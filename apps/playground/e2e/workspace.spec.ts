@@ -46,7 +46,7 @@ test('chip labels fit and stack controls update visible geometry', async ({
   await expect(
     page.getByRole('img', { name: '50 chips, total 6172800' }).locator('text'),
   ).toHaveCount(5);
-  await page.getByLabel('Visible limit').fill('8');
+  await page.getByRole('slider', { name: 'Visible limit' }).fill('8');
   await expect(
     page.getByRole('img', { name: '50 chips, total 6172800' }).locator('text'),
   ).toHaveCount(8);

@@ -209,7 +209,10 @@ function App() {
                   ))}
                 </fieldset>
                 <label>
-                  Card width <output>{cardWidth}px</output>
+                  Card width{' '}
+                  <span className="control-value" aria-hidden="true">
+                    {cardWidth}px
+                  </span>
                   <input
                     aria-label="Card width"
                     type="range"
@@ -312,7 +315,10 @@ function App() {
                     />
                   </label>
                   <label>
-                    Chip count <output>{count}</output>
+                    Chip count{' '}
+                    <span className="control-value" aria-hidden="true">
+                      {count}
+                    </span>
                     <input
                       aria-label="Chip count"
                       type="range"
@@ -323,7 +329,10 @@ function App() {
                     />
                   </label>
                   <label>
-                    Visible limit <output>{cap}</output>
+                    Visible limit{' '}
+                    <span className="control-value" aria-hidden="true">
+                      {cap}
+                    </span>
                     <input
                       aria-label="Visible limit"
                       type="range"
@@ -400,7 +409,10 @@ function App() {
                   </select>
                 </label>
                 <label>
-                  Table width <output>{tableWidth}px</output>
+                  Table width{' '}
+                  <span className="control-value" aria-hidden="true">
+                    {tableWidth}px
+                  </span>
                   <input
                     aria-label="Table width"
                     type="range"

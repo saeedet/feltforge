@@ -266,7 +266,7 @@ label {
   flex-direction: column;
   gap: 8px;
 }
-output {
+.control-value {
   font-weight: 400;
   color: #778274;
   float: right;
