@@ -1,3 +1,12 @@
-// Reserved for approved vector composition after the Penpot asset pipeline is verified.
-// No UI primitives are implemented or exported yet.
-export {};
+export { Card } from './card.js';
+export type { CardProps } from './card.js';
+export { CardBack } from './card-back.js';
+export type { CardBackProps } from './card-back.js';
+export { Chip, ChipStack } from './chip.js';
+export type { ChipProps, ChipStackProps, ChipAppearance } from './chip.js';
+export { PokerMarker } from './marker.js';
+export type { PokerMarkerProps } from './marker.js';
+export { PokerTable, TableAnchor } from './table.js';
+export type { PokerTableProps, TableAnchorProps, SeatAnchor } from './table.js';
+export type { VisualProps, ThemeStyle } from './svg.js';
+export type { CourtArtwork, JokerArtwork } from '@feltforge/assets/types';

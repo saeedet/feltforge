@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "@feltforge/core": "workspace:*",
+    "@feltforge/react": "workspace:*",
+    "@feltforge/assets": "workspace:*"
   }
 }

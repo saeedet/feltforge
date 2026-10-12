@@ -1,33 +1,27 @@
-# Initial architecture decisions
+# Architecture decisions
 
-The workspace separates framework-neutral semantics and geometry (`core`),
-authoritative/optimized vector assets (`assets`), React composition (`react`),
-and an independent Vite playground. Turborepo coordinates package builds.
+The pnpm/Turborepo workspace has four concerns: framework-neutral types and geometry in `packages/core`; source, optimized vectors and generated modules in `packages/assets`; React composition in `packages/react`; and an independent Vite playground in `apps/playground`.
 
-All workspace packages are private while implementation and licensing remain
-incomplete. These names do not require an npm organization. A single public
-`feltforge` package with subpath exports is a candidate publishing structure;
-availability, the final exports, and package contents have not been verified.
-Public npm naming will be presented to the maintainer before any publication.
+## One public package
 
-TypeScript 5.9.3 is pinned because the selected typescript-eslint release declares
-support for TypeScript below 6.1.0; the registry's latest TypeScript is not compatible
-with that constraint. Build and lint tooling are development dependencies only.
-The installed pnpm version is pinned for reproducible local and CI use.
+Internal package names remain private and do not require an npm organization. `pnpm build` assembles one `feltforge` release candidate in `dist/package`, with explicit subpath exports. Relative imports replace internal workspace package names. Runtime code has no dependency other than React as an optional peer (needed for React entries, unnecessary for core).
 
-Future card composition should keep lightweight number cards independent of
-court, Joker, and back artwork. Explicit per-style entry points or injected artwork
-must be evaluated against real consumer bundle fixtures. No tree-shaking result
-is claimed from an empty React package.
+The candidate stays `private: true` until the maintainer explicitly approves publication. No publish automation is configured. The npm name returned 404 during availability inspection; availability is not a reservation.
 
-Use a discriminated card prop union and retain `style` for ordinary React CSS.
-A `courtStyle` or explicit artwork selection can carry the visual style without
-overloading CSS semantics. This remains a planned API, not an implemented export.
+## Explicit artwork selection
 
-Table geometry will scale proportionally, while HTML overlays use normalized
-anchors and independent/clamped sizing. Marker placement belongs in layout
-utilities; the marker component renders only the puck.
+The global string-style suggestion was refined to `court={western}` and explicit Joker artwork imports. A default heavy court collection would make ordinary card imports include unwanted art. The standalone Card component therefore requires a collection for J/Q/K. The playground defaults to Persian and dynamically imports each collection. This preserves all styles, avoids a provider or global registration system, and keeps `style` available for normal React CSS.
 
-No visual geometry has been implemented before source inspection. No poker engine
-or speculative seat UI has been added. Code uses MIT; asset/font redistribution
-requires separate provenance verification before inclusion.
+Production cards are composed from one shell, reusable glyph/suit paths and geometry data. Artwork is inline vector geometry, with local SVG IDs scoped per instance. No full-deck assets, runtime font conversion or runtime SVG parsing library is shipped. Small inline fragments are generated and verified at build time. Detailed court artwork is intentionally not aggressively simplified.
+
+## Geometry and overlays
+
+Table geometry remains a 5:3 SVG. Seat, bet, marker, community and pot UI remains HTML anchored in normalized coordinates, with independent dimensions. `PokerMarker` renders only the puck. Core computes marker positions from the approved formula and stored signs. No game state or rules are inferred by the library.
+
+## Build and verification
+
+Pinned font subsets and their original WOFF2 hashes make rank extraction repeatable. Sources, generated SVGs and independently importable modules are committed. Source hashes and the exact 31-file contract fail closed on drift. CI regenerates outputs and compares the tracked result.
+
+Vitest checks semantics, geometry, bounded stack behaviour and server rendering. Separate TypeScript fixtures reject impossible component props. Raster comparisons check original versus optimized SVGs and exported Penpot glyph references without controlling a browser. Playwright checks the actual playground in CI and captures review screenshots. Package checks inspect exports, excluded source/font material and real bundled consumer fixtures.
+
+TypeScript 5.9.3 is pinned to the supported range of the chosen typescript-eslint version. SVG, font, rendering and bundling tools are development dependencies only. Assets have owner-confirmed MIT-compatible rights; font software retains its OFL notices.

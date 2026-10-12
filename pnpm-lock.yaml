@@ -59,6 +59,15 @@ importers:
 
   apps/playground:
     dependencies:
+      '@feltforge/assets':
+        specifier: workspace:*
+        version: link:../../packages/assets
+      '@feltforge/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@feltforge/react':
+        specifier: workspace:*
+        version: link:../../packages/react
       react:
         specifier: 19.3.0
         version: 19.3.0
@@ -66,15 +75,29 @@ importers:
         specifier: 19.3.0
         version: 19.3.0(react@19.3.0)
 
-  packages/assets: {}
+  packages/assets:
+    dependencies:
+      '@feltforge/core':
+        specifier: workspace:*
+        version: link:../core
 
   packages/core: {}
 
   packages/react:
+    dependencies:
+      '@feltforge/assets':
+        specifier: workspace:*
+        version: link:../assets
+      '@feltforge/core':
+        specifier: workspace:*
+        version: link:../core
     devDependencies:
       react:
         specifier: 19.3.0
         version: 19.3.0
+      react-dom:
+        specifier: 19.3.0
+        version: 19.3.0(react@19.3.0)
 
 packages:
 

@@ -1,0 +1,178 @@
+import { Resvg } from '@resvg/resvg-js';
+import { PNG } from 'pngjs';
+import { readFileSync } from 'node:fs';
+import { describe, it, expect } from 'vitest';
+import { renderToStaticMarkup as render } from 'react-dom/server';
+import {
+  Card,
+  CardBack,
+  Chip,
+  ChipStack,
+  PokerMarker,
+  PokerTable,
+  TableAnchor,
+} from './index.js';
+import { RANKS, SUITS } from '@feltforge/core';
+import type { CourtRank, NumberRank } from '@feltforge/core';
+import { persian } from '@feltforge/assets/courts/persian';
+import { western } from '@feltforge/assets/courts/western';
+import { eastern } from '@feltforge/assets/courts/eastern';
+import { joker1 } from '@feltforge/assets/jokers/1';
+import { joker2 } from '@feltforge/assets/jokers/2';
+
+describe('card composition and semantics', () => {
+  it('renders every ordinary rank/suit and all court collections without runtime fonts or embedded images', () => {
+    for (const suit of SUITS)
+      for (const rank of RANKS) {
+        const outputs = ['J', 'Q', 'K'].includes(rank)
+          ? [persian, western, eastern].map((court) =>
+              render(
+                <Card rank={rank as CourtRank} suit={suit} court={court} />,
+              ),
+            )
+          : [render(<Card rank={rank as 'A' | NumberRank} suit={suit} />)];
+        for (const out of outputs) {
+          expect(out).toContain('viewBox="0 0 250 350"');
+          expect(out).toContain('role="img"');
+          expect(out).not.toMatch(
+            /<image|<text|font-family|data:image|https?:\/\//,
+          );
+          expect(out).toContain('<path');
+        }
+      }
+  });
+  it('has useful default labels, overrides and decorative semantics', () => {
+    expect(render(<Card rank="7" suit="clubs" />)).toContain(
+      'aria-label="Seven of Clubs"',
+    );
+    expect(render(<Card rank="K" suit="hearts" court={western} />)).toContain(
+      'aria-label="King of Hearts"',
+    );
+    expect(
+      render(<Card rank="A" suit="spades" aria-label="Your card" />),
+    ).toContain('aria-label="Your card"');
+    const decorative = render(<Card rank="2" suit="hearts" decorative />);
+    expect(decorative).not.toContain('role="img"');
+    expect(decorative).not.toContain('aria-label');
+    expect(decorative).toContain('aria-hidden="true"');
+  });
+  it('keeps Joker variants independent and card backs free of rank requirements', () => {
+    const a = render(<Card rank="joker" artwork={joker1} />),
+      b = render(<Card rank="joker" artwork={joker2} />);
+    expect(a).not.toBe(b);
+    expect(a).toContain('aria-label="Joker 1"');
+    expect(b).toContain('aria-label="Joker 2"');
+    expect(render(<CardBack />)).toContain('aria-label="Classic card back"');
+  });
+  it('uses distinct referenced IDs when multiple custom spade centres share a document', () => {
+    const out = render(
+      <>
+        <Card rank="A" suit="spades" />
+        <Card rank="A" suit="spades" />
+      </>,
+    );
+    const ids = [...out.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
+    expect(ids.length).toBeGreaterThan(0);
+    expect(new Set(ids).size).toBe(ids.length);
+    for (const match of out.matchAll(/(?:href="#|url\(#)([^)" ]+)/g))
+      expect(ids).toContain(match[1]);
+  });
+});
+describe('poker primitives', () => {
+  it('preserves custom chip labels as escaped live text and exposes colours', () => {
+    const out = render(
+      <Chip
+        value={250}
+        label="<bonus>"
+        color="#123456"
+        insertColor="#abcdef"
+      />,
+    );
+    expect(out).toContain('&lt;bonus&gt;');
+    expect(out).toContain('<text');
+    expect(out).toContain('#123456');
+    expect(out).toContain('#abcdef');
+    expect(out).toContain('textLength="34"');
+  });
+  it('caps large stacks while describing their actual total', () => {
+    const out = render(
+      <ChipStack
+        chips={[
+          { value: 25, count: 500 },
+          { value: 100, count: 500 },
+        ]}
+        maxVisible={5}
+      />,
+    );
+    expect(out).toContain('aria-label="1000 chips, total 62500"');
+    expect(out.match(/<text/g)).toHaveLength(5);
+    expect(out).toContain('viewBox="0 0 76 80"');
+  });
+  it('represents an empty stack without drawing a phantom chip', () => {
+    const out = render(<ChipStack value={100} count={0} />);
+    expect(out).not.toContain('<circle');
+    expect(out).toContain('0 chips, total 0');
+  });
+  it.each([0, -1, NaN, Infinity])('rejects invalid chip size %s', (size) =>
+    expect(() => render(<Chip value={25} size={size} />)).toThrow(),
+  );
+  it.each([
+    ['dealer', 'Dealer button', 'D'],
+    ['small-blind', 'Small blind', 'SB'],
+    ['big-blind', 'Big blind', 'BB'],
+  ] as const)('renders the %s marker', (type, label, text) => {
+    const out = render(<PokerMarker type={type} />);
+    expect(out).toContain(`aria-label="${label}"`);
+    expect(out).toContain(`>${text}</text>`);
+  });
+  it.each([2, 6, 8, 9] as const)(
+    'keeps interactive overlays accessible for %i seats',
+    (layout) => {
+      const out = render(
+        <PokerTable
+          layout={layout}
+          renderSeat={(s) => <button>Seat {s.index}</button>}
+          pot={<strong>Pot</strong>}
+        />,
+      );
+      expect(out.match(/<button/g)).toHaveLength(layout);
+      expect(out).toContain('role="group"');
+      expect(out).toContain('left:50%;top:91.66666666666666%');
+      expect(out).toContain('aspect-ratio:5 / 3');
+    },
+  );
+  it('positions overlays independently of their dimensions', () => {
+    const out = render(
+      <TableAnchor at={{ x: 0.2, y: 0.8 }} style={{ width: 120 }}>
+        Seat
+      </TableAnchor>,
+    );
+    expect(out).toContain('left:20%;top:80%');
+    expect(out).toContain('width:120px');
+    expect(() => render(<TableAnchor at={{ x: NaN, y: 0 }} />)).toThrow();
+  });
+});
+
+it('matches the composed seven of hearts against the independent Penpot PNG', () => {
+  const svg = render(<Card rank="7" suit="hearts" />)
+    .replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" ')
+    .replace(/var\(--[^,]+,\s*([^)]*)\)/g, '$1');
+  const image = new Resvg(svg).render();
+  const pixels = image.pixels;
+  const reference = PNG.sync.read(
+    readFileSync(
+      new URL(
+        '../../../tooling/assets/reference/hearts-7.png',
+        import.meta.url,
+      ),
+    ),
+  );
+  expect([image.width, image.height]).toEqual([
+    reference.width,
+    reference.height,
+  ]);
+  let error = 0;
+  for (let i = 0; i < pixels.length; i++)
+    error += Math.abs(pixels[i]! - reference.data[i]!);
+  expect(error / pixels.length).toBeLessThan(0.5);
+});

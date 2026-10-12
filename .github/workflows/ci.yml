@@ -20,6 +20,15 @@ jobs:
           node-version-file: .node-version
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm generate:ranks && pnpm prepare:assets
+      - run: git diff --exit-code -- packages/assets/generated packages/assets/outlined packages/assets/src/generated
       - run: pnpm check
+      - run: pnpm test:visual
+      - run: pnpm package:check
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm test:e2e
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: playground-checks
+          path: test-results/

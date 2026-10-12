@@ -67,51 +67,63 @@ function mergeFillStroke() {
   ]);
   return {
     name: 'feltforgeMergeFillStroke',
-    fn: () => ({
-      element: {
-        exit(node) {
-          for (let i = 0; i < node.children.length - 1; i++) {
-            const a = node.children[i],
-              b = node.children[i + 1];
-            if (
-              a.type !== 'element' ||
-              b.type !== 'element' ||
-              a.name !== 'path' ||
-              b.name !== 'path'
-            )
-              continue;
-            const x = a.attributes,
-              y = b.attributes;
-            if (
-              !x.fill ||
-              x.fill === 'none' ||
-              (x.stroke && x.stroke !== 'none') ||
-              y.fill !== 'none' ||
-              !y.stroke ||
-              y.stroke === 'none'
-            )
-              continue;
-            if (
-              [
-                'opacity',
-                'filter',
-                'mask',
-                'clip-path',
-                'id',
-                'style',
-                'paint-order',
-              ].some((k) => k in x || k in y)
-            )
-              continue;
-            const keys = new Set([...Object.keys(x), ...Object.keys(y)]);
-            if ([...keys].some((k) => !paint.has(k) && x[k] !== y[k])) continue;
-            for (const k of Object.keys(y))
-              if (k.startsWith('stroke')) x[k] = y[k];
-            node.children.splice(i + 1, 1);
-          }
+    fn: () => {
+      const strokes = new WeakMap();
+      return {
+        element: {
+          enter(node, parent) {
+            strokes.set(
+              node,
+              node.attributes.stroke ?? strokes.get(parent) ?? 'none',
+            );
+          },
+          exit(node) {
+            for (let i = 0; i < node.children.length - 1; i++) {
+              const a = node.children[i],
+                b = node.children[i + 1];
+              if (
+                a.type !== 'element' ||
+                b.type !== 'element' ||
+                a.name !== 'path' ||
+                b.name !== 'path'
+              )
+                continue;
+              const x = a.attributes,
+                y = b.attributes;
+              if (
+                !x.fill ||
+                x.fill === 'none' ||
+                strokes.get(a) !== 'none' ||
+                y.fill !== 'none' ||
+                !y.stroke ||
+                y.stroke === 'none'
+              )
+                continue;
+              if (
+                [
+                  'opacity',
+                  'filter',
+                  'mask',
+                  'clip-path',
+                  'id',
+                  'style',
+                  'paint-order',
+                ].some((k) => k in x || k in y)
+              )
+                continue;
+              const keys = new Set([...Object.keys(x), ...Object.keys(y)]);
+              if ([...keys].some((k) => !paint.has(k) && x[k] !== y[k]))
+                continue;
+              for (const k of Object.keys(x))
+                if (k.startsWith('stroke')) delete x[k];
+              for (const k of Object.keys(y))
+                if (k.startsWith('stroke')) x[k] = y[k];
+              node.children.splice(i + 1, 1);
+            }
+          },
         },
-      },
-    }),
+      };
+    },
   };
 }
 
