@@ -1,0 +1,8 @@
+pnpm-lock.yaml
+dist/
+node_modules/
+.turbo/
+playwright-report/
+test-results/
+packages/assets/source/
+packages/assets/generated/
