@@ -2,7 +2,7 @@
 
 Open-source UI primitives for playing cards and poker interfaces.
 
-**Early development: workspace tooling only. No UI components or production artwork
+**Early development: workspace and asset-preparation tooling only. No UI components or production artwork
 are available yet. This project is not ready for npm publication.**
 
 The planned library includes composable playing cards, Persian/Western/Eastern court
@@ -42,8 +42,8 @@ The final public package names and exports will be reviewed before publication.
 
 ## Design source
 
-The locked Penpot system is authoritative. Implementation is waiting for its MCP
-connection and file reference. Do not substitute invented artwork or infer the final
+The locked Penpot system is authoritative. The specification has been captured through MCP; production exports are waiting
+for its interrupted connection to be restored. Do not substitute invented artwork or infer the final
 pip layout, palette, shell, typography, or stack geometry from approximate values.
 
 See [implementation status](docs/status.md), [architecture](docs/architecture.md),

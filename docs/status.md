@@ -11,15 +11,26 @@ This is a development scaffold, not a release candidate.
 - Private React package and a clearly labeled development playground shell.
 - MIT code license, contribution guidance, and a read-only-permission CI workflow.
 
-Local `pnpm check` passed: formatting, lint, typecheck, 26 semantic input tests,
+Local `pnpm check` passed: formatting, lint, typecheck, 41 semantic input and SVG pipeline tests,
 and three package/application builds. These checks do not validate visual primitives.
 
 ## Blocked next milestone
 
-Penpot is registered as a plugin but exposes no callable tools to the current chat.
-The source file URL/reference is also still needed. No source artwork, exact font,
-final geometry, or export specification has been read. Connect a usable Penpot MCP
-session and provide the locked design file reference to continue milestone 2.
+The public repository is https://github.com/saeedet/feltforge. The initial workspace
+commit passed GitHub CI: https://github.com/saeedet/feltforge/actions/runs/38233751950.
+
+Penpot MCP successfully read the file, active page, component catalog, and the
+Foundations / Export Specification / Chips / Table documentation. Source text is
+preserved under `docs/design/` with object IDs. An initial heart SVG export returned
+successfully, but no production vectors have yet been captured on disk.
+
+Subsequent MCP calls report a suspended plugin tab / missing heartbeat. Restoring
+that MCP session is required to capture all authoritative vectors and exact font
+metadata and baselines. Browser control is not authorized and must not be used.
+
+The SVG normalization/optimization and font-outline preparation tooling is in place.
+Both preparation commands intentionally fail while source provenance and exact font
+inputs are missing. This is not completion of the production asset milestone.
 
 ## Remaining work
 

@@ -14,6 +14,13 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    languageOptions: { globals: { document: 'readonly', process: 'readonly' } },
+    languageOptions: {
+      globals: {
+        document: 'readonly',
+        process: 'readonly',
+        console: 'readonly',
+        Buffer: 'readonly',
+      },
+    },
   },
 );

@@ -1,0 +1,242 @@
+[
+  {
+    "name": "00 — Overview",
+    "id": "52a5041f-08a1-80f1-8008-c36ef29dd4bc",
+    "texts": [
+      {
+        "id": "64272a52-6b67-803b-8008-c3858b73f4f5",
+        "name": "Overview Page Index",
+        "text": "Page index: 01 Foundations · 02 Components · 03 Hearts · 04–06 other suits · 07 Aces · 08 Face Cards · 09 Scale Tests · 10 Full Deck · 11 Style Gallery · 12 Card Backs · 13 Jokers · 14 Export Specification · 15 Poker Chips · 16 Poker Table · 99 Imports"
+      }
+    ]
+  },
+  {
+    "name": "01 — Foundations",
+    "id": "64272a52-6b67-803b-8008-c38508f3531e",
+    "texts": [
+      {
+        "id": "64272a52-6b67-803b-8008-c38693328349",
+        "name": "Card Values",
+        "text": "Size: 250 × 350\nAspect ratio: 5 : 7 (0.7143)\nCentre point: (125, 175)\nBackground: #F2F2F2, corner radius 13\nBorder: 1px #D2D5D9 centre stroke, inset 0.5 (249 × 349), radius 12.5\nInner panel: x 60.6, y 64.6, 128.8 × 220.8 (centred)\nInner panel: fill #F2EDC4, 1.2px #3B3C39 stroke, radius 4"
+      },
+      {
+        "id": "64272a52-6b67-803b-8008-c386933a0c22",
+        "name": "Rank Index Values",
+        "text": "Ranks 2–9: live text in components Rank / 2 … Rank / 9 (red) and Rank / Black / …\nFont: Hanuman Regular 400, 69px, line height 1.3 — typography “Rank Index”\nText box 56 × 73 at (−8, −11.5), top-aligned and centred on the 40 × 50 board\nColour: #E0001B (red suits) / #3B3C39 (black suits)\nRank / 10: bespoke vector lockup, bar “1” + rounded-rect “0”, 38.5 × 50\nAce “A”: Hanuman 69px, line height 0.9 — typography “Rank Index A”,\n   box 56 × 45 at (−8, 2.5), top-aligned and centred on the board\nText boxes are centred on their rank board, so the 180°\n   bottom copies render exactly (rotation-safe)"
+      },
+      {
+        "id": "64272a52-6b67-803b-8008-c38693411c47",
+        "name": "Corner Index Values",
+        "text": "Rank area (top): x 12.3115, y 15, 40 × 50\n   centred on index column x 32.31\nMax rank width 40 · rank height 50 · rank bottom y 65\nSuit Top: suit pip 35.2 × 44 at x 14.7115, y 75.066\nRank-to-suit gap: 10.07 (y 65 → 75.066)\nClearance to inner panel: ≥ 8.29\n   (rank area right x 52.31 → panel x 60.6)\nBottom index = exact 180° rotation about (125, 175)\nRank Bottom area: x 197.6885, y 285\nSuit Bottom: x 200.0885, y 230.934, rotated 180°"
+      },
+      {
+        "id": "64272a52-6b67-803b-8008-c3869348c53e",
+        "name": "Pips Values",
+        "text": "Centre pip: Heart Pip 30 × 37.5 (aspect 4 : 5)\nCorner suit: suit pip 35.2 × 44 (× 1.1733 of the 30 × 37.5 pip)\nPip inset inside inner panel: 8.4 on every side\nOrientation: centre above y 175 upright, below rotated 180°, on 175 upright"
+      },
+      {
+        "id": "64272a52-6b67-803b-8008-c386935029d7",
+        "name": "Pip Grid Values",
+        "text": "Columns (pip x): Left 69 · Center 110 · Right 151\nColumn centres: 84 · 125 · 166 (symmetric about x 125)\nRows (pip y): Top 73 · Upper Middle 128.5 · Center 156.25 · Lower Middle 184 · Bottom 239.5\nRow centres: 91.75 · 147.25 · 175 · 202.75 · 258.25 (Top→Bottom in 3 steps of 55.5)\nCentre-column bonus pips sit midway between the side rows they fall between:\n   7 and 8: y 114.625 / 197.875 (centres 133.375 / 216.625)\n   10: y 100.75 / 211.75 (centres 119.5 / 230.5)"
+      },
+      {
+        "id": "9ee8c525-0f6c-80ac-8008-c4d5f1c883e0",
+        "name": "Face Cards Values",
+        "text": "Face rank (J / Q / K): same font and design as the Ace “A” (final face font still TBD)\nTypography “Rank Index A” — Hanuman 400, 69px, line height 0.9, letter spacing 0\n   editable native text, box 56 × 45, top-aligned; bottom copy = 180° about (125, 175)\nCorner suit: suit pip 35.2 × 44, same positions as numbered cards\nFace Artwork slot: x 55, y 70, 140 × 210 — holds one “Face Art” component instance\n   (variant Rank × Style; see Court Styles). Same artwork for all four suits.\nArt suit pips: suit pip at 60% (21.12 × 26.4), 6 inside the inner panel corners\n   top-left x 67.2, y 71.2; bottom-right x 161.68, y 252.4, rotated 180°\nLayer order: Card Shell > Corner Top > Corner Bottom > Face Artwork > Art Suit Top > Art Suit Bottom"
+      },
+      {
+        "id": "fba0a9e4-b89c-8086-8008-c54c30b3f807",
+        "name": "Court Styles Values",
+        "text": "Default: Persian\nSupported: Persian · Western · Eastern\nInternal identifiers: persian · western · eastern\nComponent: Face Art (variants) — properties Rank (Jack / Queen / King) × Style (Persian / Western / Eastern)\nFace Artwork frame: x 55, y 70, width 140, height 210 (card coordinates; centre 125, 175)\nScale rule: 1024 × 1536 source canvas → 140 × 210 uniformly (× 0.13672); artwork bounds centred in frame\nArtwork: transparent, vector paths only — no shell, rank, suit icon or border\nCourt style affects face artwork only."
+      },
+      {
+        "id": "fba0a9e4-b89c-8086-8008-c554fee21d4a",
+        "name": "Sizing & Scaling Values",
+        "text": "Canonical design size: 250 × 350\nAspect ratio: 5:7\nScaling model: Proportional (single geometry / viewBox 0 0 250 350; everything scales as one unit)\nRecommended minimum width: 100 px\nRecommended minimum height: 140 px\nTechnically renderable down to 50 × 70, but face art and hairline strokes are not useful below 100 px\nSmall-size variant: not required at ≥ 100 px. Below 100 px a future compact treatment is advisable (not created).\nSource: 09 — Scale Tests (sizes 250 / 175 / 125 / 100 / 75 / 50 px wide)"
+      },
+      {
+        "id": "3ea547bb-4eb9-8077-8008-c5ae0a2ee439",
+        "name": "Card Backs Values",
+        "text": "Default: Classic\nInternal identifier: classic   (component Card Back / Classic)\nArchitecture: card backs are independent from court styles (backStyle ≠ courtStyle)\nCard back size: 250 × 350 — same footprint, corner radius 13 and edge as the fronts\nScaling: Proportional\nRecommended minimum: 100 × 140\nRotational symmetry: 180°\nInner frame: navy field inset 12 (r 6); gold frame line inset 20, 3 px; artwork inside the field\nPalette: navy #1F2A44 · muted gold #B8955A · ivory #F2EDC4 (on the shared #F2F2F2 card stock)"
+      },
+      {
+        "id": "66ab1695-f683-8010-8008-c5be0d95718b",
+        "name": "Jokers Values",
+        "text": "Jokers: Shared across all court styles\nAvailable variants: 1 · 2      Internal values: '1' · '2'   (components Joker / 1, Joker / 2)\nCanonical size: 250 × 350      Scaling: Proportional      Recommended minimum: 100 × 140\nSuit: None      Court-style dependency: None      (no jokerStyle)\nCorner index: Joker Index — stacked J O K E R, Hanuman 700 34 px, #3B3C39; top upright, bottom 180°\nJoker Artwork frame: x 65, y 76, 120 × 198 (source canvas 976 × 1612 × 0.12295; artwork bounds centred)\nProposed package default: <Card rank=\"joker\" /> → jokerVariant=\"1\"\n\nStyle rule\nShared across styles: number cards · Aces · Jokers · card shell · suits · ranks · pip layouts · card back\nStyle-specific (courtStyle persian | western | eastern): Jack artwork · Queen artwork · King artwork"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c68b38ff38a3",
+        "name": "Poker Chips Values",
+        "text": "Canonical chip size: 64 × 64 (viewBox 0 0 64 64)      Scaling: Proportional      Recommended minimum: 32 × 32\nDefault theme: Classic (example colours only — customisable, not a casino standard)\nGeometry: Shared      Colour: Configurable      Value: Configurable      Label: Configurable (runtime text)\nChip stacks: Generated from repeated chips — top-down overlap, +3 x / −4 y per chip at 64; shadow optional (None | Subtle)\nComponents: Poker / Chip · Poker / Chip Stack — independent of court styles and card backs\nStandalone chip SVG assets: 0 — not part of the playing-card export asset count"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c69846d93806",
+        "name": "Poker Table Values",
+        "text": "Canonical size: 1000 × 600 (viewBox 0 0 1000 600)      Aspect ratio: 5:3      Scaling: Proportional (contain, never stretch)\nDefault theme: Classic      Table colours: Configurable (rail outer / rail inner / felt / felt line / outline)\nSupported seat layouts: 2 · 6 · 8 · 9      Seat numbering: Seat 0 = bottom centre, then clockwise\nEvery seat has a Seat Anchor and a Bet Anchor; dealer/blind markers derive from seat data\nCommunity area x 270–730 · y 242–359.6 (5 × 84 px cards, gap 10) · Pot anchor (500, 212)\nRecommended minimum width: 800 px for full poker UI · Player UI: Not part of table\nComponent: Poker / Table / Classic · Standalone table SVG assets: 0 (generated by code)"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c6a1d7868955",
+        "name": "Poker Markers Values",
+        "text": "Canonical size: 64 × 64 (viewBox 0 0 64 64)      Table render size: 40 × 40      Recommended minimum: 32 × 32\nVariants: dealer · small-blind · big-blind (labels D · SB · BB)      Component: Poker / Marker (Type)\nPlacement: 125 px inward + 55 px tangent offset — M = S + 125·I + 55·lateralSign·T (T = clockwise tangent)\nLateral direction: stored per seat using lateralSign (+1 clockwise / −1 counter-clockwise; tables on 16 — Poker Table)\nTypography: Inter Tight 800 (D 28 px · SB/BB 20 px)      Generated by code: Yes      Standalone SVG assets: 0\nIndependent of court styles, chip denominations and card backs"
+      }
+    ]
+  },
+  {
+    "name": "14 — Export Specification",
+    "id": "26c05812-20d7-8042-8008-c683d1ec5e69",
+    "texts": [
+      {
+        "id": "26c05812-20d7-8042-8008-c684759fb516",
+        "name": "Page Subtitle",
+        "text": "Production asset contract for the public package. Documentation + production-asset audit only — nothing exported, no approved component changed."
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c68475a76ded",
+        "name": "1 · Core package principle — Body",
+        "text": "Cards are composed at runtime from reusable primitives — never shipped as pre-rendered card files.\nShared geometry (shell, corners, pip layouts, rotations, scaling) is package code; only artwork and reusable shapes ship as SVG.\n\n<Card rank=\"K\" suit=\"hearts\" style=\"western\" />  assembles:\n   shared card shell + shared corner geometry + ranks/k.svg + suits/heart.svg + courts/western/king.svg\n   — NOT western-king-of-hearts.svg\n\nDO NOT PRODUCE: 52 separate front SVGs, nor 52 × 3 style SVGs. Dynamic composition is a central architectural decision.\nA court artwork is suit-neutral: one King artwork per style serves all four suits."
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c68475d769ef",
+        "name": "2 · Asset matrix — Body",
+        "text": "Asset type                 Count                Standalone SVG          Generated by code\n─────────────────────────  ───────────────────  ──────────────────────  ─────────────────\nSuits                      4                    Yes                     No\nRanks                      13                   Yes *                   No\nCourt Art                  9                    Yes                     No\nJokers                     2                    Yes                     No\nCard Back                  1                    Yes (full 250 × 350)    No\nCard Shell                 1 logical geometry   No                      Yes\nPip Layout                 9 number layouts     No                      Yes\nCorners                    shared geometry      No                      Yes\n\n* Ranks: only 10 is vector in Penpot. 2–9, A, J, Q, K are live Hanuman text → glyphs must be outlined\n  during export/build (Penpot MCP cannot outline text — see §5). The row stays 'Yes', but as BUILD-OUTLINED assets.\n\nRecommended additions (pending approval — not in the original list):\nAce of Spades centrepiece  1                    Yes  aces/spade.svg     No   (special 3-path design, not a scaled suit)\nJoker corner index         1                    Yes  ranks/joker.svg    No   (stacked JOKER, Hanuman 700 → outline)"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c684760b2fa3",
+        "name": "3 · Asset naming contract (lowercase) — Body",
+        "text": "suits/            heart.svg  diamond.svg  club.svg  spade.svg\nranks/            a.svg  2.svg  3.svg  4.svg  5.svg  6.svg  7.svg  8.svg  9.svg  10.svg  j.svg  q.svg  k.svg\ncourts/persian/   jack.svg  queen.svg  king.svg\ncourts/western/   jack.svg  queen.svg  king.svg\ncourts/eastern/   jack.svg  queen.svg  king.svg\njokers/           joker-1.svg  joker-2.svg\nbacks/            classic.svg\n\nproposed:  aces/spade.svg   ranks/joker.svg\n\nSuits and ranks are single-colour: export once with fill=\"currentColor\" and colour in code\n(--card-red / --card-black). Penpot's 'Rank / Black / *' duplicates are NOT separate assets."
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c684763d6dc9",
+        "name": "4 · Generated by code (no standalone assets) — Body",
+        "text": "card outer shell · card border · inner panel · corner positioning · rank positioning · suit positioning\nnumber-card pip placement · Ace centre placement · face/joker artwork slots · rotations · dimensions · scaling\n\nCanonical geometry:  width 250 · height 350 · viewBox 0 0 250 350 · aspect ratio 5:7\nScaling: pure proportional (one geometry).   Recommended minimum: 100 × 140.\nRotation rule: every bottom element = 180° about the card centre (125, 175):  x' = 250 − x − w,  y' = 350 − y − h"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c684766b583f",
+        "name": "5 · Package composition model — Body",
+        "text": "NUMBER CARD   Card Shell + Rank + Suit + Pip Layout(rank)\nACE           Card Shell + Rank + Suit + Ace layout (centre suit; spade → aces/spade.svg)\nCOURT CARD    Card Shell + Rank + Suit + Art suit pips + Court Artwork(style, rank)\nJOKER         Card Shell + Joker Index + Joker Artwork(variant)\nBACK          Card Back(backStyle)   — complete 250 × 350 composition"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c68494e33f14",
+        "name": "6 · Corner geometry (card coords, 250 × 350) — Body",
+        "text": "Element            x          y          w        h        rot   notes\nRank Top area      12.3115    15         40       50       0     rank asset frame (ranks/*.svg viewBox 0 0 40 50)\nSuit Top           14.7115    75.0664    35.2     44       0     suit asset × 1.17333\nRank Bottom area   197.6885   285        40       50       180\nSuit Bottom        200.0885   230.9336   35.2     44       180\nRank area → inner panel clearance: 8.29 (area right x 52.3115, panel x 60.6)\n\nRank glyph placement inside the 40 × 50 area (Penpot source; reproduce exactly when outlining):\n  2–9      Hanuman 400, 69 px, line-height 1.3, centred, top-aligned; text box (−8, −11.5, 56 × 73)\n  A J Q K  Hanuman 400, 69 px, line-height 0.9, centred, top-aligned; text box (−8, 2.5, 56 × 45)\n  10       vector glyph at (0.75, 0), 38.5 × 50 — custom, keep unchanged\n\nJoker corner index (separate constant set):\nJoker Index Top    12.3115    17         40       157      0     stacked J O K E R\nJoker Index Bottom 197.6885   176        40       157      180\n  glyphs: Hanuman 700, 34 px, line-height 0.92, centred; text box (−8, 0, 56 × 157); colour --card-black\n\nShell:  background 0,0 250×350 r13 · border 0.5,0.5 249×349 r12.5 stroke 1 (centre) · inner panel 60.6,64.6 128.8×220.8 r4 stroke 1.2 (centre)\nLayer order — number/Ace: Shell > Corner Top > Pips|Centre > Corner Bottom\n              face: Shell > Corner Top > Corner Bottom > Face Artwork > Art Suit Top > Art Suit Bottom\n              joker: Shell > Corner Top > Joker Artwork > Corner Bottom"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c684951a3fe8",
+        "name": "7 · Number-card pip layouts — implementation data — Body",
+        "text": "Each pip = suit asset at 30 × 37.5, centred on (x, y); rotation in degrees about its own centre.\nIdentical for all four suits (verified hearts / diamonds / clubs / spades). Format: (x, y, rot)\n\n2   (125, 91.75, 0) (125, 258.25, 180)\n3   (125, 91.75, 0) (125, 175, 0) (125, 258.25, 180)\n4   (84, 91.75, 0) (166, 91.75, 0) (84, 258.25, 180) (166, 258.25, 180)\n5   (84, 91.75, 0) (166, 91.75, 0) (125, 175, 0) (84, 258.25, 180) (166, 258.25, 180)\n6   (84, 91.75, 0) (166, 91.75, 0) (84, 175, 0) (166, 175, 0) (84, 258.25, 180) (166, 258.25, 180)\n7   (84, 91.75, 0) (166, 91.75, 0) (125, 133.375, 0) (84, 175, 0) (166, 175, 0) (84, 258.25, 180) (166, 258.25, 180)\n8   (84, 91.75, 0) (166, 91.75, 0) (125, 133.375, 0) (84, 175, 0) (166, 175, 0) (125, 216.625, 180) (84, 258.25, 180) (166, 258.25, 180)\n9   (84, 91.75, 0) (166, 91.75, 0) (84, 147.25, 0) (166, 147.25, 0) (125, 175, 0) (84, 202.75, 180) (166, 202.75, 180) (84, 258.25, 180) (166, 258.25, 180)\n10  (84, 91.75, 0) (166, 91.75, 0) (125, 119.5, 0) (84, 147.25, 0) (166, 147.25, 0) (84, 202.75, 180) (166, 202.75, 180) (125, 230.5, 180) (84, 258.25, 180) (166, 258.25, 180)\n\nGrid: columns x = 84 · 125 · 166   rows y = 91.75 · 119.5 · 133.375 · 147.25 · 175 · 202.75 · 216.625 · 230.5 · 258.25\nRule: pips below the horizontal centre line are rotated 180°; centre-line pips (y 175) stay upright."
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c684954cd334",
+        "name": "8 · Ace, face-card and Joker slots — Body",
+        "text": "Ace centre suit (suit asset scaled; all centred on 125, 175):\n  heart     × 1.7333 → 52 × 65      frame x 99,   y 142.5\n  diamond   × 1.9467 → 58.4 × 73    frame x 95.8, y 138.5\n  club      × 2.16   → 64.8 × 81    frame x 92.6, y 134.5\n  spade           special asset aces/spade.svg: frame x 78.17, y 115.5625, 93.66 × 117.075\n                  3 paths (base fill #3B3C39, inline stroke #FFFFFF 4.87, rim stroke #3B3C39 2.88)\n\nFace cards (J/Q/K, all styles):\n  Face Artwork slot     x 55, y 70, 140 × 210 (court asset frame; centre 125, 175)\n  Art Suit Top          x 67.2, y 71.2, 21.12 × 26.4 (suit × 0.704), rot 0\n  Art Suit Bottom       x 161.68, y 252.4, 21.12 × 26.4, rot 180\n  Rank text             as A (see §6), colour = suit colour\n\nJokers:\n  Joker Artwork slot    x 65, y 76, 120 × 198 (joker asset frame; centre 125, 175); no suit"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c684b183418f",
+        "name": "Colour Tokens — Body",
+        "text": "--card-red                #E0001B   red suits (hearts, diamonds) — pips, corner suit, ranks, Ace centre\n--card-black              #3B3C39   black suits (clubs, spades), black ranks, Joker index, inner-panel stroke\n--card-background         #F2F2F2   card stock (fronts and back shell)\n--card-border             #D2D5D9   outer border stroke, 1 px\n--card-panel              #F2EDC4   inner panel fill (number, Ace, face, Joker)\n--card-panel-stroke       #3B3C39   inner panel stroke 1.2 px (alias of --card-black)\n--card-ace-spade-inline   #FFFFFF   Ace of Spades inline stroke\n--back-classic-field      #1F2A44   Classic back navy field + medallion inner\n--back-classic-gold       #B8955A   Classic back frame line, lattice, medallion, ornaments\n--back-classic-ivory      #F2EDC4   Classic back star, beads, tip dots (same value as --card-panel)\n\nRank colour = suit colour token. Court/Joker artwork colours are baked into their SVGs (not tokens).\nNo Penpot library colours are defined yet — tokens are established in code."
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c684b1a8da42",
+        "name": "10 · Production asset audit — Body",
+        "text": "Asset                       Frame            Shapes   Raster  Gradient  Filter/blur  Mask  Text  Background  Centred\nsuits/heart                 30 × 37.5        1 path   no      no        no           no    no    no          yes   path 0,0 30×37.5        #E0001B\nsuits/diamond               30 × 37.5        1 path   no      no        no           no    no    no          yes   path 1.3,0 27.4×37.5    #E0001B\nsuits/club                  30 × 37.5        1 path   no      no        no           no    no    no          yes   path 0.3,2.442 29.4×32.616  #3B3C39\nsuits/spade                 30 × 37.5        1 path   no      no        no           no    no    no          yes   path 1.336,0 27.328×37.5  #3B3C39\ncourts/persian/jack         140 × 210        317      no      no        no           no    no    no          yes   (ink 108.7 × 203.6)\ncourts/persian/queen        140 × 210        419      no      no        no           no    no    no          yes   (ink 107.6 × 204.7)\ncourts/persian/king         140 × 210        286      no      no        no           no    no    no          yes   (ink 115.0 × 205.6)\ncourts/western/jack         140 × 210        259      no      no        no           no    no    no          yes   (ink 116.1 × 204.9)\ncourts/western/queen        140 × 210        177      no      no        no           no    no    no          yes   (ink 111.4 × 206.1)\ncourts/western/king         140 × 210        220      no      no        no           no    no    no          yes   (ink 113.7 × 205.8)\ncourts/eastern/jack         140 × 210        192      no      no        no           no    no    no          yes   (ink 114.2 × 206.2)\ncourts/eastern/queen        140 × 210        209      no      no        no           no    no    no          yes   (ink 107.3 × 207.6)\ncourts/eastern/king         140 × 210        209      no      no        no           no    no    no          yes   (ink 116.1 × 207.6)\njokers/joker-1              120 × 198        275      no      no        no           no    no    no          yes   (ink 115.0 × 187.4)\njokers/joker-2              120 × 198        328      no      no        no           no    no    no          yes   (ink 118.0 × 193.5)\nbacks/classic               250 × 350        25       no      no        no           no    no    shell       180° symmetric\naces/spade (proposed)       93.66 × 117.075  3        no      no        no           no    no    no          yes\n\nCourt & Joker art: illustration only — no shell, rank, index or suit; transparent frame; every path filled; ~50% carry a\n0.5 px seam stroke in the SAME colour as their fill (anti-gap; keep in source). Joker 2's largest shape is the figure's black\noutline path (1836 commands), not a background. Persian figures are double-ended; Jokers are single, upright.\nCard back: 4 rect + 17 path + 4 ellipse; palette navy / gold / ivory on shared stock; all vector; exported as a full card."
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c684c3d68589",
+        "name": "11 · Rank font dependency (Hanuman) — Body",
+        "text": "Font-based in Penpot (live text):  2 3 4 5 6 7 8 9 A  (red + black components)  ·  J Q K  (text inside face-card masters)\n                                   Joker Index  (Hanuman 700)\nVector already:                    10  (custom glyph — keep visually unchanged)\n\nPenpot MCP test: penpot.flatten() on a detached copy of 'A' returned only the text-box rectangle (no glyph outlines).\n→ Text cannot be safely outlined through the MCP. No rank component was modified.\nPenpot SVG markup of a rank emits <text font-family:Hanuman> → external-font dependency if exported as is.\n\nDecision: outline the glyphs during export/build (e.g. fontTools / opentype.js) from Hanuman Regular (400) and Bold (700),\nreproducing the exact Penpot parameters in §6, then verify against Penpot PNG exports (pixel diff).\nHanuman is SIL Open Font License 1.1 — outlining/embedding permitted; include the licence notice in the package.\nDistribution SVGs must contain paths only — no <text>, no font-family, no webfont loading."
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c684c40814e4",
+        "name": "12 · Export requirements (every standalone SVG) — Body",
+        "text": "• valid SVG 1.1, deterministic viewBox at the asset frame origin: suits 0 0 30 37.5 · ranks 0 0 40 50 · courts 0 0 140 210\n  jokers 0 0 120 198 · backs 0 0 250 350 · aces/spade 0 0 93.66 117.075\n• no width/height attributes that block scaling (viewBox only; package sets size)\n• transparent background (all except backs/classic, which is a complete card)\n• no raster images · no base64 · no external references · no external fonts (paths only)\n• no filters unless explicitly approved (none needed today)\n• no editor metadata / ids / Penpot wrapper groups; optimised path data\n• single-colour assets (suits, ranks) use currentColor; artwork keeps its baked palette\nPenpot's raw markup is NOT distribution-ready: page-coordinate viewBox, frame wrappers, duplicated fill/stroke groups —\ncourt art measures 1.6–3.2 MB per file in raw markup. Normalise + optimise in the build step."
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c684c439da5e",
+        "name": "13 · Source vs distribution — Body",
+        "text": "SOURCE        high-fidelity SVGs exported from Penpot; visually authoritative; never optimised destructively;\n              Penpot components stay the master (no in-Penpot path simplification).\nDISTRIBUTION  build output shipped with the package: viewBox-normalised, glyphs outlined, SVGO-optimised\n              (path precision, merge, strip metadata) — must pass a visual diff against SOURCE.\nOld imports on 99 — Imports are kept (labelled UNUSED / SOURCE) until the export pipeline is validated."
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c684c468a902",
+        "name": "14 · Public values (current implementation truth) — Body",
+        "text": "type CardStyle   = 'persian' | 'western' | 'eastern'     // affects Jack, Queen, King artwork only\ntype JokerVariant = '1' | '2'                              // shared assets joker-1, joker-2 (no style dependency today)\ntype BackStyle   = 'classic'\nDefaults: style 'persian' · jokerVariant '1' (proposed) · backStyle 'classic'\nCanonical size 250 × 350 · viewBox 0 0 250 350 · minimum 100 × 140"
+      }
+    ]
+  },
+  {
+    "name": "15 — Poker Chips",
+    "id": "26c05812-20d7-8042-8008-c6898d38b4b9",
+    "texts": [
+      {
+        "id": "26c05812-20d7-8042-8008-c6898f052d5e",
+        "name": "Page Subtitle",
+        "text": "One shared, data-driven chip geometry (64 × 64). Value, label and colours are configurable; stacks repeat the same chip. Independent of card styles and the card back."
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c68b23e504b4",
+        "name": "Notes Body",
+        "text": "GEOMETRY  (canonical 64 × 64, viewBox 0 0 64 64, centre 32,32; everything scales by size/64)\n  Outer Edge     circle r 32          fill chip-base · stroke 1 px inner, #000000 @ 0.28 (chip-outline)\n  Edge Inserts   8 annular sectors    r 24.5 → 32 (depth 7.5) · sweep 18° · spacing 45° · first centred at −90° (top)\n                 sector i: θ = −90° + 45°·i, from θ−9° to θ+9° — one shape rotated 8× about (32,32)\n                 outer chord ≈ 10.0, inner chord ≈ 7.7 · fill chip-edge-insert\n  (base band)    r 22.5 → 24.5 shows chip-base between inserts and ring\n  Inner Ring     circle r 22.5 under Center Field → 2 px ring (r 20.5–22.5) · fill chip-inner-ring\n  Center Field   circle r 20.5        fill chip-center\n  Label          live text, centred on (32,32); box 40 × 24 at (12,20)\n  Paint order    Outer Edge → Edge Inserts → Inner Ring → Center Field → Label\n\nTYPOGRAPHY  (design reference — implementation may use an equivalent package/UI font)\n  Inter Tight 800 · 16 px at 64 · line-height 1 · letter-spacing 0 · align centre/centre\n  ≤ 3 characters at 16 px (≈ 33 px wide in a 41 px field); longer labels shrink to fit 34 px width.\n  Rendered at runtime as text — no chip font asset, not converted to paths.\n\nCOLOUR ROLES  chip-base · chip-edge-insert · chip-inner-ring (= insert by default) · chip-center (= base by default)\n              chip-label · chip-outline (#000000 @ 0.28)\nClassic theme (package default only — NOT a universal casino standard; fully customisable):\n  value  base      insert/ring  label     label contrast\n  1      #F2EFE6   #1F4E9C      #1F2937   12.8 : 1\n  5      #C62828   #F4F1EA      #FFFFFF    5.6 : 1\n  25     #2E7D32   #F4F1EA      #FFFFFF    5.1 : 1\n  100    #1E1F22   #F4F1EA      #FFFFFF   16.5 : 1\n  500    #6A3FA0   #F4F1EA      #FFFFFF    7.4 : 1\n  1K     #E3B23C   #1E1F22      #1F2937    7.5 : 1\n  5K     #7A4A2A   #F4F1EA      #FFFFFF    7.4 : 1\n  custom #0C7A7C   #F4F1EA      #FFFFFF    5.1 : 1   (250 — colour independent of value)\n\nSCALE (proportional)   64 Excellent · 48 Excellent · 40 Good · 32 Good · 24 Marginal · 16 Poor\n  Smallest Excellent 48 · smallest Good 32 · recommended minimum 32 × 32 (denomination readable)\n  Technically renderable 16 × 16 (chip + colour recognisable; label unreadable).\n  Fails first: label (4–6 px) → inner ring (≤ 0.75 px) → outline; edge inserts survive longest.\n\nSTACKS (Poker / Chip Stack = top-down overlapping Chip instances, data-driven) — see Perspective Test below\n  offset +3 x / −4 y per chip at 64 · bounds (64 + 3(n−1)) × (64 + 4(n−1)) · 5 chips → 76 × 80\n  order bottom → top (bottom chip at left/low, top chip painted last, label fully visible)\n  visible cap 5–8, default 5; larger counts cap visually and keep the numeric value separately\n  top-down only: no side walls, perspective or thickness. Shadow optional: variant Shadow = None | Subtle (presentation styling).\n  Totals (e.g. 1,300) are UI text outside the chips — never baked into chip graphics.\n\nEXPORT MODEL   standalone chip SVG assets required: 0\n  generated from 4 circles + 8 sector paths + 1 text → small bundle, custom colours/values, deterministic scaling\n  not counted in the playing-card export asset matrix.\n\nPROPOSED API (conceptual — no code yet)\n  <Chip value={25} />            <Chip value={100} label=\"100\" />      <Chip value={1000} label=\"1K\" />\n  <Chip value={250} color=\"#0C7A7C\" />\n  <ChipStack value={100} count={5} />\n  <ChipStack chips={[{ value: 100, count: 3 }, { value: 500, count: 2 }]} />"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c68e89564d7f",
+        "name": "Stack Test Caption",
+        "text": "Top-down overlapping Chip instances · +3 px x / −4 px y per chip at 64 · bottom chip painted first\nPoker / Chip Stack variants: Shadow = None | Subtle (0, 2, blur 2.5, #000 @ 18%). Scale-check rows: A = None, B = Subtle."
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c68fc08bb194",
+        "name": "Decision Body",
+        "text": "DECISION (approved):  top-down stack · offset +3 px x / −4 px y per chip at 64 · subtle shadow, OPTIONAL\n\nApproved visual language:  Top-down (overlapping circular Chip instances, bottom painted first, top chip label fully visible)\nRejected:                  Pseudo-3D side-wall stack (previous 6 px vertical offset) · +6/−8 alternative (larger footprint)\n\nGeometry:  5-chip bounds 76 × 80 · total displacement x +12, y −16 · bounds = (64 + 3(n−1)) × (64 + 4(n−1)); scales with size/64\nShadow:    optional presentation styling — Poker / Chip Stack variant property Shadow = None | Subtle\n           Subtle = drop shadow per chip: offset 0, 2 · blur 2.5 · spread 0 · #000000 @ 18% (scale offset/blur with size)\n           never part of the base Chip geometry/SVG; Poker / Chip itself has no shadow.\n\nFindings:  dark felt — None: identical black chips merge; Subtle: every layer separates, not muddy.\n           light page — both read; Subtle adds gentle depth without floating.\n           48 / 32 px — overlap and shadow scale proportionally; crescents ≈2.5 px at 32 (Subtle helps most here).\n\nVisible-chip cap:  recommended 5–8 · package default 5. Larger real counts cap the visual stack and keep the\n   numeric count/value separately (label outside). Never render dozens of individual chips.\n\nProposed API:  <ChipStack value={100} count={5} />                 // default: subtle shadow on\n               <ChipStack value={100} count={5} shadow={false} />   // flat, no shadow\n               <ChipStack chips={[{ value: 100, count: 3 }, { value: 500, count: 2 }]} />"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c6a071d368ed",
+        "name": "Markers Caption",
+        "text": "Poker / Marker — one shared puck geometry (64 × 64), variant Type = Dealer | Small Blind | Big Blind; only label and ring accent change. Not a chip: no edge inserts."
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c6a1cfbc15d9",
+        "name": "Marker Notes Body",
+        "text": "GEOMETRY  (canonical 64 × 64, viewBox 0 0 64 64, centre 32,32; scales by size/64)\n  Outer Disc     circle r 32    fill marker-background · stroke 2.5 inner marker-border\n  Inner Border   circle r 26    no fill · stroke 2 centre marker-accent\n  Center Field   circle r 25    fill marker-field\n  Label          live text centred on (32,32); box 48 × 32 at (8,16)\n  Paint order    Outer Disc → Inner Border → Center Field → Label\n  No edge inserts, no stripes, single ring → reads as a position token, not money.\n\nCOLOUR ROLES (configurable; independent of court styles, chips, card back)\n  marker-background #F4F1EA · marker-field #FAF8F3 · marker-border #22201E · marker-label #22201E\n  marker-accent: dealer #22201E · small-blind #2F6DB5 · big-blind #C27C0E\n\nTYPOGRAPHY  Inter Tight 800 (reference; package may use an equivalent UI font), line-height 1, centred\n  Dealer 'D' 28 px · 'SB' / 'BB' 20 px at 64 (balanced visual weight)\n\nSCALE   D: 64–32 Excellent · 24 Good · 16 Marginal     SB/BB: 64–40 Excellent · 32 Good · 24 Marginal · 16 Poor\n  Smallest Excellent 40 · smallest Good 32 · recommended minimum 32 × 32 (24 acceptable for Dealer only)\n  Fails first: SB/BB letters → accent ring (faint at 24) → dark rim survives longest.\n\nTABLE   render size 40 × 40 on the canonical 1000 px table (= 0.04 × table width) — clearly distinct from 32 px chips\n  Placement (approved): M = S + 125·I + 55·lateralSign·T · I = normalize(C − S) · T = (I.y, −I.x) clockwise tangent\n  lateralSign stored per seat (2/6/8/9 tables on 16 — Poker Table) · same function for dealer, small blind, big blind\n  validated collision-free in all layouts, minimum clearance 14.1 px\n\nEXPORT  standalone marker SVG assets: 0 — generated from 3 circles + 1 text\nAPI     <PokerMarker type=\"dealer\" />  <PokerMarker type=\"small-blind\" />  <PokerMarker type=\"big-blind\" />\n        <PokerMarker type=\"dealer\" size={40} />\n\nconst MARKER = { size: 64, outerR: 32, rimStroke: 2.5, ringR: 26, ringStroke: 2, fieldR: 25,\n  font: { family: 'Inter Tight', weight: 800, dealer: 28, blind: 20 },\n  colors: { background: '#F4F1EA', field: '#FAF8F3', border: '#22201E', label: '#22201E',\n    accent: { dealer: '#22201E', 'small-blind': '#2F6DB5', 'big-blind': '#C27C0E' } },\n  tableSize: 40, minSize: 32, placement: { inward: 125, lateral: 55 } }\nLabel box 48 × 32 at (8, 16). PokerMarker renders the puck; positioning lives in PokerTable / layout utilities."
+      }
+    ]
+  },
+  {
+    "name": "16 — Poker Table",
+    "id": "26c05812-20d7-8042-8008-c6935e7ea69b",
+    "texts": [
+      {
+        "id": "26c05812-20d7-8042-8008-c6935fc60648",
+        "name": "Page Subtitle",
+        "text": "Layout primitive: table geometry + anchors only (no players, cards, chips or game state). Canonical 1000 × 600 · viewBox 0 0 1000 600 · 5:3 · proportional scaling · generated by code."
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c6937c632461",
+        "name": "Seat Layouts Title",
+        "text": "Seat layouts — Seat 0 = bottom centre (hero), then clockwise · orange dot = Seat Anchor · white diamond = Bet Anchor · dashed box = 160 × 90 seat safe area (QA)"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c6982d6786bc",
+        "name": "Data Body",
+        "text": "2 PLAYERS  (angles 90°, 270°)\nseat  angle   seat x   seat y   nx       ny       bet x    bet y    nbx      nby\n   0    90°      500      550  0.5000   0.9167       500      445  0.5000   0.7417\n   1   270°      500       50  0.5000   0.0833       500      155  0.5000   0.2583\n\n6 PLAYERS  (angles 90°, 160°, 200°, 270°, 340°, 20°)\nseat  angle   seat x   seat y   nx       ny       bet x    bet y    nbx      nby\n   0    90°      500      550  0.5000   0.9167       500      445  0.5000   0.7417\n   1   160°    114.7    385.5  0.1147   0.6425     227.5    349.6  0.2275   0.5827\n   2   200°    114.7    214.5  0.1147   0.3575     227.5    250.4  0.2275   0.4173\n   3   270°      500       50  0.5000   0.0833       500      155  0.5000   0.2583\n   4   340°    885.3    214.5  0.8853   0.3575     772.5    250.4  0.7725   0.4173\n   5    20°    885.3    385.5  0.8853   0.6425     772.5    349.6  0.7725   0.5827\n\n8 PLAYERS  (angles 90°, 135°, 180°, 225°, 270°, 315°, 0°, 45°)\nseat  angle   seat x   seat y   nx       ny       bet x    bet y    nbx      nby\n   0    90°      500      550  0.5000   0.9167       500      445  0.5000   0.7417\n   1   135°    210.1    476.8  0.2101   0.7947     294.9    402.5  0.2949   0.6708\n   2   180°       90      300  0.0900   0.5000       210      300  0.2100   0.5000\n   3   225°    210.1    123.2  0.2101   0.2053     294.9    197.5  0.2949   0.3292\n   4   270°      500       50  0.5000   0.0833       500      155  0.5000   0.2583\n   5   315°    789.9    123.2  0.7899   0.2053     705.1    197.5  0.7051   0.3292\n   6     0°      910      300  0.9100   0.5000       790      300  0.7900   0.5000\n   7    45°    789.9    476.8  0.7899   0.7947     705.1    402.5  0.7051   0.6708\n\n9 PLAYERS  (angles 90°, 130°, 170°, 220°, 250°, 290°, 320°, 10°, 50°)\nseat  angle   seat x   seat y   nx       ny       bet x    bet y    nbx      nby\n   0    90°      500      550  0.5000   0.9167       500      445  0.5000   0.7417\n   1   130°    236.5    491.5  0.2365   0.8192     313.6    411.1  0.3136   0.6852\n   2   170°     96.2    343.4  0.0962   0.5723     214.4    325.2  0.2144   0.5420\n   3   220°    185.9    139.3  0.1859   0.2322     277.8    206.8  0.2778   0.3447\n   4   250°    359.8     65.1  0.3598   0.1085     400.8    163.7  0.4008   0.2728\n   5   290°    640.2     65.1  0.6402   0.1085     599.2    163.7  0.5992   0.2728\n   6   320°    814.1    139.3  0.8141   0.2322     722.2    206.8  0.7222   0.3447\n   7    10°    903.8    343.4  0.9038   0.5723     785.6    325.2  0.7856   0.5420\n   8    50°    763.5    491.5  0.7635   0.8192     686.4    411.1  0.6864   0.6852"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c6982ea99eb0",
+        "name": "Notes Body",
+        "text": "TABLE GEOMETRY (all racetrack rounded rects, radius = height/2) — canonical 1000 × 600, viewBox 0 0 1000 600, 5:3\n  Outer Shadow / Separation  x 80  y 80  w 840 h 460 r 230   fill #000000 @ 0.22 (flat, no blur)\n  Outer Rail                 x 80  y 70  w 840 h 460 r 230   fill table-rail-outer · stroke 2 inner table-outline\n  Inner Rail                 x 100 y 90  w 800 h 420 r 210   fill table-rail-inner   (outer rail band 20, inner rail band 12)\n  Felt                       x 112 y 102 w 776 h 396 r 198   fill table-felt\n  Inner Felt Line            x 152 y 142 w 696 h 316 r 158   stroke 2 centre table-felt-line\n\nCOLOUR ROLES — Classic (configurable; independent of card styles and chips)\n  table-rail-outer #1E1C1A · table-rail-inner #4B3424 · table-felt #1D6B45 · table-felt-line #3E8E66\n  table-outline #55504A · table-separation #000000 @ 0.22\n\nCOMMUNITY AREA   region x 270–730, y 242–359.6 (460 × 117.6), centre (500, 300.8)\n  card width 84 (= 0.084 × table width), height 117.6 (5:7), gap 10, five-card width 460\n  flop = cards 1–3, turn = 4, river = 5 (left → right). Cards are composed on top — never part of the table.\nPOT ANCHOR       (500, 212) · n (0.5, 0.3533) — centre of pot stack / amount, above the board\nTABLE CENTRE     (500, 300)\n\nSEAT SYSTEM      seat ellipse centre (500,300) rx 410 ry 250; bet ellipse rx 290 ry 145 — same angle per seat\n  seat(θ) = (500 + 410 cos θ, 300 + 250 sin θ) · bet(θ) = (500 + 290 cos θ, 300 + 145 sin θ)  (θ = 90° bottom, +clockwise)\n  Seat 0 = bottom centre (hero), then clockwise. Angles per layout are tuned, not an even circle (see data).\n  Seat safe area (QA) 160 × 90; chips at canonical: chip 32 (= 0.032 × width), 5-chip stack 38 × 40 centred on bet anchor.\n  Min clearances @1000: bet→community 2p 65 · 6p 23.5 · 8p 22.9 · 9p 15.2 · seat-box gap 9p 13.9 · all inside the container.\n\nDEALER / BLIND MARKERS (Poker / Marker, 40 px on the 1000 table) — positioned from seat data, never fixed on the felt\n  M = S + 125·I + 55·lateralSign·T  ·  I = normalize(C − S), T = (I.y, −I.x) clockwise tangent · per-seat lateralSign: see MARKER PLACEMENT\n  One shared function for dealer, small blind and big blind; only the assigned seat differs.\n\nRESPONSIVE      preserve 5:3 · width 100%, height auto (or aspect-ratio: 5 / 3) · contain, never stretch\n  700 × 500 container → scale 0.70 → 700 × 420, 80 px unused height (40 + 40).\n  1000 Excellent · 800 Good · 600 Marginal · 500 Poor (full UI). Geometry stays recognizable at 500 and below.\n  Recommended minimum width: 800 px for full poker UI (cards 67 px, chips 26 px); chip values are crisp from 1000\n  (chip ≥ 32 px) — below that the package may keep chips ≥ 32 px or rely on amount text.\n\nPLAYER CONTENT (not part of the table): avatar · name · stack · hole cards · action/status · bet chips\nEXPORT MODEL    standalone table SVG assets required: 0 — generated from 5 rounded rects (+ optional separation)\nPROPOSED API    <PokerTable seats={6} />   <PokerTable seats={9} theme=\"classic\" />\n                <PokerTable seats={6}><PokerSeat seat={0}>…</PokerSeat><PokerSeat seat={1}>…</PokerSeat></PokerTable>"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c698420becc1",
+        "name": "Integration Caption 6",
+        "text": "6 seats · community A♠ K♥ 7♦ 10♣ 2♥ (84 px) · hole cards A♥ J♣ (60 px) at Seat 0 · pot + bets: Chip Stack (Shadow Subtle), chip 32 px"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c6a11976ccb4",
+        "name": "Marker QA Caption A",
+        "text": "Approved placement: M = S + 125·I + 55·lateralSign·T (T = clockwise tangent) · clear of cards, bets, pot, seats (≥ 14 px, all layouts)"
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c6a31e9d01de",
+        "name": "Marker Placement Body",
+        "text": "Given table centre C = (500, 300) and seat anchor S (canonical 1000 × 600):\n  I = normalize(C − S)                 unit inward vector\n  T = (I.y, −I.x)                      clockwise tangent in screen space (y down) — points toward the next seat index\n  M = S + I · 125 + T · (55 · lateralSign)\n  lateralSign +1 = clockwise (toward seat i+1) · −1 = counter-clockwise (toward seat i−1)\n  Marker render size 40 × 40 (Poker / Marker scaled from 64). Same function for dealer, small blind, big blind.\n  Signs are stored per seat (deterministic) — never inferred at runtime.\n\n2 players\n  seat 0    90°   lateralSign −1   marker (555.0, 425.0)\n  seat 1   270°   lateralSign −1   marker (445.0, 175.0)\n6 players\n  seat 0    90°   lateralSign −1   marker (555.0, 425.0)\n  seat 1   160°   lateralSign −1   marker (248.6, 412.1)\n  seat 2   200°   lateralSign +1   marker (248.6, 187.9)\n  seat 3   270°   lateralSign −1   marker (445.0, 175.0)\n  seat 4   340°   lateralSign −1   marker (751.4, 187.9)\n  seat 5    20°   lateralSign +1   marker (751.4, 412.1)\n8 players\n  seat 0    90°   lateralSign −1   marker (555.0, 425.0)\n  seat 1   135°   lateralSign −1   marker (345.5, 458.7)\n  seat 2   180°   lateralSign −1   marker (215.0, 355.0)\n  seat 3   225°   lateralSign +1   marker (345.5, 141.3)\n  seat 4   270°   lateralSign −1   marker (445.0, 175.0)\n  seat 5   315°   lateralSign −1   marker (654.5, 141.3)\n  seat 6     0°   lateralSign −1   marker (785.0, 245.0)\n  seat 7    45°   lateralSign +1   marker (654.5, 458.7)\n9 players\n  seat 0    90°   lateralSign −1   marker (555.0, 425.0)\n  seat 1   130°   lateralSign −1   marker (370.0, 462.5)\n  seat 2   170°   lateralSign −1   marker (226.4, 384.7)\n  seat 3   220°   lateralSign +1   marker (322.2, 147.3)\n  seat 4   250°   lateralSign +1   marker (471.1, 144.2)\n  seat 5   290°   lateralSign −1   marker (528.9, 144.2)\n  seat 6   320°   lateralSign −1   marker (677.8, 147.3)\n  seat 7    10°   lateralSign +1   marker (773.6, 384.7)\n  seat 8    50°   lateralSign +1   marker (630.0, 462.5)\n\nValidation (1000 × 600, marker 40, bet stack 38 × 40, seat area 160 × 90, hole cards x 438–562 y 470–554):\n  all seats of 2 / 6 / 8 / 9 clear of seat areas, hole cards, bet stacks, community cards, pot and every other\n  seat's marker — minimum clearance 2p 16 · 6p 16 · 8p 15 · 9p 14.1 px; every marker ≥ 15 px inside the felt.\nHistory: an 85 / 50 rule was tested and rejected due to collisions.\n\ntype MarkerType = 'dealer' | 'small-blind' | 'big-blind'\ntype LateralSign = -1 | 1\ntype SeatMarkerPlacement = { seat: number; lateralSign: LateralSign }\nconst MARKER_LATERAL_SIGNS: Record<2 | 6 | 8 | 9, LateralSign[]> = {\n  2: [-1, -1],\n  6: [-1, -1, 1, -1, -1, 1],\n  8: [-1, -1, -1, 1, -1, -1, -1, 1],\n  9: [-1, -1, -1, 1, 1, -1, -1, 1, 1],\n}\ngetMarkerPosition({ seatPosition, tableCenter, inward: 125, lateral: 55, lateralSign })\nPokerMarker renders the puck; PokerTable / layout utilities decide where it goes."
+      }
+    ]
+  }
+]

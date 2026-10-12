@@ -1,4 +1,10 @@
 import { defineConfig } from 'vitest/config';
 export default defineConfig({
-  test: { include: ['packages/**/*.test.ts', 'packages/**/*.test.tsx'] },
+  test: {
+    include: [
+      'packages/**/*.test.ts',
+      'packages/**/*.test.tsx',
+      'tooling/**/*.test.ts',
+    ],
+  },
 });

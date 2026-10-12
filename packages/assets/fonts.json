@@ -1,0 +1,139 @@
+{
+  "faces": [
+    {
+      "family": "Hanuman",
+      "weight": 400,
+      "file": null,
+      "sourceUrl": null,
+      "sha256": null,
+      "verifiedAgainstPenpot": false
+    },
+    {
+      "family": "Hanuman",
+      "weight": 700,
+      "file": null,
+      "sourceUrl": null,
+      "sha256": null,
+      "verifiedAgainstPenpot": false
+    }
+  ],
+  "ranks": [
+    {
+      "name": "a",
+      "glyphs": ["A"],
+      "width": 40,
+      "height": 50,
+      "fontSize": 69,
+      "weight": 400,
+      "baselines": [null]
+    },
+    {
+      "name": "2",
+      "glyphs": ["2"],
+      "width": 40,
+      "height": 50,
+      "fontSize": 69,
+      "weight": 400,
+      "baselines": [null]
+    },
+    {
+      "name": "3",
+      "glyphs": ["3"],
+      "width": 40,
+      "height": 50,
+      "fontSize": 69,
+      "weight": 400,
+      "baselines": [null]
+    },
+    {
+      "name": "4",
+      "glyphs": ["4"],
+      "width": 40,
+      "height": 50,
+      "fontSize": 69,
+      "weight": 400,
+      "baselines": [null]
+    },
+    {
+      "name": "5",
+      "glyphs": ["5"],
+      "width": 40,
+      "height": 50,
+      "fontSize": 69,
+      "weight": 400,
+      "baselines": [null]
+    },
+    {
+      "name": "6",
+      "glyphs": ["6"],
+      "width": 40,
+      "height": 50,
+      "fontSize": 69,
+      "weight": 400,
+      "baselines": [null]
+    },
+    {
+      "name": "7",
+      "glyphs": ["7"],
+      "width": 40,
+      "height": 50,
+      "fontSize": 69,
+      "weight": 400,
+      "baselines": [null]
+    },
+    {
+      "name": "8",
+      "glyphs": ["8"],
+      "width": 40,
+      "height": 50,
+      "fontSize": 69,
+      "weight": 400,
+      "baselines": [null]
+    },
+    {
+      "name": "9",
+      "glyphs": ["9"],
+      "width": 40,
+      "height": 50,
+      "fontSize": 69,
+      "weight": 400,
+      "baselines": [null]
+    },
+    {
+      "name": "j",
+      "glyphs": ["J"],
+      "width": 40,
+      "height": 50,
+      "fontSize": 69,
+      "weight": 400,
+      "baselines": [null]
+    },
+    {
+      "name": "q",
+      "glyphs": ["Q"],
+      "width": 40,
+      "height": 50,
+      "fontSize": 69,
+      "weight": 400,
+      "baselines": [null]
+    },
+    {
+      "name": "k",
+      "glyphs": ["K"],
+      "width": 40,
+      "height": 50,
+      "fontSize": 69,
+      "weight": 400,
+      "baselines": [null]
+    },
+    {
+      "name": "joker",
+      "glyphs": ["J", "O", "K", "E", "R"],
+      "width": 40,
+      "height": 157,
+      "fontSize": 34,
+      "weight": 700,
+      "baselines": [null, null, null, null, null]
+    }
+  ]
+}

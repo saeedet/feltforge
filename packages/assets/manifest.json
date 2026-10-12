@@ -1,0 +1,315 @@
+{
+  "fileId": "52a5041f-08a1-80f1-8008-c36ef29dd4bb",
+  "assets": [
+    {
+      "path": "suits/heart.svg",
+      "width": 30,
+      "height": 37.5,
+      "monochrome": true,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "suits/diamond.svg",
+      "width": 30,
+      "height": 37.5,
+      "monochrome": true,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "suits/club.svg",
+      "width": 30,
+      "height": 37.5,
+      "monochrome": true,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "suits/spade.svg",
+      "width": 30,
+      "height": 37.5,
+      "monochrome": true,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/a.svg",
+      "width": 40,
+      "height": 50,
+      "monochrome": true,
+      "kind": "outline",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/2.svg",
+      "width": 40,
+      "height": 50,
+      "monochrome": true,
+      "kind": "outline",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/3.svg",
+      "width": 40,
+      "height": 50,
+      "monochrome": true,
+      "kind": "outline",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/4.svg",
+      "width": 40,
+      "height": 50,
+      "monochrome": true,
+      "kind": "outline",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/5.svg",
+      "width": 40,
+      "height": 50,
+      "monochrome": true,
+      "kind": "outline",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/6.svg",
+      "width": 40,
+      "height": 50,
+      "monochrome": true,
+      "kind": "outline",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/7.svg",
+      "width": 40,
+      "height": 50,
+      "monochrome": true,
+      "kind": "outline",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/8.svg",
+      "width": 40,
+      "height": 50,
+      "monochrome": true,
+      "kind": "outline",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/9.svg",
+      "width": 40,
+      "height": 50,
+      "monochrome": true,
+      "kind": "outline",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/10.svg",
+      "width": 40,
+      "height": 50,
+      "monochrome": true,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/j.svg",
+      "width": 40,
+      "height": 50,
+      "monochrome": true,
+      "kind": "outline",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/q.svg",
+      "width": 40,
+      "height": 50,
+      "monochrome": true,
+      "kind": "outline",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/k.svg",
+      "width": 40,
+      "height": 50,
+      "monochrome": true,
+      "kind": "outline",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "ranks/joker.svg",
+      "width": 40,
+      "height": 157,
+      "monochrome": true,
+      "kind": "outline",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "courts/persian/jack.svg",
+      "width": 140,
+      "height": 210,
+      "monochrome": false,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "courts/persian/queen.svg",
+      "width": 140,
+      "height": 210,
+      "monochrome": false,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "courts/persian/king.svg",
+      "width": 140,
+      "height": 210,
+      "monochrome": false,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "courts/western/jack.svg",
+      "width": 140,
+      "height": 210,
+      "monochrome": false,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "courts/western/queen.svg",
+      "width": 140,
+      "height": 210,
+      "monochrome": false,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "courts/western/king.svg",
+      "width": 140,
+      "height": 210,
+      "monochrome": false,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "courts/eastern/jack.svg",
+      "width": 140,
+      "height": 210,
+      "monochrome": false,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "courts/eastern/queen.svg",
+      "width": 140,
+      "height": 210,
+      "monochrome": false,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "courts/eastern/king.svg",
+      "width": 140,
+      "height": 210,
+      "monochrome": false,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "aces/spade.svg",
+      "width": 93.66,
+      "height": 117.075,
+      "monochrome": false,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "jokers/joker-1.svg",
+      "width": 120,
+      "height": 198,
+      "monochrome": false,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "jokers/joker-2.svg",
+      "width": 120,
+      "height": 198,
+      "monochrome": false,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "path": "backs/classic.svg",
+      "width": 250,
+      "height": 350,
+      "monochrome": false,
+      "kind": "penpot",
+      "sourceId": null,
+      "sha256": null,
+      "license": null
+    }
+  ]
+}
