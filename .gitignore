@@ -10,4 +10,3 @@ test-results/
 *.tgz
 .DS_Store
 *.tsbuildinfo
-packages/assets/source/fonts/

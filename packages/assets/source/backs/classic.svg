@@ -1,0 +1,534 @@
+<svg width="251" xmlns="http://www.w3.org/2000/svg" height="351" viewBox="99.5 239.5 251 351" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec21abe4">
+    <g class="frame-container-wrapper">
+      <g class="frame-container-blur">
+        <g class="frame-container-shadows">
+          <g fill="none">
+            <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec21abe4">
+              <rect rx="0" ry="0" x="100" y="240" width="250" height="350" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="frame-background">
+              </rect>
+            </g>
+            <g class="frame-children">
+              <g id="shape-3ea547bb-4eb9-8077-8008-c5acec378d0c" rx="0" ry="0">
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec3020e1">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec3020e1">
+                    <rect rx="13" ry="13" x="100" y="240" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="250" height="350" style="fill:#f2f2f2;fill-opacity:1">
+                    </rect>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec33971b">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec33971b">
+                    <rect rx="12.5" ry="12.5" x="100.5" y="240.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="249" height="349">
+                    </rect>
+                  </g>
+                  <g id="strokes-1cb89d85-2470-80bd-8008-c76a648eab0a-3ea547bb-4eb9-8077-8008-c5acec33971b" class="strokes">
+                    <g class="stroke-shape">
+                      <rect rx="12.5" ry="12.5" x="100.5" y="240.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="249" height="349" style="fill:none;fill-opacity:none;stroke-width:1;stroke:#d2d5d9;stroke-opacity:1">
+                      </rect>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g id="shape-3ea547bb-4eb9-8077-8008-c5acec3dc10e" rx="0" ry="0">
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec38a10a">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec38a10a">
+                    <rect rx="6" ry="6" x="112" y="252" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="226" height="326" style="fill:#1f2a44;fill-opacity:1">
+                    </rect>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec3b18d1">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec3b18d1">
+                    <rect rx="3" ry="3" x="120" y="260" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="210" height="310">
+                    </rect>
+                  </g>
+                  <g id="strokes-1cb89d85-2470-80bd-8008-c76a648eab0c-3ea547bb-4eb9-8077-8008-c5acec3b18d1" class="strokes">
+                    <g class="stroke-shape">
+                      <rect rx="3" ry="3" x="120" y="260" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="210" height="310" style="fill:none;fill-opacity:none;stroke-width:3;stroke:#b8955a;stroke-opacity:1">
+                      </rect>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g id="shape-3ea547bb-4eb9-8077-8008-c5acec57014f" rx="0" ry="0">
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec3efa04">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec3efa04">
+                    <path d="M225,276L312,415L225,554L138,415Z">
+                    </path>
+                  </g>
+                  <g id="strokes-1cb89d85-2470-80bd-8008-c76a648eab0d-3ea547bb-4eb9-8077-8008-c5acec3efa04" class="strokes">
+                    <g class="stroke-shape">
+                      <path d="M225,276L312,415L225,554L138,415Z" style="fill:none;fill-opacity:none;stroke-width:3;stroke:#b8955a;stroke-opacity:1">
+                      </path>
+                    </g>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec44fbbf">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec44fbbf">
+                    <path d="M225,319L289,415L225,511L161,415Z" style="fill:#b8955a;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec46401b">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec46401b">
+                    <path d="M225,334L279,415L225,496L171,415Z" style="fill:#1f2a44;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec47cd8d">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec47cd8d">
+                    <path d="M225,365L234,402L259,415L234,428L225,465L216,428L191,415L216,402Z" style="fill:#f2edc4;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec491ed3">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec491ed3">
+                    <path d="M225,403L233,415L225,427L217,415Z" style="fill:#b8955a;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec4aa3b2">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec4aa3b2">
+                    <path d="M150,288L158,300L150,312L142,300Z" style="fill:#b8955a;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec4bc7af">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec4bc7af">
+                    <path d="M300,288L308,300L300,312L292,300Z" style="fill:#b8955a;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec4d3878">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec4d3878">
+                    <path d="M150,518L158,530L150,542L142,530Z" style="fill:#b8955a;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec4e9f66">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec4e9f66">
+                    <path d="M300,518L308,530L300,542L292,530Z" style="fill:#b8955a;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec50658d">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec50658d">
+                    <ellipse cx="225" cy="276" rx="4.5" ry="4.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" style="fill:#f2edc4;fill-opacity:1">
+                    </ellipse>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec52232f">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec52232f">
+                    <ellipse cx="312" cy="415" rx="4.5" ry="4.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" style="fill:#f2edc4;fill-opacity:1">
+                    </ellipse>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec53eb8d">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec53eb8d">
+                    <ellipse cx="225" cy="554" rx="4.5" ry="4.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" style="fill:#f2edc4;fill-opacity:1">
+                    </ellipse>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5acec559ab1">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec559ab1">
+                    <ellipse cx="138" cy="415" rx="4.5" ry="4.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" style="fill:#f2edc4;fill-opacity:1">
+                    </ellipse>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5ad24a629e2">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad24a629e2">
+                    <path d="M128,268L152,268L152,271L131,271L131,292L128,292Z" style="fill:#b8955a;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5ad24a91b88">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad24a91b88">
+                    <path d="M322,268L298,268L298,271L319,271L319,292L322,292Z" style="fill:#b8955a;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5ad24aadfd9">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad24aadfd9">
+                    <path d="M128,562L152,562L152,559L131,559L131,538L128,538Z" style="fill:#b8955a;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5ad24ad75ba">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad24ad75ba">
+                    <path d="M322,562L298,562L298,559L319,559L319,538L322,538Z" style="fill:#b8955a;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5ad4e8460c2">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad4e8460c2">
+                    <path d="M181.5,338L186.5,345.5L181.5,353L176.5,345.5Z" style="fill:#f2edc4;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5ad4e86e96e">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad4e86e96e">
+                    <path d="M268.5,338L273.5,345.5L268.5,353L263.5,345.5Z" style="fill:#f2edc4;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5ad4e888996">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad4e888996">
+                    <path d="M268.5,477L273.5,484.5L268.5,492L263.5,484.5Z" style="fill:#f2edc4;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+                <g id="shape-3ea547bb-4eb9-8077-8008-c5ad4e8a251b">
+                  <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad4e8a251b">
+                    <path d="M181.5,477L186.5,484.5L181.5,492L176.5,484.5Z" style="fill:#f2edc4;fill-opacity:1">
+                    </path>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec378d0c" rx="0" ry="0">
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec3020e1">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec3020e1">
+        <rect rx="13" ry="13" x="100" y="240" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="250" height="350" style="fill:#f2f2f2;fill-opacity:1">
+        </rect>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec33971b">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec33971b">
+        <rect rx="12.5" ry="12.5" x="100.5" y="240.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="249" height="349">
+        </rect>
+      </g>
+      <g id="strokes-1cb89d85-2470-80bd-8008-c76a648f9262-3ea547bb-4eb9-8077-8008-c5acec33971b" class="strokes">
+        <g class="stroke-shape">
+          <rect rx="12.5" ry="12.5" x="100.5" y="240.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="249" height="349" style="fill:none;fill-opacity:none;stroke-width:1;stroke:#d2d5d9;stroke-opacity:1">
+          </rect>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec3dc10e" rx="0" ry="0">
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec38a10a">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec38a10a">
+        <rect rx="6" ry="6" x="112" y="252" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="226" height="326" style="fill:#1f2a44;fill-opacity:1">
+        </rect>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec3b18d1">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec3b18d1">
+        <rect rx="3" ry="3" x="120" y="260" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="210" height="310">
+        </rect>
+      </g>
+      <g id="strokes-1cb89d85-2470-80bd-8008-c76a648f9264-3ea547bb-4eb9-8077-8008-c5acec3b18d1" class="strokes">
+        <g class="stroke-shape">
+          <rect rx="3" ry="3" x="120" y="260" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="210" height="310" style="fill:none;fill-opacity:none;stroke-width:3;stroke:#b8955a;stroke-opacity:1">
+          </rect>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec57014f" rx="0" ry="0">
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec3efa04">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec3efa04">
+        <path d="M225,276L312,415L225,554L138,415Z">
+        </path>
+      </g>
+      <g id="strokes-1cb89d85-2470-80bd-8008-c76a648f9265-3ea547bb-4eb9-8077-8008-c5acec3efa04" class="strokes">
+        <g class="stroke-shape">
+          <path d="M225,276L312,415L225,554L138,415Z" style="fill:none;fill-opacity:none;stroke-width:3;stroke:#b8955a;stroke-opacity:1">
+          </path>
+        </g>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec44fbbf">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec44fbbf">
+        <path d="M225,319L289,415L225,511L161,415Z" style="fill:#b8955a;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec46401b">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec46401b">
+        <path d="M225,334L279,415L225,496L171,415Z" style="fill:#1f2a44;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec47cd8d">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec47cd8d">
+        <path d="M225,365L234,402L259,415L234,428L225,465L216,428L191,415L216,402Z" style="fill:#f2edc4;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec491ed3">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec491ed3">
+        <path d="M225,403L233,415L225,427L217,415Z" style="fill:#b8955a;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec4aa3b2">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec4aa3b2">
+        <path d="M150,288L158,300L150,312L142,300Z" style="fill:#b8955a;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec4bc7af">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec4bc7af">
+        <path d="M300,288L308,300L300,312L292,300Z" style="fill:#b8955a;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec4d3878">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec4d3878">
+        <path d="M150,518L158,530L150,542L142,530Z" style="fill:#b8955a;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec4e9f66">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec4e9f66">
+        <path d="M300,518L308,530L300,542L292,530Z" style="fill:#b8955a;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec50658d">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec50658d">
+        <ellipse cx="225" cy="276" rx="4.5" ry="4.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" style="fill:#f2edc4;fill-opacity:1">
+        </ellipse>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec52232f">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec52232f">
+        <ellipse cx="312" cy="415" rx="4.5" ry="4.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" style="fill:#f2edc4;fill-opacity:1">
+        </ellipse>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec53eb8d">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec53eb8d">
+        <ellipse cx="225" cy="554" rx="4.5" ry="4.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" style="fill:#f2edc4;fill-opacity:1">
+        </ellipse>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5acec559ab1">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec559ab1">
+        <ellipse cx="138" cy="415" rx="4.5" ry="4.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" style="fill:#f2edc4;fill-opacity:1">
+        </ellipse>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5ad24a629e2">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad24a629e2">
+        <path d="M128,268L152,268L152,271L131,271L131,292L128,292Z" style="fill:#b8955a;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5ad24a91b88">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad24a91b88">
+        <path d="M322,268L298,268L298,271L319,271L319,292L322,292Z" style="fill:#b8955a;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5ad24aadfd9">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad24aadfd9">
+        <path d="M128,562L152,562L152,559L131,559L131,538L128,538Z" style="fill:#b8955a;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5ad24ad75ba">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad24ad75ba">
+        <path d="M322,562L298,562L298,559L319,559L319,538L322,538Z" style="fill:#b8955a;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5ad4e8460c2">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad4e8460c2">
+        <path d="M181.5,338L186.5,345.5L181.5,353L176.5,345.5Z" style="fill:#f2edc4;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5ad4e86e96e">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad4e86e96e">
+        <path d="M268.5,338L273.5,345.5L268.5,353L263.5,345.5Z" style="fill:#f2edc4;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5ad4e888996">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad4e888996">
+        <path d="M268.5,477L273.5,484.5L268.5,492L263.5,484.5Z" style="fill:#f2edc4;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+    <g id="shape-3ea547bb-4eb9-8077-8008-c5ad4e8a251b">
+      <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad4e8a251b">
+        <path d="M181.5,477L186.5,484.5L181.5,492L176.5,484.5Z" style="fill:#f2edc4;fill-opacity:1">
+        </path>
+      </g>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec3020e1">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec3020e1">
+      <rect rx="13" ry="13" x="100" y="240" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="250" height="350" style="fill:#f2f2f2;fill-opacity:1">
+      </rect>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec33971b">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec33971b">
+      <rect rx="12.5" ry="12.5" x="100.5" y="240.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="249" height="349">
+      </rect>
+    </g>
+    <g id="strokes-1cb89d85-2470-80bd-8008-c76a64900343-3ea547bb-4eb9-8077-8008-c5acec33971b" class="strokes">
+      <g class="stroke-shape">
+        <rect rx="12.5" ry="12.5" x="100.5" y="240.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="249" height="349" style="fill:none;fill-opacity:none;stroke-width:1;stroke:#d2d5d9;stroke-opacity:1">
+        </rect>
+      </g>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec38a10a">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec38a10a">
+      <rect rx="6" ry="6" x="112" y="252" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="226" height="326" style="fill:#1f2a44;fill-opacity:1">
+      </rect>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec3b18d1">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec3b18d1">
+      <rect rx="3" ry="3" x="120" y="260" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="210" height="310">
+      </rect>
+    </g>
+    <g id="strokes-1cb89d85-2470-80bd-8008-c76a64900345-3ea547bb-4eb9-8077-8008-c5acec3b18d1" class="strokes">
+      <g class="stroke-shape">
+        <rect rx="3" ry="3" x="120" y="260" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="210" height="310" style="fill:none;fill-opacity:none;stroke-width:3;stroke:#b8955a;stroke-opacity:1">
+        </rect>
+      </g>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec3efa04">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec3efa04">
+      <path d="M225,276L312,415L225,554L138,415Z">
+      </path>
+    </g>
+    <g id="strokes-1cb89d85-2470-80bd-8008-c76a649045c9-3ea547bb-4eb9-8077-8008-c5acec3efa04" class="strokes">
+      <g class="stroke-shape">
+        <path d="M225,276L312,415L225,554L138,415Z" style="fill:none;fill-opacity:none;stroke-width:3;stroke:#b8955a;stroke-opacity:1">
+        </path>
+      </g>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec44fbbf">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec44fbbf">
+      <path d="M225,319L289,415L225,511L161,415Z" style="fill:#b8955a;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec46401b">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec46401b">
+      <path d="M225,334L279,415L225,496L171,415Z" style="fill:#1f2a44;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec47cd8d">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec47cd8d">
+      <path d="M225,365L234,402L259,415L234,428L225,465L216,428L191,415L216,402Z" style="fill:#f2edc4;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec491ed3">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec491ed3">
+      <path d="M225,403L233,415L225,427L217,415Z" style="fill:#b8955a;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec4aa3b2">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec4aa3b2">
+      <path d="M150,288L158,300L150,312L142,300Z" style="fill:#b8955a;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec4bc7af">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec4bc7af">
+      <path d="M300,288L308,300L300,312L292,300Z" style="fill:#b8955a;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec4d3878">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec4d3878">
+      <path d="M150,518L158,530L150,542L142,530Z" style="fill:#b8955a;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec4e9f66">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec4e9f66">
+      <path d="M300,518L308,530L300,542L292,530Z" style="fill:#b8955a;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec50658d">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec50658d">
+      <ellipse cx="225" cy="276" rx="4.5" ry="4.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" style="fill:#f2edc4;fill-opacity:1">
+      </ellipse>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec52232f">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec52232f">
+      <ellipse cx="312" cy="415" rx="4.5" ry="4.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" style="fill:#f2edc4;fill-opacity:1">
+      </ellipse>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec53eb8d">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec53eb8d">
+      <ellipse cx="225" cy="554" rx="4.5" ry="4.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" style="fill:#f2edc4;fill-opacity:1">
+      </ellipse>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5acec559ab1">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5acec559ab1">
+      <ellipse cx="138" cy="415" rx="4.5" ry="4.5" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" style="fill:#f2edc4;fill-opacity:1">
+      </ellipse>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5ad24a629e2">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad24a629e2">
+      <path d="M128,268L152,268L152,271L131,271L131,292L128,292Z" style="fill:#b8955a;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5ad24a91b88">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad24a91b88">
+      <path d="M322,268L298,268L298,271L319,271L319,292L322,292Z" style="fill:#b8955a;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5ad24aadfd9">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad24aadfd9">
+      <path d="M128,562L152,562L152,559L131,559L131,538L128,538Z" style="fill:#b8955a;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5ad24ad75ba">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad24ad75ba">
+      <path d="M322,562L298,562L298,559L319,559L319,538L322,538Z" style="fill:#b8955a;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5ad4e8460c2">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad4e8460c2">
+      <path d="M181.5,338L186.5,345.5L181.5,353L176.5,345.5Z" style="fill:#f2edc4;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5ad4e86e96e">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad4e86e96e">
+      <path d="M268.5,338L273.5,345.5L268.5,353L263.5,345.5Z" style="fill:#f2edc4;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5ad4e888996">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad4e888996">
+      <path d="M268.5,477L273.5,484.5L268.5,492L263.5,484.5Z" style="fill:#f2edc4;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+  <g id="shape-3ea547bb-4eb9-8077-8008-c5ad4e8a251b">
+    <g class="fills" id="fills-3ea547bb-4eb9-8077-8008-c5ad4e8a251b">
+      <path d="M181.5,477L186.5,484.5L181.5,492L176.5,484.5Z" style="fill:#f2edc4;fill-opacity:1">
+      </path>
+    </g>
+  </g>
+</svg>

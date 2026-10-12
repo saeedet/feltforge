@@ -8,7 +8,7 @@ import { prepareSvg } from './svg.mjs';
 /** Baselines must be measured from the actual Penpot text export, never guessed. */
 export function outlineGlyphs(
   font,
-  { glyphs, width, height, fontSize, baselines },
+  { glyphs, width, height, fontSize, baselines, offsets, advances },
 ) {
   if (
     !glyphs.length ||
@@ -21,9 +21,14 @@ export function outlineGlyphs(
       if (font.charToGlyphIndex(glyph) === 0)
         throw new Error(`Missing font glyph: ${glyph}`);
       const advance = font.getAdvanceWidth(glyph, fontSize, { kerning: false });
-      return font
-        .getPath(glyph, (width - advance) / 2, baselines[i], fontSize)
-        .toSVG(5);
+      const path = font.getPath(glyph, 0, baselines[i], fontSize);
+      const x = offsets?.[i] ?? (width - advance) / 2;
+      const scaleX = (advances?.[i] ?? advance) / advance;
+      for (const command of path.commands) {
+        for (const key of ['x', 'x1', 'x2'])
+          if (key in command) command[key] = x + command[key] * scaleX;
+      }
+      return path.toSVG(5);
     })
     .join('');
   return prepareSvg(

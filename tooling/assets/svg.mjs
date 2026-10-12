@@ -49,7 +49,76 @@ function vectorGuard() {
   };
 }
 
-export function prepareSvg(source, { width, height, monochrome = false }) {
+// Merge only adjacent, identical fill/stroke geometry with no per-path effects.
+// Independent fill/stroke opacity is preserved; paths with transforms/effects that
+// differ are deliberately left alone.
+function mergeFillStroke() {
+  const paint = new Set([
+    'fill',
+    'fill-opacity',
+    'stroke',
+    'stroke-width',
+    'stroke-opacity',
+    'stroke-linecap',
+    'stroke-linejoin',
+    'stroke-miterlimit',
+    'stroke-dasharray',
+    'stroke-dashoffset',
+  ]);
+  return {
+    name: 'feltforgeMergeFillStroke',
+    fn: () => ({
+      element: {
+        exit(node) {
+          for (let i = 0; i < node.children.length - 1; i++) {
+            const a = node.children[i],
+              b = node.children[i + 1];
+            if (
+              a.type !== 'element' ||
+              b.type !== 'element' ||
+              a.name !== 'path' ||
+              b.name !== 'path'
+            )
+              continue;
+            const x = a.attributes,
+              y = b.attributes;
+            if (
+              !x.fill ||
+              x.fill === 'none' ||
+              (x.stroke && x.stroke !== 'none') ||
+              y.fill !== 'none' ||
+              !y.stroke ||
+              y.stroke === 'none'
+            )
+              continue;
+            if (
+              [
+                'opacity',
+                'filter',
+                'mask',
+                'clip-path',
+                'id',
+                'style',
+                'paint-order',
+              ].some((k) => k in x || k in y)
+            )
+              continue;
+            const keys = new Set([...Object.keys(x), ...Object.keys(y)]);
+            if ([...keys].some((k) => !paint.has(k) && x[k] !== y[k])) continue;
+            for (const k of Object.keys(y))
+              if (k.startsWith('stroke')) x[k] = y[k];
+            node.children.splice(i + 1, 1);
+          }
+        },
+      },
+    }),
+  };
+}
+
+export function prepareSvg(
+  source,
+  { width, height, monochrome = false, sourceViewBox, frameOrigin },
+) {
   if (
     !Number.isFinite(width) ||
     !Number.isFinite(height) ||
@@ -73,7 +142,30 @@ export function prepareSvg(source, { width, height, monochrome = false }) {
             .map(Number);
           if (!box || box.length !== 4 || box.some((v) => !Number.isFinite(v)))
             throw new Error('A finite source viewBox is required');
-          const [x, y, w, h] = box;
+          let [x, y, w, h] = box;
+          if (sourceViewBox) {
+            if (
+              sourceViewBox.length !== 4 ||
+              sourceViewBox.some((v, i) => Math.abs(v - box[i]) > 0.001)
+            )
+              throw new Error('Source viewBox differs from recorded export');
+            if (
+              !frameOrigin ||
+              frameOrigin.length !== 2 ||
+              frameOrigin.some((v) => !Number.isFinite(v))
+            )
+              throw new Error('Verified frame origin required');
+            [x, y] = frameOrigin;
+            if (
+              x < box[0] ||
+              y < box[1] ||
+              x + width > box[0] + w ||
+              y + height > box[1] + h
+            )
+              throw new Error('Crop lies outside source');
+            w = width;
+            h = height;
+          }
           if (Math.abs(w - width) > 0.01 || Math.abs(h - height) > 0.01)
             throw new Error(
               `Source frame ${w}×${h} differs from approved ${width}×${height}`,
@@ -126,6 +218,11 @@ export function prepareSvg(source, { width, height, monochrome = false }) {
     plugins: [
       vectorGuard(),
       normalize,
+      { name: 'removeAttrs', params: { attrs: 'class' } },
+      'convertStyleToAttrs',
+      'cleanupIds',
+      'collapseGroups',
+      mergeFillStroke(),
       {
         name: 'preset-default',
         params: {

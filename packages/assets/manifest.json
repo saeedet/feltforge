@@ -7,9 +7,9 @@
       "height": 37.5,
       "monochrome": true,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "64272a52-6b67-803b-8008-c38599163314",
+      "sha256": "c1594f6f4405980ce74cfeb08958d725381dd02c1213e39e36458e90ca754289",
+      "license": "MIT"
     },
     {
       "path": "suits/diamond.svg",
@@ -17,9 +17,9 @@
       "height": 37.5,
       "monochrome": true,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c3f23acb96bb",
+      "sha256": "8501ac0225eea13de32d0399241886512b1ce17f58cbd89b0e782d067cc45ce2",
+      "license": "MIT"
     },
     {
       "path": "suits/club.svg",
@@ -27,9 +27,9 @@
       "height": 37.5,
       "monochrome": true,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c3f37ebb1873",
+      "sha256": "320afa57bb5c022951a1505d628eb301e0387a4fc55721110cc3dd7f9abed851",
+      "license": "MIT"
     },
     {
       "path": "suits/spade.svg",
@@ -37,9 +37,9 @@
       "height": 37.5,
       "monochrome": true,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c3f59ffa953e",
+      "sha256": "20f20d19309f50f079b44823ed4b1f162f2cc0e4aeab088aac68cf6c861838a7",
+      "license": "MIT"
     },
     {
       "path": "ranks/a.svg",
@@ -47,9 +47,9 @@
       "height": 50,
       "monochrome": true,
       "kind": "outline",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c3fcc6083889",
+      "sha256": "c101715cb6e306c80fe6156c970b8816366d59e575eba33828eb344c6fed5399",
+      "license": "SIL-OFL-1.1-derived-outline"
     },
     {
       "path": "ranks/2.svg",
@@ -57,9 +57,9 @@
       "height": 50,
       "monochrome": true,
       "kind": "outline",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c38c4cf153ea",
+      "sha256": "d4485c6f623ea97f8403b46ac74602c051096577cae8a6f2bd143c1a1ba4e851",
+      "license": "SIL-OFL-1.1-derived-outline"
     },
     {
       "path": "ranks/3.svg",
@@ -67,9 +67,9 @@
       "height": 50,
       "monochrome": true,
       "kind": "outline",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c38c4df1af19",
+      "sha256": "efba86c033b9b22bba46ad37c75bb1e8ee82a3e5ebce3065ffa2ac8133003184",
+      "license": "SIL-OFL-1.1-derived-outline"
     },
     {
       "path": "ranks/4.svg",
@@ -77,9 +77,9 @@
       "height": 50,
       "monochrome": true,
       "kind": "outline",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c38c4eeb9f97",
+      "sha256": "5aa4685db2c3aa009592c171ba44213c3e6f1c51bcae4744b1dd995204c85351",
+      "license": "SIL-OFL-1.1-derived-outline"
     },
     {
       "path": "ranks/5.svg",
@@ -87,9 +87,9 @@
       "height": 50,
       "monochrome": true,
       "kind": "outline",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c38c4bf828d7",
+      "sha256": "09ac2ee84117b9ed4da4ec8d4dded16207e0effc6aff2e4f87ff5c1fbac50b4b",
+      "license": "SIL-OFL-1.1-derived-outline"
     },
     {
       "path": "ranks/6.svg",
@@ -97,9 +97,9 @@
       "height": 50,
       "monochrome": true,
       "kind": "outline",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c38c4fe3a61b",
+      "sha256": "c82e096210d0d7727e42e8bafb193e2e4e771095f5ca8eda022a8756575fbafe",
+      "license": "SIL-OFL-1.1-derived-outline"
     },
     {
       "path": "ranks/7.svg",
@@ -107,9 +107,9 @@
       "height": 50,
       "monochrome": true,
       "kind": "outline",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c38c50d94046",
+      "sha256": "a89e1faa42df882979149eb1eb5424313f19443b5f3a504a48f12bb0344a1761",
+      "license": "SIL-OFL-1.1-derived-outline"
     },
     {
       "path": "ranks/8.svg",
@@ -117,9 +117,9 @@
       "height": 50,
       "monochrome": true,
       "kind": "outline",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c38c51d70f37",
+      "sha256": "bd2af8eda78f8539a65672c23d023d6fe160e603e736ad8f4a27b5f36414bdd9",
+      "license": "SIL-OFL-1.1-derived-outline"
     },
     {
       "path": "ranks/9.svg",
@@ -127,9 +127,9 @@
       "height": 50,
       "monochrome": true,
       "kind": "outline",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c38c52cf63f0",
+      "sha256": "0a5cb167df518fe65abc7f7ca9dc23a052a27492280ab9497d59c197e87ae800",
+      "license": "SIL-OFL-1.1-derived-outline"
     },
     {
       "path": "ranks/10.svg",
@@ -137,9 +137,9 @@
       "height": 50,
       "monochrome": true,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c38c53c5c9c2",
+      "sha256": "ce1bb41ccee83fb00d00f7585d1d405040018ba2608b1bb49962eee13ca820ed",
+      "license": "MIT"
     },
     {
       "path": "ranks/j.svg",
@@ -147,9 +147,9 @@
       "height": 50,
       "monochrome": true,
       "kind": "outline",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "9ee8c525-0f6c-80ac-8008-c4d5a35f3e7a",
+      "sha256": "cc6d1fd0a525bae0c3932d8e1887154833d4197fe0719252d5ff199e88c6ac2e",
+      "license": "SIL-OFL-1.1-derived-outline"
     },
     {
       "path": "ranks/q.svg",
@@ -157,9 +157,9 @@
       "height": 50,
       "monochrome": true,
       "kind": "outline",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "9ee8c525-0f6c-80ac-8008-c4d5a5945649",
+      "sha256": "469af590eb26114abb3db16e7b672be4ce934ebde217d0ec7d9dbb98634e5085",
+      "license": "SIL-OFL-1.1-derived-outline"
     },
     {
       "path": "ranks/k.svg",
@@ -167,9 +167,9 @@
       "height": 50,
       "monochrome": true,
       "kind": "outline",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "9ee8c525-0f6c-80ac-8008-c4d5a7cebb64",
+      "sha256": "638e0a5b783574c0cfc6e2408c2026603913b42d1f7868de4af5a0e012384a15",
+      "license": "SIL-OFL-1.1-derived-outline"
     },
     {
       "path": "ranks/joker.svg",
@@ -177,9 +177,9 @@
       "height": 157,
       "monochrome": true,
       "kind": "outline",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "3ea547bb-4eb9-8077-8008-c5b929f23728",
+      "sha256": "0ef67d8fc0bc7a2e597042dd2b2eb2af500ad4ca42b9808f3b049acb7e617ee2",
+      "license": "SIL-OFL-1.1-derived-outline"
     },
     {
       "path": "courts/persian/jack.svg",
@@ -187,9 +187,9 @@
       "height": 210,
       "monochrome": false,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "d361849e-4ba0-801c-8008-c546aad19a62",
+      "sha256": "5aaa266ee9354681235ae12f293028812022da1fb907fecfa03acf4323e45786",
+      "license": "MIT"
     },
     {
       "path": "courts/persian/queen.svg",
@@ -197,9 +197,9 @@
       "height": 210,
       "monochrome": false,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "d361849e-4ba0-801c-8008-c546ac4eb3be",
+      "sha256": "aa07226e2e1b735d1f4c4471190ec8b4c2853aec75da5830ee71c13891ff06ae",
+      "license": "MIT"
     },
     {
       "path": "courts/persian/king.svg",
@@ -207,9 +207,9 @@
       "height": 210,
       "monochrome": false,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "d361849e-4ba0-801c-8008-c546ae51814f",
+      "sha256": "e08d86cf420bc85bce1e068518c644904beb675b12ab2376a19972c7a90618a1",
+      "license": "MIT"
     },
     {
       "path": "courts/western/jack.svg",
@@ -217,9 +217,9 @@
       "height": 210,
       "monochrome": false,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "d361849e-4ba0-801c-8008-c546ab3d0626",
+      "sha256": "f294d902e368d2e50c41ccd7ccbc763adfa342ffafcf7450729b8bb4614f3845",
+      "license": "MIT"
     },
     {
       "path": "courts/western/queen.svg",
@@ -227,9 +227,9 @@
       "height": 210,
       "monochrome": false,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "d361849e-4ba0-801c-8008-c546acba563a",
+      "sha256": "e8708a7bde24044cfe20f1f2bee286602fcb56361b88050c9542454222360200",
+      "license": "MIT"
     },
     {
       "path": "courts/western/king.svg",
@@ -237,9 +237,9 @@
       "height": 210,
       "monochrome": false,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "d361849e-4ba0-801c-8008-c546aea0fcd7",
+      "sha256": "a9fc93ac59bde156b933833d3c66d6d99596f34c53667eae67e12721802e0b07",
+      "license": "MIT"
     },
     {
       "path": "courts/eastern/jack.svg",
@@ -247,9 +247,9 @@
       "height": 210,
       "monochrome": false,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "d361849e-4ba0-801c-8008-c546aba541f0",
+      "sha256": "a72e366caa895e0bea6d920a170dd02cd0185cc5a0123ad1ff86a83fa9ada372",
+      "license": "MIT"
     },
     {
       "path": "courts/eastern/queen.svg",
@@ -257,9 +257,9 @@
       "height": 210,
       "monochrome": false,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "d361849e-4ba0-801c-8008-c546ad96259c",
+      "sha256": "a3a5ba5cbe02385d4adb1d2057eae46c9b6f993ba9d3a106f0e0a9bd856d5a08",
+      "license": "MIT"
     },
     {
       "path": "courts/eastern/king.svg",
@@ -267,9 +267,9 @@
       "height": 210,
       "monochrome": false,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "d361849e-4ba0-801c-8008-c546af890a97",
+      "sha256": "f1ada3153348683128523510013b0497d99a3ec10107a91cefc0ad8ed6682bad",
+      "license": "MIT"
     },
     {
       "path": "aces/spade.svg",
@@ -277,9 +277,9 @@
       "height": 117.075,
       "monochrome": false,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "17b4700a-e1f6-805e-8008-c3fe82dcab75",
+      "sha256": "52b035418bdd95524a5c449626726886e7ba4dcc5d7488d4e54a92ef2768e0a5",
+      "license": "MIT"
     },
     {
       "path": "jokers/joker-1.svg",
@@ -287,9 +287,9 @@
       "height": 198,
       "monochrome": false,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "3ea547bb-4eb9-8077-8008-c5b88e806a82",
+      "sha256": "577e21b9bc54b6b74fd522dd40d2446aa37c4de6809c5d3f3c3cc57474c2f60d",
+      "license": "MIT"
     },
     {
       "path": "jokers/joker-2.svg",
@@ -297,9 +297,9 @@
       "height": 198,
       "monochrome": false,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "3ea547bb-4eb9-8077-8008-c5b88f65ba49",
+      "sha256": "8f891a5496826af98432aa2e4d8bf0433c02b07c283b4fd71826c1902b78c9b3",
+      "license": "MIT"
     },
     {
       "path": "backs/classic.svg",
@@ -307,9 +307,11 @@
       "height": 350,
       "monochrome": false,
       "kind": "penpot",
-      "sourceId": null,
-      "sha256": null,
-      "license": null
+      "sourceId": "3ea547bb-4eb9-8077-8008-c5acec21abe4",
+      "sha256": "8fea4707e6dbd468a02ad431acdaf8021054df80843306894b801cdcc00e6628",
+      "license": "MIT",
+      "sourceViewBox": [99.5, 239.5, 251, 351],
+      "frameOrigin": [100, 240]
     }
   ]
 }

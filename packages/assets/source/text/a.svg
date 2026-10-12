@@ -1,0 +1,19 @@
+<svg width="56" xmlns="http://www.w3.org/2000/svg" height="50" id="screenshot-17b4700a-e1f6-805e-8008-c3fcc6083889" viewBox="-8 0 56 50" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1"><style>/* khmer */
+@font-face {
+  font-family: 'Hanuman';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/hanuman/v24/VuJudNvD15HhpJJBYq31yFn72hxIv0sd5yDgWdTKRA.woff2) format('woff2');
+  unicode-range: U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanuman';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/hanuman/v24/VuJudNvD15HhpJJBYq31yFn72hxIv0sd5yDrWdQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style><g id="shape-17b4700a-e1f6-805e-8008-c3fcc6083889"><g class="frame-container-wrapper"><g class="frame-container-blur"><g class="frame-container-shadows"><g fill="none"><g class="fills" id="fills-17b4700a-e1f6-805e-8008-c3fcc6083889"><rect rx="0" ry="0" x="0" y="0" width="40" height="50" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="frame-background"/></g><g class="frame-children"><g id="shape-17b4700a-e1f6-805e-8008-c3fcc6100893"><g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="-8" y="2.5" width="56" height="45" rx="0" ry="0"><defs><pattern patternUnits="objectBoundingBox" width="51.65625" height="101" id="fill-0-render-2-0"><g><rect width="51.65625" height="101" style="fill: rgb(224, 0, 27); fill-opacity: 1;"/></g></pattern></defs><g class="fills" id="fills-17b4700a-e1f6-805e-8008-c3fcc6100893"><text x="-5.828125" y="84" dominant-baseline="ideographic" textLength="51.65625" lengthAdjust="spacingAndGlyphs" style="text-transform: uppercase; font-family: Hanuman; letter-spacing: normal; font-style: normal; font-weight: 400; white-space: pre; font-size: 69px; text-decoration: none; direction: ltr; fill: rgb(224, 0, 27); fill-opacity: 1;">A</text></g></g></g></g></g></g></g></g></g></svg>

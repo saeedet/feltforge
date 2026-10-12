@@ -6,3 +6,5 @@ playwright-report/
 test-results/
 packages/assets/source/
 packages/assets/generated/
+packages/assets/outlined/
+packages/assets/src/generated/

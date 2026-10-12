@@ -3,18 +3,22 @@
     {
       "family": "Hanuman",
       "weight": 400,
-      "file": null,
-      "sourceUrl": null,
-      "sha256": null,
-      "verifiedAgainstPenpot": false
+      "file": "hanuman-400.ttf",
+      "sourceUrl": "https://design.penpot.app/internal/gfonts/font/hanuman/v24/VuJudNvD15HhpJJBYq31yFn72hxIv0sd5yDrWdQ.woff2",
+      "sha256": "144a74c77c3c6d21bc4a7a803858a1509e8b05e400866bfdc0b5af617f9f4d77",
+      "verifiedAgainstPenpot": true,
+      "sourceSha256": "a10971f9a1cc2ef31cdf86647af27c8867fff7abc438492d1631407b4e6ad46d",
+      "conversion": "fontTools 4.60.1 TTFont, flavor=None; static face, unchanged glyphs"
     },
     {
       "family": "Hanuman",
       "weight": 700,
-      "file": null,
-      "sourceUrl": null,
-      "sha256": null,
-      "verifiedAgainstPenpot": false
+      "file": "hanuman-700.ttf",
+      "sourceUrl": "https://design.penpot.app/internal/gfonts/font/hanuman/v24/VuJudNvD15HhpJJBYq31yFn72hxIv0v64CDrWdQ.woff2",
+      "sha256": "3dc8f2deeb5f3069d0495dd6d6b08fc86bc764b5adcd45023001fb4ec8f07796",
+      "verifiedAgainstPenpot": true,
+      "sourceSha256": "c3a4e2a6f15285b5e7d386b31ffe4e6fea43cb4ddc706c3446877fe5218803be",
+      "conversion": "fontTools 4.60.1 TTFont, flavor=None; static face, unchanged glyphs"
     }
   ],
   "ranks": [
@@ -25,7 +29,10 @@
       "height": 50,
       "fontSize": 69,
       "weight": 400,
-      "baselines": [null]
+      "baselines": [50.0],
+      "offsets": [-5.828125],
+      "advances": [51.65625],
+      "baselineNote": "Penpot ideographic y minus browser rounded descent: ceil(1000 / 2048 * fontSize). Compared to exported PNGs."
     },
     {
       "name": "2",
@@ -34,7 +41,10 @@
       "height": 50,
       "fontSize": 69,
       "weight": 400,
-      "baselines": [null]
+      "baselines": [49.5],
+      "offsets": [0.9453125],
+      "advances": [38.109375],
+      "baselineNote": "Penpot ideographic y minus browser rounded descent: ceil(1000 / 2048 * fontSize). Compared to exported PNGs."
     },
     {
       "name": "3",
@@ -43,7 +53,10 @@
       "height": 50,
       "fontSize": 69,
       "weight": 400,
-      "baselines": [null]
+      "baselines": [49.5],
+      "offsets": [1.3671875],
+      "advances": [37.265625],
+      "baselineNote": "Penpot ideographic y minus browser rounded descent: ceil(1000 / 2048 * fontSize). Compared to exported PNGs."
     },
     {
       "name": "4",
@@ -52,7 +65,10 @@
       "height": 50,
       "fontSize": 69,
       "weight": 400,
-      "baselines": [null]
+      "baselines": [49.5],
+      "offsets": [0.0],
+      "advances": [39.9921875],
+      "baselineNote": "Penpot ideographic y minus browser rounded descent: ceil(1000 / 2048 * fontSize). Compared to exported PNGs."
     },
     {
       "name": "5",
@@ -61,7 +77,10 @@
       "height": 50,
       "fontSize": 69,
       "weight": 400,
-      "baselines": [null]
+      "baselines": [49.5],
+      "offsets": [1.7890625],
+      "advances": [36.421875],
+      "baselineNote": "Penpot ideographic y minus browser rounded descent: ceil(1000 / 2048 * fontSize). Compared to exported PNGs."
     },
     {
       "name": "6",
@@ -70,7 +89,10 @@
       "height": 50,
       "fontSize": 69,
       "weight": 400,
-      "baselines": [null]
+      "baselines": [49.5],
+      "offsets": [0.7265625],
+      "advances": [38.546875],
+      "baselineNote": "Penpot ideographic y minus browser rounded descent: ceil(1000 / 2048 * fontSize). Compared to exported PNGs."
     },
     {
       "name": "7",
@@ -79,7 +101,10 @@
       "height": 50,
       "fontSize": 69,
       "weight": 400,
-      "baselines": [null]
+      "baselines": [49.5],
+      "offsets": [0.9921875],
+      "advances": [38.0078125],
+      "baselineNote": "Penpot ideographic y minus browser rounded descent: ceil(1000 / 2048 * fontSize). Compared to exported PNGs."
     },
     {
       "name": "8",
@@ -88,7 +113,10 @@
       "height": 50,
       "fontSize": 69,
       "weight": 400,
-      "baselines": [null]
+      "baselines": [49.5],
+      "offsets": [0.9453125],
+      "advances": [38.109375],
+      "baselineNote": "Penpot ideographic y minus browser rounded descent: ceil(1000 / 2048 * fontSize). Compared to exported PNGs."
     },
     {
       "name": "9",
@@ -97,7 +125,10 @@
       "height": 50,
       "fontSize": 69,
       "weight": 400,
-      "baselines": [null]
+      "baselines": [49.5],
+      "offsets": [0.5546875],
+      "advances": [38.8828125],
+      "baselineNote": "Penpot ideographic y minus browser rounded descent: ceil(1000 / 2048 * fontSize). Compared to exported PNGs."
     },
     {
       "name": "j",
@@ -106,7 +137,10 @@
       "height": 50,
       "fontSize": 69,
       "weight": 400,
-      "baselines": [null]
+      "baselines": [50.0],
+      "offsets": [0.3046875000000284],
+      "advances": [39.390625],
+      "baselineNote": "Penpot ideographic y minus browser rounded descent: ceil(1000 / 2048 * fontSize). Compared to exported PNGs."
     },
     {
       "name": "q",
@@ -115,7 +149,10 @@
       "height": 50,
       "fontSize": 69,
       "weight": 400,
-      "baselines": [null]
+      "baselines": [50.0],
+      "offsets": [-3.1796874999999716],
+      "advances": [46.359375],
+      "baselineNote": "Penpot ideographic y minus browser rounded descent: ceil(1000 / 2048 * fontSize). Compared to exported PNGs."
     },
     {
       "name": "k",
@@ -124,7 +161,10 @@
       "height": 50,
       "fontSize": 69,
       "weight": 400,
-      "baselines": [null]
+      "baselines": [50.0],
+      "offsets": [-5.289062499999972],
+      "advances": [50.578125],
+      "baselineNote": "Penpot ideographic y minus browser rounded descent: ceil(1000 / 2048 * fontSize). Compared to exported PNGs."
     },
     {
       "name": "joker",
@@ -133,7 +173,10 @@
       "height": 157,
       "fontSize": 34,
       "weight": 700,
-      "baselines": [null, null, null, null, null]
+      "baselines": [23.0, 54.2734375, 85.546875, 116.8203125, 148.09375],
+      "offsets": [10.2890625, 8.78125, 7.5390625, 9.15625, 8.5],
+      "advances": [19.4140625, 22.4296875, 24.921875, 21.6875, 23.0],
+      "baselineNote": "Penpot ideographic y minus browser rounded descent: ceil(1000 / 2048 * fontSize). Compared to exported PNGs."
     }
   ]
 }

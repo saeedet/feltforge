@@ -1,0 +1,191 @@
+{
+  "fileId": "52a5041f-08a1-80f1-8008-c36ef29dd4bb",
+  "assets": [
+    {
+      "path": "suits/heart.svg",
+      "sourceBytes": 1239,
+      "bytes": 368,
+      "sha256": "5525acd9d514bf02cf34a37527e08591860de4d7beadb75ff46f90f32077e3ad"
+    },
+    {
+      "path": "suits/diamond.svg",
+      "sourceBytes": 2046,
+      "bytes": 644,
+      "sha256": "17a71f6b7c2065d47887dfe031fcdfc5af61f75aaef40ad313bac072f150a718"
+    },
+    {
+      "path": "suits/club.svg",
+      "sourceBytes": 4726,
+      "bytes": 1579,
+      "sha256": "a4200f61914bc8d0f5e521821c736cf5a3ef7f2821baa890a60cd1c5e2b40203"
+    },
+    {
+      "path": "suits/spade.svg",
+      "sourceBytes": 3028,
+      "bytes": 979,
+      "sha256": "22ce63865727701991d97642e2025f5629ae16bf72b64074630479ed2e1ac226"
+    },
+    {
+      "path": "ranks/a.svg",
+      "sourceBytes": 372,
+      "bytes": 372,
+      "sha256": "c705b071730c8029ee3ddd3d4764b55ee75ff850a5dccdabb4c3725545ea9020"
+    },
+    {
+      "path": "ranks/2.svg",
+      "sourceBytes": 652,
+      "bytes": 652,
+      "sha256": "683b818914bf46a94422fb8723721f5369fb4c15770c065022324901f8e17479"
+    },
+    {
+      "path": "ranks/3.svg",
+      "sourceBytes": 957,
+      "bytes": 957,
+      "sha256": "6434de7765b822a76a099bbf5bb222e8ccc0e651a406197ef60cab379aed6fdf"
+    },
+    {
+      "path": "ranks/4.svg",
+      "sourceBytes": 316,
+      "bytes": 316,
+      "sha256": "3d8b3c203143b359d1288179a9ec0fe1de6a13fcecbd9be57a9b455d411ca880"
+    },
+    {
+      "path": "ranks/5.svg",
+      "sourceBytes": 721,
+      "bytes": 721,
+      "sha256": "3ebb1f9514b2e01154a1467b39e759ccb9c77d3c396aa39c01c6df7518b5436e"
+    },
+    {
+      "path": "ranks/6.svg",
+      "sourceBytes": 951,
+      "bytes": 951,
+      "sha256": "f145e8c153ade5252b83ade65101983fd405e6fe0dbec07959a0d40cc954111a"
+    },
+    {
+      "path": "ranks/7.svg",
+      "sourceBytes": 353,
+      "bytes": 353,
+      "sha256": "0cc8e78b9a9a6e23caa09f01aba28d0a975ef5688c68426673516bf8fb787809"
+    },
+    {
+      "path": "ranks/8.svg",
+      "sourceBytes": 1033,
+      "bytes": 1033,
+      "sha256": "c8bd7e3c20504f44bd19631bb077dba5e33192588deef5ef3fbcb672b3ac12c2"
+    },
+    {
+      "path": "ranks/9.svg",
+      "sourceBytes": 996,
+      "bytes": 996,
+      "sha256": "e8734d2ba8ee6542c98607032dba9645e00930a7b9b4ca136aa898223fedd7d9"
+    },
+    {
+      "path": "ranks/10.svg",
+      "sourceBytes": 2630,
+      "bytes": 757,
+      "sha256": "b28a7261ebba5bbcb612421bb7f02ebe3258a97b95bdba4524ea6d3298c8f7ba"
+    },
+    {
+      "path": "ranks/j.svg",
+      "sourceBytes": 509,
+      "bytes": 509,
+      "sha256": "0bfa922cda7eefbb825c2d13a23d62711ffe14142f5d40e0759a0a0a49e802f2"
+    },
+    {
+      "path": "ranks/q.svg",
+      "sourceBytes": 847,
+      "bytes": 847,
+      "sha256": "7cd9a35439aaaba7ac6d441b0c7d7b241dce3a97fda8090e5fd1601922120031"
+    },
+    {
+      "path": "ranks/k.svg",
+      "sourceBytes": 451,
+      "bytes": 451,
+      "sha256": "ba52dd5dd721db180e9f3a4161151a418d94d0985ca81db824bad5cd5a5abf74"
+    },
+    {
+      "path": "ranks/joker.svg",
+      "sourceBytes": 2224,
+      "bytes": 2222,
+      "sha256": "1b70b5e74caa684eeabf9ae07b47349db170f2e5615fda150058e048c1d7cd4a"
+    },
+    {
+      "path": "courts/persian/jack.svg",
+      "sourceBytes": 1688367,
+      "bytes": 486461,
+      "sha256": "7249e59435e5c739c74af83d80fe357ec379080ef8577a4bbec23a10eb54d2b7"
+    },
+    {
+      "path": "courts/persian/queen.svg",
+      "sourceBytes": 2087423,
+      "bytes": 598322,
+      "sha256": "eb136fe4dfc709f943da36449af36c635d15ff7a2e194bb38715189493b7602b"
+    },
+    {
+      "path": "courts/persian/king.svg",
+      "sourceBytes": 1618467,
+      "bytes": 461735,
+      "sha256": "da197bc4b188d870b17f12e050068e1bc9c7c4d4b58c90b29e54e787b5c70a87"
+    },
+    {
+      "path": "courts/western/jack.svg",
+      "sourceBytes": 2538245,
+      "bytes": 564226,
+      "sha256": "dde59230c44b9e5268140c5b1f5a9dae01609f303e13ea929f6c42419dc7e713"
+    },
+    {
+      "path": "courts/western/queen.svg",
+      "sourceBytes": 2719899,
+      "bytes": 754336,
+      "sha256": "88791142b018eb9ed7787aec38ccd1a409282af4e3b443765a30392a10a90139"
+    },
+    {
+      "path": "courts/western/king.svg",
+      "sourceBytes": 2562703,
+      "bytes": 550824,
+      "sha256": "6d1642422acff08351334d62e005f27d214bd460ffd3c9f3140bc28bc0e1daa2"
+    },
+    {
+      "path": "courts/eastern/jack.svg",
+      "sourceBytes": 2464425,
+      "bytes": 678709,
+      "sha256": "aa220862bf39b4bd05d4fbf6292398618a7606c630ec9f7d95a96130d6ddc9e2"
+    },
+    {
+      "path": "courts/eastern/queen.svg",
+      "sourceBytes": 2493331,
+      "bytes": 531295,
+      "sha256": "2aea410377446811800d9afdb1ccd11e0726c4a36aab180e4280fdfe491bcbd1"
+    },
+    {
+      "path": "courts/eastern/king.svg",
+      "sourceBytes": 2259415,
+      "bytes": 499332,
+      "sha256": "7697b14ddce6ac9a6b745a8e830a85b9d9a8e9ff1a5b8109505bb08696004522"
+    },
+    {
+      "path": "aces/spade.svg",
+      "sourceBytes": 14777,
+      "bytes": 4985,
+      "sha256": "15a24817eabf2bd537a0cab30b9e7e821385e2a80cf770b24603d6becec9f3ca"
+    },
+    {
+      "path": "jokers/joker-1.svg",
+      "sourceBytes": 2919523,
+      "bytes": 625754,
+      "sha256": "e13cbf830f0bbb4e0c5d7c94d7d5d77582d056e2ed6f3d9ba342d956aac95478"
+    },
+    {
+      "path": "jokers/joker-2.svg",
+      "sourceBytes": 3294863,
+      "bytes": 748084,
+      "sha256": "eb77c7196b1418d8f2944aa190af0013e78987fcbf3e5f68391a2f44d2182998"
+    },
+    {
+      "path": "backs/classic.svg",
+      "sourceBytes": 27832,
+      "bytes": 4426,
+      "sha256": "5838b08443bf19887b8829a3a696927da7714ee78de706ee1c5174ef6f7f2824"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-/** Semantic vocabulary only; approved visual geometry is pending Penpot access. */
+/** Framework-independent card and poker visual primitives. */
 export const RANKS = [
   'A',
   '2',
@@ -30,3 +30,7 @@ export function isRank(value: unknown): value is Rank {
 export function isSuit(value: unknown): value is Suit {
   return typeof value === 'string' && SUITS.some((suit) => suit === value);
 }
+
+export * from './cards.js';
+export * from './chips.js';
+export * from './table.js';
