@@ -2,6 +2,8 @@
 
 ## 0.1.0 — release candidate (unpublished)
 
+- Extend flip/drag/tilt to every playground card, including Jokers, backs, hero and community cards; remove card focus and selection rings.
+
 - Add a React Bits flip/drag preview to the playground, including keyboard and reduced-motion support; keep the effect outside the npm library.
 
 - Add all 31 approved vector assets, exact Hanuman rank/Joker outlines and deterministic preparation.

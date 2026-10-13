@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-test('cards are selectable, all styles load, and every ordinary card is reachable', async ({
+test('cards flip independently, all styles load, and every ordinary card is reachable', async ({
   page,
 }) => {
   const errors: string[] = [];
@@ -10,10 +10,10 @@ test('cards are selectable, all styles load, and every ordinary card is reachabl
     page.getByRole('img', { name: 'King of Hearts' }).first(),
   ).toBeVisible();
   await page
-    .getByRole('button', { name: 'Select 7 of hearts', exact: true })
+    .getByRole('button', { name: 'Flip 7 of hearts', exact: true })
     .click();
   await expect(
-    page.getByRole('button', { name: 'Select 7 of hearts', exact: true }),
+    page.getByRole('button', { name: 'Flip 7 of hearts', exact: true }),
   ).toHaveAttribute('aria-pressed', 'true');
   for (const style of ['western', 'eastern', 'persian']) {
     await page.getByLabel('Court collection').selectOption(style);
@@ -22,7 +22,7 @@ test('cards are selectable, all styles load, and every ordinary card is reachabl
     ).toBeVisible();
   }
   await page.getByLabel('All 52 cards').check();
-  await expect(page.locator('.card-button')).toHaveCount(52);
+  await expect(page.locator('.gallery > .flip-card')).toHaveCount(52);
   await expect(page.getByRole('img', { name: 'Joker 1' })).toBeVisible();
   expect(errors).toEqual([]);
   await page.screenshot({ path: 'test-results/cards.png', fullPage: true });
@@ -74,19 +74,20 @@ test('table layouts expose independently sized overlays', async ({ page }) => {
   ).toHaveAttribute('width', '40');
   await page.screenshot({ path: 'test-results/table-500.png', fullPage: true });
 });
-test('mobile gallery stays within the viewport and native card buttons work by keyboard', async ({
+test('mobile gallery stays within the viewport and cards flip by keyboard', async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
   await expect(
-    page.getByRole('img', { name: 'Seven of Hearts' }),
+    page.locator('.gallery').getByRole('img', { name: 'Seven of Hearts' }),
   ).toBeVisible();
   const card = page.getByRole('button', {
-    name: 'Select 7 of hearts',
+    name: 'Flip 7 of hearts',
     exact: true,
   });
   await card.focus();
+  await expect(card).toHaveCSS('outline-style', 'none');
   await page.keyboard.press('Enter');
   await expect(card).toHaveAttribute('aria-pressed', 'true');
   expect(
@@ -230,4 +231,64 @@ test('a short flick crosses to the back using release velocity', async ({
   // Release immediately: an assertion here pauses past the 60ms flick window.
   await page.mouse.up();
   await expect(card).toHaveAttribute('aria-pressed', 'true');
+});
+
+test('all presented cards share motion without focus or selection rings', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await page.getByLabel('All 52 cards').check();
+  await expect(
+    page.locator('.gallery > .flip-card[data-draggable]'),
+  ).toHaveCount(52);
+  await expect(page.locator('.special-cards > .flip-card')).toHaveCount(3);
+  await expect(page.locator('.hero-art .flip-card')).toHaveCount(3);
+  const seven = page.getByRole('button', {
+    name: 'Flip 7 of hearts',
+    exact: true,
+  });
+  await seven.focus();
+  await expect(seven).toHaveCSS('outline-style', 'none');
+  await seven.press('Enter');
+  await expect(seven).toHaveAttribute('aria-pressed', 'true');
+  await expect(seven).toHaveCSS('outline-style', 'none');
+  await expect(
+    page.getByRole('button', { name: 'Flip 8 of hearts', exact: true }),
+  ).toHaveAttribute('aria-pressed', 'false');
+  for (const name of [
+    'Flip Joker 1',
+    'Flip Joker 2',
+    'Flip Classic back',
+    'Flip featured Ace of spades',
+  ]) {
+    const card = page.getByRole('button', { name, exact: true });
+    const before = await card.getAttribute('aria-pressed');
+    await card.press('Enter');
+    await expect(card).toHaveAttribute(
+      'aria-pressed',
+      before === 'true' ? 'false' : 'true',
+    );
+    await expect(card).toHaveCSS('outline-style', 'none');
+  }
+  await page.getByRole('button', { name: 'Poker table', exact: true }).click();
+  const table = page.getByRole('group', { name: '6-seat poker table' });
+  await expect(table.locator('.community-card[data-draggable]')).toHaveCount(5);
+  const hidden = page.getByRole('button', {
+    name: 'Flip hidden community K',
+    exact: true,
+  });
+  await expect(hidden).toHaveAttribute('aria-pressed', 'true');
+  await hidden.press('Enter');
+  await expect(hidden).toHaveAttribute('aria-pressed', 'false');
+  // Every full card SVG is hosted by the same interactive wrapper, including both faces.
+  expect(
+    await page
+      .locator('svg[viewBox="0 0 250 350"]')
+      .evaluateAll((cards) =>
+        cards.every((card) => card.closest('.flip-card')),
+      ),
+  ).toBe(true);
+  await page.getByLabel('Table width', { exact: true }).fill('500');
+  const bounds = (await hidden.boundingBox())!;
+  expect(bounds.width / bounds.height).toBeCloseTo(5 / 7, 2);
 });

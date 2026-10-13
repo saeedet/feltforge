@@ -1,4 +1,5 @@
 import { StrictMode, useEffect, useState } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   Card,
@@ -29,6 +30,40 @@ const loaders = {
     import('@feltforge/assets/courts/eastern').then((m) => m.eastern),
 };
 const suitSymbols = { hearts: '♥', diamonds: '♦', clubs: '♣', spades: '♠' };
+function PlaygroundCard({
+  front,
+  label,
+  width,
+  className = '',
+  ...props
+}: {
+  front: ReactNode;
+  label: string;
+  width: number;
+  className?: string;
+} & Pick<
+  ComponentProps<typeof FlipCard>,
+  'flipped' | 'defaultFlipped' | 'onFlipChange' | 'shadow'
+>) {
+  return (
+    <FlipCard
+      front={front}
+      back={<CardBack width={width} decorative />}
+      width={width}
+      height={width * 1.4}
+      radius={(width * 13) / 250}
+      background="transparent"
+      glareOpacity={0.12}
+      shadowOpacity={0.18}
+      tiltMax={9}
+      shadow={false}
+      className={`playground-card ${className}`}
+      ariaLabel={label}
+      {...props}
+    />
+  );
+}
+
 function App() {
   const [tab, setTab] = useState('Cards'),
     [style, setStyle] = useState<CourtStyle>('persian'),
@@ -38,7 +73,6 @@ function App() {
   const [suit, setSuit] = useState<Suit>('hearts'),
     [cardWidth, setCardWidth] = useState(132),
     [allSuits, setAllSuits] = useState(false),
-    [selected, setSelected] = useState(''),
     [flipped, setFlipped] = useState(false);
   const [value, setValue] = useState(250),
     [count, setCount] = useState(5),
@@ -127,25 +161,28 @@ function App() {
               <span>Open source</span>
             </div>
           </div>
-          <div className="hero-art" aria-hidden="true">
+          <div className="hero-art" aria-label="Featured cards">
             <div className="hero-back">
-              <CardBack width={215} decorative />
+              <PlaygroundCard
+                front={card('7', 'hearts', 215)}
+                label="Flip featured Classic back"
+                width={215}
+                defaultFlipped
+              />
             </div>
             <div className="hero-ace">
-              <Card rank="A" suit="spades" width={215} decorative />
+              <PlaygroundCard
+                front={card('A', 'spades', 215)}
+                label="Flip featured Ace of spades"
+                width={215}
+              />
             </div>
             <div className="hero-court">
-              {court ? (
-                <Card
-                  rank="K"
-                  suit="hearts"
-                  court={court}
-                  width={215}
-                  decorative
-                />
-              ) : (
-                <Card rank="7" suit="hearts" width={215} decorative />
-              )}
+              <PlaygroundCard
+                front={card('K', 'hearts', 215)}
+                label="Flip featured King of hearts"
+                width={215}
+              />
             </div>
             <div className="hero-chip">
               <ChipStack value={25} count={5} size={72} shadow decorative />
@@ -266,37 +303,25 @@ function App() {
                   <span className="flip-stage-label" aria-hidden="true">
                     FLIP & DRAG
                   </span>
-                  <FlipCard
+                  <PlaygroundCard
                     front={card('K', suit, 220)}
-                    back={<CardBack width={220} decorative />}
+                    label={`Flip King of ${suit}`}
+                    width={220}
                     flipped={flipped}
                     onFlipChange={setFlipped}
-                    width={220}
-                    height={308}
-                    radius={11.44}
-                    background="transparent"
-                    glareOpacity={0.12}
-                    shadowOpacity={0.18}
-                    tiltMax={9}
-                    ariaLabel={`Flip King of ${suit}`}
+                    shadow
                   />
                 </div>
               </section>
               <div className="gallery" aria-label="Playing cards">
                 {(allSuits ? SUITS : [suit]).flatMap((s) =>
                   RANKS.map((r) => (
-                    <button
-                      className="card-button"
-                      type="button"
+                    <PlaygroundCard
                       key={r + s}
-                      aria-label={`Select ${r} of ${s}`}
-                      aria-pressed={selected === r + s}
-                      onClick={() =>
-                        setSelected(selected === r + s ? '' : r + s)
-                      }
-                    >
-                      {card(r, s, cardWidth)}
-                    </button>
+                      label={`Flip ${r} of ${s}`}
+                      front={card(r, s, cardWidth)}
+                      width={cardWidth}
+                    />
                   )),
                 )}
               </div>
@@ -311,14 +336,21 @@ function App() {
                 </div>
                 <div className="special-cards">
                   {jokers.map((artwork) => (
-                    <Card
+                    <PlaygroundCard
                       key={artwork.variant}
-                      rank="joker"
-                      artwork={artwork}
+                      label={`Flip Joker ${artwork.variant}`}
+                      front={
+                        <Card rank="joker" artwork={artwork} width={132} />
+                      }
                       width={132}
                     />
                   ))}
-                  <CardBack width={132} />
+                  <PlaygroundCard
+                    label="Flip Classic back"
+                    front={card('A', 'spades', 132)}
+                    width={132}
+                    defaultFlipped
+                  />
                 </div>
               </div>
               <pre>
@@ -538,17 +570,28 @@ function App() {
                     community={
                       <>
                         {(['A', '7', '10'] as const).map((rank, i) => (
-                          <Card
+                          <PlaygroundCard
                             key={rank}
-                            rank={rank}
-                            suit={
-                              (['spades', 'hearts', 'diamonds'] as const)[i]!
-                            }
-                            width="18.26087%"
+                            label={`Flip community ${rank}`}
+                            front={card(
+                              rank,
+                              (['spades', 'hearts', 'diamonds'] as const)[i]!,
+                              84,
+                            )}
+                            width={84}
+                            className="community-card"
                           />
                         ))}
-                        <CardBack width="18.26087%" />
-                        <CardBack width="18.26087%" />
+                        {(['K', 'Q'] as const).map((rank) => (
+                          <PlaygroundCard
+                            key={rank}
+                            label={`Flip hidden community ${rank}`}
+                            front={card(rank, 'spades', 84)}
+                            width={84}
+                            className="community-card"
+                            defaultFlipped
+                          />
+                        ))}
                       </>
                     }
                   />

@@ -334,21 +334,20 @@ fieldset button[aria-pressed='true'] {
   align-items: start;
   padding: 36px 0 42px;
 }
-.card-button {
-  padding: 0;
-  border: 0;
-  background: none;
-  display: flex;
-  box-shadow: 0 3px 6px #24362612;
-  border-radius: 8px;
-  transition: transform 0.15s;
+.playground-card {
+  height: auto;
+  aspect-ratio: 5 / 7;
+  flex-shrink: 0;
 }
-.card-button:hover {
-  transform: translateY(-5px);
+.gallery > .playground-card {
+  filter: drop-shadow(0 3px 3px #24362612);
 }
-.card-button[aria-pressed='true'] {
-  outline: 3px solid #8ca77b;
-  outline-offset: 5px;
+.community-card {
+  width: 18.26087%;
+}
+.hero-art > div:has(.flip-card:hover),
+.hero-art > div:focus-within {
+  z-index: 2;
 }
 .card-loading {
   display: block;
@@ -378,7 +377,7 @@ fieldset button[aria-pressed='true'] {
   display: flex;
   gap: 16px;
 }
-.special-cards svg {
+.special-cards > .playground-card {
   filter: drop-shadow(0 3px 4px #23362c12);
 }
 pre {
@@ -563,9 +562,6 @@ footer > a:last-child {
   :root {
     scroll-behavior: auto;
   }
-  .card-button {
-    transition: none;
-  }
 }
 @media (max-width: 1000px) {
   main {
@@ -588,7 +584,7 @@ footer > a:last-child {
   .hero-meta span + span:before {
     margin-right: 10px;
   }
-  .special-cards svg {
+  .special-cards > .playground-card {
     width: 110px;
   }
   .principles {
@@ -664,7 +660,7 @@ footer > a:last-child {
   .special-cards {
     gap: 12px;
   }
-  .special-cards svg {
+  .special-cards > .playground-card {
     width: 94px;
   }
   .chip-lab {

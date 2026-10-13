@@ -220,8 +220,13 @@ export default function FlipCard({
         tiltY.set(0);
         sheen.set(0);
       }
+      const bounds = e.currentTarget.getBoundingClientRect();
       const span =
-        dragDistance > 0 ? dragDistance : axis === 'x' ? height : width;
+        dragDistance > 0
+          ? dragDistance
+          : axis === 'x'
+            ? bounds.height
+            : bounds.width;
       const deg = g.base + (axis === 'x' ? -1 : 1) * (d / span) * 180;
       turn.set(deg);
       const now = globalThis.performance.now();

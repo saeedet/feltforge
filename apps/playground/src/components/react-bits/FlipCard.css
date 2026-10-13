@@ -112,10 +112,10 @@
   opacity: 1;
 }
 
-/* FeltForge accessibility additions. */
+/* Keyboard activation remains available without a card focus ring. */
+.flip-card:focus,
 .flip-card:focus-visible {
-  outline: 3px solid #cf9a31;
-  outline-offset: 6px;
+  outline: none;
 }
 .flip-card__face > svg {
   display: block;
