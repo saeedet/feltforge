@@ -7,6 +7,8 @@ import {
   rm,
 } from 'node:fs/promises';
 import { resolve, relative, dirname } from 'node:path';
+// Default builds stay private. A release must be prepared explicitly.
+const release = process.argv.includes('--release');
 const root = resolve(import.meta.dirname, '../..'),
   out = resolve(root, 'dist/package');
 await rm(out, { recursive: true, force: true });
@@ -102,7 +104,15 @@ await writeFile(
     {
       name: 'feltforge',
       version: '0.1.0',
-      private: true,
+      private: !release,
+      ...(release
+        ? {
+            publishConfig: {
+              access: 'public',
+              registry: 'https://registry.npmjs.org/',
+            },
+          }
+        : {}),
       description:
         'Open-source UI primitives for playing cards and poker interfaces.',
       type: 'module',
@@ -133,5 +143,7 @@ await writeFile(
   ) + '\n',
 );
 console.log(
-  'Assembled private release candidate at dist/package; publishing requires explicit approval.',
+  release
+    ? 'Assembled approved public release package at dist/package. No publication has run.'
+    : 'Assembled private release candidate at dist/package; publishing requires explicit approval.',
 );

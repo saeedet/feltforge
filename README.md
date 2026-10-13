@@ -2,7 +2,15 @@
 
 Composable, accessible React primitives for playing cards and poker interfaces. Three court collections, two Jokers, crisp chips and proportionally scaled tables, built from a locked Penpot design system.
 
-**0.1.0 release candidate — not published to npm.** The repository is public; publication requires maintainer approval. No game rules, betting engine, network service or real-money logic are included.
+**0.1.0.** [Source and release notes](https://github.com/saeedet/feltforge). No game rules, betting engine, network service or real-money logic are included.
+
+## Install
+
+```sh
+npm install feltforge
+```
+
+Import only the artwork collections you need; number cards, chips and core geometry work independently.
 
 ## Run the playground
 
@@ -18,7 +26,7 @@ pnpm dev
 
 The playground lets you explore all 52 ordinary cards, court collections, Jokers, backs, custom chips, bounded stacks, markers and 2/6/8/9-seat layouts. In the Cards tab, the “Give it a spin” preview supports click flips, drag/flick rotation, hover tilt and keyboard controls, with reduced-motion support.
 
-## Use the release candidate
+## Build a package locally
 
 ```sh
 pnpm check

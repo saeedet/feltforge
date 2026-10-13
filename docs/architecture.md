@@ -6,7 +6,7 @@ The pnpm/Turborepo workspace has four concerns: framework-neutral types and geom
 
 Internal package names remain private and do not require an npm organization. `pnpm build` assembles one `feltforge` release candidate in `dist/package`, with explicit subpath exports. Relative imports replace internal workspace package names. Runtime code has no dependency other than React as an optional peer (needed for React entries, unnecessary for core).
 
-The candidate stays `private: true` until the maintainer explicitly approves publication. No publish automation is configured. The npm name returned 404 during availability inspection; availability is not a reservation.
+Default builds stay `private: true`. After explicit maintainer approval, `pnpm package:release` prepares a separate public manifest and validated tarball. It does not publish; publication remains an explicit npm action. Internal workspace packages always remain private. No publish automation is configured.
 
 ## Explicit artwork selection
 

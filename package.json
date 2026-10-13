@@ -22,7 +22,8 @@
     "test:visual": "node tooling/assets/verify.mjs",
     "package:check": "node tooling/package/verify.mjs && node tooling/package/pack.mjs",
     "package:pack": "node tooling/package/pack.mjs --pack",
-    "test:consumers": "node tooling/package/consumers.mjs"
+    "test:consumers": "node tooling/package/consumers.mjs",
+    "package:release": "pnpm build && node tooling/package/build.mjs --release && pnpm package:check && pnpm package:pack"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

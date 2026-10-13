@@ -17,4 +17,4 @@ Do not publish to npm without explicit maintainer approval.
 
 After asset changes, run `pnpm generate:ranks`, `pnpm prepare:assets`, and `pnpm test:visual`. Generated modules are committed; CI detects regeneration drift. Run `pnpm package:check` after a successful build. `pnpm package:pack && pnpm test:consumers` installs the actual tarball into isolated React 18 and Next.js build fixtures (requires network access).
 
-The release candidate remains private until explicit maintainer approval. Publication is a separate action and is never part of `build`, `check` or `package:pack`.
+Default builds remain private. Only after explicit maintainer approval, `pnpm package:release` prepares a public manifest and validated tarball. Publication is a separate action and is never part of `build`, `check`, `package:pack` or `package:release`.

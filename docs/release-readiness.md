@@ -1,6 +1,6 @@
 # FeltForge 0.1.0 release-readiness report
 
-Prepared 2026-10-13. Public repository: [saeedet/feltforge](https://github.com/saeedet/feltforge). Local checkout: `/Users/et/Projects/feltforge`. This is an unpublished release candidate; no npm publication has occurred.
+Prepared 2026-10-13. Historical readiness snapshot; see the [publication record](release-0.1.0.md) for subsequent owner approval and current release status. Public repository: [saeedet/feltforge](https://github.com/saeedet/feltforge). Local checkout: `/Users/et/Projects/feltforge`. This is an unpublished release candidate; no npm publication has occurred.
 
 ## 1. Repository architecture
 
