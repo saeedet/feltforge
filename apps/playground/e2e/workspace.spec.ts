@@ -244,7 +244,7 @@ test('gallery, special and table cards share motion while the hero stays static'
   await expect(page.locator('.special-cards > .flip-card')).toHaveCount(3);
   await expect(page.locator('.hero-art .flip-card')).toHaveCount(0);
   await expect(
-    page.locator('.hero-art svg[viewBox="0 0 250 350"]'),
+    page.locator('.hero-back > svg, .hero-ace > svg, .hero-court > svg'),
   ).toHaveCount(3);
   const seven = page.getByRole('button', {
     name: 'Flip 7 of hearts',
