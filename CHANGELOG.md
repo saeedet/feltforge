@@ -2,6 +2,8 @@
 
 ## 0.1.0 — release candidate (unpublished)
 
+- Add a React Bits flip/drag preview to the playground, including keyboard and reduced-motion support; keep the effect outside the npm library.
+
 - Add all 31 approved vector assets, exact Hanuman rank/Joker outlines and deterministic preparation.
 - Add accessible, typed Card, CardBack, Chip, ChipStack, PokerMarker, PokerTable and TableAnchor components.
 - Add Persian, Western and Eastern court collections and two independently imported Jokers.

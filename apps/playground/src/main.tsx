@@ -17,6 +17,7 @@ import type {
   TableLayout,
 } from '@feltforge/core';
 import type { CourtArtwork, JokerArtwork } from '@feltforge/assets/types';
+import FlipCard from './components/react-bits/FlipCard';
 import './style.css';
 
 const loaders = {
@@ -37,7 +38,8 @@ function App() {
   const [suit, setSuit] = useState<Suit>('hearts'),
     [cardWidth, setCardWidth] = useState(132),
     [allSuits, setAllSuits] = useState(false),
-    [selected, setSelected] = useState('');
+    [selected, setSelected] = useState(''),
+    [flipped, setFlipped] = useState(false);
   const [value, setValue] = useState(250),
     [count, setCount] = useState(5),
     [cap, setCap] = useState(5),
@@ -231,6 +233,55 @@ function App() {
                   All 52 cards
                 </label>
               </div>
+              <section className="flip-lab" aria-labelledby="flip-heading">
+                <div className="flip-copy">
+                  <p className="eyebrow">A LITTLE HANDS-ON MAGIC</p>
+                  <h3 id="flip-heading">Give it a spin.</h3>
+                  <p>
+                    Click to flip. Drag sideways and let go. The card follows
+                    your hand, then settles into place.
+                  </p>
+                  <p className="flip-hint">
+                    Keyboard: focus the card and press Enter or Space.
+                  </p>
+                  <div className="flip-actions">
+                    <button type="button" onClick={() => setFlipped(!flipped)}>
+                      {flipped ? 'Show face' : 'Show back'}{' '}
+                      <span aria-hidden="true">↻</span>
+                    </button>
+                    <span role="status">
+                      {flipped ? 'Classic back' : `King of ${suit}`}
+                    </span>
+                  </div>
+                  <a
+                    className="flip-credit"
+                    href="https://reactbits.dev/components/flip-card"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Flip & drag by React Bits ↗
+                  </a>
+                </div>
+                <div className="flip-stage">
+                  <span className="flip-stage-label" aria-hidden="true">
+                    FLIP & DRAG
+                  </span>
+                  <FlipCard
+                    front={card('K', suit, 220)}
+                    back={<CardBack width={220} decorative />}
+                    flipped={flipped}
+                    onFlipChange={setFlipped}
+                    width={220}
+                    height={308}
+                    radius={11.44}
+                    background="transparent"
+                    glareOpacity={0.12}
+                    shadowOpacity={0.18}
+                    tiltMax={9}
+                    ariaLabel={`Flip King of ${suit}`}
+                  />
+                </div>
+              </section>
               <div className="gallery" aria-label="Playing cards">
                 {(allSuits ? SUITS : [suit]).flatMap((s) =>
                   RANKS.map((r) => (

@@ -100,6 +100,8 @@ Minified ESM consumer fixtures, React external, measured by Vite:
 
 Number-card and chip consumers exclude the large court, Joker and back modules. Detailed illustrations remain the dominant optional cost. Standalone SVGs and importable artwork modules are both included in the tarball to support both consumption modes. See [bundle measurements](bundle-report.json).
 
+The playground later gained a [React Bits flip/drag preview](playground-motion.md). Its separately licensed application code and Motion dependency are excluded from the npm library; consumer bundle sizes above are unchanged. Four additional remote interaction tests cover this follow-up.
+
 ## 9. Test results
 
 - Formatting, ESLint, strict typecheck and production builds pass.
@@ -121,7 +123,7 @@ CI verifies frozen dependency installation, deterministic asset regeneration, fo
 
 `pnpm package:check` succeeds. The candidate contains **78 files**, including exactly 31 standalone SVGs. The current packed and unpacked sizes are recorded below after the final build. The file audit excludes source exports, fonts, source maps, dependency folders and local credentials. `pnpm package:pack` creates a local `feltforge-0.1.0.tgz`; it does not publish.
 
-Packed: **4,791,403 bytes**. Unpacked: **13,218,303 bytes**. Filename: `feltforge-0.1.0.tgz`. Both dry run and actual local packing succeeded.
+Packed: **4,791,610 bytes**. Unpacked: **13,218,725 bytes**. Filename: `feltforge-0.1.0.tgz`. Both dry run and actual local packing succeeded.
 
 ## 12. Remaining warnings and limits
 

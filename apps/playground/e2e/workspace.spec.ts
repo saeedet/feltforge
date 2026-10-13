@@ -94,3 +94,140 @@ test('mobile gallery stays within the viewport and native card buttons work by k
   ).toBeLessThanOrEqual(391);
   await page.screenshot({ path: 'test-results/mobile.png', fullPage: true });
 });
+
+test('flip preview supports clicks, keyboard controls and external face controls', async ({
+  page,
+}) => {
+  await page.goto('/');
+  const card = page.getByRole('button', {
+    name: 'Flip King of hearts',
+    exact: true,
+  });
+  await expect(card).toHaveAttribute('aria-pressed', 'false');
+  await card.click();
+  await expect(card).toHaveAttribute('aria-pressed', 'true');
+  await expect(card.locator('.flip-card__face--front')).toHaveAttribute(
+    'inert',
+    '',
+  );
+  await card.press('Enter');
+  await expect(card).toHaveAttribute('aria-pressed', 'false');
+  await card.press('Space');
+  await expect(card).toHaveAttribute('aria-pressed', 'true');
+  await page.getByRole('button', { name: 'Show face', exact: true }).click();
+  await expect(card).toHaveAttribute('aria-pressed', 'false');
+  await expect(card.locator('.flip-card__face--back')).toHaveAttribute(
+    'inert',
+    '',
+  );
+  await expect(page.getByRole('status')).toHaveText('King of hearts');
+});
+
+test('flip preview tilts on hover and follows a pointer drag before springing to the back', async ({
+  page,
+}) => {
+  await page.goto('/');
+  const card = page.getByRole('button', {
+    name: 'Flip King of hearts',
+    exact: true,
+  });
+  await card.scrollIntoViewIfNeeded();
+  const box = (await card.boundingBox())!;
+  const x = box.x + box.width / 2,
+    y = box.y + box.height / 2;
+  await page.mouse.move(box.x + box.width - 25, box.y + 30);
+  await expect
+    .poll(() =>
+      card.locator('.flip-card__rotor').evaluate((el) => {
+        const matrix = new DOMMatrix(getComputedStyle(el).transform);
+        return Math.abs(matrix.m13) + Math.abs(matrix.m23);
+      }),
+    )
+    .toBeGreaterThan(0.02);
+  await page.mouse.move(x, y);
+  await page.mouse.down();
+  await page.mouse.move(x + 70, y, { steps: 8 });
+  await expect(card).toHaveAttribute('data-dragging', '');
+  await expect(card).toHaveAttribute('aria-pressed', 'false');
+  await page.mouse.move(x + 160, y, { steps: 8 });
+  // Pause only to distinguish a positional drag from velocity-driven flicking.
+  await page.waitForTimeout(100);
+  await page.mouse.up();
+  await expect(card).toHaveAttribute('aria-pressed', 'true');
+  await expect(card).not.toHaveAttribute('data-dragging', '');
+  await expect
+    .poll(() =>
+      card
+        .locator('.flip-card__rotor')
+        .evaluate((el) => new DOMMatrix(getComputedStyle(el).transform).m11),
+    )
+    .toBeLessThan(-0.99);
+  await page.getByRole('button', { name: 'Show face', exact: true }).click();
+  await expect
+    .poll(() =>
+      card
+        .locator('.flip-card__rotor')
+        .evaluate((el) => new DOMMatrix(getComputedStyle(el).transform).m11),
+    )
+    .toBeGreaterThan(0.99);
+  await page
+    .locator('.flip-lab')
+    .screenshot({ path: 'test-results/flip-card.png' });
+});
+
+test('flip preview respects reduced motion while remaining operable on mobile', async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+  const card = page.getByRole('button', {
+    name: 'Flip King of hearts',
+    exact: true,
+  });
+  await expect(card).toHaveAttribute('data-fade', 'front');
+  await expect(card).not.toHaveAttribute('data-draggable', '');
+  await card.click();
+  await expect(card).toHaveAttribute('data-fade', 'back');
+  await expect(card.locator('.flip-card__rotor')).toHaveCSS(
+    'transform',
+    'none',
+  );
+  await expect(card.locator('.flip-card__face--back')).toHaveCSS(
+    'transition-duration',
+    '0s',
+  );
+  await expect(card.locator('.flip-card__face--back')).toHaveCSS(
+    'opacity',
+    '1',
+  );
+  await card.press('Enter');
+  await expect(card).toHaveAttribute('data-fade', 'front');
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth),
+  ).toBeLessThanOrEqual(391);
+  await page
+    .locator('.flip-lab')
+    .screenshot({ path: 'test-results/flip-card-mobile.png' });
+});
+
+test('a short flick crosses to the back using release velocity', async ({
+  page,
+}) => {
+  await page.goto('/');
+  const card = page.getByRole('button', {
+    name: 'Flip King of hearts',
+    exact: true,
+  });
+  await card.scrollIntoViewIfNeeded();
+  const box = (await card.boundingBox())!;
+  const x = box.x + box.width / 2,
+    y = box.y + box.height / 2;
+  await page.mouse.move(x, y);
+  await page.mouse.down();
+  // 60px is less than the 110px positional halfway threshold. Release momentum must finish the flip.
+  await page.mouse.move(x + 60, y, { steps: 6 });
+  await expect(card).toHaveAttribute('data-dragging', '');
+  await page.mouse.up();
+  await expect(card).toHaveAttribute('aria-pressed', 'true');
+});

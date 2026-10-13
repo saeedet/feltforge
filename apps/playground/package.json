@@ -10,10 +10,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "react": "19.3.0",
-    "react-dom": "19.3.0",
+    "@feltforge/assets": "workspace:*",
     "@feltforge/core": "workspace:*",
     "@feltforge/react": "workspace:*",
-    "@feltforge/assets": "workspace:*"
+    "motion": "12.43.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   }
 }

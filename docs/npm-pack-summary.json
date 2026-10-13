@@ -1,10 +1,10 @@
 {
   "name": "feltforge",
   "version": "0.1.0",
-  "size": 4791403,
-  "unpackedSize": 13218303,
+  "size": 4791610,
+  "unpackedSize": 13218725,
   "entryCount": 78,
   "filename": "feltforge-0.1.0.tgz",
-  "shasum": "0ca32ba0acfc50a65736e173467bc69fd2d52a11",
-  "integrity": "sha512-J5G6B436l3rdju951e9rQl6OSErkgCOSRmzQTbvNVpGfdC4gxJ6v3d1Ry+lvy36nvdj6lDWHTEG7LmjlYk6UeA=="
+  "shasum": "577c88963ed4c5a72452fe4946a58cbb1a447f3a",
+  "integrity": "sha512-J7v7xCI0LsUDkWPTiuwWzKXu3ysnDyazr59z31y8ftZVBxQuoBTiThTNSZRdgpAU8q6uTTcIThbreRVbm5/54Q=="
 }

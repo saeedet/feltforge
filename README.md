@@ -16,7 +16,7 @@ pnpm build
 pnpm dev
 ```
 
-The playground lets you explore all 52 ordinary cards, court collections, Jokers, backs, custom chips, bounded stacks, markers and 2/6/8/9-seat layouts.
+The playground lets you explore all 52 ordinary cards, court collections, Jokers, backs, custom chips, bounded stacks, markers and 2/6/8/9-seat layouts. In the Cards tab, the “Give it a spin” preview supports click flips, drag/flick rotation, hover tilt and keyboard controls, with reduced-motion support.
 
 ## Use the release candidate
 
@@ -105,4 +105,4 @@ See the [0.1.0 release-readiness report](https://github.com/saeedet/feltforge/bl
 
 ## License
 
-MIT for code and approved artwork. The project owner confirmed compatible redistribution rights. Hanuman build inputs retain SIL OFL 1.1 notices; only derived outlines are included in the candidate package. See [provenance](https://github.com/saeedet/feltforge/blob/main/docs/design/asset-provenance.md).
+MIT for FeltForge library code and approved artwork. The playground's adapted React Bits FlipCard retains its separate [MIT + Commons Clause notice](https://github.com/saeedet/feltforge/blob/main/apps/playground/src/components/react-bits/LICENSE.md); it and Motion are excluded from the npm library. The project owner confirmed compatible redistribution rights. Hanuman build inputs retain SIL OFL 1.1 notices; only derived outlines are included in the candidate package. See [provenance](https://github.com/saeedet/feltforge/blob/main/docs/design/asset-provenance.md).
