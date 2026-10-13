@@ -54,7 +54,7 @@ import { joker1 } from 'feltforge/jokers/1';
 
 Court artwork is **explicitly imported**. Number cards and Aces do not pull any court, Joker or back artwork into their bundle. `court={persian}`, `court={western}` and `court={eastern}` select the corresponding collection; Persian is the playground's default. The explicit object replaces a global default style to keep artwork loading predictable. `style` remains ordinary React CSS. Jokers have no suit; number cards reject court props at compile time.
 
-All card ranks are outlined SVG paths. There is **no runtime Hanuman font dependency**. Chips and markers retain live text, prefer Inter Tight 800 and fall back to Arial/sans-serif; applications can load Inter Tight themselves or set `--chip-font`.
+Card ranks are vector artwork. Chips and markers use live text; applications can set `--chip-font` to match their interface.
 
 ## Tables and overlays
 
@@ -113,4 +113,8 @@ See the [0.1.0 release-readiness report](https://github.com/saeedet/feltforge/bl
 
 ## License
 
-MIT for FeltForge library code and approved artwork. The playground's adapted React Bits FlipCard retains its separate [MIT + Commons Clause notice](https://github.com/saeedet/feltforge/blob/main/apps/playground/src/components/react-bits/LICENSE.md); it and Motion are excluded from the npm library. The project owner confirmed compatible redistribution rights. Hanuman build inputs retain SIL OFL 1.1 notices; only derived outlines are included in the candidate package. See [provenance](https://github.com/saeedet/feltforge/blob/main/docs/design/asset-provenance.md).
+MIT for FeltForge library code and artwork.
+
+The court, Joker, and card-back artwork included in FeltForge is original artwork created for this project and is distributed under the MIT License.
+
+The playground's adapted React Bits FlipCard retains its separate [MIT + Commons Clause notice](https://github.com/saeedet/feltforge/blob/main/apps/playground/src/components/react-bits/LICENSE.md); it and Motion are excluded from the npm library.

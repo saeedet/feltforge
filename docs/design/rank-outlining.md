@@ -1,7 +1,7 @@
-# Reproducible Hanuman outlines
+# Reproducible rank preparation
 
-Penpot exported Hanuman v24 Latin WOFF2 URLs for static weights 400 and 700. We downloaded those exact files, preserved their SHA-256 hashes, and losslessly decoded them to TrueType using fontTools 4.60.1 (`TTFont(..., recalcTimestamp=False)`, `flavor=None`). The small pinned TrueType subsets and OFL license are build inputs only. Neither fonts nor a runtime font loader belong in the published package.
+Rank generation uses two font inputs: `tooling/assets/ranks.mjs` reads `packages/assets/fonts.json` and parses `packages/assets/source/fonts/hanuman-400.ttf` and `hanuman-700.ttf` with `opentype.js`. `pnpm generate:ranks` uses these files to reproduce the rank and stacked Joker-index vectors; CI runs this command and rejects generation drift.
 
-`pnpm generate:ranks` verifies file hashes and weight classes, obtains glyph contours with opentype.js, and reproduces Penpot's horizontal offsets, text lengths and alphabetic baselines from `fonts.json`. The custom vector 10 bypasses outlining. Source checksums make accidental outline drift fail asset preparation.
+These source font files retain their adjacent [license](../../packages/assets/source/fonts/OFL.txt) and are excluded from the npm package.
 
-`pnpm prepare:assets` validates the exact 31-file contract, source hashes and provenance, normalizes coordinates, removes editor wrappers, merges only identical adjacent fill/stroke paths without per-path effects, and runs SVGO at five-decimal precision. No path simplification tool is used. All original exports remain under source/. See the optimization and visual reports for measured results.
+Pinned checksums, weight classes, offsets, text widths and baselines are recorded in `fonts.json`. The custom vector 10 bypasses this conversion. `pnpm prepare:assets` validates the 31-file contract, normalizes recorded frames and optimizes the vectors without contour simplification. Original sources remain separate from production output.

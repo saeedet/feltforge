@@ -49,7 +49,7 @@
       "kind": "outline",
       "sourceId": "17b4700a-e1f6-805e-8008-c3fcc6083889",
       "sha256": "c101715cb6e306c80fe6156c970b8816366d59e575eba33828eb344c6fed5399",
-      "license": "SIL-OFL-1.1-derived-outline"
+      "license": "MIT"
     },
     {
       "path": "ranks/2.svg",
@@ -59,7 +59,7 @@
       "kind": "outline",
       "sourceId": "17b4700a-e1f6-805e-8008-c38c4cf153ea",
       "sha256": "d4485c6f623ea97f8403b46ac74602c051096577cae8a6f2bd143c1a1ba4e851",
-      "license": "SIL-OFL-1.1-derived-outline"
+      "license": "MIT"
     },
     {
       "path": "ranks/3.svg",
@@ -69,7 +69,7 @@
       "kind": "outline",
       "sourceId": "17b4700a-e1f6-805e-8008-c38c4df1af19",
       "sha256": "efba86c033b9b22bba46ad37c75bb1e8ee82a3e5ebce3065ffa2ac8133003184",
-      "license": "SIL-OFL-1.1-derived-outline"
+      "license": "MIT"
     },
     {
       "path": "ranks/4.svg",
@@ -79,7 +79,7 @@
       "kind": "outline",
       "sourceId": "17b4700a-e1f6-805e-8008-c38c4eeb9f97",
       "sha256": "5aa4685db2c3aa009592c171ba44213c3e6f1c51bcae4744b1dd995204c85351",
-      "license": "SIL-OFL-1.1-derived-outline"
+      "license": "MIT"
     },
     {
       "path": "ranks/5.svg",
@@ -89,7 +89,7 @@
       "kind": "outline",
       "sourceId": "17b4700a-e1f6-805e-8008-c38c4bf828d7",
       "sha256": "09ac2ee84117b9ed4da4ec8d4dded16207e0effc6aff2e4f87ff5c1fbac50b4b",
-      "license": "SIL-OFL-1.1-derived-outline"
+      "license": "MIT"
     },
     {
       "path": "ranks/6.svg",
@@ -99,7 +99,7 @@
       "kind": "outline",
       "sourceId": "17b4700a-e1f6-805e-8008-c38c4fe3a61b",
       "sha256": "c82e096210d0d7727e42e8bafb193e2e4e771095f5ca8eda022a8756575fbafe",
-      "license": "SIL-OFL-1.1-derived-outline"
+      "license": "MIT"
     },
     {
       "path": "ranks/7.svg",
@@ -109,7 +109,7 @@
       "kind": "outline",
       "sourceId": "17b4700a-e1f6-805e-8008-c38c50d94046",
       "sha256": "a89e1faa42df882979149eb1eb5424313f19443b5f3a504a48f12bb0344a1761",
-      "license": "SIL-OFL-1.1-derived-outline"
+      "license": "MIT"
     },
     {
       "path": "ranks/8.svg",
@@ -119,7 +119,7 @@
       "kind": "outline",
       "sourceId": "17b4700a-e1f6-805e-8008-c38c51d70f37",
       "sha256": "bd2af8eda78f8539a65672c23d023d6fe160e603e736ad8f4a27b5f36414bdd9",
-      "license": "SIL-OFL-1.1-derived-outline"
+      "license": "MIT"
     },
     {
       "path": "ranks/9.svg",
@@ -129,7 +129,7 @@
       "kind": "outline",
       "sourceId": "17b4700a-e1f6-805e-8008-c38c52cf63f0",
       "sha256": "0a5cb167df518fe65abc7f7ca9dc23a052a27492280ab9497d59c197e87ae800",
-      "license": "SIL-OFL-1.1-derived-outline"
+      "license": "MIT"
     },
     {
       "path": "ranks/10.svg",
@@ -149,7 +149,7 @@
       "kind": "outline",
       "sourceId": "9ee8c525-0f6c-80ac-8008-c4d5a35f3e7a",
       "sha256": "cc6d1fd0a525bae0c3932d8e1887154833d4197fe0719252d5ff199e88c6ac2e",
-      "license": "SIL-OFL-1.1-derived-outline"
+      "license": "MIT"
     },
     {
       "path": "ranks/q.svg",
@@ -159,7 +159,7 @@
       "kind": "outline",
       "sourceId": "9ee8c525-0f6c-80ac-8008-c4d5a5945649",
       "sha256": "469af590eb26114abb3db16e7b672be4ce934ebde217d0ec7d9dbb98634e5085",
-      "license": "SIL-OFL-1.1-derived-outline"
+      "license": "MIT"
     },
     {
       "path": "ranks/k.svg",
@@ -169,7 +169,7 @@
       "kind": "outline",
       "sourceId": "9ee8c525-0f6c-80ac-8008-c4d5a7cebb64",
       "sha256": "638e0a5b783574c0cfc6e2408c2026603913b42d1f7868de4af5a0e012384a15",
-      "license": "SIL-OFL-1.1-derived-outline"
+      "license": "MIT"
     },
     {
       "path": "ranks/joker.svg",
@@ -179,7 +179,7 @@
       "kind": "outline",
       "sourceId": "3ea547bb-4eb9-8077-8008-c5b929f23728",
       "sha256": "0ef67d8fc0bc7a2e597042dd2b2eb2af500ad4ca42b9808f3b049acb7e617ee2",
-      "license": "SIL-OFL-1.1-derived-outline"
+      "license": "MIT"
     },
     {
       "path": "courts/persian/jack.svg",

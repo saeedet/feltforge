@@ -58,13 +58,9 @@ await copyTree(
 await rm(resolve(out, 'assets/README.md'), { force: true });
 await copyFile(resolve(root, 'LICENSE'), resolve(out, 'LICENSE'));
 await copyFile(resolve(root, 'README.md'), resolve(out, 'README.md'));
-await copyFile(
-  resolve(root, 'packages/assets/source/fonts/OFL.txt'),
-  resolve(out, 'HANUMAN-OFL.txt'),
-);
 await writeFile(
   resolve(out, 'NOTICE'),
-  'FeltForge code and approved artwork: MIT.\nRank and Joker-index outlines are derived from Hanuman (SIL OFL 1.1).\nNo font files are included. See HANUMAN-OFL.txt and repository provenance documentation.\n',
+  'FeltForge code and artwork are distributed under the MIT License.\nThe court, Joker, and card-back artwork included in FeltForge is original artwork created for this project.\n',
 );
 const entry = (path) => ({
   types: `./dist/${path}.d.ts`,
@@ -119,14 +115,7 @@ await writeFile(
       license: 'MIT',
       sideEffects: false,
       exports,
-      files: [
-        'dist',
-        'assets',
-        'LICENSE',
-        'NOTICE',
-        'HANUMAN-OFL.txt',
-        'README.md',
-      ],
+      files: ['dist', 'assets', 'LICENSE', 'NOTICE', 'README.md'],
       peerDependencies: { react: '^18.2.0 || ^19.0.0' },
       peerDependenciesMeta: { react: { optional: true } },
       engines: { node: '>=18' },

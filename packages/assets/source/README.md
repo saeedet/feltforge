@@ -1,5 +1,7 @@
 # Authoritative sources
 
-Approved Penpot exports are retained unchanged here. Source object identifiers, frames and checksums are in `../manifest.json`; the capture date was 2026-10-12. Original text exports under `text/` preserve font and layout evidence.
+Penpot exports are retained unchanged here. Source identifiers, frames and checksums are recorded in `../manifest.json`.
 
-`fonts/` holds the two exact static Hanuman subsets decoded losslessly from the exported Penpot v24 URLs, together with the SIL OFL license. These are build inputs only and are excluded from the published package. Regenerate glyphs with `pnpm generate:ranks`; never overwrite an authoritative export to make an optimizer pass.
+`fonts/` contains the two font inputs currently used by `pnpm generate:ranks` and their existing license. See [rank preparation](../../../docs/design/rank-outlining.md) for the verified dependency. These inputs are excluded from the npm package.
+
+Never overwrite an authoritative export to make an optimizer pass.

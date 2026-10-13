@@ -24,4 +24,4 @@ Pinned font subsets and their original WOFF2 hashes make rank extraction repeata
 
 Vitest checks semantics, geometry, bounded stack behaviour and server rendering. Separate TypeScript fixtures reject impossible component props. Raster comparisons check original versus optimized SVGs and exported Penpot glyph references without controlling a browser. Playwright checks the actual playground in CI and captures review screenshots. Package checks inspect exports, excluded source/font material and real bundled consumer fixtures.
 
-TypeScript 5.9.3 is pinned to the supported range of the chosen typescript-eslint version. SVG, font, rendering and bundling tools are development dependencies only. Assets have owner-confirmed MIT-compatible rights; font software retains its OFL notices.
+TypeScript 5.9.3 is pinned to the supported range of the chosen typescript-eslint version. SVG, font, rendering and bundling tools are development dependencies only. The court, Joker, and card-back artwork included in FeltForge is original artwork created for this project and is distributed under the MIT License.

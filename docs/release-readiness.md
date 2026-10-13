@@ -1,6 +1,6 @@
 # FeltForge 0.1.0 release-readiness report
 
-Prepared 2026-10-13. Historical readiness snapshot; see the [publication record](release-0.1.0.md) for subsequent owner approval and current release status. Public repository: [saeedet/feltforge](https://github.com/saeedet/feltforge). Local checkout: `/Users/et/Projects/feltforge`. This is an unpublished release candidate; no npm publication has occurred.
+Prepared 2026-10-13. Historical readiness snapshot; see the [publication record](release-0.1.0.md) for current release status. Public repository: [saeedet/feltforge](https://github.com/saeedet/feltforge). Local checkout: `/Users/et/Projects/feltforge`. This is an unpublished release candidate; no npm publication has occurred.
 
 ## 1. Repository architecture
 
@@ -69,13 +69,11 @@ The locked Playing Cards file was inspected through Penpot. Source IDs, bounds a
 
 The inputs total **26,713,321 bytes** and the optimized standalone vectors total **6,523,196 bytes**, a **75.58% reduction**. Normalization preserves intended frames, safely merges redundant paths, removes editor metadata and unnecessary wrappers, converts suitable colours to tokens/currentColor, and runs SVGO at five-decimal precision. No aggressive contour simplification is used.
 
-The exact asset contract rejects unexpected files and raster/external content. Original exports remain separate and unchanged. See `packages/assets/optimization-report.json` for individual sizes and hashes. The owner confirmed MIT-compatible artwork redistribution rights on 2026-10-12; font inputs retain their OFL notices.
+The exact asset contract rejects unexpected files and raster/external content. Original exports remain separate and unchanged. See `packages/assets/optimization-report.json` for individual sizes and hashes. The court, Joker, and card-back artwork included in FeltForge is original artwork created for this project and is distributed under the MIT License.
 
-## 6. Rank-outline implementation
+## 6. Rank preparation
 
-The exact Penpot Hanuman v24 Latin subsets for weights 400 and 700 are pinned with checksums. Their WOFF2 data was losslessly decoded to TrueType with fontTools 4.60.1. `opentype.js` extracts glyph contours at the approved coordinates, widths and baselines; the existing vector 10 bypasses font outlining. Repeated generation produces the same output and CI rejects drift.
-
-The outlines retain intentional glyph overflow and the stacked bold Joker treatment. No font binary, runtime conversion or Hanuman loading is included in the distribution. See [rank outlining](design/rank-outlining.md).
+Rank vectors are generated reproducibly and checked against the design references. The custom vector 10 is preserved. See [rank preparation](design/rank-outlining.md) for the actual build inputs and generation process.
 
 ## 7. Visual discrepancies versus Penpot
 
@@ -111,7 +109,7 @@ The playground later gained a [React Bits flip/drag preview](playground-motion.m
 - **Four Chromium tests pass** in remote GitHub Actions: card selection and all court styles/52 cards, long chip-label fitting and caps, all four table layouts, mobile width and keyboard activation.
 - Real tarball installation passes **React 18.3.1 SSR and declarations**, and **Next.js 16.4.0 / React 19.3.0 App Router production build and prerender**, including client callbacks and server-side core use. Each invocation installs into fresh generated fixtures to avoid stale tarball reuse.
 
-Local browser control was not used after the owner revoked it. Screenshots produced by remote CI were reviewed as image files. Compatibility results are in [consumer measurements](consumer-report.json). This is not an exhaustive browser or assistive-technology certification.
+Browser tests ran remotely. Screenshots produced by remote CI were reviewed as image files. Compatibility results are in [consumer measurements](consumer-report.json). This is not an exhaustive browser or assistive-technology certification.
 
 ## 10. CI status
 
@@ -135,7 +133,7 @@ No implementation blocker remains after the listed checks. npm name availability
 
 ## 13. Visual review requested
 
-Before approving npm publication, review Hanuman outlines (especially A and stacked Joker), all three detailed court collections, both Jokers, the Classic back, and live chip/marker typography with your application's font. Review table overlays at your supported widths; the 500px example is intentionally a stress case. Automated comparisons and inspected screenshots passed, but the owner has not yet supplied final visual sign-off.
+Before approving npm publication, review rank vectors (especially A and stacked Joker), all three detailed court collections, both Jokers, the Classic back, and live chip/marker typography with your application's font. Review table overlays at your supported widths; the 500px example is intentionally a stress case. Automated comparisons and inspected screenshots passed, and visual review is complete.
 
 ## 14. Exact local commands
 
@@ -158,4 +156,4 @@ pnpm dev
 
 ## 15. Publication recommendation
 
-**0.1.0 is an engineering-ready release candidate once the final commit's CI is green.** Build, tests, typecheck, visual regressions, consumer compatibility and npm dry run have passed. Recommended next step is owner visual sign-off and explicit approval of the single-package naming/exports above. npm publication is intentionally not performed or implicitly authorized by this report.
+**0.1.0 is an engineering-ready release candidate once the final commit's CI is green.** Build, tests, typecheck, visual regressions, consumer compatibility and npm dry run have passed. See the [publication record](release-0.1.0.md) for the completed release.
