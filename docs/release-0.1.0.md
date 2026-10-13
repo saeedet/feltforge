@@ -6,6 +6,10 @@ The implementation commit `41308c4` passed [Workspace CI](https://github.com/sae
 
 `pnpm package:release` explicitly prepares the public manifest and local tarball while default builds retain their private guard. No automatic publication workflow is configured. The library excludes the playground's separately licensed React Bits component and Motion dependency.
 
-Status: release prepared; npm publication awaits a valid authenticated npm session. The saved login returned 401 Unauthorized. Nothing has been published by this step.
+Status: **published to npm on 2026-10-13** as [`feltforge@0.1.0`](https://www.npmjs.com/package/feltforge/v/0.1.0), public access, `latest` tag, under npm account `saeedet`. The registry integrity was verified against the exact prepared tarball.
+
+Install with `npm install feltforge`.
+
+Release preparation commit `c746c70` passed [Workspace CI](https://github.com/saeedet/feltforge/actions/runs/38411840690) before publication. npm account authentication was completed by the owner; no local browser control was used.
 
 Prepared tarball: `feltforge-0.1.0.tgz` — 78 files, 4,791,677 packed bytes, 13,218,925 unpacked bytes. Registry integrity: `sha512-BA9Q77P8Qa6hVsZwo3AWxZKq7rmMCS7YkB9ZHldaQwehWLlOnTmZQpZ/39VEMv/PPWpbEJClDGc4vUe2RwaQEQ==`. Public-manifest tarball React 18 SSR/types and Next.js production/prerender checks passed.

@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 — approved for publication
+## 0.1.0 — 2026-10-13
 
 - Extend flip/drag/tilt to every playground card, including Jokers, backs, hero and community cards; remove card focus and selection rings.
 
