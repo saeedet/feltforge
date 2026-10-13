@@ -345,10 +345,6 @@ fieldset button[aria-pressed='true'] {
 .community-card {
   width: 18.26087%;
 }
-.hero-art > div:has(.flip-card:hover),
-.hero-art > div:focus-within {
-  z-index: 2;
-}
 .card-loading {
   display: block;
   aspect-ratio: 5/7;

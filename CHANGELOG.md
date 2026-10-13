@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1 — 2026-10-13
+
+- Publish the playground on GitHub Pages and link it from the repository and package.
+- Add a playground screenshot to the top of the README.
+- Restore the three decorative hero cards to their static presentation while keeping the gallery and table cards interactive.
+- Add checked, tag-triggered npm releases through a trusted GitHub Actions publisher.
+- Simplify the package's artwork provenance and licensing notes. Library behavior and exports are unchanged.
+
 ## 0.1.0 — 2026-10-13
 
 - Extend flip/drag/tilt to every playground card, including Jokers, backs, hero and community cards; remove card focus and selection rings.

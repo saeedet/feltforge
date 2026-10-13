@@ -1,5 +1,7 @@
 # FeltForge
 
+![FeltForge playground showing a six-seat poker table with community cards, chips, and markers](https://raw.githubusercontent.com/saeedet/feltforge/main/docs/images/feltforge-playground-table.png)
+
 Composable, accessible React primitives for playing cards and poker interfaces. Three court collections, two Jokers, crisp chips and proportionally scaled tables, built from a locked Penpot design system.
 
 **[Try the playground](https://saeedet.github.io/feltforge/)** · [Source and release notes](https://github.com/saeedet/feltforge). No game rules, betting engine, network service or real-money logic are included.

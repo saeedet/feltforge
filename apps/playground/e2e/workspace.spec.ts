@@ -233,7 +233,7 @@ test('a short flick crosses to the back using release velocity', async ({
   await expect(card).toHaveAttribute('aria-pressed', 'true');
 });
 
-test('all presented cards share motion without focus or selection rings', async ({
+test('gallery, special and table cards share motion while the hero stays static', async ({
   page,
 }) => {
   await page.goto('/');
@@ -242,7 +242,10 @@ test('all presented cards share motion without focus or selection rings', async 
     page.locator('.gallery > .flip-card[data-draggable]'),
   ).toHaveCount(52);
   await expect(page.locator('.special-cards > .flip-card')).toHaveCount(3);
-  await expect(page.locator('.hero-art .flip-card')).toHaveCount(3);
+  await expect(page.locator('.hero-art .flip-card')).toHaveCount(0);
+  await expect(
+    page.locator('.hero-art svg[viewBox="0 0 250 350"]'),
+  ).toHaveCount(3);
   const seven = page.getByRole('button', {
     name: 'Flip 7 of hearts',
     exact: true,
@@ -255,12 +258,7 @@ test('all presented cards share motion without focus or selection rings', async 
   await expect(
     page.getByRole('button', { name: 'Flip 8 of hearts', exact: true }),
   ).toHaveAttribute('aria-pressed', 'false');
-  for (const name of [
-    'Flip Joker 1',
-    'Flip Joker 2',
-    'Flip Classic back',
-    'Flip featured Ace of spades',
-  ]) {
+  for (const name of ['Flip Joker 1', 'Flip Joker 2', 'Flip Classic back']) {
     const card = page.getByRole('button', { name, exact: true });
     const before = await card.getAttribute('aria-pressed');
     await card.press('Enter');
@@ -280,12 +278,14 @@ test('all presented cards share motion without focus or selection rings', async 
   await expect(hidden).toHaveAttribute('aria-pressed', 'true');
   await hidden.press('Enter');
   await expect(hidden).toHaveAttribute('aria-pressed', 'false');
-  // Every full card SVG is hosted by the same interactive wrapper, including both faces.
+  // Cards outside the decorative hero use the interactive wrapper.
   expect(
     await page
       .locator('svg[viewBox="0 0 250 350"]')
       .evaluateAll((cards) =>
-        cards.every((card) => card.closest('.flip-card')),
+        cards
+          .filter((card) => !card.closest('.hero-art'))
+          .every((card) => card.closest('.flip-card')),
       ),
   ).toBe(true);
   await page.getByLabel('Table width', { exact: true }).fill('500');

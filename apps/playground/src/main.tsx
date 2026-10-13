@@ -161,28 +161,25 @@ function App() {
               <span>Open source</span>
             </div>
           </div>
-          <div className="hero-art" aria-label="Featured cards">
+          <div className="hero-art" aria-hidden="true">
             <div className="hero-back">
-              <PlaygroundCard
-                front={card('7', 'hearts', 215)}
-                label="Flip featured Classic back"
-                width={215}
-                defaultFlipped
-              />
+              <CardBack width={215} decorative />
             </div>
             <div className="hero-ace">
-              <PlaygroundCard
-                front={card('A', 'spades', 215)}
-                label="Flip featured Ace of spades"
-                width={215}
-              />
+              <Card rank="A" suit="spades" width={215} decorative />
             </div>
             <div className="hero-court">
-              <PlaygroundCard
-                front={card('K', 'hearts', 215)}
-                label="Flip featured King of hearts"
-                width={215}
-              />
+              {court ? (
+                <Card
+                  rank="K"
+                  suit="hearts"
+                  court={court}
+                  width={215}
+                  decorative
+                />
+              ) : (
+                <Card rank="7" suit="hearts" width={215} decorative />
+              )}
             </div>
             <div className="hero-chip">
               <ChipStack value={25} count={5} size={72} shadow decorative />
