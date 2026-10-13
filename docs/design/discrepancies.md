@@ -9,7 +9,7 @@ Inspection of the locked Playing Cards file found two stale labels:
   The export specification and final brief settle this as Hanuman Regular 400.
 
 These are documentation conflicts, not visual redesign requests. Penpot was not edited.
-No artwork discrepancy has yet been assessed; visual comparisons await source export.
+All source vectors have now been compared with optimized output. The composed Seven of Hearts also passes its independent Penpot PNG regression. Measured rendering differences are documented below.
 
 ## Marker coordinate transcription
 

@@ -21,7 +21,8 @@
     "generate:ranks": "node tooling/assets/ranks.mjs",
     "test:visual": "node tooling/assets/verify.mjs",
     "package:check": "node tooling/package/verify.mjs && node tooling/package/pack.mjs",
-    "package:pack": "node tooling/package/pack.mjs --pack"
+    "package:pack": "node tooling/package/pack.mjs --pack",
+    "test:consumers": "node tooling/package/consumers.mjs"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

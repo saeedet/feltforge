@@ -1,6 +1,5 @@
-# Generated production vectors
+# Production vectors
 
-No production assets exist yet. This directory will contain the 31 optimized standalone
-SVGs listed in `../contract.json`, generated reproducibly from authoritative exports.
-Do not add complete front-card decks, chip, stack, table, or marker SVG assets.
-Do not claim these pending assets have been visually validated or licensed for distribution.
+This directory contains the exact 31 optimized standalone SVG assets in `../contract.json`. Reproduce them with `pnpm generate:ranks && pnpm prepare:assets` and check fidelity with `pnpm test:visual`.
+
+No full-front deck, chip, stack, table or marker asset belongs here. The package's code composes those visuals. Original sources and their provenance are retained separately.

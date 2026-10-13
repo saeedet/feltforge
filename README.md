@@ -94,10 +94,14 @@ pnpm prepare:assets      # Validate, normalize, optimize and generate modules
 pnpm check               # Format, lint, type contracts, unit tests and build
 pnpm test:visual         # Compare SVG assets with authoritative sources
 pnpm package:check       # Inspect exports, consumer bundles and npm dry run
+pnpm package:pack        # Create a local tarball; does not publish
+pnpm test:consumers      # Install tarball into fresh React 18 / Next.js fixtures
 pnpm test:e2e            # Playwright interaction checks; install Chromium first
 ```
 
 CI runs the workspace and browser checks and retains screenshots. Asset references and checksums are committed; generated output is reproducible. The 31-file standalone asset contract excludes full-deck exports, static chips and static tables. Large court illustrations remain detailed vector artwork: import only the collections you need.
+
+See the [0.1.0 release-readiness report](https://github.com/saeedet/feltforge/blob/main/docs/release-readiness.md) for measurements, validation, known limits and the final package exports.
 
 ## License
 

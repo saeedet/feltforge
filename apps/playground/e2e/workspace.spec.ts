@@ -61,6 +61,10 @@ test('table layouts expose independently sized overlays', async ({ page }) => {
       .selectOption(String(layout));
     await expect(page.locator('[data-seat-index]')).toHaveCount(layout);
   }
+  await page.screenshot({
+    path: 'test-results/table-1000.png',
+    fullPage: true,
+  });
   await page.getByLabel('Table width', { exact: true }).fill('500');
   await expect(
     page.getByRole('group', { name: '9-seat poker table' }),

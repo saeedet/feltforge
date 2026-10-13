@@ -1,0 +1,22 @@
+[
+  {
+    "fixture": "number",
+    "bytes": 26526,
+    "gzipBytes": 8686
+  },
+  {
+    "fixture": "chips",
+    "bytes": 3994,
+    "gzipBytes": 1698
+  },
+  {
+    "fixture": "core",
+    "bytes": 2357,
+    "gzipBytes": 998
+  },
+  {
+    "fixture": "western",
+    "bytes": 1894368,
+    "gzipBytes": 722657
+  }
+]

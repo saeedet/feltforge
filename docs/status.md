@@ -1,5 +1,7 @@
 # Implementation status
 
-Workspace, public GitHub repository, Penpot source capture, 31-asset pipeline, exact Hanuman outline generation and framework-independent geometry are implemented. All four supported table layouts use the locked marker formula and per-seat signs.
+The 0.1.0 release candidate is implemented: all 31 approved production vectors, reproducible Hanuman outlines, framework-independent geometry, React primitives, the responsive playground, package assembly and documentation.
 
-React components, playground, package assembly, consumer tests and release-readiness review are in progress. Nothing has been published to npm. Browser control is disabled at the owner's request; local visual comparisons use the SVG rasterizer and exported Penpot references.
+Validation covers strict TypeScript contracts, 84 unit/SSR/visual tests, original-versus-optimized SVG comparisons, four remote Chromium interaction tests, consumer bundle checks, npm pack inspection, React 18 SSR/types and a Next.js App Router production build using the actual tarball. CI also verifies deterministic asset regeneration.
+
+The public repository is https://github.com/saeedet/feltforge. Nothing has been published to npm; the package candidate remains private until explicit maintainer approval. See [release readiness](release-readiness.md) for evidence and remaining visual review. Penpot remains unchanged. Local browser control was not used after the owner revoked it; browser tests run on GitHub Actions.

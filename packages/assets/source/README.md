@@ -1,10 +1,5 @@
-# Authoritative source exports
+# Authoritative sources
 
-No Penpot assets have been exported yet. Preserve original approved vector exports here
-with their source file/page/component identifiers, export date, bounds, and SHA-256 hashes.
-Do not fabricate substitutes or edit the only original copy.
+Approved Penpot exports are retained unchanged here. Source object identifiers, frames and checksums are in `../manifest.json`; the capture date was 2026-10-12. Original text exports under `text/` preserve font and layout evidence.
 
-Font binaries belong in the ignored `fonts/` directory only after the exact approved
-Hanuman files/weights and license have been verified. Record source URL, version,
-checksum, license, text positioning, and normalization in the future generation manifest.
-Do not add a runtime rank font dependency.
+`fonts/` holds the two exact static Hanuman subsets decoded losslessly from the exported Penpot v24 URLs, together with the SIL OFL license. These are build inputs only and are excluded from the published package. Regenerate glyphs with `pnpm generate:ranks`; never overwrite an authoritative export to make an optimizer pass.
