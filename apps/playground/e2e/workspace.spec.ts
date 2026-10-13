@@ -94,6 +94,33 @@ test('mobile gallery stays within the viewport and cards flip by keyboard', asyn
     await page.evaluate(() => document.documentElement.scrollWidth),
   ).toBeLessThanOrEqual(391);
   await page.screenshot({ path: 'test-results/mobile.png', fullPage: true });
+  const heroCards = page.locator(
+    '.hero-back > svg, .hero-ace > svg, .hero-court > svg',
+  );
+  for (const width of [390, 320]) {
+    await page.setViewportSize({ width, height: 844 });
+    const sizes = await heroCards.evaluateAll((cards) =>
+      cards.map((card) => {
+        const style = getComputedStyle(card);
+        const bounds = card.getBoundingClientRect();
+        return {
+          width: parseFloat(style.width),
+          height: parseFloat(style.height),
+          left: bounds.left,
+          right: bounds.right,
+        };
+      }),
+    );
+    expect(sizes).toHaveLength(3);
+    for (const size of sizes) {
+      expect(size.width).toBeGreaterThan(0);
+      expect(size.width).toBeCloseTo(sizes[0]!.width, 1);
+      expect(size.width / size.height).toBeCloseTo(5 / 7, 2);
+      expect(size.left).toBeGreaterThanOrEqual(0);
+      expect(size.right).toBeLessThanOrEqual(width + 1);
+    }
+  }
+  await page.locator('.hero').screenshot({ path: 'test-results/hero-320.png' });
 });
 
 test('flip preview supports clicks, keyboard controls and external face controls', async ({

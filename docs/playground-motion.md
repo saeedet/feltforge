@@ -8,4 +8,4 @@ The source is the exact React Bits `FlipCard-JS-CSS` registry item, adapted to s
 
 Remote CI covers click, keyboard and external controls; hover tilt; positional drag and spring settling; velocity-driven flicks; and reduced-motion behavior on a 390px viewport. Local checks cover lint, type safety, build and the existing library tests. Browser control stays outside the user's local session.
 
-All presented cards share the effect: the hero fan, the 52-card gallery, Jokers, Classic back examples and the five community cards. Each maintains independent flip state. Responsive cards retain 5:7 proportions and drag distance follows their rendered size. Gallery clicks flip rather than select.
+The 52-card gallery, Jokers, Classic back examples and the five community cards share the effect. Each maintains independent flip state. Responsive cards retain 5:7 proportions and drag distance follows their rendered size. Gallery clicks flip rather than select. The three decorative hero cards remain static and share the same responsive dimensions.
