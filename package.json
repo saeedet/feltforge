@@ -1,6 +1,6 @@
 {
   "name": "feltforge-workspace",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@11.24.0",
@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev": "pnpm --filter @feltforge/playground dev",
+    "build:playground": "pnpm --filter @feltforge/playground build --base=/feltforge/",
     "build": "turbo run build && node tooling/package/build.mjs",
     "typecheck": "turbo run typecheck",
     "test": "vitest run",

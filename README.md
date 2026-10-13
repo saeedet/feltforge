@@ -2,7 +2,7 @@
 
 Composable, accessible React primitives for playing cards and poker interfaces. Three court collections, two Jokers, crisp chips and proportionally scaled tables, built from a locked Penpot design system.
 
-**0.1.0.** [Source and release notes](https://github.com/saeedet/feltforge). No game rules, betting engine, network service or real-money logic are included.
+**[Try the playground](https://saeedet.github.io/feltforge/)** · [Source and release notes](https://github.com/saeedet/feltforge). No game rules, betting engine, network service or real-money logic are included.
 
 ## Install
 
@@ -26,13 +26,15 @@ pnpm dev
 
 The playground lets you explore all 52 ordinary cards, court collections, Jokers, backs, custom chips, bounded stacks, markers and 2/6/8/9-seat layouts. In the Cards tab, the “Give it a spin” preview supports click flips, drag/flick rotation, hover tilt and keyboard controls, with reduced-motion support.
 
+The [hosted playground](https://saeedet.github.io/feltforge/) is deployed from `main` after CI passes. Its source stays in `apps/playground` and is not included in the npm package.
+
 ## Build a package locally
 
 ```sh
 pnpm check
 pnpm package:check
 pnpm package:pack
-# In a consumer app, install the resulting dist/package/feltforge-0.1.0.tgz.
+# In a consumer app, install the resulting dist/package/feltforge-<version>.tgz.
 ```
 
 React 18.2+ or 19 is a peer dependency. The framework-independent `feltforge/core` entry can be used without React. The package is ESM, includes TypeScript declarations and requires no CSS framework.
@@ -108,6 +110,8 @@ pnpm test:e2e            # Playwright interaction checks; install Chromium first
 ```
 
 CI runs the workspace and browser checks and retains screenshots. Asset references and checksums are committed; generated output is reproducible. The 31-file standalone asset contract excludes full-deck exports, static chips and static tables. Large court illustrations remain detailed vector artwork: import only the collections you need.
+
+For releases, see [publishing](https://github.com/saeedet/feltforge/blob/main/docs/publishing.md). A matching `vX.Y.Z` tag runs the release checks and publishes that version to npm through a trusted GitHub Actions publisher.
 
 See the [0.1.0 release-readiness report](https://github.com/saeedet/feltforge/blob/main/docs/release-readiness.md) for measurements, validation, known limits and the final package exports.
 

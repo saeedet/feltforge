@@ -136,7 +136,7 @@ function App() {
             GitHub ↗
           </a>
         </nav>
-        <span className="release">0.1.0 · PREVIEW</span>
+        <span className="release">PLAYGROUND</span>
       </header>
       <main id="top">
         <section className="hero">

@@ -2,7 +2,10 @@ import { mkdir, mkdtemp, writeFile, readFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { resolve } from 'node:path';
 const root = resolve(import.meta.dirname, '../..'),
-  tarball = resolve(root, 'dist/package/feltforge-0.1.0.tgz');
+  { version } = JSON.parse(
+    await readFile(resolve(root, 'package.json'), 'utf8'),
+  ),
+  tarball = resolve(root, `dist/package/feltforge-${version}.tgz`);
 // A fresh install prevents npm from reusing a previous same-version local tarball.
 const consumerRoot = await mkdtemp(resolve(root, 'dist/installed-consumers-'));
 const reports = [];

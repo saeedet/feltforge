@@ -11,6 +11,9 @@ import { resolve, relative, dirname } from 'node:path';
 const release = process.argv.includes('--release');
 const root = resolve(import.meta.dirname, '../..'),
   out = resolve(root, 'dist/package');
+const { version } = JSON.parse(
+  await readFile(resolve(root, 'package.json'), 'utf8'),
+);
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
 const internal = {
@@ -99,7 +102,7 @@ await writeFile(
   JSON.stringify(
     {
       name: 'feltforge',
-      version: '0.1.0',
+      version,
       private: !release,
       ...(release
         ? {
@@ -123,7 +126,7 @@ await writeFile(
         type: 'git',
         url: 'git+https://github.com/saeedet/feltforge.git',
       },
-      homepage: 'https://github.com/saeedet/feltforge',
+      homepage: 'https://saeedet.github.io/feltforge/',
       bugs: { url: 'https://github.com/saeedet/feltforge/issues' },
       keywords: ['react', 'playing-cards', 'poker', 'svg', 'ui'],
     },
