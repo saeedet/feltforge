@@ -270,7 +270,7 @@ test('all presented cards share motion without focus or selection rings', async 
     );
     await expect(card).toHaveCSS('outline-style', 'none');
   }
-  await page.getByRole('button', { name: 'Poker table', exact: true }).click();
+  await page.getByRole('button', { name: 'Poker table' }).click();
   const table = page.getByRole('group', { name: '6-seat poker table' });
   await expect(table.locator('.community-card[data-draggable]')).toHaveCount(5);
   const hidden = page.getByRole('button', {
