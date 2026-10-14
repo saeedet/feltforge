@@ -322,23 +322,28 @@ test('flip preview respects reduced motion while remaining operable on mobile', 
 test('a short flick crosses to the back using release velocity', async ({
   page,
 }) => {
+  await page.clock.install({ time: new Date('2026-01-01T00:00:00Z') });
   await page.goto('/');
   const card = page.getByRole('button', {
     name: 'Flip King of hearts',
     exact: true,
   });
   await card.scrollIntoViewIfNeeded();
+  await page.clock.pauseAt(new Date('2026-01-01T00:01:00Z'));
   const box = (await card.boundingBox())!;
   const x = box.x + box.width / 2,
     y = box.y + box.height / 2;
   await page.mouse.move(x, y);
   await page.mouse.down();
   // 60px is less than the 110px positional halfway threshold. Release momentum must finish the flip.
-  // Two pointer samples model a quick flick; six frame-paced steps can become
-  // a slow drag on a busy runner and correctly fail to cross halfway.
-  await page.mouse.move(x + 60, y, { steps: 2 });
-  // Release immediately: an assertion here pauses past the 60ms flick window.
+  // Advance the gesture clock explicitly so runner latency cannot turn this
+  // 32ms flick into a slow drag. Native pointer events still drive the card.
+  await page.clock.runFor(16);
+  await page.mouse.move(x + 30, y);
+  await page.clock.runFor(16);
+  await page.mouse.move(x + 60, y);
   await page.mouse.up();
+  await page.clock.runFor(1000);
   await expect(card).toHaveAttribute('aria-pressed', 'true');
 });
 
