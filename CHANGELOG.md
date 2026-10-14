@@ -1,12 +1,13 @@
 # Changelog
 
-## 0.2.0 — Unreleased
+## 0.2.0 — 2026-10-14
 
 - Add vector-only compact cards in distinct 38 × 53 community and 50 × 70 hero layouts, with all 52 ordinary ranks and suits.
 - Replace the outer border on standard cards, Jokers and backs with the approved box shadow and white inset edge; support complete shadow overrides and removal.
 - Add compact cards, actual-size hands, magnified comparisons and shadow controls to the playground.
 - Keep the three large hero cards static and equally sized on mobile.
 - Add compact API, sizing, independent import and shadow override documentation.
+- Fix responsive card backs to fill their wrappers as the playground table resizes.
 
 ## 0.1.1 — 2026-10-13
 
