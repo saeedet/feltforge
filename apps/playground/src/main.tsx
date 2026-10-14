@@ -58,7 +58,12 @@ function PlaygroundCard({
         <CardBack
           width={width}
           height={height}
-          style={{ borderRadius: radius, overflow: 'hidden' }}
+          style={{
+            width: '100%',
+            height: '100%',
+            borderRadius: `${(radius / width) * 100}% / ${(radius / height) * 100}%`,
+            overflow: 'hidden',
+          }}
           decorative
         />
       }

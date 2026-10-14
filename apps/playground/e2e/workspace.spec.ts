@@ -132,6 +132,20 @@ test('table layouts expose independently sized overlays', async ({ page }) => {
     fullPage: true,
   });
   await page.getByLabel('Table width', { exact: true }).fill('500');
+  const backsFit = await page
+    .locator('.community-card .flip-card__face--back > svg')
+    .evaluateAll((backs) =>
+      backs.every((back) => {
+        const frame = back.closest('.flip-card')!;
+        const a = getComputedStyle(back),
+          b = getComputedStyle(frame);
+        return (
+          Math.abs(parseFloat(a.width) - parseFloat(b.width)) < 0.1 &&
+          Math.abs(parseFloat(a.height) - parseFloat(b.height)) < 0.1
+        );
+      }),
+    );
+  expect(backsFit).toBe(true);
   await expect(
     page.getByRole('group', { name: '9-seat poker table' }),
   ).toBeVisible();
