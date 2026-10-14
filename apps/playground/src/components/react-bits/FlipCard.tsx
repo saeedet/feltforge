@@ -19,6 +19,7 @@ import {
   useReducedMotion,
   useSpring,
   useTransform,
+  type MotionStyle,
 } from 'motion/react';
 
 import './FlipCard.css';
@@ -63,7 +64,7 @@ interface FlipCardProps {
   disabled?: boolean;
   ariaLabel?: string;
   className?: string;
-  faceStyle?: CSSProperties;
+  faceStyle?: MotionStyle;
 }
 interface Grip {
   id: number;

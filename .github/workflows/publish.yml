@@ -34,6 +34,6 @@ jobs:
       - run: pnpm test:visual
       - run: pnpm package:release
       - run: pnpm test:consumers
-      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm exec playwright install --with-deps chromium webkit
       - run: pnpm test:e2e
       - run: npm publish ./dist/package --access public --ignore-scripts --registry=https://registry.npmjs.org/

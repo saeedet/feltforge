@@ -158,7 +158,7 @@ pnpm test:visual         # Compare SVG assets with authoritative sources
 pnpm package:check       # Inspect exports, consumer bundles and npm dry run
 pnpm package:pack        # Create a local tarball; does not publish
 pnpm test:consumers      # Install tarball into fresh React 18 / Next.js fixtures
-pnpm test:e2e            # Playwright interaction checks; install Chromium first
+pnpm test:e2e            # Playwright interaction checks; install Chromium and WebKit first
 ```
 
 CI runs the workspace and browser checks and retains screenshots. Asset references and checksums are committed; generated output is reproducible. The 31-file standalone asset contract excludes full-deck exports, static chips and static tables. Large court illustrations remain detailed vector artwork: import only the collections you need.
