@@ -20,9 +20,11 @@ Inline artwork objects are trusted build-time constants, not a sanitization boun
 
 ## Chips and stacks
 
-`Chip`: required `value`, optional `label`, `color`, `insertColor`, `labelColor`, `size` (64), common SVG props. Values must be finite, non-negative safe numbers. Multiples of 1,000 format as `1K`, `5K`, etc. Labels stay live text and shrink to the 34px design limit after measurement. Server rendering uses a conservative width for labels longer than three characters. Inter Tight 800 is the reference font; provide it in your app for closest typographic fidelity.
+`Chip`: required `value`, optional `label`, `color`, `insertColor`, `labelColor`, `size` (64), `shadow` (true), common SVG props. Values must be finite, non-negative safe numbers. Multiples of 1,000 format as `1K`, `5K`, etc. Labels stay live text and shrink to the 34px design limit after measurement. Server rendering uses a conservative width for labels longer than three characters. Inter Tight 800 is the reference font; provide it in your app for closest typographic fidelity. No font asset is bundled.
 
-`ChipStack`: either `{ value, count }` or `{ chips: [{ value, count }, …] }`. Groups are ordered bottom to top. `maxVisible` accepts 1–8 (default 5) and preserves the topmost chips without allocating one element per real chip. `size` controls an individual chip; the stack's natural bounds expand by 3px right and 4px upward for each extra visible chip. Zero count draws no chip. `shadow` is optional and defaults to false. The accessible label reports actual count and total value, not the visible cap. Appearance overrides apply to all visible chips.
+`ChipStack`: either `{ value, count }` or `{ chips: [{ value, count }, …] }`. Groups are ordered bottom to top. `maxVisible` accepts 1–8 (default 5) and preserves the topmost chips without allocating one element per real chip. `size` controls an individual chip; the stack's natural bounds expand by 3px right and 4px upward for each extra visible chip. Zero count draws no chip or shadow. `shadow` defaults to true and applies Contact to each visible chip. The accessible label reports actual count and total value, not the visible cap. Appearance overrides apply to all visible chips.
+
+Contact consists of independent `0 1 blur 1 / 35%` and `0 2 blur 4 / 25%` black shadows at 64 units. Runtime SVG filters use Gaussian deviations of 0.5 and 2, matching Penpot. Both the geometry and shadows scale together. `shadow={false}` disables them; otherwise `style.filter` overrides `--chip-shadow`, which overrides the default. A direct `style.filter` applies to each chip, rather than filtering the combined stack. Custom filter lengths are in the 64-unit chip coordinate system. Use `none` or a CSS filter value such as `drop-shadow(0 2px 3px rgba(0,0,0,.3))`. The previous `CHIP.shadow` Subtle preset is deprecated; `CHIP.contactShadows` contains the current layers.
 
 Colours are configurable defaults, not universal casino denominations.
 
@@ -51,6 +53,7 @@ All card fronts, Jokers and backs have a CSS box shadow by default. `--card-shad
 | Card         | `--card-red`, `--card-black`, `--card-background`, `--card-shadow`, `--card-panel`, `--card-panel-stroke`, `--card-ace-spade-inline` |
 | Classic back | `--back-classic-field`, `--back-classic-gold`, `--back-classic-ivory` (plus card background/shadow)                                  |
 | Text         | `--chip-font` (chips and markers)                                                                                                    |
+| Chips        | `--chip-shadow` (CSS filter value; applies independently to each chip)                                                               |
 | Table        | `--table-rail`, `--table-inner-rail`, `--table-outline`, `--table-felt`, `--table-line`                                              |
 
 CSS variables inherit through the document. All components accept `className`; no stylesheet is required by the library.

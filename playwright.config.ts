@@ -10,7 +10,14 @@ export default defineConfig({
       ? { channel: process.env.PLAYWRIGHT_CHANNEL }
       : {}),
   },
-  projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
+  projects: [
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    {
+      name: 'webkit-mobile',
+      testMatch: ['**/card-shadows.spec.ts', '**/chip-shadows.spec.ts'],
+      use: { ...devices['iPhone 13'] },
+    },
+  ],
   webServer: {
     command:
       'pnpm --filter @feltforge/playground preview --host 127.0.0.1 --port 4173 --strictPort',

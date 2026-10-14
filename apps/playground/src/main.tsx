@@ -38,6 +38,7 @@ function PlaygroundCard({
   width,
   height = width * 1.4,
   radius = (width * 13) / 250,
+  shadowReferenceWidth = 100,
   className = '',
   ...props
 }: {
@@ -46,11 +47,13 @@ function PlaygroundCard({
   width: number;
   height?: number;
   radius?: number;
+  shadowReferenceWidth?: number;
   className?: string;
 } & Pick<
   ComponentProps<typeof FlipCard>,
   'flipped' | 'defaultFlipped' | 'onFlipChange' | 'shadow'
 >) {
+  const shadowScale = width / shadowReferenceWidth;
   return (
     <FlipCard
       front={front}
@@ -70,6 +73,12 @@ function PlaygroundCard({
       width={width}
       height={height}
       radius={radius}
+      faceStyle={{
+        borderRadius: `${(radius / width) * 100}% / ${(radius / height) * 100}%`,
+        // Keep the SVG inside a clipped face; paint its shadow on the HTML face
+        // so WebKit can composite it correctly through the 3D flip.
+        boxShadow: `var(--card-shadow, 0 ${shadowScale}px ${shadowScale}px rgba(0,0,0,.25), 0 ${shadowScale * 2}px ${shadowScale * 8}px rgba(0,0,0,.25), inset 0 0 0 ${shadowScale}px rgba(255,255,255,.1))`,
+      }}
       background="transparent"
       glareOpacity={0.12}
       shadowOpacity={0.18}
@@ -86,6 +95,11 @@ function App() {
   const [compactSize, setCompactSize] = useState<CompactCardSize>('community');
   const [compactZoom, setCompactZoom] = useState(1);
   const [cardShadow, setCardShadow] = useState('design');
+  const [chipShadow, setChipShadow] = useState('design');
+  const [chipSize, setChipSize] = useState(112);
+  const [customChipShadow, setCustomChipShadow] = useState(
+    'drop-shadow(0 2px 3px rgba(0, 0, 0, .3))',
+  );
   const [customCardShadow, setCustomCardShadow] = useState(
     '0 4px 16px rgba(35, 86, 62, .3)',
   );
@@ -102,7 +116,6 @@ function App() {
   const [value, setValue] = useState(250),
     [count, setCount] = useState(5),
     [cap, setCap] = useState(5),
-    [shadow, setShadow] = useState(false),
     [color, setColor] = useState('#0c7a7c');
   const [layout, setLayout] = useState<TableLayout>(6),
     [tableWidth, setTableWidth] = useState(1000),
@@ -166,12 +179,16 @@ function App() {
       <main
         id="top"
         style={
-          cardShadow === 'design'
-            ? undefined
-            : ({
-                '--card-shadow':
-                  cardShadow === 'none' ? 'none' : customCardShadow,
-              } as ThemeStyle)
+          {
+            ...(cardShadow !== 'design' && {
+              '--card-shadow':
+                cardShadow === 'none' ? 'none' : customCardShadow,
+            }),
+            ...(chipShadow !== 'design' && {
+              '--chip-shadow':
+                chipShadow === 'none' ? 'none' : customChipShadow,
+            }),
+          } as ThemeStyle
         }
       >
         <section className="hero">
@@ -449,6 +466,7 @@ function App() {
                         width={compact.width * compactZoom}
                         height={compact.height * compactZoom}
                         radius={compact.radius * compactZoom}
+                        shadowReferenceWidth={compact.width}
                       />
                     );
                   })}
@@ -526,6 +544,7 @@ function App() {
                         width={compact.width}
                         height={compact.height}
                         radius={compact.radius}
+                        shadowReferenceWidth={compact.width}
                       />
                     )),
                   )}
@@ -634,24 +653,51 @@ function App() {
                       onChange={(e) => setCap(Number(e.target.value))}
                     />
                   </label>
-                  <label className="check">
+                  <label>
+                    Chip size{' '}
+                    <span className="control-value" aria-hidden="true">
+                      {chipSize}px
+                    </span>
                     <input
-                      type="checkbox"
-                      checked={shadow}
-                      onChange={(e) => setShadow(e.target.checked)}
+                      aria-label="Chip size"
+                      type="range"
+                      min="28"
+                      max="128"
+                      value={chipSize}
+                      onChange={(e) => setChipSize(Number(e.target.value))}
                     />
-                    Subtle shadow
                   </label>
+                  <label>
+                    Chip shadow
+                    <select
+                      aria-label="Chip shadow"
+                      value={chipShadow}
+                      onChange={(e) => setChipShadow(e.target.value)}
+                    >
+                      <option value="design">Contact · original shadow</option>
+                      <option value="none">No shadow</option>
+                      <option value="custom">Custom shadow</option>
+                    </select>
+                  </label>
+                  {chipShadow === 'custom' && (
+                    <label>
+                      Custom shadow
+                      <input
+                        aria-label="Custom chip shadow"
+                        value={customChipShadow}
+                        onChange={(e) => setCustomChipShadow(e.target.value)}
+                      />
+                    </label>
+                  )}
                 </div>
                 <div className="chip-stage">
-                  <Chip value={value} color={color} size={112} />
+                  <Chip value={value} color={color} size={chipSize} />
                   <ChipStack
                     value={value}
                     count={count}
                     color={color}
                     maxVisible={cap}
-                    size={112}
-                    shadow={shadow}
+                    size={chipSize}
                   />
                   <div>
                     <strong>{count} chips</strong>
@@ -659,6 +705,38 @@ function App() {
                   </div>
                 </div>
               </div>
+              <section
+                className="chip-shadow-lab"
+                aria-labelledby="chip-shadow-heading"
+              >
+                <p className="eyebrow">CONTACT SHADOWS</p>
+                <h3 id="chip-shadow-heading">Depth in every layer.</h3>
+                <p className="note">
+                  The same two soft shadow layers follow every chip, from 64px
+                  denominations to 28px bets and pot stacks.
+                </p>
+                <div className="chip-shadow-surfaces">
+                  {['felt', 'navy'].map((surface) => (
+                    <div
+                      className={`chip-shadow-surface chip-shadow-surface--${surface}`}
+                      key={surface}
+                      aria-label={`Chip shadows on ${surface}`}
+                    >
+                      <div className="chip-shadow-row">
+                        {[100, 500, 5000].map((v) => (
+                          <Chip key={v} value={v} size={64} />
+                        ))}
+                      </div>
+                      <div className="chip-shadow-row chip-shadow-row--small">
+                        {[100, 500, 5000].map((v) => (
+                          <Chip key={v} value={v} size={28} />
+                        ))}
+                        <ChipStack value={5000} count={3} size={28} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
               <div className="marker-row">
                 <div>
                   <p className="eyebrow">THE LITTLE DETAILS</p>
@@ -678,7 +756,7 @@ function App() {
                 universal casino standards.
               </p>
               <pre>
-                <code>{`<Chip value={${value}} color="${color}" />\n<ChipStack value={${value}} count={${count}} maxVisible={${cap}} />\n<PokerMarker type="dealer" />`}</code>
+                <code>{`<Chip value={${value}} color="${color}" />\n<ChipStack value={${value}} count={${count}} maxVisible={${cap}} />\n// Remove or replace the per-chip shadow:\n<Chip value={25} shadow={false} />\n<ChipStack value={100} count={5} style={{ '--chip-shadow': 'drop-shadow(0 2px 3px rgba(0, 0, 0, .3))' }} />\n<PokerMarker type="dealer" />`}</code>
               </pre>
             </section>
           )}

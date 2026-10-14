@@ -1,0 +1,374 @@
+{
+  "page": "15 — Poker Chips",
+  "componentPage": "02 — Components",
+  "masterId": "26c05812-20d7-8042-8008-c688f846feaf",
+  "chosenOption": "A — Contact",
+  "geometry": "Existing 64 × 64 procedural chip geometry, palettes and live labels unchanged.",
+  "shadows": [
+    {
+      "x": 0,
+      "y": 1,
+      "blur": 1,
+      "opacity": 0.35
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "blur": 4,
+      "opacity": 0.25
+    }
+  ],
+  "svgStdDeviations": [0.5, 2],
+  "scope": "Each chip, including each visible chip in a top-down stack. Both shadows use SourceAlpha independently.",
+  "scale": "Numeric size/64; 28px => 0 0.4375 0.4375 at 35%, plus 0 0.875 1.75 at 25%.",
+  "examples": [
+    {
+      "id": "af8256be-c88d-80ed-8008-ca613e8be26a",
+      "name": "Chip 5K · shadow A",
+      "x": 944,
+      "y": 2840,
+      "width": 64,
+      "height": 64,
+      "shadows": [
+        {
+          "id": "af8256be-c88d-80ed-8008-ca613e930e9f",
+          "style": "drop-shadow",
+          "offsetX": 0,
+          "offsetY": 1,
+          "blur": 1,
+          "spread": 0,
+          "hidden": false,
+          "color": {
+            "color": "#000000",
+            "opacity": 0.35
+          }
+        },
+        {
+          "id": "af8256be-c88d-80ed-8008-ca613e930ea0",
+          "style": "drop-shadow",
+          "offsetX": 0,
+          "offsetY": 2,
+          "blur": 4,
+          "spread": 0,
+          "hidden": false,
+          "color": {
+            "color": "#000000",
+            "opacity": 0.25
+          }
+        }
+      ],
+      "geometry": [
+        {
+          "name": "Outer Edge",
+          "type": "ellipse",
+          "width": 64,
+          "height": 64,
+          "fills": [
+            {
+              "fillColor": "#7a4a2a",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [
+            {
+              "strokeColor": "#000000",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.28,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ]
+        },
+        {
+          "name": "Edge Inserts",
+          "type": "group",
+          "width": 63.99950408935547,
+          "height": 63.9996337890625,
+          "fills": [],
+          "strokes": []
+        },
+        {
+          "name": "Inner Ring",
+          "type": "ellipse",
+          "width": 45,
+          "height": 45,
+          "fills": [
+            {
+              "fillColor": "#f4f1ea",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": []
+        },
+        {
+          "name": "Center Field",
+          "type": "ellipse",
+          "width": 41,
+          "height": 41,
+          "fills": [
+            {
+              "fillColor": "#7a4a2a",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": []
+        }
+      ],
+      "label": "Live text; no font asset imported."
+    },
+    {
+      "id": "af8256be-c88d-80ed-8008-ca613e6bc0a6",
+      "name": "Chip 5K · shadow A",
+      "x": 624,
+      "y": 2840,
+      "width": 64,
+      "height": 64,
+      "shadows": [
+        {
+          "id": "af8256be-c88d-80ed-8008-ca613e73d7f2",
+          "style": "drop-shadow",
+          "offsetX": 0,
+          "offsetY": 1,
+          "blur": 1,
+          "spread": 0,
+          "hidden": false,
+          "color": {
+            "color": "#000000",
+            "opacity": 0.35
+          }
+        },
+        {
+          "id": "af8256be-c88d-80ed-8008-ca613e73d7f3",
+          "style": "drop-shadow",
+          "offsetX": 0,
+          "offsetY": 2,
+          "blur": 4,
+          "spread": 0,
+          "hidden": false,
+          "color": {
+            "color": "#000000",
+            "opacity": 0.25
+          }
+        }
+      ],
+      "geometry": [
+        {
+          "name": "Outer Edge",
+          "type": "ellipse",
+          "width": 64,
+          "height": 64,
+          "fills": [
+            {
+              "fillColor": "#7a4a2a",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [
+            {
+              "strokeColor": "#000000",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.28,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ]
+        },
+        {
+          "name": "Edge Inserts",
+          "type": "group",
+          "width": 63.99950408935547,
+          "height": 63.9996337890625,
+          "fills": [],
+          "strokes": []
+        },
+        {
+          "name": "Inner Ring",
+          "type": "ellipse",
+          "width": 45,
+          "height": 45,
+          "fills": [
+            {
+              "fillColor": "#f4f1ea",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": []
+        },
+        {
+          "name": "Center Field",
+          "type": "ellipse",
+          "width": 41,
+          "height": 41,
+          "fills": [
+            {
+              "fillColor": "#7a4a2a",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": []
+        }
+      ],
+      "label": "Live text; no font asset imported."
+    },
+    {
+      "id": "26c05812-20d7-8042-8008-c68a539d73ec",
+      "name": "Canonical Chip 64",
+      "x": 100,
+      "y": 230,
+      "width": 64,
+      "height": 64,
+      "shadows": [
+        {
+          "id": "af8256be-c88d-80ed-8008-ca62906f5931",
+          "style": "drop-shadow",
+          "offsetX": 0,
+          "offsetY": 1,
+          "blur": 1,
+          "spread": 0,
+          "hidden": false,
+          "color": {
+            "color": "#000000",
+            "opacity": 0.35
+          }
+        },
+        {
+          "id": "af8256be-c88d-80ed-8008-ca62906f5932",
+          "style": "drop-shadow",
+          "offsetX": 0,
+          "offsetY": 2,
+          "blur": 4,
+          "spread": 0,
+          "hidden": false,
+          "color": {
+            "color": "#000000",
+            "opacity": 0.25
+          }
+        }
+      ],
+      "geometry": [
+        {
+          "name": "Outer Edge",
+          "type": "ellipse",
+          "width": 64,
+          "height": 64,
+          "fills": [
+            {
+              "fillColor": "#2e7d32",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [
+            {
+              "strokeColor": "#000000",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.28,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ]
+        },
+        {
+          "name": "Edge Inserts",
+          "type": "group",
+          "width": 63.99950408935547,
+          "height": 63.9996337890625,
+          "fills": [],
+          "strokes": []
+        },
+        {
+          "name": "Inner Ring",
+          "type": "ellipse",
+          "width": 45,
+          "height": 45,
+          "fills": [
+            {
+              "fillColor": "#f4f1ea",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": []
+        },
+        {
+          "name": "Center Field",
+          "type": "ellipse",
+          "width": 41,
+          "height": 41,
+          "fills": [
+            {
+              "fillColor": "#2e7d32",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": []
+        }
+      ],
+      "label": "Live text; no font asset imported."
+    }
+  ],
+  "notes": [
+    {
+      "id": "26c05812-20d7-8042-8008-c68fc08bb194",
+      "name": "Decision Body",
+      "text": "DECISION (approved):  top-down stack · offset +3 px x / −4 px y per chip at 64 · subtle shadow, OPTIONAL\n\nApproved visual language:  Top-down (overlapping circular Chip instances, bottom painted first, top chip label fully visible)\nRejected:                  Pseudo-3D side-wall stack (previous 6 px vertical offset) · +6/−8 alternative (larger footprint)\n\nGeometry:  5-chip bounds 76 × 80 · total displacement x +12, y −16 · bounds = (64 + 3(n−1)) × (64 + 4(n−1)); scales with size/64\nShadow:    Poker / Chip Stack variant property Shadow = None | Contact (the single Poker / Chip carries Contact too)\n            Contact (A, 2026-10-15) = two drop shadows per chip: 0 1 blur 1 · #000 @ 35%  +  0 2 blur 4 · #000 @ 25%\n            (scale offset / blur with size/64; 28 px → 0 0.44 0.44 @ 35% + 0 0.875 1.75 @ 25%) — replaced ‘Subtle’ 0 2 2.5 @ 18%\n            never part of the base Chip geometry/SVG; Poker / Chip itself has no shadow.\n\nFindings:  dark felt — None: identical black chips merge; Subtle: every layer separates, not muddy.\n           light page — both read; Subtle adds gentle depth without floating.\n           48 / 32 px — overlap and shadow scale proportionally; crescents ≈2.5 px at 32 (Subtle helps most here).\n\nVisible-chip cap:  recommended 5–8 · package default 5. Larger real counts cap the visual stack and keep the\n   numeric count/value separately (label outside). Never render dozens of individual chips.\n\nProposed API:  <ChipStack value={100} count={5} />                 // default: subtle shadow on\n               <ChipStack value={100} count={5} shadow={false} />   // flat, no shadow\n               <ChipStack chips={[{ value: 100, count: 3 }, { value: 500, count: 2 }]} />"
+    },
+    {
+      "id": "26c05812-20d7-8042-8008-c68b23e504b4",
+      "name": "Notes Body",
+      "text": "GEOMETRY  (canonical 64 × 64, viewBox 0 0 64 64, centre 32,32; everything scales by size/64)\n  Outer Edge     circle r 32          fill chip-base · stroke 1 px inner, #000000 @ 0.28 (chip-outline)\n  Edge Inserts   8 annular sectors    r 24.5 → 32 (depth 7.5) · sweep 18° · spacing 45° · first centred at −90° (top)\n                 sector i: θ = −90° + 45°·i, from θ−9° to θ+9° — one shape rotated 8× about (32,32)\n                 outer chord ≈ 10.0, inner chord ≈ 7.7 · fill chip-edge-insert\n  (base band)    r 22.5 → 24.5 shows chip-base between inserts and ring\n  Inner Ring     circle r 22.5 under Center Field → 2 px ring (r 20.5–22.5) · fill chip-inner-ring\n  Center Field   circle r 20.5        fill chip-center\n  Label          live text, centred on (32,32); box 40 × 24 at (12,20)\n  Paint order    Outer Edge → Edge Inserts → Inner Ring → Center Field → Label\n\nTYPOGRAPHY  (design reference — implementation may use an equivalent package/UI font)\n  Inter Tight 800 · 16 px at 64 · line-height 1 · letter-spacing 0 · align centre/centre\n  ≤ 3 characters at 16 px (≈ 33 px wide in a 41 px field); longer labels shrink to fit 34 px width.\n  Rendered at runtime as text — no chip font asset, not converted to paths.\n\nCOLOUR ROLES  chip-base · chip-edge-insert · chip-inner-ring (= insert by default) · chip-center (= base by default)\n              chip-label · chip-outline (#000000 @ 0.28)\nClassic theme (package default only — NOT a universal casino standard; fully customisable):\n  value  base      insert/ring  label     label contrast\n  1      #F2EFE6   #1F4E9C      #1F2937   12.8 : 1\n  5      #C62828   #F4F1EA      #FFFFFF    5.6 : 1\n  25     #2E7D32   #F4F1EA      #FFFFFF    5.1 : 1\n  100    #1E1F22   #F4F1EA      #FFFFFF   16.5 : 1\n  500    #6A3FA0   #F4F1EA      #FFFFFF    7.4 : 1\n  1K     #E3B23C   #1E1F22      #1F2937    7.5 : 1\n  5K     #7A4A2A   #F4F1EA      #FFFFFF    7.4 : 1\n  custom #0C7A7C   #F4F1EA      #FFFFFF    5.1 : 1   (250 — colour independent of value)\n\nSCALE (proportional)   64 Excellent · 48 Excellent · 40 Good · 32 Good · 24 Marginal · 16 Poor\n  Smallest Excellent 48 · smallest Good 32 · recommended minimum 32 × 32 (denomination readable)\n  Technically renderable 16 × 16 (chip + colour recognisable; label unreadable).\n  Fails first: label (4–6 px) → inner ring (≤ 0.75 px) → outline; edge inserts survive longest.\n\nSTACKS (Poker / Chip Stack = top-down overlapping Chip instances, data-driven) — see Perspective Test below\n  offset +3 x / −4 y per chip at 64 · bounds (64 + 3(n−1)) × (64 + 4(n−1)) · 5 chips → 76 × 80\n  order bottom → top (bottom chip at left/low, top chip painted last, label fully visible)\n  visible cap 5–8, default 5; larger counts cap visually and keep the numeric value separately\n  top-down only: no side walls, perspective or thickness. Chip shadow (2026-10-15): every Poker / Chip carries shadow A ‘Contact’ — 0 1 1 #000 35% + 0 2 4 #000 25% at 64 (scale offset / blur with size/64). Stack variant Shadow = None | Contact.\n  Totals (e.g. 1,300) are UI text outside the chips — never baked into chip graphics.\n\nEXPORT MODEL   standalone chip SVG assets required: 0\n  generated from 4 circles + 8 sector paths + 1 text → small bundle, custom colours/values, deterministic scaling\n  not counted in the playing-card export asset matrix.\n\nPROPOSED API (conceptual — no code yet)\n  <Chip value={25} />            <Chip value={100} label=\"100\" />      <Chip value={1000} label=\"1K\" />\n  <Chip value={250} color=\"#0C7A7C\" />\n  <ChipStack value={100} count={5} />\n  <ChipStack chips={[{ value: 100, count: 3 }, { value: 500, count: 2 }]} />"
+    }
+  ]
+}

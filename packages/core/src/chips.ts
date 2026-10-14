@@ -12,7 +12,12 @@ export const CHIP = {
   minSize: 32,
   stackOffset: { x: 3, y: -4 },
   stackDefaultCap: 5,
+  /** @deprecated Previous Subtle preset; use contactShadows for the current design. */
   shadow: { x: 0, y: 2, blur: 2.5, opacity: 0.18 },
+  contactShadows: [
+    { x: 0, y: 1, blur: 1, opacity: 0.35 },
+    { x: 0, y: 2, blur: 4, opacity: 0.25 },
+  ],
 } as const;
 export type ChipPalette = Readonly<{
   base: string;

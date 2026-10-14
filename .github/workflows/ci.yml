@@ -27,7 +27,7 @@ jobs:
       - run: pnpm test:visual
       - run: pnpm package:check
       - run: pnpm package:pack && pnpm test:consumers
-      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm exec playwright install --with-deps chromium webkit
       - run: pnpm test:e2e
       - name: Build review playground
         if: github.event_name == 'pull_request'

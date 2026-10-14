@@ -19,6 +19,7 @@ import {
   useReducedMotion,
   useSpring,
   useTransform,
+  type MotionStyle,
 } from 'motion/react';
 
 import './FlipCard.css';
@@ -63,6 +64,7 @@ interface FlipCardProps {
   disabled?: boolean;
   ariaLabel?: string;
   className?: string;
+  faceStyle?: MotionStyle;
 }
 interface Grip {
   id: number;
@@ -103,6 +105,7 @@ export default function FlipCard({
   disabled = false,
   ariaLabel = 'Flip card',
   className = '',
+  faceStyle,
 }: FlipCardProps) {
   const reduce = useReducedMotion();
   const controlled = flipped !== undefined;
@@ -128,6 +131,14 @@ export default function FlipCard({
   const sumY = useTransform(() => turn.get() + tiltY.get());
   const turnY = useMotionTemplate`perspective(${perspective}px) scale(${lift}) rotateX(${tiltX}deg) rotateY(${sumY}deg)`;
   const turnX = useMotionTemplate`perspective(${perspective}px) scale(${lift}) rotateY(${tiltY}deg) rotateX(${sumX}deg)`;
+  // Explicit visibility prevents WebKit from painting an SVG from the hidden
+  // side of a 3D face. Follow the animated angle, including a drag or flick.
+  const frontVisibility = useTransform(() =>
+    isBack(axis === 'x' ? sumX.get() : sumY.get()) ? 'hidden' : 'visible',
+  );
+  const backVisibility = useTransform(() =>
+    isBack(axis === 'x' ? sumX.get() : sumY.get()) ? 'visible' : 'hidden',
+  );
   const facing = useTransform(turn, (t) =>
     Math.abs(Math.cos((t * Math.PI) / 180)),
   );
@@ -355,8 +366,12 @@ export default function FlipCard({
         />
       ) : null}
       <motion.div className="flip-card__rotor" style={reduce ? {} : rotorStyle}>
-        <div
+        <motion.div
           className="flip-card__face flip-card__face--front"
+          style={{
+            ...faceStyle,
+            visibility: reduce ? 'visible' : frontVisibility,
+          }}
           aria-hidden={shown}
           inert={shown}
         >
@@ -364,9 +379,13 @@ export default function FlipCard({
           {glare ? (
             <span className="flip-card__glare" aria-hidden="true" />
           ) : null}
-        </div>
-        <div
+        </motion.div>
+        <motion.div
           className="flip-card__face flip-card__face--back"
+          style={{
+            ...faceStyle,
+            visibility: reduce ? 'visible' : backVisibility,
+          }}
           aria-hidden={!shown}
           inert={!shown}
         >
@@ -374,7 +393,7 @@ export default function FlipCard({
           {glare ? (
             <span className="flip-card__glare" aria-hidden="true" />
           ) : null}
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   );

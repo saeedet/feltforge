@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.1 — 2026-10-15
+
+- Add the approved two-layer Contact shadow to single chips and each visible chip in a stack, enabled by default and scaled with the chip geometry.
+- Support removing or replacing chip shadows through `shadow`, `--chip-shadow`, or `style.filter`; document the defaults and overrides.
+- Add chip shadow controls, size comparisons and felt/navy previews to the playground.
+- Fix clipped playground card shadows on mobile and prevent hidden SVG artwork from showing through the flip effect; add mobile WebKit coverage.
+
 ## 0.2.0 — 2026-10-14
 
 - Add vector-only compact cards in distinct 38 × 53 community and 50 × 70 hero layouts, with all 52 ordinary ranks and suits.
