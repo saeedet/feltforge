@@ -20,7 +20,6 @@ export function cardAppearance(
   return {
     maxWidth: '100%',
     height: height ?? 'auto',
-    display: 'block',
     borderRadius: `${(radius / baseWidth) * 100}% / ${(radius / baseHeight) * 100}%`,
     boxShadow: `var(--card-shadow, 0 ${scale}px ${scale}px rgba(0,0,0,.25), 0 ${scale * 2}px ${scale * 8}px rgba(0,0,0,.25), inset 0 0 0 ${scale}px rgba(255,255,255,.1))`,
     ...style,
