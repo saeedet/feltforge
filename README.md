@@ -2,7 +2,7 @@
 
 ![FeltForge playground showing a six-seat poker table with community cards, chips, and markers](https://raw.githubusercontent.com/saeedet/feltforge/main/docs/images/feltforge-playground-table.png)
 
-Composable, accessible React primitives for playing cards and poker interfaces. Standard and compact mobile cards, three court collections, two Jokers, customizable card shadows, crisp chips and proportionally scaled tables, built from a Penpot design system.
+Composable, accessible React primitives for playing cards and poker interfaces. Standard and compact mobile cards, three court collections, two Jokers, customizable card and chip shadows, crisp chips and proportionally scaled tables, built from a Penpot design system.
 
 **[Try the playground](https://saeedet.github.io/feltforge/)** · [Source and release notes](https://github.com/saeedet/feltforge). No game rules, betting engine, network service or real-money logic are included.
 
@@ -109,6 +109,30 @@ Shadow lengths scale with numeric `width` or `height` props. Override a single c
 ```
 
 For sizing driven entirely by application CSS, use a shadow value suited to that layout. The standard card's inner panel and the back's decorative frame retain their design strokes. The retired `--card-border` token no longer controls the outer edge.
+
+## Chip shadows
+
+`Chip` and `ChipStack` use the Contact shadow by default. At the 64px design size, it combines two independent black layers: offset `0 1`, blur `1`, opacity `35%`; and offset `0 2`, blur `4`, opacity `25%`. The shadow follows the circular artwork and scales with the chip geometry. Each visible chip in a stack gets its own shadow, so overlapping layers remain distinct.
+
+Use `shadow={false}` to remove it, or replace it with `style.filter` or the inherited `--chip-shadow` property. These overrides apply to each chip, including every visible chip inside a stack. `shadow={false}` takes precedence; otherwise `style.filter` takes precedence over the CSS property.
+
+```tsx
+<Chip value={25} shadow={false} />;
+<ChipStack value={100} count={5} shadow={false} />;
+<Chip
+  value={25}
+  style={{ filter: 'drop-shadow(0 2px 3px rgba(0, 0, 0, .3))' }}
+/>;
+<ChipStack value={100} count={5} style={{ '--chip-shadow': 'none' }} />;
+```
+
+```css
+.my-table {
+  --chip-shadow: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+}
+```
+
+Custom filter lengths use the same 64-unit coordinate system as the chip and scale with its size. Use CSS filter functions such as `drop-shadow(...)`, or `none`; `--chip-shadow` accepts a filter value, while `--card-shadow` accepts a box-shadow value. No font files or static chip assets are imported: denominations remain configurable live text.
 
 ## Tables and overlays
 

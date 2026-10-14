@@ -117,6 +117,55 @@ describe('card composition and semantics', () => {
   });
 });
 describe('poker primitives', () => {
+  it('applies independent Contact layers to chips and every visible stack layer', () => {
+    const out = render(
+      <>
+        <Chip value={25} />
+        <ChipStack value={100} count={50} maxVisible={3} size={28} />
+      </>,
+    );
+    const ids = [...out.matchAll(/<filter id="([^"]+)"/g)].map((m) => m[1]);
+    expect(new Set(ids).size).toBe(2);
+    expect(out.match(/data-chip-face=""/g)).toHaveLength(4);
+    expect(out.match(/in="SourceAlpha"/g)).toHaveLength(4);
+    expect(out).toContain('stdDeviation="0.5"');
+    expect(out).toContain('stdDeviation="2"');
+    expect(out).toContain('flood-opacity="0.35"');
+    expect(out).toContain('flood-opacity="0.25"');
+    expect(out).toContain('width="30.625"');
+  });
+  it('supports chip shadow removal, custom filters and inherited overrides without changing live labels', () => {
+    for (const props of [
+      { shadow: false, style: { filter: 'drop-shadow(0 3px 2px red)' } },
+      { style: { filter: 'none' } },
+      { style: { '--chip-shadow': 'none' } },
+    ]) {
+      for (const component of [
+        <Chip value={25} {...props} />,
+        <ChipStack value={25} count={3} {...props} />,
+      ]) {
+        const out = render(component);
+        expect(out).toContain('<text');
+        if ('shadow' in props) {
+          expect(out).not.toContain('<filter');
+          expect(out).not.toContain('drop-shadow');
+          expect(out).toContain('filter:none');
+        } else if (props.style.filter === 'none')
+          expect(out).toContain('filter:none');
+        else expect(out).toContain('--chip-shadow:none');
+      }
+    }
+    const custom = render(
+      <ChipStack
+        value={25}
+        count={3}
+        style={{ filter: 'drop-shadow(0 3px 2px red)' }}
+      />,
+    );
+    expect(custom.match(/filter:drop-shadow\(0 3px 2px red\)/g)).toHaveLength(
+      3,
+    );
+  });
   it('preserves custom chip labels as escaped live text and exposes colours', () => {
     const out = render(
       <Chip

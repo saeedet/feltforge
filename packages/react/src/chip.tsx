@@ -10,6 +10,7 @@ import {
 import type { ChipGroup } from '@feltforge/core';
 import { accessibility } from './svg.js';
 import type { VisualProps } from './svg.js';
+import { ChipShadow, useChipShadow } from './chip-shadow.js';
 export interface ChipAppearance {
   label?: string;
   color?: string;
@@ -17,7 +18,7 @@ export interface ChipAppearance {
   labelColor?: string;
 }
 export type ChipProps = VisualProps &
-  ChipAppearance & { value: number; size?: number };
+  ChipAppearance & { value: number; size?: number; shadow?: boolean };
 const inserts = Array.from({ length: 8 }, (_, i) => chipInsertPath(i));
 export function ChipGeometry({
   value,
@@ -91,6 +92,7 @@ export const Chip = /* @__PURE__ */ forwardRef<SVGSVGElement, ChipProps>(
       insertColor,
       labelColor,
       size = 64,
+      shadow = true,
       width,
       height,
       decorative = false,
@@ -100,6 +102,7 @@ export const Chip = /* @__PURE__ */ forwardRef<SVGSVGElement, ChipProps>(
     },
     ref,
   ) {
+    const appearance = useChipShadow(shadow, style);
     if (!Number.isFinite(size) || size <= 0)
       throw new RangeError('Chip size must be positive');
     return (
@@ -109,19 +112,23 @@ export const Chip = /* @__PURE__ */ forwardRef<SVGSVGElement, ChipProps>(
         height={height ?? size}
         ref={ref}
         viewBox="0 0 64 64"
+        overflow="visible"
         {...accessibility(
           ariaLabel ?? `${label ?? formatChipValue(value)} chip`,
           decorative,
         )}
-        style={style}
+        style={appearance.outerStyle}
       >
-        <ChipGeometry
-          value={value}
-          {...(label !== undefined ? { label } : {})}
-          {...(color ? { color } : {})}
-          {...(insertColor ? { insertColor } : {})}
-          {...(labelColor ? { labelColor } : {})}
-        />
+        {shadow && <ChipShadow id={appearance.id} />}
+        <g data-chip-face="" style={{ filter: appearance.filter }}>
+          <ChipGeometry
+            value={value}
+            {...(label !== undefined ? { label } : {})}
+            {...(color ? { color } : {})}
+            {...(insertColor ? { insertColor } : {})}
+            {...(labelColor ? { labelColor } : {})}
+          />
+        </g>
       </svg>
     );
   },
@@ -141,7 +148,7 @@ export const ChipStack = /* @__PURE__ */ forwardRef<
     chips,
     size = 64,
     maxVisible = 5,
-    shadow = false,
+    shadow = true,
     decorative = false,
     width,
     height,
@@ -155,6 +162,7 @@ export const ChipStack = /* @__PURE__ */ forwardRef<
   },
   ref,
 ) {
+  const shadowAppearance = useChipShadow(shadow, style);
   const stack = getVisibleStack(
     chips ?? [{ value: value!, count: count! }],
     maxVisible,
@@ -179,16 +187,16 @@ export const ChipStack = /* @__PURE__ */ forwardRef<
         ariaLabel ?? `${stack.count} chips, total ${stack.totalValue}`,
         decorative,
       )}
-      style={{
-        filter: shadow
-          ? 'drop-shadow(0px 2px 2.5px rgb(0 0 0 / 18%))'
-          : undefined,
-        ...style,
-      }}
+      style={shadowAppearance.outerStyle}
     >
+      {shadow && stack.visible.length > 0 && (
+        <ChipShadow id={shadowAppearance.id} />
+      )}
       {stack.visible.map((c, i) => (
         <g
           key={i}
+          data-chip-face=""
+          style={{ filter: shadowAppearance.filter }}
           transform={`translate(${3 * i} ${4 * (stack.visible.length - i - 1)})`}
         >
           <ChipGeometry value={c.value} {...appearance} />

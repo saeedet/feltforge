@@ -445,6 +445,38 @@ pre {
   flex-wrap: wrap;
   padding: 40px 0;
 }
+.chip-shadow-lab {
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+}
+.chip-shadow-lab h3 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 28px;
+}
+.chip-shadow-surfaces {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 20px;
+}
+.chip-shadow-surface {
+  padding: 28px 24px;
+  border-radius: 12px;
+}
+.chip-shadow-surface--felt {
+  background: #205e3e;
+}
+.chip-shadow-surface--navy {
+  background: #0f1c4a;
+}
+.chip-shadow-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.chip-shadow-row--small {
+  margin-top: 32px;
+}
 .denominations > div,
 .marker-row > div:not(:first-child) {
   display: flex;

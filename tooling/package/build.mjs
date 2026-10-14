@@ -115,7 +115,7 @@ await writeFile(
           }
         : {}),
       description:
-        'React playing cards, compact mobile cards, chips and poker tables, with original artwork and customizable shadows.',
+        'React playing cards, compact mobile cards, chips and poker tables, with original artwork and customizable card and chip shadows.',
       type: 'module',
       license: 'MIT',
       author: { name: 'Saeed ET', url: 'https://github.com/saeedet' },
