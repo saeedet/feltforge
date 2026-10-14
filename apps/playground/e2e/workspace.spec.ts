@@ -334,7 +334,9 @@ test('a short flick crosses to the back using release velocity', async ({
   await page.mouse.move(x, y);
   await page.mouse.down();
   // 60px is less than the 110px positional halfway threshold. Release momentum must finish the flip.
-  await page.mouse.move(x + 60, y, { steps: 6 });
+  // Two pointer samples model a quick flick; six frame-paced steps can become
+  // a slow drag on a busy runner and correctly fail to cross halfway.
+  await page.mouse.move(x + 60, y, { steps: 2 });
   // Release immediately: an assertion here pauses past the 60ms flick window.
   await page.mouse.up();
   await expect(card).toHaveAttribute('aria-pressed', 'true');
