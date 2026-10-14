@@ -3,7 +3,7 @@ import { test } from '@playwright/test';
 test('mobile card shadow investigation', async ({ page }, testInfo) => {
   await page.goto('/');
   await page.setViewportSize({ width: 457, height: 950 });
-  await page.getByLabel('Card width', { exact: true }).fill('400');
+  await page.getByLabel('Card width', { exact: true }).fill('250');
   const card = page.locator('.gallery > .flip-card').first();
   await card.scrollIntoViewIfNeeded();
   await page.mouse.move(0, 0);
