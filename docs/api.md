@@ -4,6 +4,8 @@
 
 `Card` takes a discriminated union:
 
+`variant="standard"` is the default. `variant="compact"` takes any ordinary `rank` and a `suit`, with optional `size="community" | "hero"`. Compact cards do not accept `court`, `artwork` or Joker ranks. `CompactCard` is an equivalent focused component that does not require the variant prop.
+
 | Kind          | Required props                               | Excluded props     |
 | ------------- | -------------------------------------------- | ------------------ |
 | Number or Ace | `rank: 'A' \| '2'…'10'`, `suit`              | `court`, `artwork` |
@@ -42,10 +44,12 @@ Framework-neutral exports include `RANKS`, `SUITS`, `COURT_STYLES`, `PIP_LAYOUTS
 
 ## Theme tokens
 
+All card fronts, Jokers and backs have a CSS box shadow by default. `--card-shadow` replaces the complete shadow; use `none` to remove it. A direct `style.boxShadow` override takes precedence. Standard shadows use a 100px reference width; compact shadows use the selected preset's natural width. Numeric sizing props scale their offsets, blur and inset edge. For CSS-only sizing, choose an explicit shadow value. See the README for examples.
+
 | Family       | CSS custom properties                                                                                                                |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| Card         | `--card-red`, `--card-black`, `--card-background`, `--card-border`, `--card-panel`, `--card-panel-stroke`, `--card-ace-spade-inline` |
-| Classic back | `--back-classic-field`, `--back-classic-gold`, `--back-classic-ivory` (plus card background/border)                                  |
+| Card         | `--card-red`, `--card-black`, `--card-background`, `--card-shadow`, `--card-panel`, `--card-panel-stroke`, `--card-ace-spade-inline` |
+| Classic back | `--back-classic-field`, `--back-classic-gold`, `--back-classic-ivory` (plus card background/shadow)                                  |
 | Text         | `--chip-font` (chips and markers)                                                                                                    |
 | Table        | `--table-rail`, `--table-inner-rail`, `--table-outline`, `--table-felt`, `--table-line`                                              |
 
@@ -53,6 +57,6 @@ CSS variables inherit through the document. All components accept `className`; n
 
 ## Entry points
 
-`feltforge` / `feltforge/react` expose all React components. Smaller entries are `feltforge/card`, `/card-back`, `/cards`, `/chips`, `/marker`, `/table`, `/poker`. `/core` has no React dependency. `/artwork` exports artwork types. `/courts/persian`, `/courts/western`, `/courts/eastern`, `/jokers/1`, `/jokers/2` expose independent artwork constants. `/assets/*` exposes the 31 optimized standalone SVG files.
+`feltforge` / `feltforge/react` expose all React components. Smaller entries are `feltforge/card`, `/compact-card`, `/card-back`, `/cards`, `/chips`, `/marker`, `/table`, `/poker`. `/core` has no React dependency and includes `COMPACT_CARD`, `COMPACT_PIP_BOUNDS` and `COMPACT_HERO_PAIR`. `/artwork` exports artwork types. `/courts/persian`, `/courts/western`, `/courts/eastern`, `/jokers/1`, `/jokers/2` expose independent artwork constants. `/assets/*` exposes the 31 optimized standalone SVG files. Compact cards compose shared suit geometry and outlined rank modules; they add no standalone full-card exports.
 
 The output is ESM with declarations and preserved `use client` boundaries. In Next.js App Router, pass render callbacks from a client component; functions cannot cross a server/client serialization boundary. Core geometry can run in server code. Component and artwork props passed from server code must remain serializable.

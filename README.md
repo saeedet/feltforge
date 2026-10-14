@@ -2,7 +2,7 @@
 
 ![FeltForge playground showing a six-seat poker table with community cards, chips, and markers](https://raw.githubusercontent.com/saeedet/feltforge/main/docs/images/feltforge-playground-table.png)
 
-Composable, accessible React primitives for playing cards and poker interfaces. Three court collections, two Jokers, crisp chips and proportionally scaled tables, built from a locked Penpot design system.
+Composable, accessible React primitives for playing cards and poker interfaces. Standard and compact mobile cards, three court collections, two Jokers, customizable card shadows, crisp chips and proportionally scaled tables, built from a Penpot design system.
 
 **[Try the playground](https://saeedet.github.io/feltforge/)** · [Source and release notes](https://github.com/saeedet/feltforge). No game rules, betting engine, network service or real-money logic are included.
 
@@ -59,6 +59,56 @@ import { joker1 } from 'feltforge/jokers/1';
 Court artwork is **explicitly imported**. Number cards and Aces do not pull any court, Joker or back artwork into their bundle. `court={persian}`, `court={western}` and `court={eastern}` select the corresponding collection; Persian is the playground's default. The explicit object replaces a global default style to keep artwork loading predictable. `style` remains ordinary React CSS. Jokers have no suit; number cards reject court props at compile time.
 
 Card ranks are vector artwork. Chips and markers use live text; applications can set `--chip-font` to match their interface.
+
+## Compact cards
+
+Use compact cards for mobile tables and small boards. They show a bold rank, a small suit below it, and a large suit at the bottom right. All 52 ordinary cards are supported, including J, Q and K without a court collection import. Ranks and suits are vector paths; no font files or runtime font dependency are included.
+
+```tsx
+import { Card } from 'feltforge';
+
+<Card variant="compact" rank="10" suit="clubs" />;
+<Card variant="compact" size="hero" rank="K" suit="spades" />;
+```
+
+| Size                  | Dimensions | Use                                                           |
+| --------------------- | ---------- | ------------------------------------------------------------- |
+| `community` (default) | 38 × 53    | Community cards; use a 7px gap                                |
+| `hero`                | 50 × 70    | Player hands; pairs use a 13px overlap and −7° / +3° rotation |
+
+These are two distinct layouts. Numeric `width` or `height` scales the selected layout proportionally. Compact cards have no pip layouts, court illustrations, decorative Ace or bottom index. Jokers and the Classic back retain their standard design. The focused `feltforge/compact-card` entry exports `CompactCard` with the same rank, suit and size props.
+
+## Card shadows
+
+Standard cards, compact cards, Jokers and card backs use a box shadow instead of the old outer border. The shadow combines two soft black layers with a subtle white inset edge. At a 100px standard card width, or either compact preset's natural size, the default is:
+
+```css
+box-shadow:
+  0 1px 1px rgba(0, 0, 0, 0.25),
+  0 2px 8px rgba(0, 0, 0, 0.25),
+  inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+```
+
+Shadow lengths scale with numeric `width` or `height` props. Override a single card with `style`, or set the inherited `--card-shadow` property for a group. The override replaces the complete shadow, including the inset edge.
+
+```tsx
+<Card rank="7" suit="hearts" style={{ boxShadow: 'none' }} />;
+<CardBack style={{ '--card-shadow': '0 4px 12px rgba(0, 0, 0, .2)' }} />;
+<Card
+  variant="compact"
+  rank="Q"
+  suit="hearts"
+  style={{ '--card-shadow': 'none' }}
+/>;
+```
+
+```css
+.my-table {
+  --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+```
+
+For sizing driven entirely by application CSS, use a shadow value suited to that layout. The standard card's inner panel and the back's decorative frame retain their design strokes. The retired `--card-border` token no longer controls the outer edge.
 
 ## Tables and overlays
 

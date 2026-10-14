@@ -43,6 +43,10 @@
     "./jokers/2": {
       "types": "./dist/generated/jokers/2.d.ts",
       "import": "./dist/generated/jokers/2.js"
+    },
+    "./compact-ranks": {
+      "types": "./dist/generated/compact-ranks.d.ts",
+      "import": "./dist/generated/compact-ranks.js"
     }
   }
 }

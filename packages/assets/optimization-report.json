@@ -183,9 +183,9 @@
     },
     {
       "path": "backs/classic.svg",
-      "sourceBytes": 27832,
-      "bytes": 4426,
-      "sha256": "5838b08443bf19887b8829a3a696927da7714ee78de706ee1c5174ef6f7f2824"
+      "sourceBytes": 14336,
+      "bytes": 2501,
+      "sha256": "d3698bfe1dfd44f0968b010bdb4b580b558fdf5c4ce0ec90ac06f28fe5a77146"
     }
   ]
 }

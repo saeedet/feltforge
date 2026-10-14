@@ -21,6 +21,44 @@ import { joker1 } from '@feltforge/assets/jokers/1';
 import { joker2 } from '@feltforge/assets/jokers/2';
 
 describe('card composition and semantics', () => {
+  it('renders all compact ranks and suits in both approved sizes without fonts or court artwork', () => {
+    for (const size of ['community', 'hero'] as const)
+      for (const suit of SUITS)
+        for (const rank of RANKS) {
+          const out = render(
+            <Card variant="compact" size={size} rank={rank} suit={suit} />,
+          );
+          expect(out).toContain(
+            size === 'community'
+              ? 'viewBox="0 0 38 53"'
+              : 'viewBox="0 0 50 70"',
+          );
+          expect(out).toContain('data-card-variant="compact"');
+          expect(out).not.toMatch(/<text|font-family|<image|courts|card-panel/);
+          expect(out).toContain('box-shadow:var(--card-shadow');
+          expect(out).toContain('<path');
+        }
+  });
+  it('lets applications remove or replace shadows on fronts, Jokers, compact cards and backs', () => {
+    for (const card of [
+      <Card rank="7" suit="hearts" style={{ boxShadow: 'none' }} />,
+      <Card rank="joker" artwork={joker1} style={{ boxShadow: 'none' }} />,
+      <Card
+        variant="compact"
+        rank="K"
+        suit="spades"
+        style={{ boxShadow: 'none' }}
+      />,
+      <CardBack style={{ boxShadow: 'none' }} />,
+    ])
+      expect(render(card)).toContain('box-shadow:none');
+    expect(
+      render(<CardBack style={{ '--card-shadow': '0 0 4px red' }} />),
+    ).toContain('--card-shadow:0 0 4px red');
+    expect(render(<Card rank="7" suit="clubs" />)).not.toContain(
+      'var(--card-border',
+    );
+  });
   it('renders every ordinary rank/suit and all court collections without runtime fonts or embedded images', () => {
     for (const suit of SUITS)
       for (const rank of RANKS) {
@@ -153,7 +191,7 @@ describe('poker primitives', () => {
   });
 });
 
-it('matches the composed seven of hearts against the independent Penpot PNG', () => {
+it('preserves standard face artwork from the independent Penpot PNG', () => {
   const svg = render(<Card rank="7" suit="hearts" />)
     .replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" ')
     .replace(/var\(--[^,]+,\s*([^)]*)\)/g, '$1');
@@ -171,8 +209,16 @@ it('matches the composed seven of hearts against the independent Penpot PNG', ()
     reference.width,
     reference.height,
   ]);
-  let error = 0;
-  for (let i = 0; i < pixels.length; i++)
-    error += Math.abs(pixels[i]! - reference.data[i]!);
-  expect(error / pixels.length).toBeLessThan(0.5);
+  // The archived image has the retired outer border. Compare the interior;
+  // the new CSS shadow is checked in the browser, where it is rendered.
+  let error = 0,
+    count = 0;
+  for (let y = 14; y < image.height - 14; y++)
+    for (let x = 14; x < image.width - 14; x++)
+      for (let channel = 0; channel < 4; channel++) {
+        const i = (y * image.width + x) * 4 + channel;
+        error += Math.abs(pixels[i]! - reference.data[i]!);
+        count++;
+      }
+  expect(error / count).toBeLessThan(0.5);
 });

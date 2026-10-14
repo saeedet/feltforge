@@ -32,6 +32,7 @@ const fixtures = {
   number: `import {createElement} from 'react';import {Card} from '${pkg}/dist/react/index.js';export const Example=()=>createElement(Card,{rank:'7',suit:'hearts'});`,
   chips: `import {Chip} from '${pkg}/dist/react/index.js';export {Chip};`,
   core: `export {getTableLayout} from '${pkg}/dist/core/index.js';`,
+  compact: `import {createElement} from 'react';import {CompactCard} from '${pkg}/dist/react/compact-card.js';export const Example=()=>createElement(CompactCard,{rank:'K',suit:'spades'});`,
   western: `export {western} from '${pkg}/dist/assets/generated/courts/western.js';`,
 };
 const reports = [];
@@ -53,12 +54,15 @@ for (const [name, source] of Object.entries(fixtures)) {
     .flatMap((o) => o.output)
     .filter((x) => x.type === 'chunk');
   const code = chunks.map((c) => c.code).join('');
-  if (['number', 'chips', 'core'].includes(name) && code.length > 50000)
+  if (
+    ['number', 'compact', 'chips', 'core'].includes(name) &&
+    code.length > 50000
+  )
     throw Error(name + ' pulled unexpected artwork into its bundle');
   if (name === 'core' && /from["']react/.test(code))
     throw Error('Core coupled to React');
   if (
-    name === 'number' &&
+    ['number', 'compact'].includes(name) &&
     /Classic card back|back-classic-field|courts|joker-1/.test(code)
   )
     throw Error('Number cards pulled unrelated artwork');

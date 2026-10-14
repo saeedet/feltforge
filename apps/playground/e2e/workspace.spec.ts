@@ -1,4 +1,70 @@
 import { expect, test } from '@playwright/test';
+test('compact cards preserve approved sizes, flip independently and share overridable shadows', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await page.getByLabel('All 52 cards').check();
+  const gallery = page.locator('.compact-gallery');
+  await expect(gallery.locator('.flip-card')).toHaveCount(52);
+  for (const [size, width, height] of [
+    ['community', 38, 53],
+    ['hero', 50, 70],
+  ] as const) {
+    await page.getByLabel('Compact size', { exact: true }).selectOption(size);
+    const front = gallery.locator('.flip-card__face--front > svg').first();
+    await expect(front).toHaveAttribute('viewBox', `0 0 ${width} ${height}`);
+    await expect(front).toHaveCSS('width', `${width}px`);
+    await expect(front).toHaveCSS('height', `${height}px`);
+    await expect(gallery.locator('text,image')).toHaveCount(0);
+  }
+  const king = page.getByRole('button', {
+    name: 'Flip compact K of spades',
+    exact: true,
+  });
+  await king.press('Enter');
+  await expect(king).toHaveAttribute('aria-pressed', 'true');
+  await expect(
+    page.getByRole('button', { name: 'Flip compact Q of spades', exact: true }),
+  ).toHaveAttribute('aria-pressed', 'false');
+  const fronts = page.locator(
+    '.gallery .flip-card__face--front > svg, .compact-gallery .flip-card__face--front > svg',
+  );
+  expect(
+    await fronts.first().evaluate((el) => getComputedStyle(el).boxShadow),
+  ).toContain('rgba(0, 0, 0, 0.25)');
+  await page.getByLabel('Card shadow', { exact: true }).selectOption('none');
+  expect(
+    await fronts.evaluateAll((cards) =>
+      cards.every((el) => getComputedStyle(el).boxShadow === 'none'),
+    ),
+  ).toBe(true);
+  await page.getByLabel('Card shadow', { exact: true }).selectOption('custom');
+  await page
+    .getByLabel('Custom card shadow', { exact: true })
+    .fill('0 3px 9px rgba(20, 40, 60, 0.5)');
+  expect(
+    await fronts.first().evaluate((el) => getComputedStyle(el).boxShadow),
+  ).toContain('rgba(20, 40, 60, 0.5)');
+  await page.getByLabel('Card shadow', { exact: true }).selectOption('design');
+  await page
+    .getByLabel('Compact size', { exact: true })
+    .selectOption('community');
+  await page
+    .locator('.compact-lab')
+    .screenshot({ path: 'test-results/compact-desktop.png' });
+  await page.getByLabel('Magnification', { exact: true }).selectOption('4');
+  await page
+    .locator('.compact-samples')
+    .screenshot({ path: 'test-results/compact-closeup.png' });
+  await page.getByLabel('Magnification', { exact: true }).selectOption('1');
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page
+    .locator('.compact-lab')
+    .screenshot({ path: 'test-results/compact-mobile.png' });
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth),
+  ).toBeLessThanOrEqual(391);
+});
 test('cards flip independently, all styles load, and every ordinary card is reachable', async ({
   page,
 }) => {
@@ -66,6 +132,20 @@ test('table layouts expose independently sized overlays', async ({ page }) => {
     fullPage: true,
   });
   await page.getByLabel('Table width', { exact: true }).fill('500');
+  const backsFit = await page
+    .locator('.community-card .flip-card__face--back > svg')
+    .evaluateAll((backs) =>
+      backs.every((back) => {
+        const frame = back.closest('.flip-card')!;
+        const a = getComputedStyle(back),
+          b = getComputedStyle(frame);
+        return (
+          Math.abs(parseFloat(a.width) - parseFloat(b.width)) < 0.1 &&
+          Math.abs(parseFloat(a.height) - parseFloat(b.height)) < 0.1
+        );
+      }),
+    );
+  expect(backsFit).toBe(true);
   await expect(
     page.getByRole('group', { name: '9-seat poker table' }),
   ).toBeVisible();
