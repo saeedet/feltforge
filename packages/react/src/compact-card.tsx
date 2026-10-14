@@ -29,92 +29,92 @@ const names = {
   Q: 'Queen',
   K: 'King',
 };
-export const CompactCard = forwardRef<SVGSVGElement, CompactCardProps>(
-  function CompactCard(
-    {
-      rank,
-      suit,
-      size = 'community',
-      width,
-      height,
-      decorative = false,
-      style,
-      'aria-label': label,
-      ...rest
-    },
-    ref,
-  ) {
-    const c = COMPACT_CARD[size];
-    const bounds = COMPACT_PIP_BOUNDS[suit];
-    const pip = { ...suits[suit], viewBox: bounds.join(' ') };
-    const smallWidth = (c.smallHeight * bounds[2]) / bounds[3];
-    const largeWidth = (c.largeHeight * bounds[2]) / bounds[3];
-    const color = `var(--card-${suit === 'hearts' || suit === 'diamonds' ? 'red' : 'black'}, ${suit === 'hearts' || suit === 'diamonds' ? CARD_COLORS.red : CARD_COLORS.black})`;
-    const tenHeight = 0.73 * c.fontSize;
-    return (
-      <svg
-        {...rest}
-        {...dimensions(width, height, c.width, c.width / c.height)}
-        ref={ref}
-        viewBox={`0 0 ${c.width} ${c.height}`}
-        preserveAspectRatio="xMidYMid meet"
-        data-card-variant="compact"
-        data-card-size={size}
-        {...accessibility(
-          label ??
-            `${names[rank]} of ${suit[0]!.toUpperCase() + suit.slice(1)}`,
-          decorative,
-        )}
-        style={cardAppearance(
-          width,
-          height,
-          c.width,
-          c.height,
-          c.radius,
-          c.width,
-          style,
-        )}
-      >
-        <rect
-          width={c.width}
-          height={c.height}
-          rx={c.radius}
-          fill={`var(--card-background, ${CARD_COLORS.background})`}
-        />
-        <g color={color}>
-          {rank === '10' ? (
-            <InlineVector
-              asset={compactRanks['10']!}
-              x={c.rankX}
-              y={c.rankY + 0.02 * c.fontSize}
-              width={(11.44348 * tenHeight) / 14.6}
-              height={tenHeight}
-            />
-          ) : (
-            <InlineVector
-              asset={compactRanks[rank]!}
-              x={c.rankX}
-              y={c.rankY + c.baseline - c.fontSize}
-              width={c.fontSize}
-              height={c.fontSize}
-            />
-          )}
-          <InlineVector
-            asset={pip}
-            x={c.smallX}
-            y={c.smallY}
-            width={smallWidth}
-            height={c.smallHeight}
-          />
-          <InlineVector
-            asset={pip}
-            x={c.width - 3 - largeWidth}
-            y={c.height - 3 - c.largeHeight}
-            width={largeWidth}
-            height={c.largeHeight}
-          />
-        </g>
-      </svg>
-    );
+export const CompactCard = /* @__PURE__ */ forwardRef<
+  SVGSVGElement,
+  CompactCardProps
+>(function CompactCard(
+  {
+    rank,
+    suit,
+    size = 'community',
+    width,
+    height,
+    decorative = false,
+    style,
+    'aria-label': label,
+    ...rest
   },
-);
+  ref,
+) {
+  const c = COMPACT_CARD[size];
+  const bounds = COMPACT_PIP_BOUNDS[suit];
+  const pip = { ...suits[suit], viewBox: bounds.join(' ') };
+  const smallWidth = (c.smallHeight * bounds[2]) / bounds[3];
+  const largeWidth = (c.largeHeight * bounds[2]) / bounds[3];
+  const color = `var(--card-${suit === 'hearts' || suit === 'diamonds' ? 'red' : 'black'}, ${suit === 'hearts' || suit === 'diamonds' ? CARD_COLORS.red : CARD_COLORS.black})`;
+  const tenHeight = 0.73 * c.fontSize;
+  return (
+    <svg
+      {...rest}
+      {...dimensions(width, height, c.width, c.width / c.height)}
+      ref={ref}
+      viewBox={`0 0 ${c.width} ${c.height}`}
+      preserveAspectRatio="xMidYMid meet"
+      data-card-variant="compact"
+      data-card-size={size}
+      {...accessibility(
+        label ?? `${names[rank]} of ${suit[0]!.toUpperCase() + suit.slice(1)}`,
+        decorative,
+      )}
+      style={cardAppearance(
+        width,
+        height,
+        c.width,
+        c.height,
+        c.radius,
+        c.width,
+        style,
+      )}
+    >
+      <rect
+        width={c.width}
+        height={c.height}
+        rx={c.radius}
+        fill={`var(--card-background, ${CARD_COLORS.background})`}
+      />
+      <g color={color}>
+        {rank === '10' ? (
+          <InlineVector
+            asset={compactRanks['10']!}
+            x={c.rankX}
+            y={c.rankY + 0.02 * c.fontSize}
+            width={(11.44348 * tenHeight) / 14.6}
+            height={tenHeight}
+          />
+        ) : (
+          <InlineVector
+            asset={compactRanks[rank]!}
+            x={c.rankX}
+            y={c.rankY + c.baseline - c.fontSize}
+            width={c.fontSize}
+            height={c.fontSize}
+          />
+        )}
+        <InlineVector
+          asset={pip}
+          x={c.smallX}
+          y={c.smallY}
+          width={smallWidth}
+          height={c.smallHeight}
+        />
+        <InlineVector
+          asset={pip}
+          x={c.width - 3 - largeWidth}
+          y={c.height - 3 - c.largeHeight}
+          width={largeWidth}
+          height={c.largeHeight}
+        />
+      </g>
+    </svg>
+  );
+});

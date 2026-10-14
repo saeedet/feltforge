@@ -299,6 +299,7 @@ function App() {
                 <label>
                   Card shadow
                   <select
+                    aria-label="Card shadow"
                     value={cardShadow}
                     onChange={(e) => setCardShadow(e.target.value)}
                   >
@@ -389,6 +390,7 @@ function App() {
                   <label>
                     Compact size
                     <select
+                      aria-label="Compact size"
                       value={compactSize}
                       onChange={(e) =>
                         setCompactSize(e.target.value as CompactCardSize)
@@ -401,6 +403,7 @@ function App() {
                   <label>
                     Magnification
                     <select
+                      aria-label="Magnification"
                       value={compactZoom}
                       onChange={(e) => setCompactZoom(Number(e.target.value))}
                     >
