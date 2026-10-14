@@ -29,7 +29,11 @@ jobs:
       - run: pnpm package:pack && pnpm test:consumers
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm test:e2e
+      - name: Build review playground
+        if: github.event_name == 'pull_request'
+        run: pnpm --filter @feltforge/playground build --base=./
       - run: pnpm build:playground
+        if: github.event_name != 'pull_request'
       - name: Upload review playground
         if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

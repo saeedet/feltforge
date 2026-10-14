@@ -415,6 +415,7 @@ function App() {
                 <div
                   className="compact-samples"
                   aria-label="Compact design samples"
+                  style={{ columnGap: 7 * compactZoom }}
                 >
                   {(['A', '7', '10', 'Q', 'K'] as const).map((rank, i) => {
                     const s = (
