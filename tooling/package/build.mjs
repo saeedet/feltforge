@@ -21,6 +21,7 @@ const internal = {
   '@feltforge/assets/types': 'assets/types.js',
   '@feltforge/assets/symbols': 'assets/generated/symbols.js',
   '@feltforge/assets/classic': 'assets/generated/classic.js',
+  '@feltforge/assets/compact-ranks': 'assets/generated/compact-ranks.js',
 };
 async function copyTree(source, target, rewrite = false) {
   await mkdir(target, { recursive: true });
@@ -76,6 +77,7 @@ const exports = {
   './cards': entry('react/cards'),
   './poker': entry('react/poker'),
   './card': entry('react/card'),
+  './compact-card': entry('react/compact-card'),
   './card-back': entry('react/card-back'),
   './chips': entry('react/chip'),
   './table': entry('react/table'),
@@ -89,7 +91,7 @@ for (const style of ['persian', 'western', 'eastern'])
 for (const variant of ['1', '2'])
   exports['./jokers/' + variant] = entry('assets/generated/jokers/' + variant);
 for (const [name, names] of Object.entries({
-  cards: ['card', 'card-back'],
+  cards: ['card', 'compact-card', 'card-back'],
   poker: ['chip', 'marker', 'table'],
 }))
   for (const ext of ['js', 'd.ts'])
@@ -113,9 +115,10 @@ await writeFile(
           }
         : {}),
       description:
-        'Open-source UI primitives for playing cards and poker interfaces.',
+        'React playing cards, compact mobile cards, chips and poker tables, with original artwork and customizable shadows.',
       type: 'module',
       license: 'MIT',
+      author: { name: 'Saeed ET', url: 'https://github.com/saeedet' },
       sideEffects: false,
       exports,
       files: ['dist', 'assets', 'LICENSE', 'NOTICE', 'README.md'],

@@ -3,6 +3,7 @@ import { forwardRef } from 'react';
 import { classic } from '@feltforge/assets/classic';
 import { InlineVector, accessibility, dimensions } from './svg.js';
 import type { VisualProps } from './svg.js';
+import { cardAppearance } from './card-appearance.js';
 export type CardBackProps = VisualProps & { backStyle?: 'classic' };
 export const CardBack = /* @__PURE__ */ forwardRef<
   SVGSVGElement,
@@ -28,7 +29,7 @@ export const CardBack = /* @__PURE__ */ forwardRef<
       preserveAspectRatio="xMidYMid meet"
       data-back-style={backStyle}
       {...accessibility(label, decorative)}
-      style={{ maxWidth: '100%', height: height ?? 'auto', ...style }}
+      style={cardAppearance(width, height, 250, 350, 13, 100, style)}
     >
       <InlineVector asset={classic} width={250} height={350} />
     </svg>

@@ -9,14 +9,16 @@ import {
   PokerMarker,
   PokerTable,
 } from '@feltforge/react';
-import { RANKS, SUITS } from '@feltforge/core';
+import { RANKS, SUITS, COMPACT_CARD } from '@feltforge/core';
 import type {
   Rank,
   Suit,
   CourtRank,
   CourtStyle,
   TableLayout,
+  CompactCardSize,
 } from '@feltforge/core';
+import type { ThemeStyle } from '@feltforge/react';
 import type { CourtArtwork, JokerArtwork } from '@feltforge/assets/types';
 import FlipCard from './components/react-bits/FlipCard';
 import './style.css';
@@ -34,12 +36,16 @@ function PlaygroundCard({
   front,
   label,
   width,
+  height = width * 1.4,
+  radius = (width * 13) / 250,
   className = '',
   ...props
 }: {
   front: ReactNode;
   label: string;
   width: number;
+  height?: number;
+  radius?: number;
   className?: string;
 } & Pick<
   ComponentProps<typeof FlipCard>,
@@ -48,10 +54,17 @@ function PlaygroundCard({
   return (
     <FlipCard
       front={front}
-      back={<CardBack width={width} decorative />}
+      back={
+        <CardBack
+          width={width}
+          height={height}
+          style={{ borderRadius: radius, overflow: 'hidden' }}
+          decorative
+        />
+      }
       width={width}
-      height={width * 1.4}
-      radius={(width * 13) / 250}
+      height={height}
+      radius={radius}
       background="transparent"
       glareOpacity={0.12}
       shadowOpacity={0.18}
@@ -65,6 +78,13 @@ function PlaygroundCard({
 }
 
 function App() {
+  const [compactSize, setCompactSize] = useState<CompactCardSize>('community');
+  const [compactZoom, setCompactZoom] = useState(1);
+  const [cardShadow, setCardShadow] = useState('design');
+  const [customCardShadow, setCustomCardShadow] = useState(
+    '0 4px 16px rgba(35, 86, 62, .3)',
+  );
+  const compact = COMPACT_CARD[compactSize];
   const [tab, setTab] = useState('Cards'),
     [style, setStyle] = useState<CourtStyle>('persian'),
     [court, setCourt] = useState<CourtArtwork | null>(null),
@@ -138,7 +158,17 @@ function App() {
         </nav>
         <span className="release">PLAYGROUND</span>
       </header>
-      <main id="top">
+      <main
+        id="top"
+        style={
+          cardShadow === 'design'
+            ? undefined
+            : ({
+                '--card-shadow':
+                  cardShadow === 'none' ? 'none' : customCardShadow,
+              } as ThemeStyle)
+        }
+      >
         <section className="hero">
           <div>
             <p className="eyebrow">THE VISUAL TOOLKIT FOR YOUR NEXT TABLE</p>
@@ -266,6 +296,27 @@ function App() {
                   />
                   All 52 cards
                 </label>
+                <label>
+                  Card shadow
+                  <select
+                    value={cardShadow}
+                    onChange={(e) => setCardShadow(e.target.value)}
+                  >
+                    <option value="design">Original shadow</option>
+                    <option value="none">None</option>
+                    <option value="custom">Custom</option>
+                  </select>
+                </label>
+                {cardShadow === 'custom' && (
+                  <label>
+                    Custom shadow
+                    <input
+                      aria-label="Custom card shadow"
+                      value={customCardShadow}
+                      onChange={(e) => setCustomCardShadow(e.target.value)}
+                    />
+                  </label>
+                )}
               </div>
               <section className="flip-lab" aria-labelledby="flip-heading">
                 <div className="flip-copy">
@@ -306,7 +357,6 @@ function App() {
                     width={220}
                     flipped={flipped}
                     onFlipChange={setFlipped}
-                    shadow
                   />
                 </div>
               </section>
@@ -322,6 +372,159 @@ function App() {
                   )),
                 )}
               </div>
+              <section
+                className="compact-lab"
+                aria-labelledby="compact-heading"
+              >
+                <div className="section-heading">
+                  <div>
+                    <p className="eyebrow">SMALL CARDS. CLEAR HANDS.</p>
+                    <h3 id="compact-heading">Made for mobile.</h3>
+                  </div>
+                  <p>
+                    Bold ranks and two suit symbols, drawn for small tables.
+                  </p>
+                </div>
+                <div className="toolbar">
+                  <label>
+                    Compact size
+                    <select
+                      value={compactSize}
+                      onChange={(e) =>
+                        setCompactSize(e.target.value as CompactCardSize)
+                      }
+                    >
+                      <option value="community">Community · 38 × 53</option>
+                      <option value="hero">Hero · 50 × 70</option>
+                    </select>
+                  </label>
+                  <label>
+                    Magnification
+                    <select
+                      value={compactZoom}
+                      onChange={(e) => setCompactZoom(Number(e.target.value))}
+                    >
+                      <option value="1">Actual size</option>
+                      <option value="4">4× close-up</option>
+                    </select>
+                  </label>
+                </div>
+                <div
+                  className="compact-samples"
+                  aria-label="Compact design samples"
+                >
+                  {(['A', '7', '10', 'Q', 'K'] as const).map((rank, i) => {
+                    const s = (
+                      [
+                        'spades',
+                        'diamonds',
+                        'clubs',
+                        'hearts',
+                        'spades',
+                      ] as const
+                    )[i]!;
+                    return (
+                      <PlaygroundCard
+                        key={rank}
+                        label={`Flip compact sample ${rank}`}
+                        front={
+                          <Card
+                            variant="compact"
+                            size={compactSize}
+                            rank={rank}
+                            suit={s}
+                            width={compact.width * compactZoom}
+                            aria-label={`Compact sample ${rank} of ${s}`}
+                          />
+                        }
+                        width={compact.width * compactZoom}
+                        height={compact.height * compactZoom}
+                        radius={compact.radius * compactZoom}
+                      />
+                    );
+                  })}
+                </div>
+                <p className="note">
+                  {compactZoom === 1
+                    ? 'Actual pixel sizes'
+                    : 'Magnified for a closer look'}{' '}
+                  · {compact.width} × {compact.height} · Courts share the same
+                  clear rank and suit treatment.
+                </p>
+                <div className="compact-hand-demo">
+                  <div>
+                    <p>COMMUNITY · 38 × 53</p>
+                    <div className="compact-community">
+                      {(['A', '7', '10', 'Q', 'K'] as const).map((rank, i) => (
+                        <Card
+                          key={rank}
+                          variant="compact"
+                          rank={rank}
+                          suit={
+                            (
+                              [
+                                'spades',
+                                'diamonds',
+                                'clubs',
+                                'hearts',
+                                'spades',
+                              ] as const
+                            )[i]!
+                          }
+                          aria-label={`Compact community ${rank}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <p>YOUR HAND · 50 × 70</p>
+                    <div className="compact-hero-pair">
+                      <Card
+                        variant="compact"
+                        size="hero"
+                        rank="Q"
+                        suit="hearts"
+                        aria-label="Compact hero Queen"
+                      />
+                      <Card
+                        variant="compact"
+                        size="hero"
+                        rank="K"
+                        suit="spades"
+                        aria-label="Compact hero King"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="compact-gallery"
+                  aria-label="Compact playing cards"
+                >
+                  {(allSuits ? SUITS : [suit]).flatMap((s) =>
+                    RANKS.map((rank) => (
+                      <PlaygroundCard
+                        key={rank + s}
+                        label={`Flip compact ${rank} of ${s}`}
+                        front={
+                          <Card
+                            variant="compact"
+                            size={compactSize}
+                            rank={rank}
+                            suit={s}
+                            aria-label={`Compact ${rank} of ${s}`}
+                          />
+                        }
+                        width={compact.width}
+                        height={compact.height}
+                        radius={compact.radius}
+                      />
+                    )),
+                  )}
+                </div>
+                <pre>
+                  <code>{`<Card variant="compact" size="${compactSize}" rank="K" suit="spades" />\n<Card variant="compact" rank="10" suit="clubs" />\n// Optional shadow override:\n<Card rank="7" suit="hearts" style={{ '--card-shadow': 'none' }} />`}</code>
+                </pre>
+              </section>
               <div className="special-row">
                 <div>
                   <p className="eyebrow">SHARED ACROSS COLLECTIONS</p>

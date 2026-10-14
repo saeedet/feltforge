@@ -339,6 +339,7 @@ export default function FlipCard({
           '--fc-shadow': shadowColor,
           '--fc-shadow-o': shadowOpacity,
           '--fc-glare': glareOpacity,
+          aspectRatio: width / height,
         } as CSSProperties
       }
     >

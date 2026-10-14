@@ -1,17 +1,35 @@
 'use client';
 import { forwardRef } from 'react';
 import { CARD, CARD_COLORS, ACE_FRAMES, PIP_LAYOUTS } from '@feltforge/core';
-import type { Suit, NumberRank, CourtRank } from '@feltforge/core';
+import type {
+  Suit,
+  NumberRank,
+  CourtRank,
+  Rank,
+  CompactCardSize,
+} from '@feltforge/core';
 import type { CourtArtwork, JokerArtwork } from '@feltforge/assets/types';
 import * as symbols from '@feltforge/assets/symbols';
 import { InlineVector, accessibility, dimensions } from './svg.js';
 import type { VisualProps } from './svg.js';
+import { CompactCard } from './compact-card.js';
+import { cardAppearance } from './card-appearance.js';
 
 export type CardProps = VisualProps &
   (
-    | { rank: 'A' | NumberRank; suit: Suit; court?: never; artwork?: never }
-    | { rank: CourtRank; suit: Suit; court: CourtArtwork; artwork?: never }
-    | { rank: 'joker'; artwork: JokerArtwork; suit?: never; court?: never }
+    | {
+        variant: 'compact';
+        size?: CompactCardSize;
+        rank: Rank;
+        suit: Suit;
+        court?: never;
+        artwork?: never;
+      }
+    | ({ variant?: 'standard'; size?: never } & (
+        | { rank: 'A' | NumberRank; suit: Suit; court?: never; artwork?: never }
+        | { rank: CourtRank; suit: Suit; court: CourtArtwork; artwork?: never }
+        | { rank: 'joker'; artwork: JokerArtwork; suit?: never; court?: never }
+      ))
   );
 const suits = {
   hearts: symbols.heart,
@@ -52,7 +70,12 @@ const names = {
 const token = (name: string, value: string) => `var(--card-${name}, ${value})`;
 export const Card = /* @__PURE__ */ forwardRef<SVGSVGElement, CardProps>(
   function Card(props, ref) {
+    if (props.variant === 'compact') {
+      const { variant, ...compact } = props;
+      return <CompactCard {...compact} data-card-variant={variant} ref={ref} />;
+    }
     const {
+      variant = 'standard',
       rank,
       suit,
       court,
@@ -90,23 +113,15 @@ export const Card = /* @__PURE__ */ forwardRef<SVGSVGElement, CardProps>(
         ref={ref}
         viewBox="0 0 250 350"
         preserveAspectRatio="xMidYMid meet"
+        data-card-variant={variant}
         {...accessibility(ariaLabel ?? label, decorative)}
-        style={{ maxWidth: '100%', height: height ?? 'auto', ...style }}
+        style={cardAppearance(width, height, 250, 350, 13, 100, style)}
       >
         <rect
           width="250"
           height="350"
           rx="13"
           fill={token('background', CARD_COLORS.background)}
-        />
-        <rect
-          x=".5"
-          y=".5"
-          width="249"
-          height="349"
-          rx="12.5"
-          fill="none"
-          stroke={token('border', CARD_COLORS.border)}
         />
         {rank !== 'joker' && (
           <rect

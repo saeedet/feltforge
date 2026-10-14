@@ -1,5 +1,8 @@
 export { Card } from './card.js';
 export type { CardProps } from './card.js';
+export { CompactCard } from './compact-card.js';
+export type { CompactCardProps } from './compact-card.js';
+export type { CompactCardSize } from '@feltforge/core';
 export { CardBack } from './card-back.js';
 export type { CardBackProps } from './card-back.js';
 export { Chip, ChipStack } from './chip.js';

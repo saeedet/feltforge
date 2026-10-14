@@ -4,6 +4,14 @@ import { joker1 } from '@feltforge/assets/jokers/1';
 void (<Card rank="A" suit="spades" />);
 void (<Card rank="K" suit="hearts" court={persian} />);
 void (<Card rank="joker" artwork={joker1} />);
+void (<Card variant="compact" size="community" rank="K" suit="spades" />);
+void (<Card variant="compact" size="hero" rank="10" suit="clubs" />);
+// @ts-expect-error compact cards do not load court artwork
+void (<Card variant="compact" rank="K" suit="spades" court={persian} />);
+// @ts-expect-error compact cards are the 52 ordinary ranks, not Jokers
+void (<Card variant="compact" rank="joker" artwork={joker1} />);
+// @ts-expect-error compact presets are explicit approved sizes
+void (<Card variant="compact" size="small" rank="A" suit="hearts" />);
 // @ts-expect-error ordinary cards require a suit
 void (<Card rank="A" />);
 // @ts-expect-error Jokers have no suit

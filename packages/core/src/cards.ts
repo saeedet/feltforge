@@ -1,12 +1,56 @@
 /** Values transcribed from Penpot Export Specification; see docs/design. */
 export const DEFAULT_COURT_STYLE = 'persian' as const;
 export const DEFAULT_JOKER_VARIANT = '1' as const;
+/** Pixel geometries inspected in the approved compact card masters. */
+export const COMPACT_CARD = {
+  community: {
+    width: 38,
+    height: 53,
+    radius: 3,
+    rankX: 2,
+    rankY: 3,
+    fontSize: 20,
+    baseline: 14.5,
+    smallX: 1.5,
+    smallY: 25,
+    smallHeight: 12,
+    largeHeight: 21.75,
+  },
+  hero: {
+    width: 50,
+    height: 70,
+    radius: 4,
+    rankX: 3,
+    rankY: 3,
+    fontSize: 28,
+    baseline: 20.5,
+    smallX: 3,
+    smallY: 32,
+    smallHeight: 15,
+    largeHeight: 24,
+  },
+} as const;
+export type CompactCardSize = keyof typeof COMPACT_CARD;
+export const COMPACT_PIP_BOUNDS = {
+  hearts: [0, 0, 30, 37.5],
+  diamonds: [1.29998779296875, 0, 27.4000244140625, 37.5],
+  clubs: [
+    0.29998779296875, 2.4420013427734375, 29.4000244140625, 32.61601257324219,
+  ],
+  spades: [1.33599853515625, 0, 27.32794189453125, 37.5],
+} as const;
+export const COMPACT_HERO_PAIR = {
+  overlap: 13,
+  offset: 37,
+  rotations: [-7, 3],
+} as const;
 export const CARD = {
   width: 250,
   height: 350,
   minWidth: 100,
   minHeight: 140,
   shell: { x: 0, y: 0, width: 250, height: 350, radius: 13 },
+  /** @deprecated Standard cards now use an overridable box shadow. */
   border: {
     x: 0.5,
     y: 0.5,

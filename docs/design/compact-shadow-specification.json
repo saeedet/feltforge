@@ -1,0 +1,2677 @@
+{
+  "compactNotes": [
+    "Fixed pixel specs (not proportional to each other). Component: Card / Compact (02 — Components) · Size × Suit × Rank Glyph = 16 masters.\n\nCOMMUNITY          38 × 53 · radius 3 · card gap 7\n  rank             left 2 · top 3 · font-size 20 (Hanuman 700, line-height 1)\n  small suit       left 1.5 · top 25 · font-size 16 → pip height 12\n  large suit       right 3 · bottom 3 · font-size 29 → pip height 21.75\n\nHERO               50 × 70 · radius 4\n  rank             left 3 · top 3 · font-size 28 (Hanuman 700, line-height 1)\n  small suit       left 3 · top 32 · font-size 20 → pip height 15\n  large suit       right 3 · bottom 3 · font-size 32 → pip height 24\n  pair             overlap 13 (second card x 37) · left −7° · right +3° (rotate about card centre)\n\nCOMMON\n  shell            background #F2F2F2 · NO border — edge shadow 0 1 1 rgba(0,0,0,.25), 0 2 8 rgba(0,0,0,.25) + 1 px inset ring rgba(255,255,255,.10) · no inner panel\n  colours          Hearts / Diamonds #E0001B · Clubs / Spades #3B3C39 (rank + both suits use the suit colour)\n  suits            approved pip SVGs (Heart 30 × 37.5 · Diamond 27.4 × 37.5 · Club 29.4 × 32.6 · Spade 27.3 × 37.5), uniform scale,\n                   pip height = 0.75 × spec font-size, positioned by the pip's own box\n  rank 10          approved custom 10 glyph matched to the Hanuman 700 numeral height: visible height 0.73 × font-size\n                   (14.6 community · 20.4 hero), visible top = top + 0.02 × font-size; same-colour centre stroke 6 % of that height\n                   (included in the height); path data closed per sub-path (Z) so the stroked '1' keeps its top-left corner\n  composition      one top-left index (rank + small suit) and one large suit — no bottom index, no pip layouts,\n                   no court art (courtStyle ignored), no decorative Ace\n\nARCHITECTURE\n  Standard = visual richness, ≥ ~100 px. Compact = mobile / small boards, instant rank + suit + colour recognition.\n  Shared: 5:7-ish card shape, rank identity, suit identity, colour rules. Compact reuses existing rank font, 10 glyph and pip SVGs —\n  standalone compact-card SVG files required: 0.   API idea (not final): <Card rank=\"K\" suit=\"spades\" variant=\"compact\" size=\"community\" | \"hero\" />\n\nNote: Hanuman 700 (compact only) vs 400 (standard) — same family, chosen for small-size weight. Earlier v1 explorations are kept above as superseded."
+  ],
+  "masters": [
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c19ab58173",
+      "variant": {
+        "Size": "Hero",
+        "Suit": "Spades",
+        "Rank Glyph": "10"
+      },
+      "width": 50,
+      "height": 70,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19ac241f7",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caebcbb8a3",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caebcbb8a4",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19ad087fa",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c6649e72d4",
+          "name": "Rank (custom 10 glyph)",
+          "x": 3.613200000000006,
+          "y": 4.173200000000179,
+          "width": 14.794472000000042,
+          "height": 19.213600000000042,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [
+            {
+              "strokeColor": "#3b3c39",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1.2263999999999997,
+              "strokeAlignment": "center",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19aef0205",
+          "name": "Small Suit",
+          "x": 3,
+          "y": 32,
+          "width": 10.931176757812409,
+          "height": 15,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19afe60a6",
+          "name": "Large Suit",
+          "x": 29.510117187499986,
+          "y": 43,
+          "width": 17.489882812500014,
+          "height": 24,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c19a626c2d",
+      "variant": {
+        "Size": "Hero",
+        "Suit": "Spades",
+        "Rank Glyph": "Text"
+      },
+      "width": 50,
+      "height": 70,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19a6d6a41",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caebc5ffb8",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caebc5ffb9",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19a7b531f",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19a8a93a7",
+          "name": "Rank",
+          "x": 3,
+          "y": 3,
+          "width": 21,
+          "height": 28,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [],
+          "characters": "K",
+          "fontFamily": "Hanuman",
+          "fontSize": "28",
+          "fontWeight": "700",
+          "lineHeight": "1"
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19a9832a4",
+          "name": "Small Suit",
+          "x": 3,
+          "y": 32,
+          "width": 10.931176757812409,
+          "height": 15,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19aa699c1",
+          "name": "Large Suit",
+          "x": 29.510117187499986,
+          "y": 43,
+          "width": 17.489882812500014,
+          "height": 24,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c19a02222b",
+      "variant": {
+        "Size": "Hero",
+        "Suit": "Clubs",
+        "Rank Glyph": "10"
+      },
+      "width": 50,
+      "height": 70,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19a114bfa",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caebc08f6c",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caebc08f6d",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19a21ed9a",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c66467b821",
+          "name": "Rank (custom 10 glyph)",
+          "x": 3.613200000000006,
+          "y": 4.173200000000179,
+          "width": 14.794472000000042,
+          "height": 19.213600000000042,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [
+            {
+              "strokeColor": "#3b3c39",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1.2263999999999997,
+              "strokeAlignment": "center",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19a433b0b",
+          "name": "Small Suit",
+          "x": 3,
+          "y": 32,
+          "width": 13.520977318138762,
+          "height": 15,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19a537d2e",
+          "name": "Large Suit",
+          "x": 25.3664362909779,
+          "y": 43,
+          "width": 21.6335637090221,
+          "height": 24,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c199aeefd4",
+      "variant": {
+        "Size": "Hero",
+        "Suit": "Clubs",
+        "Rank Glyph": "Text"
+      },
+      "width": 50,
+      "height": 70,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c199b9c06e",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caebba1d37",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caebba1d38",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c199c7c86d",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c199d6c464",
+          "name": "Rank",
+          "x": 3,
+          "y": 3,
+          "width": 21,
+          "height": 28,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [],
+          "characters": "K",
+          "fontFamily": "Hanuman",
+          "fontSize": "28",
+          "fontWeight": "700",
+          "lineHeight": "1"
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c199e42e0b",
+          "name": "Small Suit",
+          "x": 3,
+          "y": 32,
+          "width": 13.520977318138762,
+          "height": 15,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c199f36b08",
+          "name": "Large Suit",
+          "x": 25.3664362909779,
+          "y": 43,
+          "width": 21.63356370902204,
+          "height": 24,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c1995a877c",
+      "variant": {
+        "Size": "Hero",
+        "Suit": "Diamonds",
+        "Rank Glyph": "10"
+      },
+      "width": 50,
+      "height": 70,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c199661e32",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caebb415aa",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caebb415ab",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19973d85a",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c66431164e",
+          "name": "Rank (custom 10 glyph)",
+          "x": 3.613200000000006,
+          "y": 4.173200000000179,
+          "width": 14.794472000000042,
+          "height": 19.213600000000042,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [
+            {
+              "strokeColor": "#e0001b",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1.2263999999999997,
+              "strokeAlignment": "center",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c199921dd5",
+          "name": "Small Suit",
+          "x": 3,
+          "y": 32,
+          "width": 10.960009765625045,
+          "height": 15,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c199a09e49",
+          "name": "Large Suit",
+          "x": 29.463984374999995,
+          "y": 43,
+          "width": 17.536015625000005,
+          "height": 24,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c199017543",
+      "variant": {
+        "Size": "Hero",
+        "Suit": "Diamonds",
+        "Rank Glyph": "Text"
+      },
+      "width": 50,
+      "height": 70,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1990f943e",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caebae005b",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caebae005c",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1991e29c8",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1992d7ff3",
+          "name": "Rank",
+          "x": 3,
+          "y": 3,
+          "width": 21,
+          "height": 28,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [],
+          "characters": "K",
+          "fontFamily": "Hanuman",
+          "fontSize": "28",
+          "fontWeight": "700",
+          "lineHeight": "1"
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1993afd36",
+          "name": "Small Suit",
+          "x": 3,
+          "y": 32,
+          "width": 10.960009765625045,
+          "height": 15,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1994aaf17",
+          "name": "Large Suit",
+          "x": 29.463984374999995,
+          "y": 43,
+          "width": 17.536015625000005,
+          "height": 24,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c198a69cc6",
+      "variant": {
+        "Size": "Hero",
+        "Suit": "Hearts",
+        "Rank Glyph": "10"
+      },
+      "width": 50,
+      "height": 70,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c198b398f0",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeba72d9d",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeba72d9e",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c198c1298e",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c663fd87cd",
+          "name": "Rank (custom 10 glyph)",
+          "x": 3.613200000000006,
+          "y": 4.173200000000179,
+          "width": 14.794472000000042,
+          "height": 19.213600000000042,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [
+            {
+              "strokeColor": "#e0001b",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1.2263999999999997,
+              "strokeAlignment": "center",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c198df31e4",
+          "name": "Small Suit",
+          "x": 3,
+          "y": 32,
+          "width": 12,
+          "height": 15,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c198efc105",
+          "name": "Large Suit",
+          "x": 27.80000000000001,
+          "y": 43,
+          "width": 19.19999999999999,
+          "height": 24,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c19852beab",
+      "variant": {
+        "Size": "Hero",
+        "Suit": "Hearts",
+        "Rank Glyph": "Text"
+      },
+      "width": 50,
+      "height": 70,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1985e4ff2",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeba01946",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeba01947",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1986c5f5d",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 70,
+          "rotation": 0,
+          "radius": 4,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1987b0978",
+          "name": "Rank",
+          "x": 3,
+          "y": 3,
+          "width": 21,
+          "height": 28,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [],
+          "characters": "K",
+          "fontFamily": "Hanuman",
+          "fontSize": "28",
+          "fontWeight": "700",
+          "lineHeight": "1"
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19888931d",
+          "name": "Small Suit",
+          "x": 3,
+          "y": 32,
+          "width": 12,
+          "height": 15,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19898387a",
+          "name": "Large Suit",
+          "x": 27.799999999999997,
+          "y": 43,
+          "width": 19.19999999999999,
+          "height": 24,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c197f6e305",
+      "variant": {
+        "Size": "Community",
+        "Suit": "Spades",
+        "Rank Glyph": "10"
+      },
+      "width": 38,
+      "height": 53,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19804b5dc",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb9987f1",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb9987f2",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19812e7bb",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c663cb9229",
+          "name": "Rank (custom 10 glyph)",
+          "x": 2.437999999999988,
+          "y": 3.838000000000193,
+          "width": 10.567479999999932,
+          "height": 13.72400000000016,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [
+            {
+              "strokeColor": "#3b3c39",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 1,
+              "strokeStyle": "solid",
+              "strokeWidth": 0.876,
+              "strokeAlignment": "center",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c198311990",
+          "name": "Small Suit",
+          "x": 1.5,
+          "y": 25,
+          "width": 8.744941406250064,
+          "height": 12,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1984038f4",
+          "name": "Large Suit",
+          "x": 19.149793701171916,
+          "y": 28.25,
+          "width": 15.850206298828084,
+          "height": 21.75,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c1979d4ed3",
+      "variant": {
+        "Size": "Community",
+        "Suit": "Spades",
+        "Rank Glyph": "Text"
+      },
+      "width": 38,
+      "height": 53,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c197aa697e",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb92d647",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb92d648",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c197b7aace",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c197c65011",
+          "name": "Rank",
+          "x": 2,
+          "y": 3,
+          "width": 15,
+          "height": 20,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [],
+          "characters": "K",
+          "fontFamily": "Hanuman",
+          "fontSize": "20",
+          "fontWeight": "700",
+          "lineHeight": "1"
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c197d65acc",
+          "name": "Small Suit",
+          "x": 1.5,
+          "y": 25,
+          "width": 8.744941406250064,
+          "height": 12,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c197e7e45b",
+          "name": "Large Suit",
+          "x": 19.149793701171916,
+          "y": 28.25,
+          "width": 15.850206298828084,
+          "height": 21.75,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c197470a6c",
+      "variant": {
+        "Size": "Community",
+        "Suit": "Clubs",
+        "Rank Glyph": "10"
+      },
+      "width": 38,
+      "height": 53,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19754c1c6",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb8c05d2",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb8c05d3",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19762de1f",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c66398e664",
+          "name": "Rank (custom 10 glyph)",
+          "x": 2.437999999999988,
+          "y": 3.838000000000193,
+          "width": 10.567479999999932,
+          "height": 13.72400000000016,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [
+            {
+              "strokeColor": "#3b3c39",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 1,
+              "strokeStyle": "solid",
+              "strokeWidth": 0.876,
+              "strokeAlignment": "center",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19781097e",
+          "name": "Small Suit",
+          "x": 1.5,
+          "y": 25,
+          "width": 10.816781854511078,
+          "height": 12,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1978f778e",
+          "name": "Large Suit",
+          "x": 15.394582888698721,
+          "y": 28.25,
+          "width": 19.605417111301335,
+          "height": 21.75,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c196f4e656",
+      "variant": {
+        "Size": "Community",
+        "Suit": "Clubs",
+        "Rank Glyph": "Text"
+      },
+      "width": 38,
+      "height": 53,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c197020bad",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb85525a",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb85525b",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1970fb844",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1971e1762",
+          "name": "Rank",
+          "x": 2,
+          "y": 3,
+          "width": 15,
+          "height": 20,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [],
+          "characters": "K",
+          "fontFamily": "Hanuman",
+          "fontSize": "20",
+          "fontWeight": "700",
+          "lineHeight": "1"
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1972af5d7",
+          "name": "Small Suit",
+          "x": 1.5,
+          "y": 25,
+          "width": 10.816781854511078,
+          "height": 12,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19738dec3",
+          "name": "Large Suit",
+          "x": 15.394582888698721,
+          "y": 28.25,
+          "width": 19.605417111301335,
+          "height": 21.75,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#3b3c39",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c1969592d6",
+      "variant": {
+        "Size": "Community",
+        "Suit": "Diamonds",
+        "Rank Glyph": "10"
+      },
+      "width": 38,
+      "height": 53,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c196a33663",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb7eaea9",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb7eaeaa",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c196b33aca",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c66364c967",
+          "name": "Rank (custom 10 glyph)",
+          "x": 2.437999999999988,
+          "y": 3.838000000000193,
+          "width": 10.567479999999932,
+          "height": 13.72400000000016,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [
+            {
+              "strokeColor": "#e0001b",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 1,
+              "strokeStyle": "solid",
+              "strokeWidth": 0.876,
+              "strokeAlignment": "center",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c196d578a6",
+          "name": "Small Suit",
+          "x": 1.5,
+          "y": 25,
+          "width": 8.768007812499945,
+          "height": 12,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c196e51ee5",
+          "name": "Large Suit",
+          "x": 19.107985839843764,
+          "y": 28.25,
+          "width": 15.89201416015635,
+          "height": 21.75,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c1963fb555",
+      "variant": {
+        "Size": "Community",
+        "Suit": "Diamonds",
+        "Rank Glyph": "Text"
+      },
+      "width": 38,
+      "height": 53,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1964e8dea",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb779a96",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb779a97",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1965c010c",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1966b1d58",
+          "name": "Rank",
+          "x": 2,
+          "y": 3,
+          "width": 15,
+          "height": 20,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [],
+          "characters": "K",
+          "fontFamily": "Hanuman",
+          "fontSize": "20",
+          "fontWeight": "700",
+          "lineHeight": "1"
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19678d44b",
+          "name": "Small Suit",
+          "x": 1.5,
+          "y": 25,
+          "width": 8.768007812499945,
+          "height": 12,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c196870c79",
+          "name": "Large Suit",
+          "x": 19.107985839843764,
+          "y": 28.25,
+          "width": 15.89201416015635,
+          "height": 21.75,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c195e6b8f0",
+      "variant": {
+        "Size": "Community",
+        "Suit": "Hearts",
+        "Rank Glyph": "10"
+      },
+      "width": 38,
+      "height": 53,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c195f19197",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb709dd1",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb709dd2",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c195ffb03b",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c663301c41",
+          "name": "Rank (custom 10 glyph)",
+          "x": 2.437999999999988,
+          "y": 3.838000000000193,
+          "width": 10.567479999999932,
+          "height": 13.72400000000016,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [
+            {
+              "strokeColor": "#e0001b",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 1,
+              "strokeStyle": "solid",
+              "strokeWidth": 0.876,
+              "strokeAlignment": "center",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1961fbd6d",
+          "name": "Small Suit",
+          "x": 1.5,
+          "y": 25,
+          "width": 9.599999999999994,
+          "height": 12,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c1962fa0ec",
+          "name": "Large Suit",
+          "x": 17.599999999999994,
+          "y": 28.25,
+          "width": 17.400000000000006,
+          "height": 21.75,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    },
+    {
+      "id": "0a58c7a9-eba3-80c0-8008-c9c19586d3a4",
+      "variant": {
+        "Size": "Community",
+        "Suit": "Hearts",
+        "Rank Glyph": "Text"
+      },
+      "width": 38,
+      "height": 53,
+      "children": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c19598483b",
+          "name": "Card Background",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [
+            {
+              "fillColor": "#f2f2f2",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb69b22a",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 1,
+              "blur": 1,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            },
+            {
+              "id": "0a58c7a9-eba3-80c0-8008-c9caeb69b22b",
+              "style": "drop-shadow",
+              "offsetX": 0,
+              "offsetY": 2,
+              "blur": 8,
+              "spread": 0,
+              "hidden": false,
+              "color": {
+                "color": "#000000",
+                "opacity": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c195a8f0f8",
+          "name": "Inset ring (1 px · white 10 %)",
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 53,
+          "rotation": 0,
+          "radius": 3,
+          "fills": [],
+          "strokes": [
+            {
+              "strokeColor": "#ffffff",
+              "strokeColorRefFile": null,
+              "strokeColorRefId": null,
+              "strokeOpacity": 0.1,
+              "strokeStyle": "solid",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "strokeCapStart": null,
+              "strokeCapEnd": null,
+              "strokeColorGradient": null,
+              "strokeImage": null
+            }
+          ],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c195b93d2c",
+          "name": "Rank",
+          "x": 2,
+          "y": 3,
+          "width": 15,
+          "height": 20,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": [],
+          "characters": "K",
+          "fontFamily": "Hanuman",
+          "fontSize": "20",
+          "fontWeight": "700",
+          "lineHeight": "1"
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c195c809f4",
+          "name": "Small Suit",
+          "x": 1.5,
+          "y": 25,
+          "width": 9.599999999999994,
+          "height": 12,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9c195d7bac4",
+          "name": "Large Suit",
+          "x": 17.599999999999994,
+          "y": 28.25,
+          "width": 17.399999999999977,
+          "height": 21.75,
+          "rotation": 0,
+          "radius": null,
+          "fills": [
+            {
+              "fillColor": "#e0001b",
+              "fillOpacity": 1,
+              "fillColorGradient": null,
+              "fillColorRefFile": null,
+              "fillColorRefId": null,
+              "fillImage": null
+            }
+          ],
+          "strokes": [],
+          "shadows": []
+        }
+      ]
+    }
+  ],
+  "rankTextSvg": "<svg width=\"15\" xmlns=\"http://www.w3.org/2000/svg\" height=\"20\" id=\"screenshot-0a58c7a9-eba3-80c0-8008-c9c195b93d2c\" viewBox=\"72 3300 15 20\" style=\"-webkit-print-color-adjust::exact\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" fill=\"none\" version=\"1.1\">\n  <style>\n  </style>\n  <g id=\"shape-0a58c7a9-eba3-80c0-8008-c9c195b93d2c\">\n    <g transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" class=\"text-container\" x=\"72\" y=\"3300\" width=\"15\" height=\"20\" rx=\"0\" ry=\"0\">\n      <defs>\n        <pattern patternUnits=\"objectBoundingBox\" width=\"14.6640625\" height=\"29.5\" id=\"fill-0-render-1456-0\">\n          <g>\n            <rect width=\"14.6640625\" height=\"29.5\" style=\"fill:#e0001b;fill-opacity:1\">\n            </rect>\n          </g>\n        </pattern>\n      </defs>\n      <g class=\"fills\" id=\"fills-0a58c7a9-eba3-80c0-8008-c9c195b93d2c\">\n        <text x=\"72\" y=\"3324.5\" dominant-baseline=\"ideographic\" textLength=\"14.6640625\" lengthAdjust=\"spacingAndGlyphs\" style=\"text-transform:none;font-family:Hanuman;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none;direction:ltr;fill:#e0001b;fill-opacity:1\">K</text>\n      </g>\n    </g>\n  </g>\n</svg>",
+  "tenSvg": "<svg width=\"14.567\" xmlns=\"http://www.w3.org/2000/svg\" height=\"17.724\" id=\"screenshot-0a58c7a9-eba3-80c0-8008-c9c663301c41\" viewBox=\"150.438 3298.838 14.567 17.724\" style=\"-webkit-print-color-adjust::exact\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" fill=\"none\" version=\"1.1\">\n  <g id=\"shape-0a58c7a9-eba3-80c0-8008-c9c663301c41\">\n    <g class=\"fills\" id=\"fills-0a58c7a9-eba3-80c0-8008-c9c663301c41\">\n      <path d=\"M152.43800354003906,3300.837890625L154.35939025878906,3300.837890625L154.35939025878906,3314.56201171875L152.43800354003906,3314.56201171875L152.43800354003906,3300.837890625ZM158.47657775878906,3300.837890625L160.53517150878906,3300.837890625C161.8996124267578,3300.837890625,163.00550842285156,3301.94384765625,163.00550842285156,3303.308349609375L163.00550842285156,3312.091796875C163.00550842285156,3313.4560546875,161.8996124267578,3314.56201171875,160.53517150878906,3314.56201171875L158.47657775878906,3314.56201171875C157.1121368408203,3314.56201171875,156.00624084472656,3313.4560546875,156.00624084472656,3312.091796875L156.00624084472656,3303.308349609375C156.00624084472656,3301.94384765625,157.1121368408203,3300.837890625,158.47657775878906,3300.837890625ZM158.61378479003906,3302.416259765625C158.3105010986328,3302.416259765625,158.06483459472656,3302.907958984375,158.06483459472656,3303.51416015625L158.06483459472656,3311.8857421875C158.06483459472656,3312.4921875,158.3105010986328,3312.983642578125,158.61378479003906,3312.983642578125L160.3979034423828,3312.983642578125C160.7012481689453,3312.983642578125,160.9468536376953,3312.4921875,160.9468536376953,3311.8857421875L160.9468536376953,3303.51416015625C160.9468536376953,3302.907958984375,160.7012481689453,3302.416259765625,160.3979034423828,3302.416259765625L158.61378479003906,3302.416259765625Z\" style=\"fill:#e0001b;fill-opacity:1\">\n      </path>\n    </g>\n    <g id=\"strokes-61e93fd5-1206-800f-8008-ca13ff8dbe75-0a58c7a9-eba3-80c0-8008-c9c663301c41\" class=\"strokes\">\n      <g class=\"stroke-shape\">\n        <path d=\"M152.43800354003906,3300.837890625L154.35939025878906,3300.837890625L154.35939025878906,3314.56201171875L152.43800354003906,3314.56201171875L152.43800354003906,3300.837890625ZM158.47657775878906,3300.837890625L160.53517150878906,3300.837890625C161.8996124267578,3300.837890625,163.00550842285156,3301.94384765625,163.00550842285156,3303.308349609375L163.00550842285156,3312.091796875C163.00550842285156,3313.4560546875,161.8996124267578,3314.56201171875,160.53517150878906,3314.56201171875L158.47657775878906,3314.56201171875C157.1121368408203,3314.56201171875,156.00624084472656,3313.4560546875,156.00624084472656,3312.091796875L156.00624084472656,3303.308349609375C156.00624084472656,3301.94384765625,157.1121368408203,3300.837890625,158.47657775878906,3300.837890625ZM158.61378479003906,3302.416259765625C158.3105010986328,3302.416259765625,158.06483459472656,3302.907958984375,158.06483459472656,3303.51416015625L158.06483459472656,3311.8857421875C158.06483459472656,3312.4921875,158.3105010986328,3312.983642578125,158.61378479003906,3312.983642578125L160.3979034423828,3312.983642578125C160.7012481689453,3312.983642578125,160.9468536376953,3312.4921875,160.9468536376953,3311.8857421875L160.9468536376953,3303.51416015625C160.9468536376953,3302.907958984375,160.7012481689453,3302.416259765625,160.3979034423828,3302.416259765625L158.61378479003906,3302.416259765625Z\" style=\"fill:none;fill-opacity:none;stroke-width:0.876;stroke:#e0001b;stroke-opacity:1\">\n        </path>\n      </g>\n    </g>\n  </g>\n</svg>",
+  "backSvg": "<svg width=\"450\" xmlns=\"http://www.w3.org/2000/svg\" height=\"570\" viewBox=\"0 145 450 570\" style=\"-webkit-print-color-adjust::exact\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" fill=\"none\" version=\"1.1\">\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec21abe4\">\n    <g class=\"frame-container-wrapper\">\n      <g class=\"frame-container-blur\">\n        <g class=\"frame-container-shadows\">\n          <g fill=\"none\">\n            <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec21abe4\">\n              <rect rx=\"0\" ry=\"0\" x=\"100\" y=\"240\" width=\"250\" height=\"350\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" class=\"frame-background\">\n              </rect>\n            </g>\n            <g class=\"frame-children\">\n              <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec378d0c\" rx=\"0\" ry=\"0\">\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec3020e1\">\n                  <defs>\n                    <filter id=\"filter-render-1460\" x=\"-0.3\" y=\"-0.21428571428571427\" width=\"1.6\" height=\"1.4714285714285715\" filterUnits=\"objectBoundingBox\" color-interpolation-filters=\"sRGB\">\n                      <feFlood flood-opacity=\"0\">\n                      </feFlood>\n                      <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\">\n                      </feColorMatrix>\n                      <feOffset dx=\"0\" dy=\"5\">\n                      </feOffset>\n                      <feGaussianBlur stdDeviation=\"10\">\n                      </feGaussianBlur>\n                      <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\">\n                      </feColorMatrix>\n                      <feBlend mode=\"normal\">\n                      </feBlend>\n                      <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\">\n                      </feColorMatrix>\n                      <feOffset dx=\"0\" dy=\"2.5\">\n                      </feOffset>\n                      <feGaussianBlur stdDeviation=\"1.25\">\n                      </feGaussianBlur>\n                      <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\">\n                      </feColorMatrix>\n                      <feBlend mode=\"normal\">\n                      </feBlend>\n                      <feBlend mode=\"normal\" in=\"SourceGraphic\">\n                      </feBlend>\n                    </filter>\n                    <filter id=\"filter-shadow-render-1460\" x=\"-0.3\" y=\"-0.21428571428571427\" width=\"1.6\" height=\"1.4714285714285715\" filterUnits=\"objectBoundingBox\" color-interpolation-filters=\"sRGB\">\n                      <feFlood flood-opacity=\"0\">\n                      </feFlood>\n                      <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\">\n                      </feColorMatrix>\n                      <feOffset dx=\"0\" dy=\"5\">\n                      </feOffset>\n                      <feGaussianBlur stdDeviation=\"10\">\n                      </feGaussianBlur>\n                      <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\">\n                      </feColorMatrix>\n                      <feBlend mode=\"normal\">\n                      </feBlend>\n                      <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\">\n                      </feColorMatrix>\n                      <feOffset dx=\"0\" dy=\"2.5\">\n                      </feOffset>\n                      <feGaussianBlur stdDeviation=\"1.25\">\n                      </feGaussianBlur>\n                      <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\">\n                      </feColorMatrix>\n                      <feBlend mode=\"normal\">\n                      </feBlend>\n                      <feBlend mode=\"normal\" in=\"SourceGraphic\">\n                      </feBlend>\n                    </filter>\n                  </defs>\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec3020e1\">\n                    <rect rx=\"13\" ry=\"13\" x=\"100\" y=\"240\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"250\" height=\"350\" filter=\"url(#filter-render-1460)\" style=\"fill:#f2f2f2;fill-opacity:1\">\n                    </rect>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec33971b\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec33971b\">\n                    <rect rx=\"12.5\" ry=\"12.5\" x=\"100.5\" y=\"240.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"249\" height=\"349\">\n                    </rect>\n                  </g>\n                  <g id=\"strokes-61e93fd5-1206-800f-8008-ca14076aa8e8-3ea547bb-4eb9-8077-8008-c5acec33971b\" class=\"strokes\">\n                    <g class=\"inner-stroke-shape\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\">\n                      <defs>\n                        <clipPath id=\"inner-stroke-render-1461-3ea547bb-4eb9-8077-8008-c5acec33971b-0\">\n                          <use href=\"#stroke-shape-render-1461-3ea547bb-4eb9-8077-8008-c5acec33971b-0\">\n                          </use>\n                        </clipPath>\n                        <rect rx=\"12.5\" ry=\"12.5\" x=\"100.5\" y=\"240.5\" width=\"249\" height=\"349\" style=\"fill:none;fill-opacity:none;stroke-width:5;stroke:#ffffff;stroke-opacity:0.1\" id=\"stroke-shape-render-1461-3ea547bb-4eb9-8077-8008-c5acec33971b-0\">\n                        </rect>\n                      </defs>\n                      <use href=\"#stroke-shape-render-1461-3ea547bb-4eb9-8077-8008-c5acec33971b-0\" clip-path=\"url(&#x27;#inner-stroke-render-1461-3ea547bb-4eb9-8077-8008-c5acec33971b-0&#x27;)\">\n                      </use>\n                    </g>\n                  </g>\n                </g>\n              </g>\n              <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec3dc10e\" rx=\"0\" ry=\"0\">\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec38a10a\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec38a10a\">\n                    <rect rx=\"6\" ry=\"6\" x=\"112\" y=\"252\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"226\" height=\"326\" style=\"fill:#1f2a44;fill-opacity:1\">\n                    </rect>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec3b18d1\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec3b18d1\">\n                    <rect rx=\"3\" ry=\"3\" x=\"120\" y=\"260\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"210\" height=\"310\">\n                    </rect>\n                  </g>\n                  <g id=\"strokes-61e93fd5-1206-800f-8008-ca14076ac563-3ea547bb-4eb9-8077-8008-c5acec3b18d1\" class=\"strokes\">\n                    <g class=\"stroke-shape\">\n                      <rect rx=\"3\" ry=\"3\" x=\"120\" y=\"260\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"210\" height=\"310\" style=\"fill:none;fill-opacity:none;stroke-width:3;stroke:#b8955a;stroke-opacity:1\">\n                      </rect>\n                    </g>\n                  </g>\n                </g>\n              </g>\n              <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec57014f\" rx=\"0\" ry=\"0\">\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec3efa04\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec3efa04\">\n                    <path d=\"M225,276L312,415L225,554L138,415Z\">\n                    </path>\n                  </g>\n                  <g id=\"strokes-61e93fd5-1206-800f-8008-ca14076ac564-3ea547bb-4eb9-8077-8008-c5acec3efa04\" class=\"strokes\">\n                    <g class=\"stroke-shape\">\n                      <path d=\"M225,276L312,415L225,554L138,415Z\" style=\"fill:none;fill-opacity:none;stroke-width:3;stroke:#b8955a;stroke-opacity:1\">\n                      </path>\n                    </g>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec44fbbf\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec44fbbf\">\n                    <path d=\"M225,319L289,415L225,511L161,415Z\" style=\"fill:#b8955a;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec46401b\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec46401b\">\n                    <path d=\"M225,334L279,415L225,496L171,415Z\" style=\"fill:#1f2a44;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec47cd8d\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec47cd8d\">\n                    <path d=\"M225,365L234,402L259,415L234,428L225,465L216,428L191,415L216,402Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec491ed3\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec491ed3\">\n                    <path d=\"M225,403L233,415L225,427L217,415Z\" style=\"fill:#b8955a;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec4aa3b2\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec4aa3b2\">\n                    <path d=\"M150,288L158,300L150,312L142,300Z\" style=\"fill:#b8955a;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec4bc7af\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec4bc7af\">\n                    <path d=\"M300,288L308,300L300,312L292,300Z\" style=\"fill:#b8955a;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec4d3878\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec4d3878\">\n                    <path d=\"M150,518L158,530L150,542L142,530Z\" style=\"fill:#b8955a;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec4e9f66\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec4e9f66\">\n                    <path d=\"M300,518L308,530L300,542L292,530Z\" style=\"fill:#b8955a;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec50658d\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec50658d\">\n                    <ellipse cx=\"225\" cy=\"276\" rx=\"4.5\" ry=\"4.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" style=\"fill:#f2edc4;fill-opacity:1\">\n                    </ellipse>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec52232f\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec52232f\">\n                    <ellipse cx=\"312\" cy=\"415\" rx=\"4.5\" ry=\"4.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" style=\"fill:#f2edc4;fill-opacity:1\">\n                    </ellipse>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec53eb8d\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec53eb8d\">\n                    <ellipse cx=\"225\" cy=\"554\" rx=\"4.5\" ry=\"4.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" style=\"fill:#f2edc4;fill-opacity:1\">\n                    </ellipse>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec559ab1\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec559ab1\">\n                    <ellipse cx=\"138\" cy=\"415\" rx=\"4.5\" ry=\"4.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" style=\"fill:#f2edc4;fill-opacity:1\">\n                    </ellipse>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad24a629e2\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad24a629e2\">\n                    <path d=\"M128,268L152,268L152,271L131,271L131,292L128,292Z\" style=\"fill:#b8955a;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad24a91b88\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad24a91b88\">\n                    <path d=\"M322,268L298,268L298,271L319,271L319,292L322,292Z\" style=\"fill:#b8955a;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad24aadfd9\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad24aadfd9\">\n                    <path d=\"M128,562L152,562L152,559L131,559L131,538L128,538Z\" style=\"fill:#b8955a;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad24ad75ba\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad24ad75ba\">\n                    <path d=\"M322,562L298,562L298,559L319,559L319,538L322,538Z\" style=\"fill:#b8955a;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad4e8460c2\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad4e8460c2\">\n                    <path d=\"M181.5,338L186.5,345.5L181.5,353L176.5,345.5Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad4e86e96e\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad4e86e96e\">\n                    <path d=\"M268.5,338L273.5,345.5L268.5,353L263.5,345.5Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad4e888996\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad4e888996\">\n                    <path d=\"M268.5,477L273.5,484.5L268.5,492L263.5,484.5Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n                <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad4e8a251b\">\n                  <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad4e8a251b\">\n                    <path d=\"M181.5,477L186.5,484.5L181.5,492L176.5,484.5Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n                    </path>\n                  </g>\n                </g>\n              </g>\n            </g>\n          </g>\n        </g>\n      </g>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec378d0c\" rx=\"0\" ry=\"0\">\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec3020e1\">\n      <defs>\n        <filter id=\"filter-render-1488\" x=\"-0.3\" y=\"-0.21428571428571427\" width=\"1.6\" height=\"1.4714285714285715\" filterUnits=\"objectBoundingBox\" color-interpolation-filters=\"sRGB\">\n          <feFlood flood-opacity=\"0\">\n          </feFlood>\n          <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\">\n          </feColorMatrix>\n          <feOffset dx=\"0\" dy=\"5\">\n          </feOffset>\n          <feGaussianBlur stdDeviation=\"10\">\n          </feGaussianBlur>\n          <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\">\n          </feColorMatrix>\n          <feBlend mode=\"normal\">\n          </feBlend>\n          <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\">\n          </feColorMatrix>\n          <feOffset dx=\"0\" dy=\"2.5\">\n          </feOffset>\n          <feGaussianBlur stdDeviation=\"1.25\">\n          </feGaussianBlur>\n          <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\">\n          </feColorMatrix>\n          <feBlend mode=\"normal\">\n          </feBlend>\n          <feBlend mode=\"normal\" in=\"SourceGraphic\">\n          </feBlend>\n        </filter>\n        <filter id=\"filter-shadow-render-1488\" x=\"-0.3\" y=\"-0.21428571428571427\" width=\"1.6\" height=\"1.4714285714285715\" filterUnits=\"objectBoundingBox\" color-interpolation-filters=\"sRGB\">\n          <feFlood flood-opacity=\"0\">\n          </feFlood>\n          <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\">\n          </feColorMatrix>\n          <feOffset dx=\"0\" dy=\"5\">\n          </feOffset>\n          <feGaussianBlur stdDeviation=\"10\">\n          </feGaussianBlur>\n          <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\">\n          </feColorMatrix>\n          <feBlend mode=\"normal\">\n          </feBlend>\n          <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\">\n          </feColorMatrix>\n          <feOffset dx=\"0\" dy=\"2.5\">\n          </feOffset>\n          <feGaussianBlur stdDeviation=\"1.25\">\n          </feGaussianBlur>\n          <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\">\n          </feColorMatrix>\n          <feBlend mode=\"normal\">\n          </feBlend>\n          <feBlend mode=\"normal\" in=\"SourceGraphic\">\n          </feBlend>\n        </filter>\n      </defs>\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec3020e1\">\n        <rect rx=\"13\" ry=\"13\" x=\"100\" y=\"240\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"250\" height=\"350\" filter=\"url(#filter-render-1488)\" style=\"fill:#f2f2f2;fill-opacity:1\">\n        </rect>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec33971b\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec33971b\">\n        <rect rx=\"12.5\" ry=\"12.5\" x=\"100.5\" y=\"240.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"249\" height=\"349\">\n        </rect>\n      </g>\n      <g id=\"strokes-61e93fd5-1206-800f-8008-ca14076b686a-3ea547bb-4eb9-8077-8008-c5acec33971b\" class=\"strokes\">\n        <g class=\"inner-stroke-shape\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\">\n          <defs>\n            <clipPath id=\"inner-stroke-render-1489-3ea547bb-4eb9-8077-8008-c5acec33971b-0\">\n              <use href=\"#stroke-shape-render-1489-3ea547bb-4eb9-8077-8008-c5acec33971b-0\">\n              </use>\n            </clipPath>\n            <rect rx=\"12.5\" ry=\"12.5\" x=\"100.5\" y=\"240.5\" width=\"249\" height=\"349\" style=\"fill:none;fill-opacity:none;stroke-width:5;stroke:#ffffff;stroke-opacity:0.1\" id=\"stroke-shape-render-1489-3ea547bb-4eb9-8077-8008-c5acec33971b-0\">\n            </rect>\n          </defs>\n          <use href=\"#stroke-shape-render-1489-3ea547bb-4eb9-8077-8008-c5acec33971b-0\" clip-path=\"url(&#x27;#inner-stroke-render-1489-3ea547bb-4eb9-8077-8008-c5acec33971b-0&#x27;)\">\n          </use>\n        </g>\n      </g>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec3dc10e\" rx=\"0\" ry=\"0\">\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec38a10a\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec38a10a\">\n        <rect rx=\"6\" ry=\"6\" x=\"112\" y=\"252\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"226\" height=\"326\" style=\"fill:#1f2a44;fill-opacity:1\">\n        </rect>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec3b18d1\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec3b18d1\">\n        <rect rx=\"3\" ry=\"3\" x=\"120\" y=\"260\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"210\" height=\"310\">\n        </rect>\n      </g>\n      <g id=\"strokes-61e93fd5-1206-800f-8008-ca14076b8409-3ea547bb-4eb9-8077-8008-c5acec3b18d1\" class=\"strokes\">\n        <g class=\"stroke-shape\">\n          <rect rx=\"3\" ry=\"3\" x=\"120\" y=\"260\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"210\" height=\"310\" style=\"fill:none;fill-opacity:none;stroke-width:3;stroke:#b8955a;stroke-opacity:1\">\n          </rect>\n        </g>\n      </g>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec57014f\" rx=\"0\" ry=\"0\">\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec3efa04\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec3efa04\">\n        <path d=\"M225,276L312,415L225,554L138,415Z\">\n        </path>\n      </g>\n      <g id=\"strokes-61e93fd5-1206-800f-8008-ca14076b840a-3ea547bb-4eb9-8077-8008-c5acec3efa04\" class=\"strokes\">\n        <g class=\"stroke-shape\">\n          <path d=\"M225,276L312,415L225,554L138,415Z\" style=\"fill:none;fill-opacity:none;stroke-width:3;stroke:#b8955a;stroke-opacity:1\">\n          </path>\n        </g>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec44fbbf\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec44fbbf\">\n        <path d=\"M225,319L289,415L225,511L161,415Z\" style=\"fill:#b8955a;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec46401b\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec46401b\">\n        <path d=\"M225,334L279,415L225,496L171,415Z\" style=\"fill:#1f2a44;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec47cd8d\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec47cd8d\">\n        <path d=\"M225,365L234,402L259,415L234,428L225,465L216,428L191,415L216,402Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec491ed3\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec491ed3\">\n        <path d=\"M225,403L233,415L225,427L217,415Z\" style=\"fill:#b8955a;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec4aa3b2\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec4aa3b2\">\n        <path d=\"M150,288L158,300L150,312L142,300Z\" style=\"fill:#b8955a;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec4bc7af\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec4bc7af\">\n        <path d=\"M300,288L308,300L300,312L292,300Z\" style=\"fill:#b8955a;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec4d3878\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec4d3878\">\n        <path d=\"M150,518L158,530L150,542L142,530Z\" style=\"fill:#b8955a;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec4e9f66\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec4e9f66\">\n        <path d=\"M300,518L308,530L300,542L292,530Z\" style=\"fill:#b8955a;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec50658d\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec50658d\">\n        <ellipse cx=\"225\" cy=\"276\" rx=\"4.5\" ry=\"4.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" style=\"fill:#f2edc4;fill-opacity:1\">\n        </ellipse>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec52232f\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec52232f\">\n        <ellipse cx=\"312\" cy=\"415\" rx=\"4.5\" ry=\"4.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" style=\"fill:#f2edc4;fill-opacity:1\">\n        </ellipse>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec53eb8d\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec53eb8d\">\n        <ellipse cx=\"225\" cy=\"554\" rx=\"4.5\" ry=\"4.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" style=\"fill:#f2edc4;fill-opacity:1\">\n        </ellipse>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec559ab1\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec559ab1\">\n        <ellipse cx=\"138\" cy=\"415\" rx=\"4.5\" ry=\"4.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" style=\"fill:#f2edc4;fill-opacity:1\">\n        </ellipse>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad24a629e2\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad24a629e2\">\n        <path d=\"M128,268L152,268L152,271L131,271L131,292L128,292Z\" style=\"fill:#b8955a;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad24a91b88\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad24a91b88\">\n        <path d=\"M322,268L298,268L298,271L319,271L319,292L322,292Z\" style=\"fill:#b8955a;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad24aadfd9\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad24aadfd9\">\n        <path d=\"M128,562L152,562L152,559L131,559L131,538L128,538Z\" style=\"fill:#b8955a;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad24ad75ba\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad24ad75ba\">\n        <path d=\"M322,562L298,562L298,559L319,559L319,538L322,538Z\" style=\"fill:#b8955a;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad4e8460c2\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad4e8460c2\">\n        <path d=\"M181.5,338L186.5,345.5L181.5,353L176.5,345.5Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad4e86e96e\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad4e86e96e\">\n        <path d=\"M268.5,338L273.5,345.5L268.5,353L263.5,345.5Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad4e888996\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad4e888996\">\n        <path d=\"M268.5,477L273.5,484.5L268.5,492L263.5,484.5Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n    <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad4e8a251b\">\n      <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad4e8a251b\">\n        <path d=\"M181.5,477L186.5,484.5L181.5,492L176.5,484.5Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n        </path>\n      </g>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec3020e1\">\n    <defs>\n      <filter id=\"filter-render-1515\" x=\"-0.3\" y=\"-0.21428571428571427\" width=\"1.6\" height=\"1.4714285714285715\" filterUnits=\"objectBoundingBox\" color-interpolation-filters=\"sRGB\">\n        <feFlood flood-opacity=\"0\">\n        </feFlood>\n        <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\">\n        </feColorMatrix>\n        <feOffset dx=\"0\" dy=\"5\">\n        </feOffset>\n        <feGaussianBlur stdDeviation=\"10\">\n        </feGaussianBlur>\n        <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\">\n        </feColorMatrix>\n        <feBlend mode=\"normal\">\n        </feBlend>\n        <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\">\n        </feColorMatrix>\n        <feOffset dx=\"0\" dy=\"2.5\">\n        </feOffset>\n        <feGaussianBlur stdDeviation=\"1.25\">\n        </feGaussianBlur>\n        <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\">\n        </feColorMatrix>\n        <feBlend mode=\"normal\">\n        </feBlend>\n        <feBlend mode=\"normal\" in=\"SourceGraphic\">\n        </feBlend>\n      </filter>\n      <filter id=\"filter-shadow-render-1515\" x=\"-0.3\" y=\"-0.21428571428571427\" width=\"1.6\" height=\"1.4714285714285715\" filterUnits=\"objectBoundingBox\" color-interpolation-filters=\"sRGB\">\n        <feFlood flood-opacity=\"0\">\n        </feFlood>\n        <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\">\n        </feColorMatrix>\n        <feOffset dx=\"0\" dy=\"5\">\n        </feOffset>\n        <feGaussianBlur stdDeviation=\"10\">\n        </feGaussianBlur>\n        <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\">\n        </feColorMatrix>\n        <feBlend mode=\"normal\">\n        </feBlend>\n        <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\">\n        </feColorMatrix>\n        <feOffset dx=\"0\" dy=\"2.5\">\n        </feOffset>\n        <feGaussianBlur stdDeviation=\"1.25\">\n        </feGaussianBlur>\n        <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\">\n        </feColorMatrix>\n        <feBlend mode=\"normal\">\n        </feBlend>\n        <feBlend mode=\"normal\" in=\"SourceGraphic\">\n        </feBlend>\n      </filter>\n    </defs>\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec3020e1\">\n      <rect rx=\"13\" ry=\"13\" x=\"100\" y=\"240\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"250\" height=\"350\" filter=\"url(#filter-render-1515)\" style=\"fill:#f2f2f2;fill-opacity:1\">\n      </rect>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec33971b\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec33971b\">\n      <rect rx=\"12.5\" ry=\"12.5\" x=\"100.5\" y=\"240.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"249\" height=\"349\">\n      </rect>\n    </g>\n    <g id=\"strokes-61e93fd5-1206-800f-8008-ca14076c2616-3ea547bb-4eb9-8077-8008-c5acec33971b\" class=\"strokes\">\n      <g class=\"inner-stroke-shape\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\">\n        <defs>\n          <clipPath id=\"inner-stroke-render-1516-3ea547bb-4eb9-8077-8008-c5acec33971b-0\">\n            <use href=\"#stroke-shape-render-1516-3ea547bb-4eb9-8077-8008-c5acec33971b-0\">\n            </use>\n          </clipPath>\n          <rect rx=\"12.5\" ry=\"12.5\" x=\"100.5\" y=\"240.5\" width=\"249\" height=\"349\" style=\"fill:none;fill-opacity:none;stroke-width:5;stroke:#ffffff;stroke-opacity:0.1\" id=\"stroke-shape-render-1516-3ea547bb-4eb9-8077-8008-c5acec33971b-0\">\n          </rect>\n        </defs>\n        <use href=\"#stroke-shape-render-1516-3ea547bb-4eb9-8077-8008-c5acec33971b-0\" clip-path=\"url(&#x27;#inner-stroke-render-1516-3ea547bb-4eb9-8077-8008-c5acec33971b-0&#x27;)\">\n        </use>\n      </g>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec38a10a\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec38a10a\">\n      <rect rx=\"6\" ry=\"6\" x=\"112\" y=\"252\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"226\" height=\"326\" style=\"fill:#1f2a44;fill-opacity:1\">\n      </rect>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec3b18d1\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec3b18d1\">\n      <rect rx=\"3\" ry=\"3\" x=\"120\" y=\"260\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"210\" height=\"310\">\n      </rect>\n    </g>\n    <g id=\"strokes-61e93fd5-1206-800f-8008-ca14076c2618-3ea547bb-4eb9-8077-8008-c5acec3b18d1\" class=\"strokes\">\n      <g class=\"stroke-shape\">\n        <rect rx=\"3\" ry=\"3\" x=\"120\" y=\"260\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" width=\"210\" height=\"310\" style=\"fill:none;fill-opacity:none;stroke-width:3;stroke:#b8955a;stroke-opacity:1\">\n        </rect>\n      </g>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec3efa04\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec3efa04\">\n      <path d=\"M225,276L312,415L225,554L138,415Z\">\n      </path>\n    </g>\n    <g id=\"strokes-61e93fd5-1206-800f-8008-ca14076c2619-3ea547bb-4eb9-8077-8008-c5acec3efa04\" class=\"strokes\">\n      <g class=\"stroke-shape\">\n        <path d=\"M225,276L312,415L225,554L138,415Z\" style=\"fill:none;fill-opacity:none;stroke-width:3;stroke:#b8955a;stroke-opacity:1\">\n        </path>\n      </g>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec44fbbf\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec44fbbf\">\n      <path d=\"M225,319L289,415L225,511L161,415Z\" style=\"fill:#b8955a;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec46401b\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec46401b\">\n      <path d=\"M225,334L279,415L225,496L171,415Z\" style=\"fill:#1f2a44;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec47cd8d\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec47cd8d\">\n      <path d=\"M225,365L234,402L259,415L234,428L225,465L216,428L191,415L216,402Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec491ed3\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec491ed3\">\n      <path d=\"M225,403L233,415L225,427L217,415Z\" style=\"fill:#b8955a;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec4aa3b2\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec4aa3b2\">\n      <path d=\"M150,288L158,300L150,312L142,300Z\" style=\"fill:#b8955a;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec4bc7af\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec4bc7af\">\n      <path d=\"M300,288L308,300L300,312L292,300Z\" style=\"fill:#b8955a;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec4d3878\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec4d3878\">\n      <path d=\"M150,518L158,530L150,542L142,530Z\" style=\"fill:#b8955a;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec4e9f66\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec4e9f66\">\n      <path d=\"M300,518L308,530L300,542L292,530Z\" style=\"fill:#b8955a;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec50658d\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec50658d\">\n      <ellipse cx=\"225\" cy=\"276\" rx=\"4.5\" ry=\"4.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" style=\"fill:#f2edc4;fill-opacity:1\">\n      </ellipse>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec52232f\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec52232f\">\n      <ellipse cx=\"312\" cy=\"415\" rx=\"4.5\" ry=\"4.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" style=\"fill:#f2edc4;fill-opacity:1\">\n      </ellipse>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec53eb8d\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec53eb8d\">\n      <ellipse cx=\"225\" cy=\"554\" rx=\"4.5\" ry=\"4.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" style=\"fill:#f2edc4;fill-opacity:1\">\n      </ellipse>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5acec559ab1\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5acec559ab1\">\n      <ellipse cx=\"138\" cy=\"415\" rx=\"4.5\" ry=\"4.5\" transform=\"matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)\" style=\"fill:#f2edc4;fill-opacity:1\">\n      </ellipse>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad24a629e2\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad24a629e2\">\n      <path d=\"M128,268L152,268L152,271L131,271L131,292L128,292Z\" style=\"fill:#b8955a;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad24a91b88\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad24a91b88\">\n      <path d=\"M322,268L298,268L298,271L319,271L319,292L322,292Z\" style=\"fill:#b8955a;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad24aadfd9\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad24aadfd9\">\n      <path d=\"M128,562L152,562L152,559L131,559L131,538L128,538Z\" style=\"fill:#b8955a;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad24ad75ba\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad24ad75ba\">\n      <path d=\"M322,562L298,562L298,559L319,559L319,538L322,538Z\" style=\"fill:#b8955a;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad4e8460c2\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad4e8460c2\">\n      <path d=\"M181.5,338L186.5,345.5L181.5,353L176.5,345.5Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad4e86e96e\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad4e86e96e\">\n      <path d=\"M268.5,338L273.5,345.5L268.5,353L263.5,345.5Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad4e888996\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad4e888996\">\n      <path d=\"M268.5,477L273.5,484.5L268.5,492L263.5,484.5Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n  <g id=\"shape-3ea547bb-4eb9-8077-8008-c5ad4e8a251b\">\n    <g class=\"fills\" id=\"fills-3ea547bb-4eb9-8077-8008-c5ad4e8a251b\">\n      <path d=\"M181.5,477L186.5,484.5L181.5,492L176.5,484.5Z\" style=\"fill:#f2edc4;fill-opacity:1\">\n      </path>\n    </g>\n  </g>\n</svg>",
+  "standard": [
+    {
+      "id": "64272a52-6b67-803b-8008-c385a96c7abf",
+      "name": "Card Background",
+      "x": 0,
+      "y": 0,
+      "width": 250,
+      "height": 350,
+      "rotation": 0,
+      "radius": 13,
+      "fills": [
+        {
+          "fillColor": "#f2f2f2",
+          "fillOpacity": 1,
+          "fillColorGradient": null,
+          "fillColorRefFile": null,
+          "fillColorRefId": null,
+          "fillImage": null
+        }
+      ],
+      "strokes": [],
+      "shadows": [
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9cecf0c54e2",
+          "style": "drop-shadow",
+          "offsetX": 0,
+          "offsetY": 2.5,
+          "blur": 2.5,
+          "spread": 0,
+          "hidden": false,
+          "color": {
+            "color": "#000000",
+            "opacity": 0.25
+          }
+        },
+        {
+          "id": "0a58c7a9-eba3-80c0-8008-c9cecf0c54e3",
+          "style": "drop-shadow",
+          "offsetX": 0,
+          "offsetY": 5,
+          "blur": 20,
+          "spread": 0,
+          "hidden": false,
+          "color": {
+            "color": "#000000",
+            "opacity": 0.25
+          }
+        }
+      ]
+    }
+  ]
+}

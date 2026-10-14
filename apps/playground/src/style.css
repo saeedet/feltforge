@@ -176,7 +176,6 @@ main {
   position: absolute;
   /* Keep the rightmost card from shrinking to the remaining horizontal space. */
   width: min(215px, calc(100% * 215 / 350));
-  filter: drop-shadow(0 12px 14px #23362c22);
 }
 .hero-back {
   left: 12%;
@@ -341,8 +340,57 @@ fieldset button[aria-pressed='true'] {
   aspect-ratio: 5 / 7;
   flex-shrink: 0;
 }
-.gallery > .playground-card {
-  filter: drop-shadow(0 3px 3px #24362612);
+.playground-card .flip-card__face {
+  overflow: visible;
+}
+.compact-lab {
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+}
+.compact-lab h3 {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  margin: 0;
+}
+.compact-samples,
+.compact-gallery,
+.compact-community {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.compact-samples {
+  padding: 30px 0;
+  gap: 28px 7px;
+}
+.compact-gallery {
+  padding: 32px 0;
+  gap: 16px 7px;
+}
+.compact-hand-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 30px 20px;
+  border-radius: 16px;
+  background: #1f6948;
+  color: #fff;
+}
+.compact-hand-demo p {
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin: 0 0 20px;
+}
+.compact-hero-pair {
+  display: flex;
+  padding: 5px 3px;
+}
+.compact-hero-pair > svg:first-child {
+  transform: rotate(-7deg);
+}
+.compact-hero-pair > svg:last-child {
+  margin-left: -13px;
+  transform: rotate(3deg);
 }
 .community-card {
   width: 18.26087%;
