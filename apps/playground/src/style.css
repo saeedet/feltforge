@@ -340,8 +340,9 @@ fieldset button[aria-pressed='true'] {
   aspect-ratio: 5 / 7;
   flex-shrink: 0;
 }
-.playground-card .flip-card__face {
-  overflow: visible;
+.playground-card .flip-card__face > svg {
+  /* The HTML face owns the shadow while the SVG supplies the artwork. */
+  box-shadow: none !important;
 }
 .compact-lab {
   padding: 32px 0;

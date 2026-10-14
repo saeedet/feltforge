@@ -27,7 +27,7 @@ test('compact cards preserve approved sizes, flip independently and share overri
     page.getByRole('button', { name: 'Flip compact Q of spades', exact: true }),
   ).toHaveAttribute('aria-pressed', 'false');
   const fronts = page.locator(
-    '.gallery .flip-card__face--front > svg, .compact-gallery .flip-card__face--front > svg',
+    '.gallery .flip-card__face--front, .compact-gallery .flip-card__face--front',
   );
   expect(
     await fronts.first().evaluate((el) => getComputedStyle(el).boxShadow),

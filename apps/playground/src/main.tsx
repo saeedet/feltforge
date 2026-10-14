@@ -38,6 +38,7 @@ function PlaygroundCard({
   width,
   height = width * 1.4,
   radius = (width * 13) / 250,
+  shadowReferenceWidth = 100,
   className = '',
   ...props
 }: {
@@ -46,11 +47,13 @@ function PlaygroundCard({
   width: number;
   height?: number;
   radius?: number;
+  shadowReferenceWidth?: number;
   className?: string;
 } & Pick<
   ComponentProps<typeof FlipCard>,
   'flipped' | 'defaultFlipped' | 'onFlipChange' | 'shadow'
 >) {
+  const shadowScale = width / shadowReferenceWidth;
   return (
     <FlipCard
       front={front}
@@ -70,6 +73,12 @@ function PlaygroundCard({
       width={width}
       height={height}
       radius={radius}
+      faceStyle={{
+        borderRadius: `${(radius / width) * 100}% / ${(radius / height) * 100}%`,
+        // Keep the SVG inside a clipped face; paint its shadow on the HTML face
+        // so WebKit can composite it correctly through the 3D flip.
+        boxShadow: `var(--card-shadow, 0 ${shadowScale}px ${shadowScale}px rgba(0,0,0,.25), 0 ${shadowScale * 2}px ${shadowScale * 8}px rgba(0,0,0,.25), inset 0 0 0 ${shadowScale}px rgba(255,255,255,.1))`,
+      }}
       background="transparent"
       glareOpacity={0.12}
       shadowOpacity={0.18}
@@ -449,6 +458,7 @@ function App() {
                         width={compact.width * compactZoom}
                         height={compact.height * compactZoom}
                         radius={compact.radius * compactZoom}
+                        shadowReferenceWidth={compact.width}
                       />
                     );
                   })}
@@ -526,6 +536,7 @@ function App() {
                         width={compact.width}
                         height={compact.height}
                         radius={compact.radius}
+                        shadowReferenceWidth={compact.width}
                       />
                     )),
                   )}
