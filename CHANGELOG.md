@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.1 — Unreleased
+## 0.2.1 — 2026-10-15
 
 - Add the approved two-layer Contact shadow to single chips and each visible chip in a stack, enabled by default and scaled with the chip geometry.
 - Support removing or replacing chip shadows through `shadow`, `--chip-shadow`, or `style.filter`; document the defaults and overrides.
