@@ -26,6 +26,8 @@ Inline artwork objects are trusted build-time constants, not a sanitization boun
 
 Contact consists of independent `0 1 blur 1 / 35%` and `0 2 blur 4 / 25%` black shadows at 64 units. Runtime SVG filters use Gaussian deviations of 0.5 and 2, matching Penpot. Both the geometry and shadows scale together. `shadow={false}` disables them; otherwise `style.filter` overrides `--chip-shadow`, which overrides the default. A direct `style.filter` applies to each chip, rather than filtering the combined stack. Custom filter lengths are in the 64-unit chip coordinate system. Use `none` or a CSS filter value such as `drop-shadow(0 2px 3px rgba(0,0,0,.3))`. The previous `CHIP.shadow` Subtle preset is deprecated; `CHIP.contactShadows` contains the current layers.
 
+`CHIP.rim` defines the continuous inner border: width 1, color `#000000`, opacity 0.28 at 64 units. It paints after Edge Inserts and before Inner Ring on every chip, including stack layers. The SVG stroke uses radius 31.5 and width 1 to remain inside the 32-unit outer radius. It scales with the geometry and remains visible when shadows are disabled.
+
 Colours are configurable defaults, not universal casino denominations.
 
 ## Markers

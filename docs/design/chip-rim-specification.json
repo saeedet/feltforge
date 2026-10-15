@@ -1,0 +1,438 @@
+{
+  "file": "Playing Cards",
+  "master": {
+    "id": "26c05812-20d7-8042-8008-c688f846feaf",
+    "name": "Poker / Chip",
+    "x": 240,
+    "y": 2100,
+    "width": 64,
+    "height": 64,
+    "children": [
+      {
+        "id": "26c05812-20d7-8042-8008-c688f858d612",
+        "name": "Outer Edge",
+        "type": "ellipse",
+        "width": 64,
+        "height": 64,
+        "strokes": []
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c688f8a7399c",
+        "name": "Edge Inserts",
+        "type": "group",
+        "width": 63.99950408935547,
+        "height": 63.9996337890625,
+        "strokes": [],
+        "children": []
+      },
+      {
+        "id": "dcb052a4-ae96-8045-8008-cae9ecb6f7ce",
+        "name": "Rim",
+        "type": "ellipse",
+        "width": 64,
+        "height": 64,
+        "strokes": [
+          {
+            "strokeColor": "#000000",
+            "strokeColorRefFile": null,
+            "strokeColorRefId": null,
+            "strokeOpacity": 0.28,
+            "strokeStyle": "solid",
+            "strokeWidth": 1,
+            "strokeAlignment": "inner",
+            "strokeCapStart": null,
+            "strokeCapEnd": null,
+            "strokeColorGradient": null,
+            "strokeImage": null
+          }
+        ]
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c688f8a9ea4c",
+        "name": "Inner Ring",
+        "type": "ellipse",
+        "width": 45,
+        "height": 45,
+        "strokes": []
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c688f8b48a09",
+        "name": "Center Field",
+        "type": "ellipse",
+        "width": 41,
+        "height": 41,
+        "strokes": []
+      },
+      {
+        "id": "26c05812-20d7-8042-8008-c688f8bfa8ac",
+        "name": "Label",
+        "type": "text",
+        "width": 40,
+        "height": 24,
+        "strokes": []
+      }
+    ]
+  },
+  "canonicalRims": [
+    {
+      "id": "26c05812-20d7-8042-8008-c68a53bc779a",
+      "name": "Chip 1",
+      "width": 64,
+      "height": 64,
+      "paintOrder": [
+        "Outer Edge",
+        "Edge Inserts",
+        "Rim",
+        "Inner Ring",
+        "Center Field",
+        "Label"
+      ],
+      "rim": {
+        "id": "dcb052a4-ae96-8045-8008-cae9ece36429",
+        "name": "Rim",
+        "type": "ellipse",
+        "width": 64,
+        "height": 64,
+        "strokes": [
+          {
+            "strokeColor": "#000000",
+            "strokeColorRefFile": null,
+            "strokeColorRefId": null,
+            "strokeOpacity": 0.28,
+            "strokeStyle": "solid",
+            "strokeWidth": 1,
+            "strokeAlignment": "inner",
+            "strokeCapStart": null,
+            "strokeCapEnd": null,
+            "strokeColorGradient": null,
+            "strokeImage": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "26c05812-20d7-8042-8008-c68a53e11da9",
+      "name": "Chip 500",
+      "width": 64,
+      "height": 64,
+      "paintOrder": [
+        "Outer Edge",
+        "Edge Inserts",
+        "Rim",
+        "Inner Ring",
+        "Center Field",
+        "Label"
+      ],
+      "rim": {
+        "id": "dcb052a4-ae96-8045-8008-cae9eceb5b04",
+        "name": "Rim",
+        "type": "ellipse",
+        "width": 64,
+        "height": 64,
+        "strokes": [
+          {
+            "strokeColor": "#000000",
+            "strokeColorRefFile": null,
+            "strokeColorRefId": null,
+            "strokeOpacity": 0.28,
+            "strokeStyle": "solid",
+            "strokeWidth": 1,
+            "strokeAlignment": "inner",
+            "strokeCapStart": null,
+            "strokeCapEnd": null,
+            "strokeColorGradient": null,
+            "strokeImage": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "26c05812-20d7-8042-8008-c68a53ea2e42",
+      "name": "Chip 1K",
+      "width": 64,
+      "height": 64,
+      "paintOrder": [
+        "Outer Edge",
+        "Edge Inserts",
+        "Rim",
+        "Inner Ring",
+        "Center Field",
+        "Label"
+      ],
+      "rim": {
+        "id": "dcb052a4-ae96-8045-8008-cae9ececd992",
+        "name": "Rim",
+        "type": "ellipse",
+        "width": 64,
+        "height": 64,
+        "strokes": [
+          {
+            "strokeColor": "#000000",
+            "strokeColorRefFile": null,
+            "strokeColorRefId": null,
+            "strokeOpacity": 0.28,
+            "strokeStyle": "solid",
+            "strokeWidth": 1,
+            "strokeAlignment": "inner",
+            "strokeCapStart": null,
+            "strokeCapEnd": null,
+            "strokeColorGradient": null,
+            "strokeImage": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "26c05812-20d7-8042-8008-c68a53d0113d",
+      "name": "Chip 25",
+      "width": 64,
+      "height": 64,
+      "paintOrder": [
+        "Outer Edge",
+        "Edge Inserts",
+        "Rim",
+        "Inner Ring",
+        "Center Field",
+        "Label"
+      ],
+      "rim": {
+        "id": "dcb052a4-ae96-8045-8008-cae9ecee8459",
+        "name": "Rim",
+        "type": "ellipse",
+        "width": 64,
+        "height": 64,
+        "strokes": [
+          {
+            "strokeColor": "#000000",
+            "strokeColorRefFile": null,
+            "strokeColorRefId": null,
+            "strokeOpacity": 0.28,
+            "strokeStyle": "solid",
+            "strokeWidth": 1,
+            "strokeAlignment": "inner",
+            "strokeCapStart": null,
+            "strokeCapEnd": null,
+            "strokeColorGradient": null,
+            "strokeImage": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "26c05812-20d7-8042-8008-c68a53c72ecc",
+      "name": "Chip 5",
+      "width": 64,
+      "height": 64,
+      "paintOrder": [
+        "Outer Edge",
+        "Edge Inserts",
+        "Rim",
+        "Inner Ring",
+        "Center Field",
+        "Label"
+      ],
+      "rim": {
+        "id": "dcb052a4-ae96-8045-8008-cae9ecf3f72a",
+        "name": "Rim",
+        "type": "ellipse",
+        "width": 64,
+        "height": 64,
+        "strokes": [
+          {
+            "strokeColor": "#000000",
+            "strokeColorRefFile": null,
+            "strokeColorRefId": null,
+            "strokeOpacity": 0.28,
+            "strokeStyle": "solid",
+            "strokeWidth": 1,
+            "strokeAlignment": "inner",
+            "strokeCapStart": null,
+            "strokeCapEnd": null,
+            "strokeColorGradient": null,
+            "strokeImage": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "26c05812-20d7-8042-8008-c68a53f510a6",
+      "name": "Chip 5K",
+      "width": 64,
+      "height": 64,
+      "paintOrder": [
+        "Outer Edge",
+        "Edge Inserts",
+        "Rim",
+        "Inner Ring",
+        "Center Field",
+        "Label"
+      ],
+      "rim": {
+        "id": "dcb052a4-ae96-8045-8008-cae9ecf524b2",
+        "name": "Rim",
+        "type": "ellipse",
+        "width": 64,
+        "height": 64,
+        "strokes": [
+          {
+            "strokeColor": "#000000",
+            "strokeColorRefFile": null,
+            "strokeColorRefId": null,
+            "strokeOpacity": 0.28,
+            "strokeStyle": "solid",
+            "strokeWidth": 1,
+            "strokeAlignment": "inner",
+            "strokeCapStart": null,
+            "strokeCapEnd": null,
+            "strokeColorGradient": null,
+            "strokeImage": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "26c05812-20d7-8042-8008-c68a53fe39a5",
+      "name": "Chip 250 — Custom",
+      "width": 64,
+      "height": 64,
+      "paintOrder": [
+        "Outer Edge",
+        "Edge Inserts",
+        "Rim",
+        "Inner Ring",
+        "Center Field",
+        "Label"
+      ],
+      "rim": {
+        "id": "dcb052a4-ae96-8045-8008-cae9ecf959ee",
+        "name": "Rim",
+        "type": "ellipse",
+        "width": 64,
+        "height": 64,
+        "strokes": [
+          {
+            "strokeColor": "#000000",
+            "strokeColorRefFile": null,
+            "strokeColorRefId": null,
+            "strokeOpacity": 0.28,
+            "strokeStyle": "solid",
+            "strokeWidth": 1,
+            "strokeAlignment": "inner",
+            "strokeCapStart": null,
+            "strokeCapEnd": null,
+            "strokeColorGradient": null,
+            "strokeImage": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "26c05812-20d7-8042-8008-c68a53d82b98",
+      "name": "Chip 100",
+      "width": 64,
+      "height": 64,
+      "paintOrder": [
+        "Outer Edge",
+        "Edge Inserts",
+        "Rim",
+        "Inner Ring",
+        "Center Field",
+        "Label"
+      ],
+      "rim": {
+        "id": "dcb052a4-ae96-8045-8008-cae9ecfbb250",
+        "name": "Rim",
+        "type": "ellipse",
+        "width": 64,
+        "height": 64,
+        "strokes": [
+          {
+            "strokeColor": "#000000",
+            "strokeColorRefFile": null,
+            "strokeColorRefId": null,
+            "strokeOpacity": 0.28,
+            "strokeStyle": "solid",
+            "strokeWidth": 1,
+            "strokeAlignment": "inner",
+            "strokeCapStart": null,
+            "strokeCapEnd": null,
+            "strokeColorGradient": null,
+            "strokeImage": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "26c05812-20d7-8042-8008-c68a539d73ec",
+      "name": "Canonical Chip 64",
+      "width": 64,
+      "height": 64,
+      "paintOrder": [
+        "Outer Edge",
+        "Edge Inserts",
+        "Rim",
+        "Inner Ring",
+        "Center Field",
+        "Label"
+      ],
+      "rim": {
+        "id": "dcb052a4-ae96-8045-8008-cae9ecfe82b3",
+        "name": "Rim",
+        "type": "ellipse",
+        "width": 64,
+        "height": 64,
+        "strokes": [
+          {
+            "strokeColor": "#000000",
+            "strokeColorRefFile": null,
+            "strokeColorRefId": null,
+            "strokeOpacity": 0.28,
+            "strokeStyle": "solid",
+            "strokeWidth": 1,
+            "strokeAlignment": "inner",
+            "strokeCapStart": null,
+            "strokeCapEnd": null,
+            "strokeColorGradient": null,
+            "strokeImage": null
+          }
+        ]
+      }
+    }
+  ],
+  "reviewBoard": [
+    {
+      "id": "dcb052a4-ae96-8045-8008-cae9e1fc5be7",
+      "name": "Chip Rim Fix — before / after · AFTER = PRIMARY DESIGN (approved 2026-10-15)",
+      "x": 100,
+      "y": 3570,
+      "width": 1500,
+      "height": 720
+    }
+  ],
+  "notes": [
+    {
+      "id": "26c05812-20d7-8042-8008-c68a5ce0e7ea",
+      "text": "Chip ├ Outer Edge ├ Edge Inserts ├ Rim ├ Inner Ring ├ Center Field └ Label"
+    },
+    {
+      "id": "dcb052a4-ae96-8045-8008-cae9e2095d06",
+      "text": "Chip rim — before / after · AFTER approved as the primary design"
+    },
+    {
+      "id": "dcb052a4-ae96-8045-8008-cae9e216c85a",
+      "text": "Before: the 1 px rim stroke sat on Outer Edge, UNDER the Edge Inserts, so light inserts hid it and the silhouette looked dented. After: the rim is its own ring ABOVE the inserts — continuous on every chip."
+    },
+    {
+      "id": "af8256be-c88d-80ed-8008-ca6147067e67",
+      "text": "0 2 0 · 45% (hard rim = chip thickness)  +  0 4 8 · 25%"
+    },
+    {
+      "id": "dcb052a4-ae96-8045-8008-caea2fbe3a4b",
+      "text": "3× ZOOM (1 px rim → 3 px)"
+    },
+    {
+      "id": "dcb052a4-ae96-8045-8008-cae9e22e2774",
+      "text": "AFTER — PRIMARY DESIGN ✓ (approved)"
+    }
+  ]
+}

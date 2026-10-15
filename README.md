@@ -110,6 +110,10 @@ Shadow lengths scale with numeric `width` or `height` props. Override a single c
 
 For sizing driven entirely by application CSS, use a shadow value suited to that layout. The standard card's inner panel and the back's decorative frame retain their design strokes. The retired `--card-border` token no longer controls the outer edge.
 
+## Chip borders
+
+Every chip has a continuous black inner border at 28% opacity, painted above all eight edge inserts. The border is 1px at the 64px design size and scales with the chip geometry. It applies to all denominations, custom chips and every visible stack layer, including when shadows are disabled.
+
 ## Chip shadows
 
 `Chip` and `ChipStack` use the Contact shadow by default. At the 64px design size, it combines two independent black layers: offset `0 1`, blur `1`, opacity `35%`; and offset `0 2`, blur `4`, opacity `25%`. The shadow follows the circular artwork and scales with the chip geometry. Each visible chip in a stack gets its own shadow, so overlapping layers remain distinct.

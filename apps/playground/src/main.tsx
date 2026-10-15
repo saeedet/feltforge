@@ -706,6 +706,27 @@ function App() {
                 </div>
               </div>
               <section
+                className="chip-rim-lab"
+                aria-labelledby="chip-rim-heading"
+              >
+                <p className="eyebrow">CHIP BORDERS</p>
+                <h3 id="chip-rim-heading">One continuous edge.</h3>
+                <p className="note">
+                  A thin border follows the whole chip, including every light
+                  insert. Shown at 4× size, without shadows, for a closer look.
+                </p>
+                <div className="chip-rim-previews">
+                  {[1, 100, 250].map((v) => (
+                    <div key={v}>
+                      <Chip value={v} size={256} shadow={false} />
+                      <span>
+                        {v === 250 ? 'Custom · 250' : v} · 4× close-up
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+              <section
                 className="chip-shadow-lab"
                 aria-labelledby="chip-shadow-heading"
               >

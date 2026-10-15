@@ -117,6 +117,38 @@ describe('card composition and semantics', () => {
   });
 });
 describe('poker primitives', () => {
+  it('keeps a continuous inner rim visible over all eight inserts for every chip palette', () => {
+    for (const value of [1, 5, 25, 100, 500, 1000, 5000, 250]) {
+      const svg = render(
+        <Chip value={value} size={256} shadow={false} />,
+      ).replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" ');
+      const withoutRim = svg.replace(
+        /<circle\b[^>]*data-chip-rim=""[^>]*(?:\/>|><\/circle>)/,
+        '',
+      );
+      expect(withoutRim).not.toBe(svg);
+      const options = { font: { loadSystemFonts: false } };
+      const bordered = PNG.sync.read(new Resvg(svg, options).render().asPng());
+      const flat = PNG.sync.read(
+        new Resvg(withoutRim, options).render().asPng(),
+      );
+      for (let i = 0; i < 8; i++) {
+        const angle = ((-90 + i * 45) * Math.PI) / 180;
+        const x = Math.round(128 + 126 * Math.cos(angle));
+        const y = Math.round(128 + 126 * Math.sin(angle));
+        const offset = (y * bordered.width + x) * 4;
+        const difference = Math.max(
+          ...[0, 1, 2].map(
+            (c) => flat.data[offset + c]! - bordered.data[offset + c]!,
+          ),
+        );
+        expect(
+          difference,
+          `rim over insert ${i} on chip ${value}`,
+        ).toBeGreaterThan(5);
+      }
+    }
+  });
   it('applies independent Contact layers to chips and every visible stack layer', () => {
     const out = render(
       <>
@@ -127,6 +159,7 @@ describe('poker primitives', () => {
     const ids = [...out.matchAll(/<filter id="([^"]+)"/g)].map((m) => m[1]);
     expect(new Set(ids).size).toBe(2);
     expect(out.match(/data-chip-face=""/g)).toHaveLength(4);
+    expect(out.match(/data-chip-rim=""/g)).toHaveLength(4);
     expect(out.match(/in="SourceAlpha"/g)).toHaveLength(4);
     expect(out).toContain('stdDeviation="0.5"');
     expect(out).toContain('stdDeviation="2"');

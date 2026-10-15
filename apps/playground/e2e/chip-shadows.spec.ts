@@ -68,6 +68,9 @@ test('Contact shadows render outside chips, separate stack layers and support ov
       ),
   ).toBe(true);
   await page.getByLabel('Chip shadow', { exact: true }).selectOption('design');
+  await page.locator('.chip-rim-lab').screenshot({
+    path: `test-results/chip-rims-${testInfo.project.name}.png`,
+  });
   await page.locator('.chip-shadow-lab').screenshot({
     path: `test-results/chip-shadows-${testInfo.project.name}.png`,
   });
@@ -81,6 +84,9 @@ test('Contact shadows render outside chips, separate stack layers and support ov
     page.locator('.chip-stage > svg').nth(1).locator('[data-chip-face],filter'),
   ).toHaveCount(0);
   await page.setViewportSize({ width: 390, height: 844 });
+  await page.locator('.chip-rim-lab').screenshot({
+    path: `test-results/chip-rims-mobile-${testInfo.project.name}.png`,
+  });
   await page.locator('.chip-shadow-lab').screenshot({
     path: `test-results/chip-shadows-mobile-${testInfo.project.name}.png`,
   });
