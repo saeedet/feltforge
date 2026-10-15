@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.2 — Unreleased
+## 0.2.2 — 2026-10-15
 
 - Align the separate chip rim with the updated Penpot master: a continuous 1px inner border above every edge insert, using shared design constants on single chips and stack layers.
 - Add magnified chip-border previews and document the rim's sizing and paint order.
