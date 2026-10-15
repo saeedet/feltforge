@@ -445,14 +445,31 @@ pre {
   flex-wrap: wrap;
   padding: 40px 0;
 }
+.chip-rim-lab,
 .chip-shadow-lab {
   padding: 32px 0;
   border-top: 1px solid var(--line);
 }
+.chip-rim-lab h3,
 .chip-shadow-lab h3 {
   margin: 0;
   font-family: Georgia, serif;
   font-size: 28px;
+}
+.chip-rim-previews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 32px;
+}
+.chip-rim-previews > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.chip-rim-previews span {
+  font-size: 12px;
+  color: #74806f;
 }
 .chip-shadow-surfaces {
   display: grid;

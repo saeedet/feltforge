@@ -55,16 +55,19 @@ export function ChipGeometry({
       {inserts.map((d, i) => (
         <path key={i} d={d} fill={insert} />
       ))}
+      {/* The separate inner rim paints above every edge insert. */}
+      <circle
+        data-chip-rim=""
+        cx={CHIP.center}
+        cy={CHIP.center}
+        r={CHIP.outerR - CHIP.rim.width / 2}
+        fill="none"
+        stroke={CHIP.rim.color}
+        strokeWidth={CHIP.rim.width}
+        strokeOpacity={CHIP.rim.opacity}
+      />
       <circle cx="32" cy="32" r="22.5" fill={insert} />
       <circle cx="32" cy="32" r="20.5" fill={base} />
-      <circle
-        cx="32"
-        cy="32"
-        r="31.5"
-        fill="none"
-        stroke="#000"
-        strokeOpacity=".28"
-      />
       <text
         ref={ref}
         x="32"

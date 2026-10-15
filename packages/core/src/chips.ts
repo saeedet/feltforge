@@ -12,6 +12,7 @@ export const CHIP = {
   minSize: 32,
   stackOffset: { x: 3, y: -4 },
   stackDefaultCap: 5,
+  rim: { width: 1, color: '#000000', opacity: 0.28 },
   /** @deprecated Previous Subtle preset; use contactShadows for the current design. */
   shadow: { x: 0, y: 2, blur: 2.5, opacity: 0.18 },
   contactShadows: [

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.2 — Unreleased
+
+- Align the separate chip rim with the updated Penpot master: a continuous 1px inner border above every edge insert, using shared design constants on single chips and stack layers.
+- Add magnified chip-border previews and document the rim's sizing and paint order.
+- Verify that the rim remains visible over all eight inserts across every denomination and custom chips.
+
 ## 0.2.1 — 2026-10-15
 
 - Add the approved two-layer Contact shadow to single chips and each visible chip in a stack, enabled by default and scaled with the chip geometry.
