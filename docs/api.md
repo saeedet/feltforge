@@ -36,7 +36,13 @@ Colours are configurable defaults, not universal casino denominations.
 
 ## Tables
 
-`PokerTable`: `layout: 2 | 6 | 8 | 9`, optional `renderSeat`, `renderBet`, `renderMarker`, `community`, `pot`, HTML children/props, style and div ref.
+`PokerTable`: `layout: 2 | 6 | 8 | 9`, optional `theme: TableTheme` (default `classic`), `renderSeat`, `renderBet`, `renderMarker`, `community`, `pot`, HTML children/props, style and div ref.
+
+Themes are `classic`, `midnight-racetrack`, `royal-burgundy`, `neon-night`, `emerald-art-deco` and `ocean-slate`. Classic uses the updated Penpot master. Every theme shares the same 1000 × 600 canvas and overlay geometry; `theme` never changes seats, bets, markers, community cards or the pot. Decorative lettering and symbols are outlined SVG paths, with no runtime fonts, images or external requests.
+
+`TABLE_THEMES`, `TABLE_THEME_LABELS` and `TableTheme` are available from the root React entry, `/table`, `/poker` and `/core`. Invalid theme values throw a `RangeError` at runtime.
+
+Material tokens replace the theme's default rail, inner rail, outline, felt or betting-line paint. `--table-shadow` overrides each shadowed layer's SVG filter, including Neon Night glow and Royal Burgundy stud shadows. Use `none` to remove these effects, or a CSS filter such as `drop-shadow(0 3px 6px rgba(0,0,0,.3))`. Lengths use table coordinate units and scale with the SVG. The token affects decorative artwork only; overlay card and chip shadows remain independently configurable.
 
 Each render callback receives `{ index, angle, lateralSign, seat, bet, marker, normalized }`. Canonical points use the 1000 × 600 coordinate system; normalized points are in 0–1 space. The table is a labelled group, with its decorative SVG hidden from assistive technology. HTML controls in overlays remain interactive.
 
@@ -56,7 +62,7 @@ All card fronts, Jokers and backs have a CSS box shadow by default. `--card-shad
 | Classic back | `--back-classic-field`, `--back-classic-gold`, `--back-classic-ivory` (plus card background/shadow)                                  |
 | Text         | `--chip-font` (chips and markers)                                                                                                    |
 | Chips        | `--chip-shadow` (CSS filter value; applies independently to each chip)                                                               |
-| Table        | `--table-rail`, `--table-inner-rail`, `--table-outline`, `--table-felt`, `--table-line`                                              |
+| Table        | `--table-rail`, `--table-inner-rail`, `--table-outline`, `--table-felt`, `--table-line`, `--table-shadow`                            |
 
 CSS variables inherit through the document. All components accept `className`; no stylesheet is required by the library.
 

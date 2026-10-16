@@ -53,12 +53,12 @@ for (const mode of ['react18', 'next']) {
     await write(
       dir,
       'check.mjs',
-      `import React from 'react';import {renderToString} from 'react-dom/server';import {Card,ChipStack,PokerTable} from 'feltforge';import {western} from 'feltforge/courts/western';import {getTableLayout} from 'feltforge/core';import assert from 'node:assert/strict';const compact=renderToString(React.createElement(Card,{variant:'compact',rank:'K',suit:'spades'}));assert.match(compact,/viewBox="0 0 38 53"/);assert.doesNotMatch(compact,/<text|font-family/);const card=renderToString(React.createElement(Card,{rank:'Q',suit:'hearts',court:western}));assert.match(card,/Queen of Hearts/);assert.match(card,/<path/);const stack=renderToString(React.createElement(ChipStack,{value:25,count:1000}));assert.match(stack,/1000 chips, total 25000/);assert.equal((stack.match(/<text/g)||[]).length,5);const table=renderToString(React.createElement(PokerTable,{layout:9,renderSeat:s=>React.createElement('button',{},s.index)}));assert.equal((table.match(/<button/g)||[]).length,9);assert.equal(getTableLayout(9).seats.length,9);console.log('React '+React.version+' SSR passed');`,
+      `import React from 'react';import {renderToString} from 'react-dom/server';import {Card,ChipStack,PokerTable} from 'feltforge';import {western} from 'feltforge/courts/western';import {getTableLayout,TABLE_THEMES} from 'feltforge/core';import assert from 'node:assert/strict';const compact=renderToString(React.createElement(Card,{variant:'compact',rank:'K',suit:'spades'}));assert.match(compact,/viewBox="0 0 38 53"/);assert.doesNotMatch(compact,/<text|font-family/);const card=renderToString(React.createElement(Card,{rank:'Q',suit:'hearts',court:western}));assert.match(card,/Queen of Hearts/);assert.match(card,/<path/);const stack=renderToString(React.createElement(ChipStack,{value:25,count:1000}));assert.match(stack,/1000 chips, total 25000/);assert.equal((stack.match(/<text/g)||[]).length,5);assert.equal(TABLE_THEMES.length,6);for(const theme of TABLE_THEMES){const skin=renderToString(React.createElement(PokerTable,{layout:6,theme}));assert.match(skin,new RegExp('data-table-theme="'+theme+'"'));assert.doesNotMatch(skin,/<text|<image|font-family/);}const table=renderToString(React.createElement(PokerTable,{layout:9,renderSeat:s=>React.createElement('button',{},s.index)}));assert.equal((table.match(/<button/g)||[]).length,9);assert.equal(getTableLayout(9).seats.length,9);console.log('React '+React.version+' SSR passed');`,
     );
     await write(
       dir,
       'consumer.tsx',
-      `import {Card,ChipStack,PokerTable} from 'feltforge';import {CompactCard} from 'feltforge/compact-card';import {western} from 'feltforge/courts/western';export const Example=()=> <><CompactCard rank="K" suit="spades" size="hero"/><Card variant="compact" rank="10" suit="clubs"/><Card rank="K" suit="hearts" court={western}/><ChipStack value={25} count={5}/><PokerTable layout={9}/></>;\n// @ts-expect-error Jokers cannot have suits\nconst wrong=<Card rank="joker" suit="hearts"/>;void wrong;`,
+      `import {Card,ChipStack,PokerTable} from 'feltforge';import {CompactCard} from 'feltforge/compact-card';import {western} from 'feltforge/courts/western';export const Example=()=> <><CompactCard rank="K" suit="spades" size="hero"/><Card variant="compact" rank="10" suit="clubs"/><Card rank="K" suit="hearts" court={western}/><ChipStack value={25} count={5}/><PokerTable layout={9} theme="neon-night"/></>;\n// @ts-expect-error Jokers cannot have suits\nconst wrong=<Card rank="joker" suit="hearts"/>;void wrong;`,
     );
     await write(
       dir,
@@ -93,12 +93,12 @@ for (const mode of ['react18', 'next']) {
     await write(
       dir,
       'app/page.tsx',
-      `import {Card,CardBack} from 'feltforge';import {western} from 'feltforge/courts/western';import {getTableLayout} from 'feltforge/core';import Demo from './demo';export default function Page(){return <main><h1>FeltForge consumer</h1><Card rank="7" suit="hearts"/><Card rank="K" suit="clubs" court={western}/><CardBack/><p>{getTableLayout(6).seats.length} seats</p><Demo/></main>}`,
+      `import {Card,CardBack} from 'feltforge';import {western} from 'feltforge/courts/western';import {getTableLayout,TABLE_THEMES} from 'feltforge/core';import Demo from './demo';export default function Page(){return <main><h1>FeltForge consumer</h1><Card rank="7" suit="hearts"/><Card rank="K" suit="clubs" court={western}/><CardBack/><p>{getTableLayout(6).seats.length} seats</p><Demo/></main>}`,
     );
     await write(
       dir,
       'app/demo.tsx',
-      `'use client';import {useState} from 'react';import {ChipStack,PokerTable} from 'feltforge';export default function Demo(){const [count,setCount]=useState(5);return <><button onClick={()=>setCount(count+1)}>Add chip</button><ChipStack value={25} count={count}/><PokerTable layout={6} renderSeat={s=><button>Seat {s.index}</button>}/></>}`,
+      `'use client';import {useState} from 'react';import {ChipStack,PokerTable} from 'feltforge';export default function Demo(){const [count,setCount]=useState(5);return <><button onClick={()=>setCount(count+1)}>Add chip</button><ChipStack value={25} count={count}/><PokerTable layout={6} theme="royal-burgundy" renderSeat={s=><button>Seat {s.index}</button>}/></>}`,
     );
     console.log('Building Next.js App Router server/client consumer…');
     const log = run(dir, resolve(dir, 'node_modules/.bin/next'), [

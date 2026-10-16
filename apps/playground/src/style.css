@@ -563,6 +563,39 @@ pre {
   border-radius: 8px;
   padding: 20px 8px;
 }
+.table-theme-heading {
+  margin-top: 2rem;
+}
+.table-theme-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1rem;
+}
+.table-theme-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+  background: #e5e9df;
+  color: #243b2b;
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+}
+.table-theme-card[aria-pressed='true'] {
+  border-color: #527c45;
+  background: #dce5d5;
+}
+.table-theme-card:focus-visible {
+  outline: 2px solid #527c45;
+  outline-offset: 3px;
+}
+.table-theme-card span {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
 .table-preview {
   margin: auto;
   padding: 0 20px;

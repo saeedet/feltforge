@@ -1,6 +1,6 @@
 {
   "name": "feltforge-workspace",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@11.24.0",
@@ -20,6 +20,7 @@
     "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
     "prepare:assets": "node tooling/assets/build.mjs && node tooling/assets/modules.mjs",
     "generate:ranks": "node tooling/assets/ranks.mjs",
+    "generate:tables": "node tooling/assets/tables.mjs",
     "test:visual": "node tooling/assets/verify.mjs",
     "package:check": "node tooling/package/verify.mjs && node tooling/package/pack.mjs",
     "package:pack": "node tooling/package/pack.mjs --pack",

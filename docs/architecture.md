@@ -6,7 +6,7 @@ The pnpm/Turborepo workspace has four concerns: framework-neutral types and geom
 
 Internal package names remain private and do not require an npm organization. `pnpm build` assembles one `feltforge` release candidate in `dist/package`, with explicit subpath exports. Relative imports replace internal workspace package names. Runtime code has no dependency other than React as an optional peer (needed for React entries, unnecessary for core).
 
-Default builds stay `private: true`. After explicit maintainer approval, `pnpm package:release` prepares a separate public manifest and validated tarball. It does not publish; publication remains an explicit npm action. Internal workspace packages always remain private. No publish automation is configured.
+Default builds stay `private: true`. After maintainer approval, `pnpm package:release` prepares a separate public manifest and validated tarball. A matching version tag runs the checked trusted-publisher workflow. Internal workspace packages always remain private.
 
 ## Explicit artwork selection
 
@@ -17,6 +17,8 @@ Production cards are composed from one shell, reusable glyph/suit paths and geom
 ## Geometry and overlays
 
 Table geometry remains a 5:3 SVG. Seat, bet, marker, community and pot UI remains HTML anchored in normalized coordinates, with independent dimensions. `PokerMarker` renders only the puck. Core computes marker positions from the approved formula and stored signs. No game state or rules are inferred by the library.
+
+Six table themes share these anchors. `PokerTable` defaults to the refined Classic skin; `theme` changes decorative artwork only. The captured component masters generate typed layer data, including gradients, clipped patterns, independent shadows and inside strokes. Lettering is imported as vector outlines from Penpot PDF exports, converted to SVG without adding font files. Instance-scoped SVG IDs keep repeated tables and server rendering independent. Existing material tokens override theme paints; `--table-shadow` replaces the decorative filters.
 
 ## Build and verification
 

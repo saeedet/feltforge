@@ -28,8 +28,8 @@ jobs:
           package-manager-cache: false
       - run: node tooling/package/release-guard.mjs
       - run: pnpm install --frozen-lockfile
-      - run: pnpm generate:ranks && pnpm prepare:assets
-      - run: git diff --exit-code -- packages/assets/generated packages/assets/outlined packages/assets/src/generated
+      - run: pnpm generate:ranks && pnpm prepare:assets && pnpm generate:tables
+      - run: git diff --exit-code -- packages/assets/generated packages/assets/outlined packages/assets/src/generated packages/react/src/table-skins.generated.ts
       - run: pnpm check
       - run: pnpm test:visual
       - run: pnpm package:release
