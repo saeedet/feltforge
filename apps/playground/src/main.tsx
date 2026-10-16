@@ -953,6 +953,7 @@ function App() {
                     type="button"
                     key={theme}
                     className="table-theme-card"
+                    aria-label={TABLE_THEME_LABELS[theme]}
                     aria-pressed={tableTheme === theme}
                     onClick={() => setTableTheme(theme)}
                   >
