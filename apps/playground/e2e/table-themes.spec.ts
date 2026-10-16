@@ -14,7 +14,7 @@ test('all six table themes preserve overlays and local SVG references', async ({
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('/');
-  await page.getByRole('button', { name: 'Poker table', exact: true }).click();
+  await page.getByRole('button', { name: /^Poker table/ }).click();
   const main = page.locator('.table-preview > [data-table-theme]');
   await expect(page.getByLabel('Table themes').getByRole('button')).toHaveCount(
     6,
