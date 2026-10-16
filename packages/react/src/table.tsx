@@ -1,9 +1,12 @@
 'use client';
 import { forwardRef } from 'react';
 import type { HTMLAttributes, ReactNode } from 'react';
-import { getTableLayout, TABLE_COLORS } from '@feltforge/core';
-import type { Point, TableLayout } from '@feltforge/core';
+import { getTableLayout } from '@feltforge/core';
+import type { Point, TableLayout, TableTheme } from '@feltforge/core';
 import type { ThemeStyle } from './svg.js';
+import { TableSurface } from './table-surface.js';
+export { TABLE_THEMES, TABLE_THEME_LABELS } from '@feltforge/core';
+export type { TableTheme } from '@feltforge/core';
 export type SeatAnchor = ReturnType<typeof getTableLayout>['seats'][number];
 export type TableAnchorProps = Omit<HTMLAttributes<HTMLDivElement>, 'style'> & {
   at: Point;
@@ -32,6 +35,7 @@ export const TableAnchor = /* @__PURE__ */ forwardRef<
 });
 export type PokerTableProps = Omit<HTMLAttributes<HTMLDivElement>, 'style'> & {
   layout: TableLayout;
+  theme?: TableTheme;
   style?: ThemeStyle;
   renderSeat?: (seat: SeatAnchor) => ReactNode;
   renderBet?: (seat: SeatAnchor) => ReactNode;
@@ -45,6 +49,7 @@ export const PokerTable = /* @__PURE__ */ forwardRef<
 >(function PokerTable(
   {
     layout,
+    theme = 'classic',
     renderSeat,
     renderBet,
     renderMarker,
@@ -57,13 +62,13 @@ export const PokerTable = /* @__PURE__ */ forwardRef<
   },
   ref,
 ) {
-  const data = getTableLayout(layout),
-    c = TABLE_COLORS;
+  const data = getTableLayout(layout);
   return (
     <div
       {...props}
       ref={ref}
       role="group"
+      data-table-theme={theme}
       aria-label={label ?? `${layout}-seat poker table`}
       style={{
         position: 'relative',
@@ -73,68 +78,7 @@ export const PokerTable = /* @__PURE__ */ forwardRef<
         ...style,
       }}
     >
-      <svg
-        viewBox="0 0 1000 600"
-        width="100%"
-        height="100%"
-        aria-hidden="true"
-        focusable="false"
-        style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}
-      >
-        <rect
-          x="80"
-          y="80"
-          width="840"
-          height="460"
-          rx="230"
-          fill="#000"
-          opacity=".22"
-        />
-        <rect
-          x="80"
-          y="70"
-          width="840"
-          height="460"
-          rx="230"
-          fill={`var(--table-rail, ${c.outerRail})`}
-        />
-        <rect
-          x="81"
-          y="71"
-          width="838"
-          height="458"
-          rx="229"
-          fill="none"
-          stroke={`var(--table-outline, ${c.outline})`}
-          strokeWidth="2"
-        />
-        <rect
-          x="100"
-          y="90"
-          width="800"
-          height="420"
-          rx="210"
-          fill={`var(--table-inner-rail, ${c.innerRail})`}
-        />
-        <rect
-          x="112"
-          y="102"
-          width="776"
-          height="396"
-          rx="198"
-          fill={`var(--table-felt, ${c.felt})`}
-        />
-        <rect
-          x="152"
-          y="142"
-          width="696"
-          height="316"
-          rx="158"
-          fill="none"
-          stroke={`var(--table-line, ${c.feltLine})`}
-          strokeWidth="2"
-        />
-      </svg>
+      <TableSurface theme={theme} />
       {community && (
         <div
           style={{
@@ -150,25 +94,26 @@ export const PokerTable = /* @__PURE__ */ forwardRef<
         </div>
       )}
       {pot && <TableAnchor at={data.normalizedPot}>{pot}</TableAnchor>}
-      {data.seats.map((seat) => (
-        <div key={seat.index} data-seat-index={seat.index}>
-          {renderSeat && (
-            <TableAnchor at={seat.normalized.seat}>
-              {renderSeat(seat)}
-            </TableAnchor>
-          )}
-          {renderBet && (
-            <TableAnchor at={seat.normalized.bet}>
-              {renderBet(seat)}
-            </TableAnchor>
-          )}
-          {renderMarker && (
-            <TableAnchor at={seat.normalized.marker}>
-              {renderMarker(seat)}
-            </TableAnchor>
-          )}
-        </div>
-      ))}
+      {(renderSeat || renderBet || renderMarker) &&
+        data.seats.map((seat) => (
+          <div key={seat.index} data-seat-index={seat.index}>
+            {renderSeat && (
+              <TableAnchor at={seat.normalized.seat}>
+                {renderSeat(seat)}
+              </TableAnchor>
+            )}
+            {renderBet && (
+              <TableAnchor at={seat.normalized.bet}>
+                {renderBet(seat)}
+              </TableAnchor>
+            )}
+            {renderMarker && (
+              <TableAnchor at={seat.normalized.marker}>
+                {renderMarker(seat)}
+              </TableAnchor>
+            )}
+          </div>
+        ))}
       {children}
     </div>
   );

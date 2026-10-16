@@ -1,5 +1,7 @@
 # Captured design specification
 
+The refreshed Classic and five additional poker table masters are captured separately in [table themes](table-themes.md), with reproducible font-free SVG lettering and themed React geometry.
+
 `penpot-specification.json` is a read-only capture of the locked Playing Cards Penpot file `52a5041f-08a1-80f1-8008-c36ef29dd4bb`, inspected on 2026-10-12. It preserves source page and text-object IDs. Penpot remains authoritative.
 
 All required vector exports, exact font subsets, layout metadata and checksums are captured. `pnpm generate:ranks` reproduces thirteen text-derived assets; the existing vector 10 is preserved. `pnpm prepare:assets` validates all thirty-one sources before generating output, removes editor wrappers, normalizes/crops only recorded frames, safely merges duplicated fill/stroke geometry and optimizes at five-decimal precision.

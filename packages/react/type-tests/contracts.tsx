@@ -26,3 +26,6 @@ void (<CardBack rank="A" />);
 void (<ChipStack value={25} count={5} chips={[]} />);
 // @ts-expect-error only approved table layouts exist
 void (<PokerTable layout={7} />);
+void (<PokerTable layout={9} theme="emerald-art-deco" />);
+// @ts-expect-error table theme names are explicit
+void (<PokerTable layout={6} theme="green" />);

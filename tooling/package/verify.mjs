@@ -31,6 +31,7 @@ for (const file of files.filter((x) => /\.(js|d\.ts)$/.test(x))) {
 const fixtures = {
   number: `import {createElement} from 'react';import {Card} from '${pkg}/dist/react/index.js';export const Example=()=>createElement(Card,{rank:'7',suit:'hearts'});`,
   chips: `import {Chip} from '${pkg}/dist/react/index.js';export {Chip};`,
+  tables: `export {PokerTable,TABLE_THEMES} from '${pkg}/dist/react/table.js';`,
   core: `export {getTableLayout} from '${pkg}/dist/core/index.js';`,
   compact: `import {createElement} from 'react';import {CompactCard} from '${pkg}/dist/react/compact-card.js';export const Example=()=>createElement(CompactCard,{rank:'K',suit:'spades'});`,
   western: `export {western} from '${pkg}/dist/assets/generated/courts/western.js';`,

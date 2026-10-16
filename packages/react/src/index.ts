@@ -10,6 +10,8 @@ export type { ChipProps, ChipStackProps, ChipAppearance } from './chip.js';
 export { PokerMarker } from './marker.js';
 export type { PokerMarkerProps } from './marker.js';
 export { PokerTable, TableAnchor } from './table.js';
+export { TABLE_THEMES, TABLE_THEME_LABELS } from './table.js';
+export type { TableTheme } from './table.js';
 export type { PokerTableProps, TableAnchorProps, SeatAnchor } from './table.js';
 export type { VisualProps, ThemeStyle } from './svg.js';
 export type { CourtArtwork, JokerArtwork } from '@feltforge/assets/types';

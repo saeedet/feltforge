@@ -9,13 +9,20 @@ import {
   PokerMarker,
   PokerTable,
 } from '@feltforge/react';
-import { RANKS, SUITS, COMPACT_CARD } from '@feltforge/core';
+import {
+  RANKS,
+  SUITS,
+  COMPACT_CARD,
+  TABLE_THEMES,
+  TABLE_THEME_LABELS,
+} from '@feltforge/core';
 import type {
   Rank,
   Suit,
   CourtRank,
   CourtStyle,
   TableLayout,
+  TableTheme,
   CompactCardSize,
 } from '@feltforge/core';
 import type { ThemeStyle } from '@feltforge/react';
@@ -104,7 +111,11 @@ function App() {
     '0 4px 16px rgba(35, 86, 62, .3)',
   );
   const compact = COMPACT_CARD[compactSize];
-  const [tab, setTab] = useState('Cards'),
+  const [tab, setTab] = useState(() =>
+      new URLSearchParams(document.location.search).get('tab') === 'table'
+        ? 'Poker table'
+        : 'Cards',
+    ),
     [style, setStyle] = useState<CourtStyle>('persian'),
     [court, setCourt] = useState<CourtArtwork | null>(null),
     [jokers, setJokers] = useState<JokerArtwork[]>([]),
@@ -118,6 +129,7 @@ function App() {
     [cap, setCap] = useState(5),
     [color, setColor] = useState('#0c7a7c');
   const [layout, setLayout] = useState<TableLayout>(6),
+    [tableTheme, setTableTheme] = useState<TableTheme>('classic'),
     [tableWidth, setTableWidth] = useState(1000),
     [dealer, setDealer] = useState(0);
   useEffect(() => {
@@ -785,6 +797,22 @@ function App() {
             <section aria-label="Poker table preview">
               <div className="toolbar">
                 <label>
+                  Table theme
+                  <select
+                    aria-label="Table theme"
+                    value={tableTheme}
+                    onChange={(e) =>
+                      setTableTheme(e.target.value as TableTheme)
+                    }
+                  >
+                    {TABLE_THEMES.map((theme) => (
+                      <option key={theme} value={theme}>
+                        {TABLE_THEME_LABELS[theme]}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label>
                   Seats
                   <select
                     aria-label="Seats"
@@ -833,6 +861,7 @@ function App() {
                 <div className="table-preview" style={{ width: tableWidth }}>
                   <PokerTable
                     layout={layout}
+                    theme={tableTheme}
                     renderSeat={(s) => (
                       <div
                         className={`seat ${s.index === 0 ? 'hero-seat' : ''}`}
@@ -911,8 +940,32 @@ function App() {
                 interface.
               </p>
               <pre>
-                <code>{`<PokerTable\n  layout={${layout}}\n  renderSeat={({ index }) => <PlayerPanel seat={index} />}\n  renderBet={() => <ChipStack value={25} count={3} />}\n/>`}</code>
+                <code>{`<PokerTable\n  layout={${layout}}\n  theme="${tableTheme}"\n  renderSeat={({ index }) => <PlayerPanel seat={index} />}\n  renderBet={() => <ChipStack value={25} count={3} />}\n/>`}</code>
               </pre>
+              <h3 className="table-theme-heading">Six tables. Your room.</h3>
+              <p className="note">
+                Choose a table to preview it with cards, chips and players. All
+                themes share the same seat layouts.
+              </p>
+              <div className="table-theme-gallery" aria-label="Table themes">
+                {TABLE_THEMES.map((theme) => (
+                  <button
+                    type="button"
+                    key={theme}
+                    className="table-theme-card"
+                    aria-label={TABLE_THEME_LABELS[theme]}
+                    aria-pressed={tableTheme === theme}
+                    onClick={() => setTableTheme(theme)}
+                  >
+                    <PokerTable
+                      theme={theme}
+                      layout={6}
+                      aria-label={`${TABLE_THEME_LABELS[theme]} theme preview`}
+                    />
+                    <span>{TABLE_THEME_LABELS[theme]}</span>
+                  </button>
+                ))}
+              </div>
             </section>
           )}
         </section>

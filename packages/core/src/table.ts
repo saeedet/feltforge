@@ -1,6 +1,23 @@
 import type { TableLayout } from './index.js';
 
 export type Point = Readonly<{ x: number; y: number }>;
+export const TABLE_THEMES = [
+  'classic',
+  'midnight-racetrack',
+  'royal-burgundy',
+  'neon-night',
+  'emerald-art-deco',
+  'ocean-slate',
+] as const;
+export type TableTheme = (typeof TABLE_THEMES)[number];
+export const TABLE_THEME_LABELS: Readonly<Record<TableTheme, string>> = {
+  classic: 'Classic',
+  'midnight-racetrack': 'Midnight Racetrack',
+  'royal-burgundy': 'Royal Burgundy',
+  'neon-night': 'Neon Night',
+  'emerald-art-deco': 'Emerald Art Deco',
+  'ocean-slate': 'Ocean Slate',
+};
 export type LateralSign = -1 | 1;
 export const TABLE = {
   width: 1000,
@@ -8,6 +25,7 @@ export const TABLE = {
   center: { x: 500, y: 300 },
   seatEllipse: { rx: 410, ry: 250 },
   betEllipse: { rx: 290, ry: 145 },
+  /** Legacy flat shadow geometry; current skins use layered SVG filters. */
   separation: {
     x: 80,
     y: 80,
@@ -22,17 +40,17 @@ export const TABLE = {
     width: 840,
     height: 460,
     radius: 230,
-    innerStrokeWidth: 2,
+    innerStrokeWidth: 1.5,
   },
   innerRail: { x: 100, y: 90, width: 800, height: 420, radius: 210 },
   felt: { x: 112, y: 102, width: 776, height: 396, radius: 198 },
   feltLine: {
-    x: 152,
-    y: 142,
-    width: 696,
-    height: 316,
-    radius: 158,
-    strokeWidth: 2,
+    x: 162,
+    y: 152,
+    width: 676,
+    height: 296,
+    radius: 148,
+    strokeWidth: 1.5,
   },
   community: {
     x: 270,
@@ -45,11 +63,11 @@ export const TABLE = {
   pot: { x: 500, y: 212 },
 } as const;
 export const TABLE_COLORS = {
-  outerRail: '#1E1C1A',
-  innerRail: '#4B3424',
+  outerRail: '#211E1B',
+  innerRail: '#5B3A22',
   felt: '#1D6B45',
-  feltLine: '#3E8E66',
-  outline: '#55504A',
+  feltLine: '#5FB488',
+  outline: '#4D4741',
   separation: '#000000',
 } as const;
 export const SEAT_ANGLES = {

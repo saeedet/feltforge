@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 — 2026-10-17
+
+- Add five Penpot table themes: Midnight Racetrack, Royal Burgundy, Neon Night, Emerald Art Deco and Ocean Slate, alongside the refined Classic design.
+- Add `PokerTable.theme`, theme names and labels while preserving all 2/6/8/9-seat overlay anchors and the Classic default.
+- Preserve gradients, stitching, brass studs, felt patterns, lighting and glow. Convert decorative lettering to SVG paths with no runtime font dependency.
+- Add a theme picker and six-design gallery to the playground, plus theme, color and shadow customization documentation.
+- Refresh the README banner with the updated Classic table, card shadows and chip rims.
+
 ## 0.2.2 — 2026-10-15
 
 - Align the separate chip rim with the updated Penpot master: a continuous 1px inner border above every edge insert, using shared design constants on single chips and stack layers.

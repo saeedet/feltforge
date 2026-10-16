@@ -1,0 +1,4523 @@
+{
+  "file": "Playing Cards",
+  "fileId": "52a5041f-08a1-80f1-8008-c36ef29dd4bb",
+  "page": "02 \u2014 Components",
+  "captured": "2026-10-16",
+  "width": 1000,
+  "height": 600,
+  "masters": [
+    {
+      "id": "26c05812-20d7-8042-8008-c692e399cde6",
+      "name": "Classic",
+      "theme": "classic",
+      "layers": [
+        {
+          "name": "Outer Rail",
+          "kind": "rect",
+          "x": 80,
+          "y": 70,
+          "width": 840,
+          "height": 460,
+          "radius": 230,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0.5,
+              "startY": 0,
+              "endX": 0.5,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#36322e",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#211e1b",
+                  "opacity": 1,
+                  "offset": 0.5
+                },
+                {
+                  "color": "#0f0d0c",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "strokes": [
+            {
+              "color": "#4d4741",
+              "width": 1.5,
+              "inner": true
+            }
+          ],
+          "shadows": [
+            {
+              "x": 0,
+              "y": 16,
+              "blur": 30,
+              "color": "#000000",
+              "opacity": 0.6
+            },
+            {
+              "x": 0,
+              "y": 4,
+              "blur": 6,
+              "color": "#000000",
+              "opacity": 0.35
+            }
+          ]
+        },
+        {
+          "name": "Rail Highlight",
+          "kind": "rect",
+          "x": 83,
+          "y": 73,
+          "width": 834,
+          "height": 454,
+          "radius": 227,
+          "strokes": [
+            {
+              "color": "#ffffff",
+              "width": 1.5,
+              "opacity": 0.1,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Rail Stitching",
+          "kind": "rect",
+          "x": 87,
+          "y": 77,
+          "width": 826,
+          "height": 446,
+          "radius": 223,
+          "strokes": [
+            {
+              "color": "#8a8178",
+              "width": 1,
+              "opacity": 0.45,
+              "dash": "10 10"
+            }
+          ]
+        },
+        {
+          "name": "Inner Rail (walnut)",
+          "kind": "rect",
+          "x": 100,
+          "y": 90,
+          "width": 800,
+          "height": 420,
+          "radius": 210,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0,
+              "startY": 0,
+              "endX": 1,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#7a5233",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#5b3a22",
+                  "opacity": 1,
+                  "offset": 0.45
+                },
+                {
+                  "color": "#3b2414",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "strokes": [
+            {
+              "color": "#000000",
+              "width": 1,
+              "opacity": 0.4,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Walnut Bevel",
+          "kind": "rect",
+          "x": 101,
+          "y": 91,
+          "width": 798,
+          "height": 418,
+          "radius": 209,
+          "strokes": [
+            {
+              "color": "#c28a5c",
+              "width": 1,
+              "opacity": 0.35,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Walnut Grain",
+          "kind": "rect",
+          "x": 107,
+          "y": 97,
+          "width": 786,
+          "height": 406,
+          "radius": 203,
+          "strokes": [
+            {
+              "color": "#2a170b",
+              "width": 0.75,
+              "opacity": 0.35
+            }
+          ]
+        },
+        {
+          "name": "Felt",
+          "kind": "rect",
+          "x": 112,
+          "y": 102,
+          "width": 776,
+          "height": 396,
+          "radius": 198,
+          "fill": {
+            "gradient": {
+              "type": "radial",
+              "startX": 0.5,
+              "startY": 0.45,
+              "endX": 0.5,
+              "endY": 1.15,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#2a8a5a",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#1d6b45",
+                  "opacity": 1,
+                  "offset": 0.5
+                },
+                {
+                  "color": "#0d3d26",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "strokes": [
+            {
+              "color": "#000000",
+              "width": 14,
+              "opacity": 0.16,
+              "inner": true
+            },
+            {
+              "color": "#000000",
+              "width": 5,
+              "opacity": 0.2,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Overhead Light",
+          "kind": "rect",
+          "x": 112,
+          "y": 102,
+          "width": 776,
+          "height": 396,
+          "radius": 198,
+          "fill": {
+            "gradient": {
+              "type": "radial",
+              "startX": 0.5,
+              "startY": 0.4,
+              "endX": 0.5,
+              "endY": 0.95,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#ffffff",
+                  "opacity": 0.1,
+                  "offset": 0
+                },
+                {
+                  "color": "#ffffff",
+                  "opacity": 0,
+                  "offset": 0.6
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Betting Line",
+          "kind": "rect",
+          "x": 162,
+          "y": 152,
+          "width": 676,
+          "height": 296,
+          "radius": 148,
+          "strokes": [
+            {
+              "color": "#5fb488",
+              "width": 1.5,
+              "opacity": 0.55
+            }
+          ]
+        },
+        {
+          "name": "Text",
+          "kind": "text",
+          "x": 456,
+          "y": 419.5,
+          "width": 138.56,
+          "height": 22.72,
+          "asset": "classic-wordmark.svg",
+          "sourceId": "35d3bec8-6597-804f-8008-cc8b51598581"
+        }
+      ]
+    },
+    {
+      "id": "35d3bec8-6597-804f-8008-cc8b6242630d",
+      "name": "Midnight Racetrack",
+      "theme": "midnight-racetrack",
+      "layers": [
+        {
+          "name": "Outer Rail",
+          "kind": "rect",
+          "x": 80,
+          "y": 70,
+          "width": 840,
+          "height": 460,
+          "radius": 230,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0.5,
+              "startY": 0,
+              "endX": 0.5,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#34343a",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#18181c",
+                  "opacity": 1,
+                  "offset": 0.5
+                },
+                {
+                  "color": "#0b0b0d",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "strokes": [
+            {
+              "color": "#4a4a52",
+              "width": 2,
+              "inner": true
+            }
+          ],
+          "shadows": [
+            {
+              "x": 0,
+              "y": 16,
+              "blur": 30,
+              "color": "#000000",
+              "opacity": 0.6
+            },
+            {
+              "x": 0,
+              "y": 4,
+              "blur": 6,
+              "color": "#000000",
+              "opacity": 0.35
+            }
+          ]
+        },
+        {
+          "name": "Rail Highlight",
+          "kind": "rect",
+          "x": 83,
+          "y": 73,
+          "width": 834,
+          "height": 454,
+          "radius": 227,
+          "strokes": [
+            {
+              "color": "#ffffff",
+              "width": 1.5,
+              "opacity": 0.08,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Racetrack (walnut)",
+          "kind": "rect",
+          "x": 100,
+          "y": 90,
+          "width": 800,
+          "height": 420,
+          "radius": 210,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0,
+              "startY": 0,
+              "endX": 1,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#7a4b2a",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#5a3519",
+                  "opacity": 1,
+                  "offset": 0.5
+                },
+                {
+                  "color": "#3b2210",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "strokes": [
+            {
+              "color": "#000000",
+              "width": 1,
+              "opacity": 0.35,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Racetrack Brass Edge",
+          "kind": "rect",
+          "x": 116,
+          "y": 106,
+          "width": 768,
+          "height": 388,
+          "radius": 194,
+          "strokes": [
+            {
+              "color": "#c9a46a",
+              "width": 1.5,
+              "opacity": 0.85
+            }
+          ]
+        },
+        {
+          "name": "Felt",
+          "kind": "rect",
+          "x": 120,
+          "y": 110,
+          "width": 760,
+          "height": 380,
+          "radius": 190,
+          "fill": {
+            "gradient": {
+              "type": "radial",
+              "startX": 0.5,
+              "startY": 0.45,
+              "endX": 0.5,
+              "endY": 1.15,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#2a55b0",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#173a86",
+                  "opacity": 1,
+                  "offset": 0.45
+                },
+                {
+                  "color": "#0a1a44",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "strokes": [
+            {
+              "color": "#000000",
+              "width": 14,
+              "opacity": 0.14,
+              "inner": true
+            },
+            {
+              "color": "#000000",
+              "width": 5,
+              "opacity": 0.18,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Betting Line",
+          "kind": "rect",
+          "x": 170,
+          "y": 160,
+          "width": 660,
+          "height": 280,
+          "radius": 140,
+          "strokes": [
+            {
+              "color": "#c7d4f2",
+              "width": 1.5,
+              "opacity": 0.45
+            }
+          ]
+        },
+        {
+          "name": "Text",
+          "kind": "text",
+          "x": 456,
+          "y": 419.5,
+          "width": 138.56,
+          "height": 22.72,
+          "asset": "midnight-racetrack-wordmark.svg",
+          "sourceId": "35d3bec8-6597-804f-8008-cc8b62c20bac"
+        }
+      ]
+    },
+    {
+      "id": "35d3bec8-6597-804f-8008-cc8b62e4818e",
+      "name": "Royal Burgundy",
+      "theme": "royal-burgundy",
+      "layers": [
+        {
+          "name": "Outer Rail",
+          "kind": "rect",
+          "x": 80,
+          "y": 70,
+          "width": 840,
+          "height": 460,
+          "radius": 230,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0.5,
+              "startY": 0,
+              "endX": 0.5,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#c99060",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#9a6236",
+                  "opacity": 1,
+                  "offset": 0.45
+                },
+                {
+                  "color": "#5e3417",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "strokes": [
+            {
+              "color": "#4a2810",
+              "width": 2,
+              "inner": true
+            }
+          ],
+          "shadows": [
+            {
+              "x": 0,
+              "y": 16,
+              "blur": 30,
+              "color": "#000000",
+              "opacity": 0.6
+            },
+            {
+              "x": 0,
+              "y": 4,
+              "blur": 6,
+              "color": "#000000",
+              "opacity": 0.35
+            }
+          ]
+        },
+        {
+          "name": "Rail Highlight",
+          "kind": "rect",
+          "x": 83,
+          "y": 73,
+          "width": 834,
+          "height": 454,
+          "radius": 227,
+          "strokes": [
+            {
+              "color": "#ffffff",
+              "width": 1.5,
+              "opacity": 0.14,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Brass Studs",
+          "kind": "group",
+          "x": 80,
+          "y": 70,
+          "width": 840,
+          "height": 460,
+          "children": [
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 307,
+              "y": 76,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 340.5716242638546,
+              "y": 76,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 374.14324852770915,
+              "y": 76,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 407.7148727915637,
+              "y": 76,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 441.2864970554183,
+              "y": 76,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 474.8581213192724,
+              "y": 76,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 508.429745583127,
+              "y": 76,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 542.0013698469816,
+              "y": 76,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 575.5729941108361,
+              "y": 76,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 609.1446183746907,
+              "y": 76,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 642.7162426385448,
+              "y": 76,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 676.2878669023994,
+              "y": 76,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 709.8187501790812,
+              "y": 77.18120043939689,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 742.8198861083615,
+              "y": 83.16562410395818,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 774.5353985502625,
+              "y": 94.07500400234858,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 804.2348272593013,
+              "y": 109.65807923083048,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 831.2341457035004,
+              "y": 129.55594602022575,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 854.9115153168023,
+              "y": 153.3103238781041,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 874.7216074606804,
+              "y": 180.37411053982032,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 890.2081632366862,
+              "y": 210.1239826305773,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 901.0145018768662,
+              "y": 241.87475182462367,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 906.8917356865827,
+              "y": 274.8951458556712,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 907.7045023361479,
+              "y": 308.42465091603844,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 903.4340824771839,
+              "y": 341.69102753640254,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 894.1788308799069,
+              "y": 373.9280965267899,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 880.1519111615257,
+              "y": 404.39338533936825,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 861.6763862786815,
+              "y": 432.3852284284403,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 839.1777778579308,
+              "y": 457.2589277582447,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 813.1742657350928,
+              "y": 478.4416012556394,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 784.2647534241328,
+              "y": 495.4453772234119,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 753.1150743874036,
+              "y": 507.8786308252875,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 720.4426567994483,
+              "y": 515.4550038479192,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 687,
+              "y": 518,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 653.4283757361454,
+              "y": 518,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 619.8567514722909,
+              "y": 518,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 586.2851272084363,
+              "y": 518,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 552.7135029445817,
+              "y": 518,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 519.1418786807271,
+              "y": 518,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 485.570254416873,
+              "y": 518,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 451.99863015301844,
+              "y": 518,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 418.42700588916387,
+              "y": 518,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 384.85538162530975,
+              "y": 518,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 351.2837573614552,
+              "y": 518,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 317.7121330976006,
+              "y": 518,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 284.18124982091877,
+              "y": 516.818799560604,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 251.18011389163848,
+              "y": 510.8343758960418,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 219.46460144973753,
+              "y": 499.9249959976514,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 189.76517274069874,
+              "y": 484.3419207691695,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 162.76585429650004,
+              "y": 464.44405397977425,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 139.08848468319775,
+              "y": 440.6896761218959,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 119.27839253931961,
+              "y": 413.6258894601797,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 103.79183676331331,
+              "y": 383.8760173694227,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 92.98549812313377,
+              "y": 352.1252481753763,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 87.1082643134173,
+              "y": 319.1048541443288,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 86.29549766385207,
+              "y": 285.57534908396156,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 90.56591752281611,
+              "y": 252.30897246359746,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 99.82116912009315,
+              "y": 220.0719034732101,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 113.84808883847427,
+              "y": 189.60661466063175,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 132.32361372131845,
+              "y": 161.6147715715597,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 154.82222214206922,
+              "y": 136.74107224175532,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 180.82573426490717,
+              "y": 115.55839874436151,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 209.73524657586722,
+              "y": 98.55462277658717,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 240.88492561259636,
+              "y": 86.12136917471253,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            },
+            {
+              "name": "Ellipse",
+              "kind": "ellipse",
+              "x": 273.55734320055126,
+              "y": 78.54499615208078,
+              "width": 6,
+              "height": 6,
+              "fill": {
+                "gradient": {
+                  "type": "radial",
+                  "startX": 0.35,
+                  "startY": 0.3,
+                  "endX": 0.8,
+                  "endY": 1,
+                  "width": 1,
+                  "stops": [
+                    {
+                      "color": "#fff0c2",
+                      "opacity": 1,
+                      "offset": 0
+                    },
+                    {
+                      "color": "#d6ad55",
+                      "opacity": 1,
+                      "offset": 0.5
+                    },
+                    {
+                      "color": "#7a5a1c",
+                      "opacity": 1,
+                      "offset": 1
+                    }
+                  ]
+                }
+              },
+              "shadows": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "blur": 1,
+                  "color": "#000000",
+                  "opacity": 0.45
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gold Trim",
+          "kind": "rect",
+          "x": 100,
+          "y": 90,
+          "width": 800,
+          "height": 420,
+          "radius": 210,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0.5,
+              "startY": 0,
+              "endX": 0.5,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#f1d48a",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#b88a35",
+                  "opacity": 1,
+                  "offset": 0.5
+                },
+                {
+                  "color": "#7d5a1e",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "strokes": [
+            {
+              "color": "#5a3d10",
+              "width": 1,
+              "opacity": 0.6,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Felt",
+          "kind": "rect",
+          "x": 106,
+          "y": 96,
+          "width": 788,
+          "height": 408,
+          "radius": 204,
+          "fill": {
+            "gradient": {
+              "type": "radial",
+              "startX": 0.5,
+              "startY": 0.45,
+              "endX": 0.5,
+              "endY": 1.15,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#a32336",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#7c1626",
+                  "opacity": 1,
+                  "offset": 0.5
+                },
+                {
+                  "color": "#3d0710",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "strokes": [
+            {
+              "color": "#000000",
+              "width": 14,
+              "opacity": 0.18,
+              "inner": true
+            },
+            {
+              "color": "#000000",
+              "width": 5,
+              "opacity": 0.2,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Pinstripe Outer",
+          "kind": "rect",
+          "x": 156,
+          "y": 146,
+          "width": 688,
+          "height": 308,
+          "radius": 154,
+          "strokes": [
+            {
+              "color": "#d8b46a",
+              "width": 1.5,
+              "opacity": 0.8
+            }
+          ]
+        },
+        {
+          "name": "Pinstripe Inner",
+          "kind": "rect",
+          "x": 162,
+          "y": 152,
+          "width": 676,
+          "height": 296,
+          "radius": 148,
+          "strokes": [
+            {
+              "color": "#d8b46a",
+              "width": 0.75,
+              "opacity": 0.6
+            }
+          ]
+        },
+        {
+          "name": "Text",
+          "kind": "text",
+          "x": 486,
+          "y": 159.5,
+          "width": 16.0,
+          "height": 32.0,
+          "asset": "royal-burgundy-crown.svg",
+          "sourceId": "35d3bec8-6597-804f-8008-cc8b66a243c0"
+        },
+        {
+          "name": "Text",
+          "kind": "text",
+          "x": 462,
+          "y": 418.5,
+          "width": 93.44,
+          "height": 22.72,
+          "asset": "royal-burgundy-wordmark.svg",
+          "sourceId": "35d3bec8-6597-804f-8008-cc8b66b4d16f"
+        }
+      ]
+    },
+    {
+      "id": "35d3bec8-6597-804f-8008-cc8b890b015e",
+      "name": "Neon Night",
+      "theme": "neon-night",
+      "layers": [
+        {
+          "name": "Outer Rail",
+          "kind": "rect",
+          "x": 80,
+          "y": 70,
+          "width": 840,
+          "height": 460,
+          "radius": 230,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0.5,
+              "startY": 0,
+              "endX": 0.5,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#1d1f26",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#0c0d11",
+                  "opacity": 1,
+                  "offset": 0.55
+                },
+                {
+                  "color": "#050507",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "strokes": [
+            {
+              "color": "#2c2f3a",
+              "width": 1.5,
+              "inner": true
+            }
+          ],
+          "shadows": [
+            {
+              "x": 0,
+              "y": 16,
+              "blur": 30,
+              "color": "#000000",
+              "opacity": 0.7
+            },
+            {
+              "x": 0,
+              "y": 0,
+              "blur": 60,
+              "color": "#22e3ff",
+              "opacity": 0.18
+            }
+          ]
+        },
+        {
+          "name": "Gloss Highlight",
+          "kind": "rect",
+          "x": 84,
+          "y": 74,
+          "width": 832,
+          "height": 452,
+          "radius": 226,
+          "strokes": [
+            {
+              "color": "#ffffff",
+              "width": 1.5,
+              "opacity": 0.1,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Neon Rim",
+          "kind": "rect",
+          "x": 96,
+          "y": 86,
+          "width": 808,
+          "height": 428,
+          "radius": 214,
+          "strokes": [
+            {
+              "color": "#22e3ff",
+              "width": 3
+            }
+          ],
+          "shadows": [
+            {
+              "x": 0,
+              "y": 0,
+              "blur": 6,
+              "color": "#22e3ff",
+              "opacity": 0.9
+            },
+            {
+              "x": 0,
+              "y": 0,
+              "blur": 18,
+              "color": "#22e3ff",
+              "opacity": 0.55
+            },
+            {
+              "x": 0,
+              "y": 0,
+              "blur": 40,
+              "color": "#22e3ff",
+              "opacity": 0.25
+            }
+          ]
+        },
+        {
+          "name": "Inner Rail",
+          "kind": "rect",
+          "x": 102,
+          "y": 92,
+          "width": 796,
+          "height": 416,
+          "radius": 208,
+          "fill": {
+            "color": "#08090c"
+          }
+        },
+        {
+          "name": "Felt",
+          "kind": "group",
+          "x": 112,
+          "y": 102,
+          "width": 776,
+          "height": 396,
+          "radius": 198,
+          "fill": {
+            "gradient": {
+              "type": "radial",
+              "startX": 0.5,
+              "startY": 0.45,
+              "endX": 0.5,
+              "endY": 1.15,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#2b2f3a",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#1a1d25",
+                  "opacity": 1,
+                  "offset": 0.55
+                },
+                {
+                  "color": "#0d0f14",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "children": [
+            {
+              "name": "Hex Grid (single path, 5%)",
+              "kind": "path",
+              "x": 73.89488223348462,
+              "y": 58,
+              "width": 876.4999885559077,
+              "height": 473,
+              "opacity": 0.05,
+              "strokes": [
+                {
+                  "color": "#ffffff",
+                  "width": 1
+                }
+              ],
+              "d": "M111.99487,91L92.99487,102L73.89478,91L73.89478,69L92.99487,58L111.99487,69ZM150.19482,91L131.09497,102L111.99487,91L111.99487,69L131.09497,58L150.19482,69ZM188.29492,91L169.19482,102L150.19482,91L150.19482,69L169.19482,58L188.29492,69ZM226.39478,91L207.29492,102L188.29492,91L188.29492,69L207.29492,58L226.39478,69ZM264.49487,91L245.39478,102L226.39478,91L226.39478,69L245.39478,58L264.49487,69ZM302.59497,91L283.49487,102L264.49487,91L264.49487,69L283.49487,58L302.59497,69ZM340.69482,91L321.59497,102L302.59497,91L302.59497,69L321.59497,58L340.69482,69ZM378.79492,91L359.69482,102L340.69482,91L340.69482,69L359.69482,58L378.79492,69ZM416.89478,91L397.79492,102L378.79492,91L378.79492,69L397.79492,58L416.89478,69ZM454.99487,91L435.89478,102L416.89478,91L416.89478,69L435.89478,58L454.99487,69ZM493.09497,91L473.99487,102L454.99487,91L454.99487,69L473.99487,58L493.09497,69ZM531.19482,91L512.19482,102L493.09497,91L493.09497,69L512.19482,58L531.19482,69ZM569.29492,91L550.29492,102L531.19482,91L531.19482,69L550.29492,58L569.29492,69ZM607.39478,91L588.39478,102L569.29492,91L569.29492,69L588.39478,58L607.39478,69ZM645.49487,91L626.49487,102L607.39478,91L607.39478,69L626.49487,58L645.49487,69ZM683.59497,91L664.59497,102L645.49487,91L645.49487,69L664.59497,58L683.59497,69ZM721.69482,91L702.69482,102L683.59497,91L683.59497,69L702.69482,58L721.69482,69ZM759.79492,91L740.79492,102L721.69482,91L721.69482,69L740.79492,58L759.79492,69ZM797.89502,91L778.89502,102L759.79492,91L759.79492,69L778.89502,58L797.89502,69ZM835.99512,91L816.99512,102L797.89502,91L797.89502,69L816.99512,58L835.99512,69ZM874.09473,91L855.09473,102L835.99512,91L835.99512,69L855.09473,58L874.09473,69ZM912.29492,91L893.19482,102L874.09473,91L874.09473,69L893.19482,58L912.29492,69ZM950.39502,91L931.29492,102L912.29492,91L912.29492,69L931.29492,58L950.39502,69ZM131.09497,124L111.99487,135L92.99487,124L92.99487,102L111.99487,91L131.09497,102ZM169.19482,124L150.19482,135L131.09497,124L131.09497,102L150.19482,91L169.19482,102ZM207.29492,124L188.29492,135L169.19482,124L169.19482,102L188.29492,91L207.29492,102ZM245.39478,124L226.39478,135L207.29492,124L207.29492,102L226.39478,91L245.39478,102ZM283.49487,124L264.49487,135L245.39478,124L245.39478,102L264.49487,91L283.49487,102ZM321.59497,124L302.59497,135L283.49487,124L283.49487,102L302.59497,91L321.59497,102ZM359.69482,124L340.69482,135L321.59497,124L321.59497,102L340.69482,91L359.69482,102ZM397.79492,124L378.79492,135L359.69482,124L359.69482,102L378.79492,91L397.79492,102ZM435.89478,124L416.89478,135L397.79492,124L397.79492,102L416.89478,91L435.89478,102ZM473.99487,124L454.99487,135L435.89478,124L435.89478,102L454.99487,91L473.99487,102ZM512.19482,124L493.09497,135L473.99487,124L473.99487,102L493.09497,91L512.19482,102ZM550.29492,124L531.19482,135L512.19482,124L512.19482,102L531.19482,91L550.29492,102ZM588.39478,124L569.29492,135L550.29492,124L550.29492,102L569.29492,91L588.39478,102ZM626.49487,124L607.39478,135L588.39478,124L588.39478,102L607.39478,91L626.49487,102ZM664.59497,124L645.49487,135L626.49487,124L626.49487,102L645.49487,91L664.59497,102ZM702.69482,124L683.59497,135L664.59497,124L664.59497,102L683.59497,91L702.69482,102ZM740.79492,124L721.69482,135L702.69482,124L702.69482,102L721.69482,91L740.79492,102ZM778.89502,124L759.79492,135L740.79492,124L740.79492,102L759.79492,91L778.89502,102ZM816.99512,124L797.89502,135L778.89502,124L778.89502,102L797.89502,91L816.99512,102ZM855.09473,124L835.99512,135L816.99512,124L816.99512,102L835.99512,91L855.09473,102ZM893.19482,124L874.09473,135L855.09473,124L855.09473,102L874.09473,91L893.19482,102ZM931.29492,124L912.29492,135L893.19482,124L893.19482,102L912.29492,91L931.29492,102ZM111.99487,157L92.99487,168L73.89478,157L73.89478,135L92.99487,124L111.99487,135ZM150.19482,157L131.09497,168L111.99487,157L111.99487,135L131.09497,124L150.19482,135ZM188.29492,157L169.19482,168L150.19482,157L150.19482,135L169.19482,124L188.29492,135ZM226.39478,157L207.29492,168L188.29492,157L188.29492,135L207.29492,124L226.39478,135ZM264.49487,157L245.39478,168L226.39478,157L226.39478,135L245.39478,124L264.49487,135ZM302.59497,157L283.49487,168L264.49487,157L264.49487,135L283.49487,124L302.59497,135ZM340.69482,157L321.59497,168L302.59497,157L302.59497,135L321.59497,124L340.69482,135ZM378.79492,157L359.69482,168L340.69482,157L340.69482,135L359.69482,124L378.79492,135ZM416.89478,157L397.79492,168L378.79492,157L378.79492,135L397.79492,124L416.89478,135ZM454.99487,157L435.89478,168L416.89478,157L416.89478,135L435.89478,124L454.99487,135ZM493.09497,157L473.99487,168L454.99487,157L454.99487,135L473.99487,124L493.09497,135ZM531.19482,157L512.19482,168L493.09497,157L493.09497,135L512.19482,124L531.19482,135ZM569.29492,157L550.29492,168L531.19482,157L531.19482,135L550.29492,124L569.29492,135ZM607.39478,157L588.39478,168L569.29492,157L569.29492,135L588.39478,124L607.39478,135ZM645.49487,157L626.49487,168L607.39478,157L607.39478,135L626.49487,124L645.49487,135ZM683.59497,157L664.59497,168L645.49487,157L645.49487,135L664.59497,124L683.59497,135ZM721.69482,157L702.69482,168L683.59497,157L683.59497,135L702.69482,124L721.69482,135ZM759.79492,157L740.79492,168L721.69482,157L721.69482,135L740.79492,124L759.79492,135ZM797.89502,157L778.89502,168L759.79492,157L759.79492,135L778.89502,124L797.89502,135ZM835.99512,157L816.99512,168L797.89502,157L797.89502,135L816.99512,124L835.99512,135ZM874.09473,157L855.09473,168L835.99512,157L835.99512,135L855.09473,124L874.09473,135ZM912.29492,157L893.19482,168L874.09473,157L874.09473,135L893.19482,124L912.29492,135ZM950.39502,157L931.29492,168L912.29492,157L912.29492,135L931.29492,124L950.39502,135ZM131.09497,190L111.99487,201L92.99487,190L92.99487,168L111.99487,157L131.09497,168ZM169.19482,190L150.19482,201L131.09497,190L131.09497,168L150.19482,157L169.19482,168ZM207.29492,190L188.29492,201L169.19482,190L169.19482,168L188.29492,157L207.29492,168ZM245.39478,190L226.39478,201L207.29492,190L207.29492,168L226.39478,157L245.39478,168ZM283.49487,190L264.49487,201L245.39478,190L245.39478,168L264.49487,157L283.49487,168ZM321.59497,190L302.59497,201L283.49487,190L283.49487,168L302.59497,157L321.59497,168ZM359.69482,190L340.69482,201L321.59497,190L321.59497,168L340.69482,157L359.69482,168ZM397.79492,190L378.79492,201L359.69482,190L359.69482,168L378.79492,157L397.79492,168ZM435.89478,190L416.89478,201L397.79492,190L397.79492,168L416.89478,157L435.89478,168ZM473.99487,190L454.99487,201L435.89478,190L435.89478,168L454.99487,157L473.99487,168ZM512.19482,190L493.09497,201L473.99487,190L473.99487,168L493.09497,157L512.19482,168ZM550.29492,190L531.19482,201L512.19482,190L512.19482,168L531.19482,157L550.29492,168ZM588.39478,190L569.29492,201L550.29492,190L550.29492,168L569.29492,157L588.39478,168ZM626.49487,190L607.39478,201L588.39478,190L588.39478,168L607.39478,157L626.49487,168ZM664.59497,190L645.49487,201L626.49487,190L626.49487,168L645.49487,157L664.59497,168ZM702.69482,190L683.59497,201L664.59497,190L664.59497,168L683.59497,157L702.69482,168ZM740.79492,190L721.69482,201L702.69482,190L702.69482,168L721.69482,157L740.79492,168ZM778.89502,190L759.79492,201L740.79492,190L740.79492,168L759.79492,157L778.89502,168ZM816.99512,190L797.89502,201L778.89502,190L778.89502,168L797.89502,157L816.99512,168ZM855.09473,190L835.99512,201L816.99512,190L816.99512,168L835.99512,157L855.09473,168ZM893.19482,190L874.09473,201L855.09473,190L855.09473,168L874.09473,157L893.19482,168ZM931.29492,190L912.29492,201L893.19482,190L893.19482,168L912.29492,157L931.29492,168ZM111.99487,223L92.99487,234L73.89478,223L73.89478,201L92.99487,190L111.99487,201ZM150.19482,223L131.09497,234L111.99487,223L111.99487,201L131.09497,190L150.19482,201ZM188.29492,223L169.19482,234L150.19482,223L150.19482,201L169.19482,190L188.29492,201ZM226.39478,223L207.29492,234L188.29492,223L188.29492,201L207.29492,190L226.39478,201ZM264.49487,223L245.39478,234L226.39478,223L226.39478,201L245.39478,190L264.49487,201ZM302.59497,223L283.49487,234L264.49487,223L264.49487,201L283.49487,190L302.59497,201ZM340.69482,223L321.59497,234L302.59497,223L302.59497,201L321.59497,190L340.69482,201ZM378.79492,223L359.69482,234L340.69482,223L340.69482,201L359.69482,190L378.79492,201ZM416.89478,223L397.79492,234L378.79492,223L378.79492,201L397.79492,190L416.89478,201ZM454.99487,223L435.89478,234L416.89478,223L416.89478,201L435.89478,190L454.99487,201ZM493.09497,223L473.99487,234L454.99487,223L454.99487,201L473.99487,190L493.09497,201ZM531.19482,223L512.19482,234L493.09497,223L493.09497,201L512.19482,190L531.19482,201ZM569.29492,223L550.29492,234L531.19482,223L531.19482,201L550.29492,190L569.29492,201ZM607.39478,223L588.39478,234L569.29492,223L569.29492,201L588.39478,190L607.39478,201ZM645.49487,223L626.49487,234L607.39478,223L607.39478,201L626.49487,190L645.49487,201ZM683.59497,223L664.59497,234L645.49487,223L645.49487,201L664.59497,190L683.59497,201ZM721.69482,223L702.69482,234L683.59497,223L683.59497,201L702.69482,190L721.69482,201ZM759.79492,223L740.79492,234L721.69482,223L721.69482,201L740.79492,190L759.79492,201ZM797.89502,223L778.89502,234L759.79492,223L759.79492,201L778.89502,190L797.89502,201ZM835.99512,223L816.99512,234L797.89502,223L797.89502,201L816.99512,190L835.99512,201ZM874.09473,223L855.09473,234L835.99512,223L835.99512,201L855.09473,190L874.09473,201ZM912.29492,223L893.19482,234L874.09473,223L874.09473,201L893.19482,190L912.29492,201ZM950.39502,223L931.29492,234L912.29492,223L912.29492,201L931.29492,190L950.39502,201ZM131.09497,256L111.99487,267L92.99487,256L92.99487,234L111.99487,223L131.09497,234ZM169.19482,256L150.19482,267L131.09497,256L131.09497,234L150.19482,223L169.19482,234ZM207.29492,256L188.29492,267L169.19482,256L169.19482,234L188.29492,223L207.29492,234ZM245.39478,256L226.39478,267L207.29492,256L207.29492,234L226.39478,223L245.39478,234ZM283.49487,256L264.49487,267L245.39478,256L245.39478,234L264.49487,223L283.49487,234ZM321.59497,256L302.59497,267L283.49487,256L283.49487,234L302.59497,223L321.59497,234ZM359.69482,256L340.69482,267L321.59497,256L321.59497,234L340.69482,223L359.69482,234ZM397.79492,256L378.79492,267L359.69482,256L359.69482,234L378.79492,223L397.79492,234ZM435.89478,256L416.89478,267L397.79492,256L397.79492,234L416.89478,223L435.89478,234ZM473.99487,256L454.99487,267L435.89478,256L435.89478,234L454.99487,223L473.99487,234ZM512.19482,256L493.09497,267L473.99487,256L473.99487,234L493.09497,223L512.19482,234ZM550.29492,256L531.19482,267L512.19482,256L512.19482,234L531.19482,223L550.29492,234ZM588.39478,256L569.29492,267L550.29492,256L550.29492,234L569.29492,223L588.39478,234ZM626.49487,256L607.39478,267L588.39478,256L588.39478,234L607.39478,223L626.49487,234ZM664.59497,256L645.49487,267L626.49487,256L626.49487,234L645.49487,223L664.59497,234ZM702.69482,256L683.59497,267L664.59497,256L664.59497,234L683.59497,223L702.69482,234ZM740.79492,256L721.69482,267L702.69482,256L702.69482,234L721.69482,223L740.79492,234ZM778.89502,256L759.79492,267L740.79492,256L740.79492,234L759.79492,223L778.89502,234ZM816.99512,256L797.89502,267L778.89502,256L778.89502,234L797.89502,223L816.99512,234ZM855.09473,256L835.99512,267L816.99512,256L816.99512,234L835.99512,223L855.09473,234ZM893.19482,256L874.09473,267L855.09473,256L855.09473,234L874.09473,223L893.19482,234ZM931.29492,256L912.29492,267L893.19482,256L893.19482,234L912.29492,223L931.29492,234ZM111.99487,289L92.99487,300L73.89478,289L73.89478,267L92.99487,256L111.99487,267ZM150.19482,289L131.09497,300L111.99487,289L111.99487,267L131.09497,256L150.19482,267ZM188.29492,289L169.19482,300L150.19482,289L150.19482,267L169.19482,256L188.29492,267ZM226.39478,289L207.29492,300L188.29492,289L188.29492,267L207.29492,256L226.39478,267ZM264.49487,289L245.39478,300L226.39478,289L226.39478,267L245.39478,256L264.49487,267ZM302.59497,289L283.49487,300L264.49487,289L264.49487,267L283.49487,256L302.59497,267ZM340.69482,289L321.59497,300L302.59497,289L302.59497,267L321.59497,256L340.69482,267ZM378.79492,289L359.69482,300L340.69482,289L340.69482,267L359.69482,256L378.79492,267ZM416.89478,289L397.79492,300L378.79492,289L378.79492,267L397.79492,256L416.89478,267ZM454.99487,289L435.89478,300L416.89478,289L416.89478,267L435.89478,256L454.99487,267ZM493.09497,289L473.99487,300L454.99487,289L454.99487,267L473.99487,256L493.09497,267ZM531.19482,289L512.19482,300L493.09497,289L493.09497,267L512.19482,256L531.19482,267ZM569.29492,289L550.29492,300L531.19482,289L531.19482,267L550.29492,256L569.29492,267ZM607.39478,289L588.39478,300L569.29492,289L569.29492,267L588.39478,256L607.39478,267ZM645.49487,289L626.49487,300L607.39478,289L607.39478,267L626.49487,256L645.49487,267ZM683.59497,289L664.59497,300L645.49487,289L645.49487,267L664.59497,256L683.59497,267ZM721.69482,289L702.69482,300L683.59497,289L683.59497,267L702.69482,256L721.69482,267ZM759.79492,289L740.79492,300L721.69482,289L721.69482,267L740.79492,256L759.79492,267ZM797.89502,289L778.89502,300L759.79492,289L759.79492,267L778.89502,256L797.89502,267ZM835.99512,289L816.99512,300L797.89502,289L797.89502,267L816.99512,256L835.99512,267ZM874.09473,289L855.09473,300L835.99512,289L835.99512,267L855.09473,256L874.09473,267ZM912.29492,289L893.19482,300L874.09473,289L874.09473,267L893.19482,256L912.29492,267ZM950.39502,289L931.29492,300L912.29492,289L912.29492,267L931.29492,256L950.39502,267ZM131.09497,322L111.99487,333L92.99487,322L92.99487,300L111.99487,289L131.09497,300ZM169.19482,322L150.19482,333L131.09497,322L131.09497,300L150.19482,289L169.19482,300ZM207.29492,322L188.29492,333L169.19482,322L169.19482,300L188.29492,289L207.29492,300ZM245.39478,322L226.39478,333L207.29492,322L207.29492,300L226.39478,289L245.39478,300ZM283.49487,322L264.49487,333L245.39478,322L245.39478,300L264.49487,289L283.49487,300ZM321.59497,322L302.59497,333L283.49487,322L283.49487,300L302.59497,289L321.59497,300ZM359.69482,322L340.69482,333L321.59497,322L321.59497,300L340.69482,289L359.69482,300ZM397.79492,322L378.79492,333L359.69482,322L359.69482,300L378.79492,289L397.79492,300ZM435.89478,322L416.89478,333L397.79492,322L397.79492,300L416.89478,289L435.89478,300ZM473.99487,322L454.99487,333L435.89478,322L435.89478,300L454.99487,289L473.99487,300ZM512.19482,322L493.09497,333L473.99487,322L473.99487,300L493.09497,289L512.19482,300ZM550.29492,322L531.19482,333L512.19482,322L512.19482,300L531.19482,289L550.29492,300ZM588.39478,322L569.29492,333L550.29492,322L550.29492,300L569.29492,289L588.39478,300ZM626.49487,322L607.39478,333L588.39478,322L588.39478,300L607.39478,289L626.49487,300ZM664.59497,322L645.49487,333L626.49487,322L626.49487,300L645.49487,289L664.59497,300ZM702.69482,322L683.59497,333L664.59497,322L664.59497,300L683.59497,289L702.69482,300ZM740.79492,322L721.69482,333L702.69482,322L702.69482,300L721.69482,289L740.79492,300ZM778.89502,322L759.79492,333L740.79492,322L740.79492,300L759.79492,289L778.89502,300ZM816.99512,322L797.89502,333L778.89502,322L778.89502,300L797.89502,289L816.99512,300ZM855.09473,322L835.99512,333L816.99512,322L816.99512,300L835.99512,289L855.09473,300ZM893.19482,322L874.09473,333L855.09473,322L855.09473,300L874.09473,289L893.19482,300ZM931.29492,322L912.29492,333L893.19482,322L893.19482,300L912.29492,289L931.29492,300ZM111.99487,355L92.99487,366L73.89478,355L73.89478,333L92.99487,322L111.99487,333ZM150.19482,355L131.09497,366L111.99487,355L111.99487,333L131.09497,322L150.19482,333ZM188.29492,355L169.19482,366L150.19482,355L150.19482,333L169.19482,322L188.29492,333ZM226.39478,355L207.29492,366L188.29492,355L188.29492,333L207.29492,322L226.39478,333ZM264.49487,355L245.39478,366L226.39478,355L226.39478,333L245.39478,322L264.49487,333ZM302.59497,355L283.49487,366L264.49487,355L264.49487,333L283.49487,322L302.59497,333ZM340.69482,355L321.59497,366L302.59497,355L302.59497,333L321.59497,322L340.69482,333ZM378.79492,355L359.69482,366L340.69482,355L340.69482,333L359.69482,322L378.79492,333ZM416.89478,355L397.79492,366L378.79492,355L378.79492,333L397.79492,322L416.89478,333ZM454.99487,355L435.89478,366L416.89478,355L416.89478,333L435.89478,322L454.99487,333ZM493.09497,355L473.99487,366L454.99487,355L454.99487,333L473.99487,322L493.09497,333ZM531.19482,355L512.19482,366L493.09497,355L493.09497,333L512.19482,322L531.19482,333ZM569.29492,355L550.29492,366L531.19482,355L531.19482,333L550.29492,322L569.29492,333ZM607.39478,355L588.39478,366L569.29492,355L569.29492,333L588.39478,322L607.39478,333ZM645.49487,355L626.49487,366L607.39478,355L607.39478,333L626.49487,322L645.49487,333ZM683.59497,355L664.59497,366L645.49487,355L645.49487,333L664.59497,322L683.59497,333ZM721.69482,355L702.69482,366L683.59497,355L683.59497,333L702.69482,322L721.69482,333ZM759.79492,355L740.79492,366L721.69482,355L721.69482,333L740.79492,322L759.79492,333ZM797.89502,355L778.89502,366L759.79492,355L759.79492,333L778.89502,322L797.89502,333ZM835.99512,355L816.99512,366L797.89502,355L797.89502,333L816.99512,322L835.99512,333ZM874.09473,355L855.09473,366L835.99512,355L835.99512,333L855.09473,322L874.09473,333ZM912.29492,355L893.19482,366L874.09473,355L874.09473,333L893.19482,322L912.29492,333ZM950.39502,355L931.29492,366L912.29492,355L912.29492,333L931.29492,322L950.39502,333ZM131.09497,388L111.99487,399L92.99487,388L92.99487,366L111.99487,355L131.09497,366ZM169.19482,388L150.19482,399L131.09497,388L131.09497,366L150.19482,355L169.19482,366ZM207.29492,388L188.29492,399L169.19482,388L169.19482,366L188.29492,355L207.29492,366ZM245.39478,388L226.39478,399L207.29492,388L207.29492,366L226.39478,355L245.39478,366ZM283.49487,388L264.49487,399L245.39478,388L245.39478,366L264.49487,355L283.49487,366ZM321.59497,388L302.59497,399L283.49487,388L283.49487,366L302.59497,355L321.59497,366ZM359.69482,388L340.69482,399L321.59497,388L321.59497,366L340.69482,355L359.69482,366ZM397.79492,388L378.79492,399L359.69482,388L359.69482,366L378.79492,355L397.79492,366ZM435.89478,388L416.89478,399L397.79492,388L397.79492,366L416.89478,355L435.89478,366ZM473.99487,388L454.99487,399L435.89478,388L435.89478,366L454.99487,355L473.99487,366ZM512.19482,388L493.09497,399L473.99487,388L473.99487,366L493.09497,355L512.19482,366ZM550.29492,388L531.19482,399L512.19482,388L512.19482,366L531.19482,355L550.29492,366ZM588.39478,388L569.29492,399L550.29492,388L550.29492,366L569.29492,355L588.39478,366ZM626.49487,388L607.39478,399L588.39478,388L588.39478,366L607.39478,355L626.49487,366ZM664.59497,388L645.49487,399L626.49487,388L626.49487,366L645.49487,355L664.59497,366ZM702.69482,388L683.59497,399L664.59497,388L664.59497,366L683.59497,355L702.69482,366ZM740.79492,388L721.69482,399L702.69482,388L702.69482,366L721.69482,355L740.79492,366ZM778.89502,388L759.79492,399L740.79492,388L740.79492,366L759.79492,355L778.89502,366ZM816.99512,388L797.89502,399L778.89502,388L778.89502,366L797.89502,355L816.99512,366ZM855.09473,388L835.99512,399L816.99512,388L816.99512,366L835.99512,355L855.09473,366ZM893.19482,388L874.09473,399L855.09473,388L855.09473,366L874.09473,355L893.19482,366ZM931.29492,388L912.29492,399L893.19482,388L893.19482,366L912.29492,355L931.29492,366ZM111.99487,421L92.99487,432L73.89478,421L73.89478,399L92.99487,388L111.99487,399ZM150.19482,421L131.09497,432L111.99487,421L111.99487,399L131.09497,388L150.19482,399ZM188.29492,421L169.19482,432L150.19482,421L150.19482,399L169.19482,388L188.29492,399ZM226.39478,421L207.29492,432L188.29492,421L188.29492,399L207.29492,388L226.39478,399ZM264.49487,421L245.39478,432L226.39478,421L226.39478,399L245.39478,388L264.49487,399ZM302.59497,421L283.49487,432L264.49487,421L264.49487,399L283.49487,388L302.59497,399ZM340.69482,421L321.59497,432L302.59497,421L302.59497,399L321.59497,388L340.69482,399ZM378.79492,421L359.69482,432L340.69482,421L340.69482,399L359.69482,388L378.79492,399ZM416.89478,421L397.79492,432L378.79492,421L378.79492,399L397.79492,388L416.89478,399ZM454.99487,421L435.89478,432L416.89478,421L416.89478,399L435.89478,388L454.99487,399ZM493.09497,421L473.99487,432L454.99487,421L454.99487,399L473.99487,388L493.09497,399ZM531.19482,421L512.19482,432L493.09497,421L493.09497,399L512.19482,388L531.19482,399ZM569.29492,421L550.29492,432L531.19482,421L531.19482,399L550.29492,388L569.29492,399ZM607.39478,421L588.39478,432L569.29492,421L569.29492,399L588.39478,388L607.39478,399ZM645.49487,421L626.49487,432L607.39478,421L607.39478,399L626.49487,388L645.49487,399ZM683.59497,421L664.59497,432L645.49487,421L645.49487,399L664.59497,388L683.59497,399ZM721.69482,421L702.69482,432L683.59497,421L683.59497,399L702.69482,388L721.69482,399ZM759.79492,421L740.79492,432L721.69482,421L721.69482,399L740.79492,388L759.79492,399ZM797.89502,421L778.89502,432L759.79492,421L759.79492,399L778.89502,388L797.89502,399ZM835.99512,421L816.99512,432L797.89502,421L797.89502,399L816.99512,388L835.99512,399ZM874.09473,421L855.09473,432L835.99512,421L835.99512,399L855.09473,388L874.09473,399ZM912.29492,421L893.19482,432L874.09473,421L874.09473,399L893.19482,388L912.29492,399ZM950.39502,421L931.29492,432L912.29492,421L912.29492,399L931.29492,388L950.39502,399ZM131.09497,454L111.99487,465L92.99487,454L92.99487,432L111.99487,421L131.09497,432ZM169.19482,454L150.19482,465L131.09497,454L131.09497,432L150.19482,421L169.19482,432ZM207.29492,454L188.29492,465L169.19482,454L169.19482,432L188.29492,421L207.29492,432ZM245.39478,454L226.39478,465L207.29492,454L207.29492,432L226.39478,421L245.39478,432ZM283.49487,454L264.49487,465L245.39478,454L245.39478,432L264.49487,421L283.49487,432ZM321.59497,454L302.59497,465L283.49487,454L283.49487,432L302.59497,421L321.59497,432ZM359.69482,454L340.69482,465L321.59497,454L321.59497,432L340.69482,421L359.69482,432ZM397.79492,454L378.79492,465L359.69482,454L359.69482,432L378.79492,421L397.79492,432ZM435.89478,454L416.89478,465L397.79492,454L397.79492,432L416.89478,421L435.89478,432ZM473.99487,454L454.99487,465L435.89478,454L435.89478,432L454.99487,421L473.99487,432ZM512.19482,454L493.09497,465L473.99487,454L473.99487,432L493.09497,421L512.19482,432ZM550.29492,454L531.19482,465L512.19482,454L512.19482,432L531.19482,421L550.29492,432ZM588.39478,454L569.29492,465L550.29492,454L550.29492,432L569.29492,421L588.39478,432ZM626.49487,454L607.39478,465L588.39478,454L588.39478,432L607.39478,421L626.49487,432ZM664.59497,454L645.49487,465L626.49487,454L626.49487,432L645.49487,421L664.59497,432ZM702.69482,454L683.59497,465L664.59497,454L664.59497,432L683.59497,421L702.69482,432ZM740.79492,454L721.69482,465L702.69482,454L702.69482,432L721.69482,421L740.79492,432ZM778.89502,454L759.79492,465L740.79492,454L740.79492,432L759.79492,421L778.89502,432ZM816.99512,454L797.89502,465L778.89502,454L778.89502,432L797.89502,421L816.99512,432ZM855.09473,454L835.99512,465L816.99512,454L816.99512,432L835.99512,421L855.09473,432ZM893.19482,454L874.09473,465L855.09473,454L855.09473,432L874.09473,421L893.19482,432ZM931.29492,454L912.29492,465L893.19482,454L893.19482,432L912.29492,421L931.29492,432ZM111.99487,487L92.99487,498L73.89478,487L73.89478,465L92.99487,454L111.99487,465ZM150.19482,487L131.09497,498L111.99487,487L111.99487,465L131.09497,454L150.19482,465ZM188.29492,487L169.19482,498L150.19482,487L150.19482,465L169.19482,454L188.29492,465ZM226.39478,487L207.29492,498L188.29492,487L188.29492,465L207.29492,454L226.39478,465ZM264.49487,487L245.39478,498L226.39478,487L226.39478,465L245.39478,454L264.49487,465ZM302.59497,487L283.49487,498L264.49487,487L264.49487,465L283.49487,454L302.59497,465ZM340.69482,487L321.59497,498L302.59497,487L302.59497,465L321.59497,454L340.69482,465ZM378.79492,487L359.69482,498L340.69482,487L340.69482,465L359.69482,454L378.79492,465ZM416.89478,487L397.79492,498L378.79492,487L378.79492,465L397.79492,454L416.89478,465ZM454.99487,487L435.89478,498L416.89478,487L416.89478,465L435.89478,454L454.99487,465ZM493.09497,487L473.99487,498L454.99487,487L454.99487,465L473.99487,454L493.09497,465ZM531.19482,487L512.19482,498L493.09497,487L493.09497,465L512.19482,454L531.19482,465ZM569.29492,487L550.29492,498L531.19482,487L531.19482,465L550.29492,454L569.29492,465ZM607.39478,487L588.39478,498L569.29492,487L569.29492,465L588.39478,454L607.39478,465ZM645.49487,487L626.49487,498L607.39478,487L607.39478,465L626.49487,454L645.49487,465ZM683.59497,487L664.59497,498L645.49487,487L645.49487,465L664.59497,454L683.59497,465ZM721.69482,487L702.69482,498L683.59497,487L683.59497,465L702.69482,454L721.69482,465ZM759.79492,487L740.79492,498L721.69482,487L721.69482,465L740.79492,454L759.79492,465ZM797.89502,487L778.89502,498L759.79492,487L759.79492,465L778.89502,454L797.89502,465ZM835.99512,487L816.99512,498L797.89502,487L797.89502,465L816.99512,454L835.99512,465ZM874.09473,487L855.09473,498L835.99512,487L835.99512,465L855.09473,454L874.09473,465ZM912.29492,487L893.19482,498L874.09473,487L874.09473,465L893.19482,454L912.29492,465ZM950.39502,487L931.29492,498L912.29492,487L912.29492,465L931.29492,454L950.39502,465ZM131.09497,520L111.99487,531L92.99487,520L92.99487,498L111.99487,487L131.09497,498ZM169.19482,520L150.19482,531L131.09497,520L131.09497,498L150.19482,487L169.19482,498ZM207.29492,520L188.29492,531L169.19482,520L169.19482,498L188.29492,487L207.29492,498ZM245.39478,520L226.39478,531L207.29492,520L207.29492,498L226.39478,487L245.39478,498ZM283.49487,520L264.49487,531L245.39478,520L245.39478,498L264.49487,487L283.49487,498ZM321.59497,520L302.59497,531L283.49487,520L283.49487,498L302.59497,487L321.59497,498ZM359.69482,520L340.69482,531L321.59497,520L321.59497,498L340.69482,487L359.69482,498ZM397.79492,520L378.79492,531L359.69482,520L359.69482,498L378.79492,487L397.79492,498ZM435.89478,520L416.89478,531L397.79492,520L397.79492,498L416.89478,487L435.89478,498ZM473.99487,520L454.99487,531L435.89478,520L435.89478,498L454.99487,487L473.99487,498ZM512.19482,520L493.09497,531L473.99487,520L473.99487,498L493.09497,487L512.19482,498ZM550.29492,520L531.19482,531L512.19482,520L512.19482,498L531.19482,487L550.29492,498ZM588.39478,520L569.29492,531L550.29492,520L550.29492,498L569.29492,487L588.39478,498ZM626.49487,520L607.39478,531L588.39478,520L588.39478,498L607.39478,487L626.49487,498ZM664.59497,520L645.49487,531L626.49487,520L626.49487,498L645.49487,487L664.59497,498ZM702.69482,520L683.59497,531L664.59497,520L664.59497,498L683.59497,487L702.69482,498ZM740.79492,520L721.69482,531L702.69482,520L702.69482,498L721.69482,487L740.79492,498ZM778.89502,520L759.79492,531L740.79492,520L740.79492,498L759.79492,487L778.89502,498ZM816.99512,520L797.89502,531L778.89502,520L778.89502,498L797.89502,487L816.99512,498ZM855.09473,520L835.99512,531L816.99512,520L816.99512,498L835.99512,487L855.09473,498ZM893.19482,520L874.09473,531L855.09473,520L855.09473,498L874.09473,487L893.19482,498ZM931.29492,520L912.29492,531L893.19482,520L893.19482,498L912.29492,487L931.29492,498Z"
+            },
+            {
+              "name": "Felt Edge Shade",
+              "kind": "rect",
+              "x": 112,
+              "y": 102,
+              "width": 776,
+              "height": 396,
+              "radius": 198,
+              "strokes": [
+                {
+                  "color": "#000000",
+                  "width": 16,
+                  "opacity": 0.3,
+                  "inner": true
+                }
+              ]
+            }
+          ],
+          "clip": true
+        },
+        {
+          "name": "Neon Betting Line",
+          "kind": "rect",
+          "x": 168,
+          "y": 158,
+          "width": 664,
+          "height": 284,
+          "radius": 142,
+          "strokes": [
+            {
+              "color": "#ff3dd8",
+              "width": 2
+            }
+          ],
+          "shadows": [
+            {
+              "x": 0,
+              "y": 0,
+              "blur": 6,
+              "color": "#ff3dd8",
+              "opacity": 0.9
+            },
+            {
+              "x": 0,
+              "y": 0,
+              "blur": 18,
+              "color": "#ff3dd8",
+              "opacity": 0.55
+            },
+            {
+              "x": 0,
+              "y": 0,
+              "blur": 40,
+              "color": "#ff3dd8",
+              "opacity": 0.25
+            }
+          ]
+        },
+        {
+          "name": "Text",
+          "kind": "text",
+          "x": 466,
+          "y": 419.5,
+          "width": 82.56,
+          "height": 22.72,
+          "asset": "neon-night-wordmark.svg",
+          "sourceId": "35d3bec8-6597-804f-8008-cc8b89a1c886"
+        }
+      ]
+    },
+    {
+      "id": "35d3bec8-6597-804f-8008-cc8b6ea6d8e7",
+      "name": "Emerald Art Deco",
+      "theme": "emerald-art-deco",
+      "layers": [
+        {
+          "name": "Outer Rail",
+          "kind": "rect",
+          "x": 80,
+          "y": 70,
+          "width": 840,
+          "height": 460,
+          "radius": 230,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0.5,
+              "startY": 0,
+              "endX": 0.5,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#4a2e1c",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#2c1a0e",
+                  "opacity": 1,
+                  "offset": 0.5
+                },
+                {
+                  "color": "#170d06",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "strokes": [
+            {
+              "color": "#5e3b25",
+              "width": 1.5,
+              "inner": true
+            }
+          ],
+          "shadows": [
+            {
+              "x": 0,
+              "y": 16,
+              "blur": 30,
+              "color": "#000000",
+              "opacity": 0.6
+            },
+            {
+              "x": 0,
+              "y": 4,
+              "blur": 6,
+              "color": "#000000",
+              "opacity": 0.35
+            }
+          ]
+        },
+        {
+          "name": "Rail Highlight",
+          "kind": "rect",
+          "x": 83,
+          "y": 73,
+          "width": 834,
+          "height": 454,
+          "radius": 227,
+          "strokes": [
+            {
+              "color": "#ffffff",
+              "width": 1.5,
+              "opacity": 0.08,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Gold Inlay",
+          "kind": "rect",
+          "x": 91,
+          "y": 81,
+          "width": 818,
+          "height": 438,
+          "radius": 219,
+          "strokes": [
+            {
+              "color": "#d4af37",
+              "width": 2.5,
+              "opacity": 0.95
+            }
+          ]
+        },
+        {
+          "name": "Lacquer Trim",
+          "kind": "rect",
+          "x": 102,
+          "y": 92,
+          "width": 796,
+          "height": 416,
+          "radius": 208,
+          "fill": {
+            "color": "#0d0d0d"
+          },
+          "strokes": [
+            {
+              "color": "#d4af37",
+              "width": 1,
+              "opacity": 0.5,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Felt",
+          "kind": "rect",
+          "x": 108,
+          "y": 98,
+          "width": 784,
+          "height": 404,
+          "radius": 202,
+          "fill": {
+            "gradient": {
+              "type": "radial",
+              "startX": 0.5,
+              "startY": 0.45,
+              "endX": 0.5,
+              "endY": 1.15,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#23a26b",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#147a4d",
+                  "opacity": 1,
+                  "offset": 0.5
+                },
+                {
+                  "color": "#08402a",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "strokes": [
+            {
+              "color": "#000000",
+              "width": 14,
+              "opacity": 0.16,
+              "inner": true
+            },
+            {
+              "color": "#000000",
+              "width": 5,
+              "opacity": 0.18,
+              "inner": true
+            }
+          ]
+        },
+        {
+          "name": "Deco Line Outer",
+          "kind": "rect",
+          "x": 160,
+          "y": 150,
+          "width": 680,
+          "height": 300,
+          "radius": 150,
+          "strokes": [
+            {
+              "color": "#e2c26a",
+              "width": 1.75,
+              "opacity": 0.9
+            }
+          ]
+        },
+        {
+          "name": "Deco Line Inner",
+          "kind": "rect",
+          "x": 168,
+          "y": 158,
+          "width": 664,
+          "height": 284,
+          "radius": 142,
+          "strokes": [
+            {
+              "color": "#e2c26a",
+              "width": 0.75,
+              "opacity": 0.6
+            }
+          ]
+        },
+        {
+          "name": "Deco Chevron",
+          "kind": "path",
+          "x": 160,
+          "y": 278,
+          "width": 8,
+          "height": 44,
+          "strokes": [
+            {
+              "color": "#e2c26a",
+              "width": 1.5,
+              "opacity": 0.9
+            }
+          ],
+          "d": "M168,278L160,300L168,322"
+        },
+        {
+          "name": "Deco Chevron",
+          "kind": "path",
+          "x": 169,
+          "y": 281,
+          "width": 8,
+          "height": 38,
+          "strokes": [
+            {
+              "color": "#e2c26a",
+              "width": 1.5,
+              "opacity": 0.7
+            }
+          ],
+          "d": "M177,281L169,300L177,319"
+        },
+        {
+          "name": "Deco Chevron",
+          "kind": "path",
+          "x": 178,
+          "y": 284,
+          "width": 8,
+          "height": 32,
+          "strokes": [
+            {
+              "color": "#e2c26a",
+              "width": 1.5,
+              "opacity": 0.5
+            }
+          ],
+          "d": "M186,284L178,300L186,316"
+        },
+        {
+          "name": "Deco Chevron",
+          "kind": "path",
+          "x": 832,
+          "y": 278,
+          "width": 8,
+          "height": 44,
+          "strokes": [
+            {
+              "color": "#e2c26a",
+              "width": 1.5,
+              "opacity": 0.9
+            }
+          ],
+          "d": "M832,278L840,300L832,322"
+        },
+        {
+          "name": "Deco Chevron",
+          "kind": "path",
+          "x": 823,
+          "y": 281,
+          "width": 8,
+          "height": 38,
+          "strokes": [
+            {
+              "color": "#e2c26a",
+              "width": 1.5,
+              "opacity": 0.7
+            }
+          ],
+          "d": "M823,281L831,300L823,319"
+        },
+        {
+          "name": "Deco Chevron",
+          "kind": "path",
+          "x": 814,
+          "y": 284,
+          "width": 8,
+          "height": 32,
+          "strokes": [
+            {
+              "color": "#e2c26a",
+              "width": 1.5,
+              "opacity": 0.5
+            }
+          ],
+          "d": "M814,284L822,300L814,316"
+        },
+        {
+          "name": "Deco Diamond",
+          "kind": "path",
+          "x": 493,
+          "y": 151,
+          "width": 14,
+          "height": 14,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0.5,
+              "startY": 0,
+              "endX": 0.5,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#f6e09a",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#c9a13b",
+                  "opacity": 1,
+                  "offset": 0.6
+                },
+                {
+                  "color": "#8a6a1e",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "d": "M500,151L507,158L500,165L493,158Z"
+        },
+        {
+          "name": "Deco Diamond small",
+          "kind": "path",
+          "x": 480.5,
+          "y": 154.5,
+          "width": 7,
+          "height": 7,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0.5,
+              "startY": 0,
+              "endX": 0.5,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#f6e09a",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#c9a13b",
+                  "opacity": 1,
+                  "offset": 0.6
+                },
+                {
+                  "color": "#8a6a1e",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "d": "M484,154.5L480.5,158L484,161.5L487.5,158Z"
+        },
+        {
+          "name": "Deco Diamond small",
+          "kind": "path",
+          "x": 512.5,
+          "y": 154.5,
+          "width": 7,
+          "height": 7,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0.5,
+              "startY": 0,
+              "endX": 0.5,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#f6e09a",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#c9a13b",
+                  "opacity": 1,
+                  "offset": 0.6
+                },
+                {
+                  "color": "#8a6a1e",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "d": "M516,154.5L519.5,158L516,161.5L512.5,158Z"
+        },
+        {
+          "name": "Deco Diamond",
+          "kind": "path",
+          "x": 493,
+          "y": 435,
+          "width": 14,
+          "height": 14,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0.5,
+              "startY": 0,
+              "endX": 0.5,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#f6e09a",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#c9a13b",
+                  "opacity": 1,
+                  "offset": 0.6
+                },
+                {
+                  "color": "#8a6a1e",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "d": "M500,435L507,442L500,449L493,442Z"
+        },
+        {
+          "name": "Deco Diamond small",
+          "kind": "path",
+          "x": 480.5,
+          "y": 438.5,
+          "width": 7,
+          "height": 7,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0.5,
+              "startY": 0,
+              "endX": 0.5,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#f6e09a",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#c9a13b",
+                  "opacity": 1,
+                  "offset": 0.6
+                },
+                {
+                  "color": "#8a6a1e",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "d": "M484,438.5L480.5,442L484,445.5L487.5,442Z"
+        },
+        {
+          "name": "Deco Diamond small",
+          "kind": "path",
+          "x": 512.5,
+          "y": 438.5,
+          "width": 7,
+          "height": 7,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0.5,
+              "startY": 0,
+              "endX": 0.5,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#f6e09a",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#c9a13b",
+                  "opacity": 1,
+                  "offset": 0.6
+                },
+                {
+                  "color": "#8a6a1e",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "d": "M516,438.5L519.5,442L516,445.5L512.5,442Z"
+        },
+        {
+          "name": "Text",
+          "kind": "text",
+          "x": 434,
+          "y": 412,
+          "width": 170.56,
+          "height": 22.72,
+          "asset": "emerald-art-deco-wordmark.svg",
+          "sourceId": "35d3bec8-6597-804f-8008-cc8b6fc9c798"
+        }
+      ]
+    },
+    {
+      "id": "35d3bec8-6597-804f-8008-cc8b6fed0470",
+      "name": "Ocean Slate",
+      "theme": "ocean-slate",
+      "layers": [
+        {
+          "name": "Outer Rail",
+          "kind": "rect",
+          "x": 80,
+          "y": 70,
+          "width": 840,
+          "height": 460,
+          "radius": 230,
+          "fill": {
+            "gradient": {
+              "type": "linear",
+              "startX": 0.5,
+              "startY": 0,
+              "endX": 0.5,
+              "endY": 1,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#3a4452",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#2a323d",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "strokes": [
+            {
+              "color": "#4a5566",
+              "width": 1,
+              "inner": true
+            }
+          ],
+          "shadows": [
+            {
+              "x": 0,
+              "y": 12,
+              "blur": 28,
+              "color": "#000000",
+              "opacity": 0.45
+            }
+          ]
+        },
+        {
+          "name": "Steel Trim",
+          "kind": "rect",
+          "x": 94,
+          "y": 84,
+          "width": 812,
+          "height": 432,
+          "radius": 216,
+          "strokes": [
+            {
+              "color": "#9fb2c6",
+              "width": 1.5,
+              "opacity": 0.7
+            }
+          ]
+        },
+        {
+          "name": "Felt",
+          "kind": "group",
+          "x": 100,
+          "y": 90,
+          "width": 800,
+          "height": 420,
+          "radius": 210,
+          "fill": {
+            "gradient": {
+              "type": "radial",
+              "startX": 0.5,
+              "startY": 0.45,
+              "endX": 0.5,
+              "endY": 1.15,
+              "width": 1,
+              "stops": [
+                {
+                  "color": "#1d8a96",
+                  "opacity": 1,
+                  "offset": 0
+                },
+                {
+                  "color": "#136672",
+                  "opacity": 1,
+                  "offset": 0.5
+                },
+                {
+                  "color": "#0a3f48",
+                  "opacity": 1,
+                  "offset": 1
+                }
+              ]
+            }
+          },
+          "children": [
+            {
+              "name": "Diamond Weave (3%)",
+              "kind": "group",
+              "x": 100,
+              "y": 90,
+              "width": 800,
+              "height": 420,
+              "opacity": 0.05,
+              "children": [
+                {
+                  "name": "Path",
+                  "kind": "path",
+                  "x": 100,
+                  "y": 90,
+                  "width": 800,
+                  "height": 420,
+                  "strokes": [
+                    {
+                      "color": "#ffffff",
+                      "width": 1
+                    }
+                  ],
+                  "d": "M-320,90L100,510M-320,510L100,90M-294,90L126,510M-294,510L126,90M-268,90L152,510M-268,510L152,90M-242,90L178,510M-242,510L178,90M-216,90L204,510M-216,510L204,90M-190,90L230,510M-190,510L230,90M-164,90L256,510M-164,510L256,90M-138,90L282,510M-138,510L282,90M-112,90L308,510M-112,510L308,90M-86,90L334,510M-86,510L334,90M-60,90L360,510M-60,510L360,90M-34,90L386,510M-34,510L386,90M-8,90L412,510M-8,510L412,90M18,90L438,510M18,510L438,90M44,90L464,510M44,510L464,90M70,90L490,510M70,510L490,90M96,90L516,510M96,510L516,90M122,90L542,510M122,510L542,90M148,90L568,510M148,510L568,90M174,90L594,510M174,510L594,90M200,90L620,510M200,510L620,90M226,90L646,510M226,510L646,90M252,90L672,510M252,510L672,90M278,90L698,510M278,510L698,90M304,90L724,510M304,510L724,90M330,90L750,510M330,510L750,90M356,90L776,510M356,510L776,90M382,90L802,510M382,510L802,90M408,90L828,510M408,510L828,90M434,90L854,510M434,510L854,90M460,90L880,510M460,510L880,90M486,90L906,510M486,510L906,90M512,90L932,510M512,510L932,90M538,90L958,510M538,510L958,90M564,90L984,510M564,510L984,90M590,90L1010,510M590,510L1010,90M616,90L1036,510M616,510L1036,90M642,90L1062,510M642,510L1062,90M668,90L1088,510M668,510L1088,90M694,90L1114,510M694,510L1114,90M720,90L1140,510M720,510L1140,90M746,90L1166,510M746,510L1166,90M772,90L1192,510M772,510L1192,90M798,90L1218,510M798,510L1218,90M824,90L1244,510M824,510L1244,90M850,90L1270,510M850,510L1270,90M876,90L1296,510M876,510L1296,90"
+                }
+              ]
+            },
+            {
+              "name": "Felt Edge Shade",
+              "kind": "rect",
+              "x": 100,
+              "y": 90,
+              "width": 800,
+              "height": 420,
+              "radius": 210,
+              "strokes": [
+                {
+                  "color": "#000000",
+                  "width": 12,
+                  "opacity": 0.18,
+                  "inner": true
+                }
+              ]
+            }
+          ],
+          "clip": true
+        },
+        {
+          "name": "Betting Line",
+          "kind": "rect",
+          "x": 164,
+          "y": 154,
+          "width": 672,
+          "height": 292,
+          "radius": 146,
+          "strokes": [
+            {
+              "color": "#ffffff",
+              "width": 1.5,
+              "opacity": 0.4,
+              "dash": "15 15"
+            }
+          ]
+        },
+        {
+          "name": "Text",
+          "kind": "text",
+          "x": 466,
+          "y": 420,
+          "width": 82.56,
+          "height": 22.72,
+          "asset": "ocean-slate-wordmark.svg",
+          "sourceId": "35d3bec8-6597-804f-8008-cc8b7491f7b8"
+        }
+      ]
+    }
+  ]
+}

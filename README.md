@@ -1,8 +1,8 @@
 # FeltForge
 
-![FeltForge playground showing a six-seat poker table with community cards, chips, and markers](https://raw.githubusercontent.com/saeedet/feltforge/main/docs/images/feltforge-playground-table.png)
+![FeltForge playground showing the refined Classic six-seat poker table with community cards, chips, and markers](https://raw.githubusercontent.com/saeedet/feltforge/main/docs/images/feltforge-playground-table.png)
 
-Composable, accessible React primitives for playing cards and poker interfaces. Standard and compact mobile cards, three court collections, two Jokers, customizable card and chip shadows, crisp chips and proportionally scaled tables, built from a Penpot design system.
+Composable, accessible React primitives for playing cards and poker interfaces. Standard and compact mobile cards, three court collections, two Jokers, customizable card and chip shadows, crisp chips and six proportionally scaled table themes, built from a Penpot design system.
 
 **[Try the playground](https://saeedet.github.io/feltforge/)** · [Source and release notes](https://github.com/saeedet/feltforge). No game rules, betting engine, network service or real-money logic are included.
 
@@ -26,7 +26,7 @@ pnpm build
 pnpm dev
 ```
 
-The playground lets you explore all 52 ordinary cards, court collections, Jokers, backs, custom chips, bounded stacks, markers and 2/6/8/9-seat layouts. In the Cards tab, the “Give it a spin” preview supports click flips, drag/flick rotation, hover tilt and keyboard controls, with reduced-motion support.
+The playground lets you explore all 52 ordinary cards, court collections, Jokers, backs, custom chips, bounded stacks, markers and six table themes in 2/6/8/9-seat layouts. The Poker table tab includes a theme picker and a gallery of all six designs. In the Cards tab, the “Give it a spin” preview supports click flips, drag/flick rotation, hover tilt and keyboard controls, with reduced-motion support.
 
 The [hosted playground](https://saeedet.github.io/feltforge/) is deployed from `main` after CI passes. Its source stays in `apps/playground` and is not included in the npm package.
 
@@ -145,6 +145,7 @@ import { PokerTable, ChipStack, PokerMarker } from 'feltforge';
 
 <PokerTable
   layout={6}
+  theme="midnight-racetrack"
   renderSeat={({ index }) => <button>Player {index + 1}</button>}
   renderBet={() => <ChipStack value={25} count={3} size={40} />}
   renderMarker={({ index }) =>
@@ -153,6 +154,31 @@ import { PokerTable, ChipStack, PokerMarker } from 'feltforge';
   pot={<strong>Pot: 750</strong>}
 />;
 ```
+
+Choose from the updated **Classic**, **Midnight Racetrack**, **Royal Burgundy**, **Neon Night**, **Emerald Art Deco**, and **Ocean Slate** designs. Omit `theme` for Classic. Every theme includes its Penpot rail, felt, lighting and decorative details; lettering and symbols are SVG paths with no font dependency.
+
+| Theme              | `theme` value        |
+| ------------------ | -------------------- |
+| Classic            | `classic`            |
+| Midnight Racetrack | `midnight-racetrack` |
+| Royal Burgundy     | `royal-burgundy`     |
+| Neon Night         | `neon-night`         |
+| Emerald Art Deco   | `emerald-art-deco`   |
+| Ocean Slate        | `ocean-slate`        |
+
+`TABLE_THEMES`, `TABLE_THEME_LABELS` and the `TableTheme` type are exported from `feltforge`, `feltforge/table` and `feltforge/core` for building your own picker.
+
+Override a theme's rail, inner rail, outline, felt or betting line with the existing CSS tokens. Overrides replace that material's paint with your color while retaining the design's shading and details:
+
+```tsx
+<PokerTable
+  layout={6}
+  theme="ocean-slate"
+  style={{ '--table-felt': '#155e63', '--table-line': '#f5e9c9' }}
+/>
+```
+
+Tables include SVG shadows and, in Neon Night, glow. Set `style={{ '--table-shadow': 'none' }}` to disable these effects, or replace them with a CSS filter such as `drop-shadow(0 3px 6px rgba(0,0,0,.3))`. Filter lengths use the 1000 × 600 table coordinate system and scale with the table. This token applies to each shadowed layer, including brass studs and neon lines.
 
 The table retains a 5:3 aspect ratio. Seat, bet, marker and pot overlays use normalized anchors and retain their own dimensions. `TableAnchor` supports custom overlays; `getTableLayout()` exposes the same geometry independently of React. Seat 0 is bottom centre, then clockwise. Markers use the approved 125px inward / 55px tangent formula and stored signs.
 
@@ -181,6 +207,7 @@ See [API and theme tokens](https://github.com/saeedet/feltforge/blob/main/docs/a
 ```sh
 pnpm generate:ranks       # Check pinned fonts and reproduce outline paths
 pnpm prepare:assets      # Validate, normalize, optimize and generate modules
+pnpm generate:tables     # Reproduce table skins and outlined lettering
 pnpm check               # Format, lint, type contracts, unit tests and build
 pnpm test:visual         # Compare SVG assets with authoritative sources
 pnpm package:check       # Inspect exports, consumer bundles and npm dry run
