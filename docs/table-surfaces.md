@@ -82,4 +82,4 @@ These example positions are in Poker's existing canonical mobile scenes. Continu
 
 After updating the consumer dependency to the released 0.4.0 version, remove its `MobileTableSurface` spans, material CSS, old rail background/shadows, and `--mobile-*` material variables. Retain placement rules and the surrounding canonical scene transforms, safe-area handling, HUDs, cards, bets, pots and controls. Do not leave the old background or box shadows on the new SVG, which would draw a second table beneath it. Replace materials with `--table-*` overrides only if the application intentionally customizes the theme.
 
-This change does not modify the Poker repository. Until 0.4.0 is approved, merged and tagged, that npm version is unavailable; test the locally packed candidate if integrating before publication. The standard repository release pipeline publishes the version after approval.
+This change does not modify the Poker repository. Upgrade its FeltForge dependency to 0.4.0 before using `TableSurface`; earlier versions do not expose this API.

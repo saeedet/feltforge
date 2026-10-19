@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased — 0.4.0
+## 0.4.0 — 2026-10-19
 
 - Keep table overlays in the order artwork, cards, chips/pots/markers, then seats, so chip stacks cannot cover player panels. Apply the same order to the playground's independent surface example.
 - Scale the playground's dealer, small-blind and big-blind markers with the table, with a 32px minimum for readable labels. Document responsive marker sizing.
