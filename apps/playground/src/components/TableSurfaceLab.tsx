@@ -140,6 +140,8 @@ export function TableSurfaceLab({ theme }: { theme: TableTheme }) {
                 decorative
               />
             ))}
+          </div>
+          <div className="surface-chips">
             <Chip value={25} size={32} decorative />
           </div>
           <span className="surface-player surface-player-bottom">You</span>

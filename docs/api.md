@@ -52,7 +52,7 @@ Dimensions and scale must be finite positive numbers that do not overflow geomet
 
 It accepts common SVG props, `className`, `style`, `aria-label` and an SVG ref. Its default accessible label is the theme name followed by “poker table surface”. It has no `layout`, render callbacks or children. Compose independently positioned HTML siblings in your application's own scene. The intrinsic SVG is exactly the outer-rail size, without the desktop scene's margins; shadows and glow overflow these bounds by default. The fixed `preserveAspectRatio="xMidYMid meet"` prevents nonuniform stretching. CSS `width: 100%; height: auto` scales it responsively without changing its shape; update numeric dimensions to change the proportions.
 
-All six themes reuse the existing paint, gradients, shadows and outlined assets. Insets, stitching and bevels follow the new stadium; textures tile with constant-size cells, round studs redistribute around the perimeter, and ornaments remain upright and uniformly sized. Stud count is capped at 512 for extreme aspect ratios. Material colors and `--table-shadow` use the same tokens as `PokerTable`; custom filter lengths are explicit surface design units and are not multiplied by `detailScale`. The default shadows scale with the materials. There are no built-in mobile breakpoints, seat anchors or game state.
+All six themes reuse the existing paint, gradients, shadows and outlined assets. Insets, stitching and bevels follow the new stadium; textures tile with constant-size cells, round studs redistribute around the perimeter, and ornaments remain upright and proportional. Lettering moves inward to fit curved betting lines and reduces uniformly if thick materials leave insufficient width. Stud count is capped at 512 for extreme aspect ratios. Material colors and `--table-shadow` use the same tokens as `PokerTable`; custom filter lengths are explicit surface design units and are not multiplied by `detailScale`. The default shadows scale with the materials. There are no built-in mobile breakpoints, seat anchors or game state.
 
 See [surface integration](table-surfaces.md) for practical examples, scaling details and migration guidance.
 
@@ -69,6 +69,8 @@ Material tokens replace the theme's default rail, inner rail, outline, felt or b
 Each render callback receives `{ index, angle, lateralSign, seat, bet, marker, normalized }`. Canonical points use the 1000 × 600 coordinate system; normalized points are in 0–1 space. The table is a labelled group, with its decorative SVG hidden from assistive technology. HTML controls in overlays remain interactive.
 
 `community` occupies x=27%, y=40.3333%, width=46%, with proportional gaps. Five card children can each use width `18.26087%` of that region. `pot` uses the approved 500,212 anchor.
+
+Overlay stacking is contained within the table: artwork at layer 0, community cards at 1, bets/pot/markers at 2, and seats at 3. Seats stay above chip stacks even when they overlap. Custom `children` can use `TableAnchor` with `style={{ zIndex: 1 }}` for cards, `2` for chips or `3` for seats. Content inside an overlay stays within that overlay's layer.
 
 `TableAnchor` accepts `at: {x,y}` in normalized coordinates and ordinary div props. It centres its independently sized child at that point.
 

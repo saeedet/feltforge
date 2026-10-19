@@ -88,6 +88,12 @@ export function adaptTableLayers(
 ): readonly TableLayer[] {
   const { width, height, detailScale: s } = g;
   if (width === 840 && height === 460 && s === 1) return layers;
+  const deepestInset = Math.max(
+    ...layers.map((n) =>
+      n.placement?.kind === 'inset' ? n.placement.inset : 0,
+    ),
+  );
+  const field = insetRect(g, deepestInset + 4);
   function adapt(node: TableLayer): TableLayer {
     const placement = node.placement;
     if (!placement)
@@ -145,6 +151,34 @@ export function adaptTableLayers(
     if (placement.edge === 'right') x = 80 + width - (920 - cx) * s;
     if (placement.edge === 'top') y = 70 + (cy - 70) * s;
     if (placement.edge === 'bottom') y = 70 + height - (530 - cy) * s;
+    if (node.wordmark) {
+      // A flat desktop wordmark must also fit the curved end of a narrow/circular field.
+      // Limit only with uniform sizing; keep the source outlines and upright orientation.
+      const availableWidth =
+        field.width - 2 * Math.abs(x - (field.x + field.width / 2)) - 8 * s;
+      const scale = Math.min(s, availableWidth / node.width),
+        w = node.width * scale,
+        h = node.height * scale;
+      const verticalBounds = (px: number) => {
+        const dx = Math.max(
+          field.x + field.radius - px,
+          0,
+          px - (field.x + field.width - field.radius),
+        );
+        const dy = Math.sqrt(Math.max(0, field.radius ** 2 - dx ** 2));
+        return {
+          top: field.y + field.radius - dy,
+          bottom: field.y + field.height - field.radius + dy,
+        };
+      };
+      const left = verticalBounds(x - w / 2),
+        right = verticalBounds(x + w / 2);
+      y = Math.max(
+        Math.max(left.top, right.top) + h / 2,
+        Math.min(Math.min(left.bottom, right.bottom) - h / 2, y),
+      );
+      return { ...node, x: x - w / 2, y: y - h / 2, width: w, height: h };
+    }
     if (node.kind === 'path')
       return {
         ...node,

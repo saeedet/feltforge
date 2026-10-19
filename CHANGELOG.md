@@ -2,6 +2,8 @@
 
 ## Unreleased — 0.4.0
 
+- Keep table overlays in the order artwork, cards, chips/pots/markers, then seats, so chip stacks cannot cover player panels. Apply the same order to the playground's independent surface example.
+
 - Add `TableSurface`, an artwork-only SVG component with configurable outer-rail dimensions and material scale, available from the root, table, poker and focused table-surface entries.
 - Adapt all six themes to portrait, landscape, circular and intermediate proportions through shared stadium geometry, edge-anchored SVG ornaments, regular textures and round perimeter studs.
 - Preserve the existing PokerTable API, 1000 × 600 desktop canvas, overlay anchors and default rendering across all themes.

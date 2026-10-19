@@ -578,10 +578,16 @@ pre {
 }
 .surface-stage {
   position: relative;
+  isolation: isolate;
   flex: none;
+}
+.surface-underlay {
+  position: relative;
+  z-index: 0;
 }
 .surface-player {
   position: absolute;
+  z-index: 3;
   left: 50%;
   transform: translateX(-50%);
   border: 1px solid #b9c6af;
@@ -602,12 +608,20 @@ pre {
 }
 .surface-community {
   position: absolute;
-  left: 50%;
+  z-index: 1;
+  left: calc(50% - 18.5px);
   top: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   gap: 5px;
+}
+.surface-chips {
+  position: absolute;
+  z-index: 2;
+  left: calc(50% + 64.5px);
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .table-theme-gallery {
   display: grid;

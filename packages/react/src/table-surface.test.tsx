@@ -167,6 +167,57 @@ describe('adaptive table surfaces', () => {
       }
     }
   });
+  it.each(TABLE_THEMES)(
+    'keeps %s lettering inside the curved betting field without distortion',
+    (theme) => {
+      for (const [width, height, s] of [
+        ...sizes,
+        [334, 334, 334 / 280] as const,
+        [300, 800, 300 / 280] as const,
+      ]) {
+        const source = TABLE_SKINS[theme];
+        const inset =
+          (Math.max(
+            ...source.map((n) =>
+              n.placement?.kind === 'inset' ? n.placement.inset : 0,
+            ),
+          ) +
+            4) *
+          s;
+        const r = Math.min(width, height) / 2 - inset;
+        const nodes = flatten(
+          adaptTableLayers(source, resolveSurfaceGeometry(width, height, s)),
+        );
+        for (const n of nodes.filter((n) => n.wordmark)) {
+          const original = source.find((v) => v.wordmark === n.wordmark)!;
+          expect(n.width / n.height).toBeCloseTo(
+            original.width / original.height,
+            6,
+          );
+          expect(n.width / original.width).toBeGreaterThan(0);
+          expect(n.width / original.width).toBeLessThanOrEqual(s + 1e-10);
+          for (const x of [n.x, n.x + n.width])
+            for (const y of [n.y, n.y + n.height]) {
+              const cx =
+                width >= height
+                  ? Math.min(
+                      80 + width - Math.min(width, height) / 2,
+                      Math.max(80 + Math.min(width, height) / 2, x),
+                    )
+                  : 80 + width / 2;
+              const cy =
+                height >= width
+                  ? Math.min(
+                      70 + height - Math.min(width, height) / 2,
+                      Math.max(70 + Math.min(width, height) / 2, y),
+                    )
+                  : 70 + height / 2;
+              expect(Math.hypot(x - cx, y - cy)).toBeLessThanOrEqual(r + 1e-8);
+            }
+        }
+      }
+    },
+  );
   it('tiles textures with stable dimensions and instance-local references', () => {
     const out = render(
       <>

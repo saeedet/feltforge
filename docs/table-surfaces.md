@@ -27,6 +27,8 @@ function TableScene() {
 
 The numerical dimensions describe the outer rail. There are no hidden scene margins, seat anchors or positioning callbacks. The SVG's bounds run from 0,0 to width,height. Shadows extend outside them, so leave space in the parent. The table's geometry is recomputed when its numerical props change. CSS-only resizing scales it uniformly; it never changes the proportion automatically or requires DOM measurements inside the library.
 
+For independently composed scenes, use `position: relative; isolation: isolate` on the scene, then positioned sibling layers with `z-index: 0` for the surface, `1` for cards, `2` for chips/pots/markers and `3` for seats. Keep these layers as siblings so a child cannot become trapped below another stacking context. `PokerTable` applies this order to its built-in overlays automatically; `TableSurface` leaves the consumer's overlays under its control.
+
 ## Dimensions and material sizing
 
 `width` and `height` can describe any positive finite stadium. Rounded ends have radius `Math.min(width, height) / 2`, including a circular surface when both dimensions match. The same material recipe creates the rail, felt, betting line and other inset layers.
@@ -35,7 +37,7 @@ The numerical dimensions describe the outer rail. There are no hidden scene marg
 
 For example, Classic's felt is inset by `32 * detailScale` and its betting line by `82 * detailScale`. With 334 × 486 and scale 0.57, the felt is 297.52 × 449.52 and the betting line is 240.52 × 392.52. Intrinsic dimensions and material scale both scale through the SVG viewport when CSS changes its displayed size.
 
-All six themes support every valid proportion. Gradients follow their layer bounds. Lighting keeps its top-to-bottom direction; the surface is recomputed rather than rotating a desktop image. Wordmarks, crowns, diamonds and chevrons anchor to the appropriate edge without stretching. SVG texture tiles keep regular cells. Royal Burgundy studs remain round and evenly spaced; extreme proportions use at most 512 studs. Color tokens and `--table-shadow` remain available. No font or image downloads are required.
+All six themes support every valid proportion. Gradients follow their layer bounds. Lighting keeps its top-to-bottom direction; the surface is recomputed rather than rotating a desktop image. Wordmarks, crowns, diamonds and chevrons anchor to the appropriate edge without stretching. Lettering moves inward to remain inside curved betting lines, and scales down uniformly when thick materials leave insufficient width. SVG texture tiles keep regular cells. Royal Burgundy studs remain round and evenly spaced; extreme proportions use at most 512 studs. Color tokens and `--table-shadow` remain available. No font or image downloads are required.
 
 ## Handoff for AI-engineering-system/poker
 
