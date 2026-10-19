@@ -14,6 +14,29 @@ const skins = {};
 async function prepare(layer) {
   const output = { ...layer };
   delete output.sourceId;
+  if (layer.name === 'Brass Studs') output.placement = { kind: 'studs' };
+  else if (layer.name.startsWith('Hex Grid'))
+    output.placement = { kind: 'hex' };
+  else if (layer.name.startsWith('Diamond Weave'))
+    output.placement = { kind: 'weave' };
+  else if (layer.kind === 'rect' || (layer.kind === 'group' && layer.radius)) {
+    if (Math.abs(layer.x - 80 - (layer.y - 70)) > 0.001)
+      throw Error(
+        'Table inset layers must share a uniform inset: ' + layer.name,
+      );
+    output.placement = { kind: 'inset', inset: layer.x - 80 };
+  } else if (layer.kind !== 'group') {
+    const distances = {
+      left: layer.x + layer.width / 2 - 80,
+      right: 920 - layer.x - layer.width / 2,
+      top: layer.y + layer.height / 2 - 70,
+      bottom: 530 - layer.y - layer.height / 2,
+    };
+    const edge = Object.keys(distances).reduce((a, b) =>
+      distances[a] < distances[b] ? a : b,
+    );
+    output.placement = { kind: 'ornament', edge };
+  }
   if (output.asset) {
     const source = await readFile(
       resolve(root, 'tooling/assets/source/table-wordmarks', output.asset),
@@ -37,6 +60,8 @@ async function prepare(layer) {
   }
   if (output.children)
     output.children = await Promise.all(output.children.map(prepare));
+  if (output.placement?.kind === 'studs')
+    for (const child of output.children) delete child.placement;
   return output;
 }
 for (const master of specification.masters)

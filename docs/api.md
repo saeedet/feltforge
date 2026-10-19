@@ -34,7 +34,31 @@ Colours are configurable defaults, not universal casino denominations.
 
 `PokerMarker`: `type: 'dealer' | 'small-blind' | 'big-blind'`, optional `size` (40), `accentColor` and SVG props. Labels are D, SB, BB. The canonical puck is 64 × 64, with a recommended minimum rendered size of 32. Placement is deliberately handled separately by the table/core geometry.
 
+Import it with `import { PokerMarker } from 'feltforge'` or `import { PokerMarker } from 'feltforge/marker'`. Its default size is independent of the table. Inside `PokerTable`, use `style={{ width: 'clamp(32px, 4cqw, 40px)', height: 'auto' }}` to shrink markers with the table while keeping a readable minimum, as demonstrated in the playground. Container units refer to the table's width; outside `PokerTable`, provide a parent with `container-type: inline-size` or use your own sizing rule.
+
 ## Tables
+
+### TableSurface
+
+`TableSurface` renders only table artwork. It is exported from `feltforge`, `/react`, `/table`, `/poker`, and the focused `/table-surface` entry, with the `TableSurfaceProps` type.
+
+| Prop          | Default                         | Meaning                                            |
+| ------------- | ------------------------------- | -------------------------------------------------- |
+| `width`       | `840`                           | Outer-rail width in numeric design units           |
+| `height`      | `460`                           | Outer-rail height in numeric design units          |
+| `detailScale` | `Math.min(width, height) / 460` | Uniform material, line, ornament and shadow sizing |
+| `theme`       | `classic`                       | Any existing `TableTheme`                          |
+| `decorative`  | `false`                         | Hide the surface from assistive technology         |
+
+Dimensions and scale must be finite positive numbers that do not overflow geometry arithmetic, and `detailScale <= Math.min(width, height) / 280`. Invalid values or themes throw `RangeError`. This scale bound keeps the deepest inset and end ornaments apart. Default sizing satisfies it. The surface is a stadium: its outer radius is half the shorter edge, with each layer inset uniformly. It does not provide arbitrary corner-radius or custom-path controls.
+
+It accepts common SVG props, `className`, `style`, `aria-label` and an SVG ref. Its default accessible label is the theme name followed by “poker table surface”. It has no `layout`, render callbacks or children. Compose independently positioned HTML siblings in your application's own scene. The intrinsic SVG is exactly the outer-rail size, without the desktop scene's margins; shadows and glow overflow these bounds by default. The fixed `preserveAspectRatio="xMidYMid meet"` prevents nonuniform stretching. CSS `width: 100%; height: auto` scales it responsively without changing its shape; update numeric dimensions to change the proportions.
+
+All six themes reuse the existing paint, gradients, shadows and outlined assets. Insets, stitching and bevels follow the new stadium; textures tile with constant-size cells, round studs redistribute around the perimeter, and ornaments remain upright and proportional. Lettering moves inward to fit curved betting lines and reduces uniformly if thick materials leave insufficient width. Stud count is capped at 512 for extreme aspect ratios. Material colors and `--table-shadow` use the same tokens as `PokerTable`; custom filter lengths are explicit surface design units and are not multiplied by `detailScale`. The default shadows scale with the materials. There are no built-in mobile breakpoints, seat anchors or game state.
+
+See [surface integration](table-surfaces.md) for practical examples, scaling details and migration guidance.
+
+### PokerTable and TableAnchor
 
 `PokerTable`: `layout: 2 | 6 | 8 | 9`, optional `theme: TableTheme` (default `classic`), `renderSeat`, `renderBet`, `renderMarker`, `community`, `pot`, HTML children/props, style and div ref.
 
@@ -47,6 +71,8 @@ Material tokens replace the theme's default rail, inner rail, outline, felt or b
 Each render callback receives `{ index, angle, lateralSign, seat, bet, marker, normalized }`. Canonical points use the 1000 × 600 coordinate system; normalized points are in 0–1 space. The table is a labelled group, with its decorative SVG hidden from assistive technology. HTML controls in overlays remain interactive.
 
 `community` occupies x=27%, y=40.3333%, width=46%, with proportional gaps. Five card children can each use width `18.26087%` of that region. `pot` uses the approved 500,212 anchor.
+
+Overlay stacking is contained within the table: artwork at layer 0, community cards at 1, bets/pot/markers at 2, and seats at 3. Seats stay above chip stacks even when they overlap. Custom `children` can use `TableAnchor` with `style={{ zIndex: 1 }}` for cards, `2` for chips or `3` for seats. Content inside an overlay stays within that overlay's layer.
 
 `TableAnchor` accepts `at: {x,y}` in normalized coordinates and ordinary div props. It centres its independently sized child at that point.
 

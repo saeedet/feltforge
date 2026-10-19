@@ -1,4 +1,11 @@
-import { Card, CardBack, ChipStack, PokerTable } from '../src/index.js';
+import {
+  Card,
+  CardBack,
+  ChipStack,
+  PokerTable,
+  TableSurface,
+} from '../src/index.js';
+import { createRef } from 'react';
 import { persian } from '@feltforge/assets/courts/persian';
 import { joker1 } from '@feltforge/assets/jokers/1';
 void (<Card rank="A" suit="spades" />);
@@ -29,3 +36,20 @@ void (<PokerTable layout={7} />);
 void (<PokerTable layout={9} theme="emerald-art-deco" />);
 // @ts-expect-error table theme names are explicit
 void (<PokerTable layout={6} theme="green" />);
+void (
+  <TableSurface
+    width={334}
+    height={486}
+    detailScale={0.57}
+    theme="ocean-slate"
+    decorative
+    ref={createRef<SVGSVGElement>()}
+    style={{ width: '100%', height: 'auto', '--table-shadow': 'none' }}
+  />
+);
+// @ts-expect-error geometry dimensions are numeric design units
+void (<TableSurface width="100%" />);
+// @ts-expect-error surface has no seat layout or render callbacks
+void (<TableSurface layout={6} renderSeat={() => null} />);
+// @ts-expect-error table artwork retains proportional rendering
+void (<TableSurface preserveAspectRatio="none" />);

@@ -184,6 +184,39 @@ The table retains a 5:3 aspect ratio. Seat, bet, marker and pot overlays use nor
 
 800px or wider is recommended for a complete table interface. Narrow applications should adapt or scroll their overlays; the library does not shrink an entire interface as one SVG scene.
 
+### Artwork for custom layouts
+
+Use `TableSurface` when your application owns player positions and screen composition. It renders the same six themes without seats, cards or gameplay content. `width` and `height` describe the **outer rail**, without the desktop canvas margins. They are numeric design units, not viewport dimensions.
+
+```tsx
+import { TableSurface } from 'feltforge/table';
+
+<div style={{ position: 'relative', width: 334 }}>
+  <TableSurface
+    theme="classic"
+    width={334}
+    height={486}
+    detailScale={0.57}
+    decorative
+    style={{ width: '100%', height: 'auto' }}
+  />
+  <div style={{ position: 'absolute', left: '50%', top: '50%' }}>
+    {/* Your independently positioned players, cards, chips and controls. */}
+  </div>
+</div>;
+
+// Other examples; any valid dimensions are supported:
+<TableSurface width={559.64} height={262.66} detailScale={0.571} />;
+<TableSurface width={480} height={480} theme="royal-burgundy" />;
+<TableSurface width={720} height={380} theme="neon-night" />;
+```
+
+The surface recomputes stadium curvature and layer insets rather than stretching a desktop SVG. `detailScale` controls rail thickness, strokes, stitching, shadows and ornament size together. It defaults to `Math.min(width, height) / 460`; use an explicit value when your design specifies material sizing independently of the outer dimensions. It must be positive and no greater than the shorter edge divided by 280, leaving room for the betting line and ornaments.
+
+All themes support portrait, landscape and intermediate proportions. Studs follow the perimeter, textures tile, and lettering and decorative shapes retain their proportions. Color tokens and `--table-shadow` work as above. The SVG bounds exclude shadows; leave room around the surface and avoid clipping its parent.
+
+CSS sizing scales the chosen shape uniformly. To change its proportions, update the numeric `width`/`height` props. `TableSurface` uses no viewport observer or breakpoints and does not reposition your content. Existing `PokerTable` props, its 1000 × 600 canvas and overlay geometry remain unchanged; existing consumers need no migration. See the [integration guide](https://github.com/saeedet/feltforge/blob/main/docs/table-surfaces.md) for a complete mobile replacement example.
+
 ## Accessibility and theming
 
 Visuals have meaningful default accessible labels, accept `aria-label` overrides, and support `decorative`. Interactive examples use native buttons around cards so keyboard activation and focus work naturally. Table overlays remain accessible HTML.

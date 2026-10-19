@@ -29,6 +29,14 @@ export type TableShadow = {
   opacity: number;
 };
 export type TableLayer = {
+  placement?:
+    | { kind: 'inset'; inset: number }
+    | { kind: 'ornament'; edge: 'left' | 'right' | 'top' | 'bottom' }
+    | { kind: 'studs' }
+    | { kind: 'hex' }
+    | { kind: 'weave' };
+  transform?: string;
+  pattern?: 'hex' | 'weave';
   name: string;
   kind: 'rect' | 'ellipse' | 'path' | 'group' | 'text';
   x: number;

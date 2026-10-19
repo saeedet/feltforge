@@ -5,7 +5,6 @@ import type { TableTheme } from './table.js';
 import { Resvg } from '@resvg/resvg-js';
 import { PNG } from 'pngjs';
 import { readFileSync } from 'node:fs';
-import { TableSurface } from './table-surface.js';
 
 describe('Penpot table themes', () => {
   it('uses the refreshed Classic design by default', () => {
@@ -82,7 +81,9 @@ describe('Penpot table themes', () => {
   it.each(['classic', 'royal-burgundy'] as const)(
     'matches the %s master independently exported from Penpot',
     (theme) => {
-      const svg = render(<TableSurface theme={theme} />)
+      const svg = render(<PokerTable layout={6} theme={theme} />)
+        .replace(/^<div[^>]*>/, '')
+        .replace(/<\/div>$/, '')
         .replace(
           '<svg ',
           '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ',

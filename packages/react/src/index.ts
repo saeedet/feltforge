@@ -10,6 +10,8 @@ export type { ChipProps, ChipStackProps, ChipAppearance } from './chip.js';
 export { PokerMarker } from './marker.js';
 export type { PokerMarkerProps } from './marker.js';
 export { PokerTable, TableAnchor } from './table.js';
+export { TableSurface } from './table-surface.js';
+export type { TableSurfaceProps } from './table-surface.js';
 export { TABLE_THEMES, TABLE_THEME_LABELS } from './table.js';
 export type { TableTheme } from './table.js';
 export type { PokerTableProps, TableAnchorProps, SeatAnchor } from './table.js';
