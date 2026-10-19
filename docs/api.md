@@ -34,6 +34,8 @@ Colours are configurable defaults, not universal casino denominations.
 
 `PokerMarker`: `type: 'dealer' | 'small-blind' | 'big-blind'`, optional `size` (40), `accentColor` and SVG props. Labels are D, SB, BB. The canonical puck is 64 × 64, with a recommended minimum rendered size of 32. Placement is deliberately handled separately by the table/core geometry.
 
+Import it with `import { PokerMarker } from 'feltforge'` or `import { PokerMarker } from 'feltforge/marker'`. Its default size is independent of the table. Inside `PokerTable`, use `style={{ width: 'clamp(32px, 4cqw, 40px)', height: 'auto' }}` to shrink markers with the table while keeping a readable minimum, as demonstrated in the playground. Container units refer to the table's width; outside `PokerTable`, provide a parent with `container-type: inline-size` or use your own sizing rule.
+
 ## Tables
 
 ### TableSurface

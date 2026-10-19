@@ -893,11 +893,17 @@ function App() {
                     )}
                     renderMarker={(s) =>
                       s.index === dealer ? (
-                        <PokerMarker type="dealer" />
+                        <PokerMarker type="dealer" className="table-marker" />
                       ) : s.index === (dealer + 1) % layout ? (
-                        <PokerMarker type="small-blind" />
+                        <PokerMarker
+                          type="small-blind"
+                          className="table-marker"
+                        />
                       ) : s.index === (dealer + 2) % layout ? (
-                        <PokerMarker type="big-blind" />
+                        <PokerMarker
+                          type="big-blind"
+                          className="table-marker"
+                        />
                       ) : null
                     }
                     pot={

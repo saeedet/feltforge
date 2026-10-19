@@ -657,6 +657,11 @@ pre {
   margin: auto;
   padding: 0 20px;
 }
+.table-marker {
+  display: block;
+  width: clamp(32px, 4cqw, 40px);
+  height: auto;
+}
 .seat {
   display: flex;
   align-items: center;

@@ -131,7 +131,18 @@ test('table layouts expose independently sized overlays', async ({ page }) => {
     path: 'test-results/table-1000.png',
     fullPage: true,
   });
+  const markers = page.locator('.table-marker');
+  await expect(markers).toHaveCount(3);
+  const largeMarkers = await markers.evaluateAll((nodes) =>
+    nodes.map((node) => node.getBoundingClientRect().width),
+  );
   await page.getByLabel('Table width', { exact: true }).fill('500');
+  for (const [i, marker] of (await markers.all()).entries()) {
+    const bounds = await marker.boundingBox();
+    expect(bounds!.width).toBeLessThan(largeMarkers[i]!);
+    expect(bounds!.width).toBeGreaterThanOrEqual(32);
+    expect(bounds!.height).toBeCloseTo(bounds!.width, 2);
+  }
   const backsFit = await page
     .locator('.community-card .flip-card__face--back > svg')
     .evaluateAll((backs) =>
