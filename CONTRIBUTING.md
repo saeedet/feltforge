@@ -19,4 +19,6 @@ After asset changes, run `pnpm generate:ranks`, `pnpm prepare:assets`, and `pnpm
 
 After table design changes, capture the current component masters and outline decorative lettering before updating the sources. Run `pnpm generate:tables` to reproduce the typed skins. Keep font files and live text out of table artwork, preserve overlay anchors and verify all six themes. See [table preparation](docs/design/table-themes.md).
 
+Keep material definitions shared between `PokerTable` and `TableSurface`. New decorative layers need explicit placement semantics in the skin generator; do not stretch paths to fit new proportions. Check canonical desktop regressions and adapted surfaces across all six themes. See [adaptive surface architecture](docs/design/adaptive-surfaces.md).
+
 Default builds remain private. Only after explicit maintainer approval, `pnpm package:release` prepares a public manifest and validated tarball. Publication is a separate action and is never part of `build`, `check`, `package:pack` or `package:release`.

@@ -14,7 +14,11 @@ export default defineConfig({
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
     {
       name: 'webkit-mobile',
-      testMatch: ['**/card-shadows.spec.ts', '**/chip-shadows.spec.ts'],
+      testMatch: [
+        '**/card-shadows.spec.ts',
+        '**/chip-shadows.spec.ts',
+        '**/table-surfaces.spec.ts',
+      ],
       use: { ...devices['iPhone 13'] },
     },
   ],

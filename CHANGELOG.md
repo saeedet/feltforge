@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — 0.4.0
+
+- Add `TableSurface`, an artwork-only SVG component with configurable outer-rail dimensions and material scale, available from the root, table, poker and focused table-surface entries.
+- Adapt all six themes to portrait, landscape, circular and intermediate proportions through shared stadium geometry, edge-anchored SVG ornaments, regular textures and round perimeter studs.
+- Preserve the existing PokerTable API, 1000 × 600 desktop canvas, overlay anchors and default rendering across all themes.
+- Add an interactive surface-proportion lab, desktop pixel regressions, geometry/browser coverage and consumer integration guidance.
+
 ## 0.3.0 — 2026-10-17
 
 - Add five Penpot table themes: Midnight Racetrack, Royal Burgundy, Neon Night, Emerald Art Deco and Ocean Slate, alongside the refined Classic design.

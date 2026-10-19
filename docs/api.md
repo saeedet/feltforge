@@ -36,6 +36,28 @@ Colours are configurable defaults, not universal casino denominations.
 
 ## Tables
 
+### TableSurface
+
+`TableSurface` renders only table artwork. It is exported from `feltforge`, `/react`, `/table`, `/poker`, and the focused `/table-surface` entry, with the `TableSurfaceProps` type.
+
+| Prop          | Default                         | Meaning                                            |
+| ------------- | ------------------------------- | -------------------------------------------------- |
+| `width`       | `840`                           | Outer-rail width in numeric design units           |
+| `height`      | `460`                           | Outer-rail height in numeric design units          |
+| `detailScale` | `Math.min(width, height) / 460` | Uniform material, line, ornament and shadow sizing |
+| `theme`       | `classic`                       | Any existing `TableTheme`                          |
+| `decorative`  | `false`                         | Hide the surface from assistive technology         |
+
+Dimensions and scale must be finite positive numbers that do not overflow geometry arithmetic, and `detailScale <= Math.min(width, height) / 280`. Invalid values or themes throw `RangeError`. This scale bound keeps the deepest inset and end ornaments apart. Default sizing satisfies it. The surface is a stadium: its outer radius is half the shorter edge, with each layer inset uniformly. It does not provide arbitrary corner-radius or custom-path controls.
+
+It accepts common SVG props, `className`, `style`, `aria-label` and an SVG ref. Its default accessible label is the theme name followed by “poker table surface”. It has no `layout`, render callbacks or children. Compose independently positioned HTML siblings in your application's own scene. The intrinsic SVG is exactly the outer-rail size, without the desktop scene's margins; shadows and glow overflow these bounds by default. The fixed `preserveAspectRatio="xMidYMid meet"` prevents nonuniform stretching. CSS `width: 100%; height: auto` scales it responsively without changing its shape; update numeric dimensions to change the proportions.
+
+All six themes reuse the existing paint, gradients, shadows and outlined assets. Insets, stitching and bevels follow the new stadium; textures tile with constant-size cells, round studs redistribute around the perimeter, and ornaments remain upright and uniformly sized. Stud count is capped at 512 for extreme aspect ratios. Material colors and `--table-shadow` use the same tokens as `PokerTable`; custom filter lengths are explicit surface design units and are not multiplied by `detailScale`. The default shadows scale with the materials. There are no built-in mobile breakpoints, seat anchors or game state.
+
+See [surface integration](table-surfaces.md) for practical examples, scaling details and migration guidance.
+
+### PokerTable and TableAnchor
+
 `PokerTable`: `layout: 2 | 6 | 8 | 9`, optional `theme: TableTheme` (default `classic`), `renderSeat`, `renderBet`, `renderMarker`, `community`, `pot`, HTML children/props, style and div ref.
 
 Themes are `classic`, `midnight-racetrack`, `royal-burgundy`, `neon-night`, `emerald-art-deco` and `ocean-slate`. Classic uses the updated Penpot master. Every theme shares the same 1000 × 600 canvas and overlay geometry; `theme` never changes seats, bets, markers, community cards or the pot. Decorative lettering and symbols are outlined SVG paths, with no runtime fonts, images or external requests.

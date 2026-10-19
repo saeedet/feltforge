@@ -4,7 +4,9 @@ import type { HTMLAttributes, ReactNode } from 'react';
 import { getTableLayout } from '@feltforge/core';
 import type { Point, TableLayout, TableTheme } from '@feltforge/core';
 import type { ThemeStyle } from './svg.js';
-import { TableSurface } from './table-surface.js';
+import { TableArtwork } from './table-artwork.js';
+export { TableSurface } from './table-surface.js';
+export type { TableSurfaceProps } from './table-surface.js';
 export { TABLE_THEMES, TABLE_THEME_LABELS } from '@feltforge/core';
 export type { TableTheme } from '@feltforge/core';
 export type SeatAnchor = ReturnType<typeof getTableLayout>['seats'][number];
@@ -78,7 +80,21 @@ export const PokerTable = /* @__PURE__ */ forwardRef<
         ...style,
       }}
     >
-      <TableSurface theme={theme} />
+      <svg
+        viewBox="0 0 1000 600"
+        width="100%"
+        height="100%"
+        aria-hidden="true"
+        focusable="false"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          pointerEvents: 'none',
+          overflow: 'visible',
+        }}
+      >
+        <TableArtwork theme={theme} />
+      </svg>
       {community && (
         <div
           style={{

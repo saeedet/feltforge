@@ -566,6 +566,49 @@ pre {
 .table-theme-heading {
   margin-top: 2rem;
 }
+.surface-lab {
+  margin: 2rem 0;
+}
+.surface-preview-frame {
+  background: #e4e9df;
+  border-radius: 12px;
+  padding: 40px 28px;
+  display: flex;
+  justify-content: center;
+}
+.surface-stage {
+  position: relative;
+  flex: none;
+}
+.surface-player {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #b9c6af;
+  border-radius: 8px;
+  background: #faf8f1;
+  color: #243b2b;
+  font: 600 12px/1.4 sans-serif;
+  padding: 6px 16px;
+  box-shadow: 0 2px 6px #0002;
+  white-space: nowrap;
+}
+.surface-player-top {
+  top: 4%;
+  cursor: pointer;
+}
+.surface-player-bottom {
+  bottom: 4%;
+}
+.surface-community {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 .table-theme-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));

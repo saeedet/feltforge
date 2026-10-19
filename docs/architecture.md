@@ -16,6 +16,8 @@ Production cards are composed from one shell, reusable glyph/suit paths and geom
 
 ## Geometry and overlays
 
+For consumer-owned responsive scenes, `TableSurface` exposes the shared artwork independently of `PokerTable`. Width and height refer to the outer rail, and a uniform detail scale controls material sizing. Build-generated placement semantics reflow the captured skin layers without duplicating their paint recipes. See [the architecture evaluation](design/adaptive-surfaces.md) and [consumer handoff](table-surfaces.md).
+
 Table geometry remains a 5:3 SVG. Seat, bet, marker, community and pot UI remains HTML anchored in normalized coordinates, with independent dimensions. `PokerMarker` renders only the puck. Core computes marker positions from the approved formula and stored signs. No game state or rules are inferred by the library.
 
 Six table themes share these anchors. `PokerTable` defaults to the refined Classic skin; `theme` changes decorative artwork only. The captured component masters generate typed layer data, including gradients, clipped patterns, independent shadows and inside strokes. Lettering is imported as vector outlines from Penpot PDF exports, converted to SVG without adding font files. Instance-scoped SVG IDs keep repeated tables and server rendering independent. Existing material tokens override theme paints; `--table-shadow` replaces the decorative filters.

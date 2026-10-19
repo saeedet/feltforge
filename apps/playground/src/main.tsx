@@ -29,6 +29,7 @@ import type { ThemeStyle } from '@feltforge/react';
 import type { CourtArtwork, JokerArtwork } from '@feltforge/assets/types';
 import FlipCard from './components/react-bits/FlipCard';
 import './style.css';
+import { TableSurfaceLab } from './components/TableSurfaceLab.js';
 
 const loaders = {
   persian: () =>
@@ -942,6 +943,7 @@ function App() {
               <pre>
                 <code>{`<PokerTable\n  layout={${layout}}\n  theme="${tableTheme}"\n  renderSeat={({ index }) => <PlayerPanel seat={index} />}\n  renderBet={() => <ChipStack value={25} count={3} />}\n/>`}</code>
               </pre>
+              <TableSurfaceLab theme={tableTheme} />
               <h3 className="table-theme-heading">Six tables. Your room.</h3>
               <p className="note">
                 Choose a table to preview it with cards, chips and players. All

@@ -81,6 +81,7 @@ const exports = {
   './card-back': entry('react/card-back'),
   './chips': entry('react/chip'),
   './table': entry('react/table'),
+  './table-surface': entry('react/table-surface'),
   './marker': entry('react/marker'),
   './artwork': entry('assets/types'),
   './assets/*': './assets/*',
@@ -115,7 +116,7 @@ await writeFile(
           }
         : {}),
       description:
-        'React playing cards, compact mobile cards, chips and six poker table themes, with original artwork and customizable shadows.',
+        'React playing cards, compact mobile cards, chips and six adaptive poker table themes, with original artwork and customizable shadows.',
       type: 'module',
       license: 'MIT',
       author: { name: 'Saeed ET', url: 'https://github.com/saeedet' },

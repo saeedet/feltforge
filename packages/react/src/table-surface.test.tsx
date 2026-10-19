@@ -1,0 +1,206 @@
+import { readFileSync } from 'node:fs';
+import { Resvg } from '@resvg/resvg-js';
+import { PNG } from 'pngjs';
+import { renderToStaticMarkup as render } from 'react-dom/server';
+import { describe, it, expect } from 'vitest';
+import { PokerTable, TableSurface, TABLE_THEMES } from './index.js';
+import { resolveSurfaceGeometry, adaptTableLayers } from './table-geometry.js';
+import { TABLE_SKINS } from './table-skins.generated.js';
+import type { TableLayer } from './table-skin-types.js';
+
+function flatten(nodes: readonly TableLayer[]): TableLayer[] {
+  return nodes.flatMap((node) => [node, ...flatten(node.children ?? [])]);
+}
+const sizes = [
+  [334, 486, 0.57],
+  [559.64, 262.66, 0.571],
+  [460, 460, 1],
+  [725, 355, 0.7],
+  [315, 700, 0.6],
+  [640, 380, 0.8],
+] as const;
+describe('adaptive table surfaces', () => {
+  it.each(TABLE_THEMES)(
+    'preserves every %s desktop pixel from 0.3.0',
+    (theme) => {
+      const svg = render(<PokerTable layout={6} theme={theme} />)
+        .replace(/^<div[^>]*>/, '')
+        .replace(/<\/div>$/, '')
+        .replace(
+          '<svg ',
+          '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ',
+        )
+        .replace('width="100%" height="100%"', 'width="1000" height="600"')
+        .replace(/var\(--[\w-]+,\s*(url\([^)]+\)|[^)]+)\)/g, '$1');
+      const image = new Resvg(svg).render(),
+        pixels = PNG.sync.read(image.asPng()).data;
+      const reference = PNG.sync.read(
+        readFileSync(
+          new URL(
+            `../../../tooling/assets/reference/tables/v0.3.0-${theme}.png`,
+            import.meta.url,
+          ),
+        ),
+      );
+      expect([image.width, image.height]).toEqual([1000, 600]);
+      expect(Buffer.compare(pixels, reference.data)).toBe(0);
+    },
+  );
+  it('uses outer-rail bounds rather than the desktop scene canvas', () => {
+    const out = render(
+      <TableSurface
+        width={334}
+        height={486}
+        detailScale={0.57}
+        data-testid="surface"
+      />,
+    );
+    expect(out).toContain('viewBox="0 0 334 486"');
+    expect(out).toContain('width="334" height="486"');
+    expect(out).toContain('role="img"');
+    expect(out).toContain('aria-label="Classic poker table surface"');
+    expect(out).not.toMatch(/data-seat-index|container-type|<button/);
+    expect(out).toContain('preserveAspectRatio="xMidYMid meet"');
+    expect(render(<TableSurface decorative />)).toContain('aria-hidden="true"');
+  });
+  it.each(TABLE_THEMES)(
+    'recomputes %s insets, radii, materials and ornaments at arbitrary proportions',
+    (theme) => {
+      for (const [width, height, detailScale] of sizes) {
+        const g = resolveSurfaceGeometry(width, height, detailScale),
+          nodes = flatten(adaptTableLayers(TABLE_SKINS[theme], g));
+        const rail = nodes.find((n) => n.name === 'Outer Rail')!;
+        expect([rail.x, rail.y, rail.width, rail.height, rail.radius]).toEqual([
+          80,
+          70,
+          width,
+          height,
+          Math.min(width, height) / 2,
+        ]);
+        const insetNodes = nodes.filter((n) => n.placement?.kind === 'inset');
+        for (const node of insetNodes) {
+          if (node.placement?.kind !== 'inset') throw Error('Unreachable');
+          const inset = node.placement.inset * detailScale;
+          expect(node.x - 80).toBeCloseTo(inset);
+          expect(node.y - 70).toBeCloseTo(inset);
+          expect(node.width).toBeCloseTo(width - 2 * inset);
+          expect(node.height).toBeCloseTo(height - 2 * inset);
+          expect(node.radius).toBeCloseTo(Math.min(width, height) / 2 - inset);
+          expect(node.width).toBeGreaterThan(0);
+          expect(node.height).toBeGreaterThan(0);
+        }
+        const out = render(
+          <TableSurface
+            theme={theme}
+            width={width}
+            height={height}
+            detailScale={detailScale}
+          />,
+        );
+        expect(out).toContain('<linearGradient');
+        expect(out).toContain('<radialGradient');
+        expect(out).toContain('var(--table-felt, url(');
+        expect(out).toContain('var(--table-shadow, url(');
+        expect(out).not.toMatch(
+          /<text\b|<image\b|NaN|Infinity|scale\([^ )]+[ ,]+[^ )]+\)/,
+        );
+        for (const n of nodes.filter((n) => n.wordmark)) {
+          const original = TABLE_SKINS[theme].find(
+            (v) => v.wordmark === n.wordmark,
+          )!;
+          expect(n.width / original.width).toBeCloseTo(detailScale);
+          expect(n.height / original.height).toBeCloseTo(detailScale);
+        }
+      }
+    },
+  );
+  it('keeps the portrait Classic felt and betting line at their actual material insets', () => {
+    const nodes = adaptTableLayers(
+      TABLE_SKINS.classic,
+      resolveSurfaceGeometry(334, 486, 0.57),
+    );
+    const felt = nodes.find((n) => n.name === 'Felt')!,
+      line = nodes.find((n) => n.name === 'Betting Line')!;
+    expect(felt.x).toBeCloseTo(98.24);
+    expect(felt.width).toBeCloseTo(297.52);
+    expect(felt.radius).toBeCloseTo(148.76);
+    expect(line.x).toBeCloseTo(126.74);
+    expect(line.width).toBeCloseTo(240.52);
+    expect(line.radius).toBeCloseTo(120.26);
+    const out = render(
+      <TableSurface width={334} height={486} detailScale={0.57} />,
+    );
+    expect(Number(out.match(/stdDeviation="([^"]+)"/)![1])).toBeCloseTo(8.55);
+    expect(
+      out
+        .match(/stroke-dasharray="([^"]+)"/)![1]!
+        .split(' ')
+        .map(Number),
+    ).toEqual([0.57 * 10, 0.57 * 10]);
+  });
+  it('places round brass studs on the actual stadium perimeter and bounds their count', () => {
+    for (const [width, height, s] of [...sizes, [1000000, 460, 1] as const]) {
+      const nodes = flatten(
+        adaptTableLayers(
+          TABLE_SKINS['royal-burgundy'],
+          resolveSurfaceGeometry(width, height, s),
+        ),
+      );
+      const studs = nodes.filter((n) => n.kind === 'ellipse');
+      expect(studs.length).toBeLessThanOrEqual(512);
+      expect(studs.length).toBeGreaterThan(8);
+      for (const node of studs) {
+        expect(node.width).toBeCloseTo(6 * s);
+        expect(node.height).toBeCloseTo(node.width);
+        const x = node.x + node.width / 2,
+          y = node.y + node.height / 2,
+          r = Math.min(width, height) / 2;
+        const cx =
+          width >= height
+            ? Math.min(80 + width - r, Math.max(80 + r, x))
+            : 80 + width / 2;
+        const cy =
+          height >= width
+            ? Math.min(70 + height - r, Math.max(70 + r, y))
+            : 70 + height / 2;
+        expect(Math.hypot(x - cx, y - cy)).toBeCloseTo(r - 9 * s, 6);
+      }
+    }
+  });
+  it('tiles textures with stable dimensions and instance-local references', () => {
+    const out = render(
+      <>
+        {TABLE_THEMES.map((theme) => (
+          <TableSurface key={theme} theme={theme} width={334} height={486} />
+        ))}
+        <TableSurface theme="neon-night" width={720} height={300} />
+      </>,
+    );
+    expect(out.match(/<pattern/g)).toHaveLength(3);
+    const ids = [...out.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
+    expect(new Set(ids).size).toBe(ids.length);
+    for (const m of out.matchAll(/(?:url\(#|href="#)([^)" ]+)/g))
+      expect(ids).toContain(m[1]);
+  });
+  it('defaults details to the short edge, preserves identity geometry and validates dimensions', () => {
+    expect(resolveSurfaceGeometry(334, 486).detailScale).toBeCloseTo(334 / 460);
+    expect(
+      adaptTableLayers(TABLE_SKINS.classic, resolveSurfaceGeometry()),
+    ).toBe(TABLE_SKINS.classic);
+    for (const value of [0, -1, NaN, Infinity]) {
+      expect(() => render(<TableSurface width={value} />)).toThrow(RangeError);
+      expect(() => render(<TableSurface height={value} />)).toThrow(RangeError);
+      expect(() => render(<TableSurface detailScale={value} />)).toThrow(
+        RangeError,
+      );
+    }
+    expect(() =>
+      render(<TableSurface width={334} height={486} detailScale={2} />),
+    ).toThrow(RangeError);
+    expect(() =>
+      render(
+        <TableSurface width={Number.MAX_VALUE} height={Number.MAX_VALUE} />,
+      ),
+    ).toThrow(RangeError);
+  });
+});
