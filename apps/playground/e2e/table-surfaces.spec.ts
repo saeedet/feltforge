@@ -159,6 +159,19 @@ for (const theme of themes)
             (lines[0]![edge] + lines[1]![edge]) / 2,
             2,
           );
+          if (
+            await table.evaluate((el) =>
+              el.classList.contains('surface-underlay'),
+            )
+          ) {
+            const player = (await page
+              .locator(
+                index === 0 ? '.surface-player-top' : '.surface-player-bottom',
+              )
+              .boundingBox())!;
+            if (index === 0) expect(player.y + player.height).toBeLessThan(top);
+            else expect(player.y).toBeGreaterThan(bottom);
+          }
         }
       }
     };
@@ -226,11 +239,9 @@ for (const theme of themes)
           .selectOption('auto');
         await expectCenteredOutlines(surface);
         if (theme === 'emerald-art-deco')
-          await page
-            .locator('.surface-preview-frame')
-            .screenshot({
-              path: `test-results/surface-emerald-portrait-auto-${info.project.name}.png`,
-            });
+          await page.locator('.surface-preview-frame').screenshot({
+            path: `test-results/surface-emerald-portrait-auto-${info.project.name}.png`,
+          });
       }
     }
     await page.getByLabel('Surface width', { exact: true }).fill('725');
