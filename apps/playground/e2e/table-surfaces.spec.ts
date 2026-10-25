@@ -94,6 +94,82 @@ for (const theme of themes)
     await page.goto('/?tab=table#explore');
     await page.getByLabel('Table theme', { exact: true }).selectOption(theme);
     const surface = page.locator('.surface-underlay');
+    const expectCenteredOutlines = async (table: typeof surface) => {
+      // Read a single layout snapshot in one coordinate system. Mobile WebKit
+      // can scroll while controls resize the surface between separate calls.
+      const metrics = await table.evaluate((el) => {
+        const svg = el as SVGSVGElement;
+        const box = svg.getBoundingClientRect();
+        const center = box.x + box.width / 2;
+        const outlines = Array.from(
+          svg.querySelectorAll('[data-table-layer="Text"]'),
+          (mark) => {
+            const bounds = mark.getBoundingClientRect();
+            return bounds.x + bounds.width / 2 - center;
+          },
+        );
+        const diamonds = Array.from(
+          svg.querySelectorAll('[data-table-layer^="Deco Diamond"]'),
+          (node) => node.getBoundingClientRect(),
+        );
+        const lines = ['Deco Line Outer', 'Deco Line Inner'].map((name) =>
+          svg
+            .querySelector(`[data-table-layer="${name}"] > g > rect`)
+            ?.getBoundingClientRect(),
+        );
+        const rows = diamonds.length
+          ? [diamonds.slice(0, 3), diamonds.slice(3)].map((row, index) => {
+              const left = Math.min(...row.map((b) => b.left));
+              const right = Math.max(...row.map((b) => b.right));
+              const top = Math.min(...row.map((b) => b.top));
+              const bottom = Math.max(...row.map((b) => b.bottom));
+              const centers = row
+                .map((b) => b.x + b.width / 2)
+                .sort((a, b) => a - b);
+              const edge = index === 0 ? 'top' : 'bottom';
+              const player = svg.classList.contains('surface-underlay')
+                ? svg
+                    .parentElement!.querySelector(
+                      index === 0
+                        ? '.surface-player-top'
+                        : '.surface-player-bottom',
+                    )!
+                    .getBoundingClientRect()
+                : null;
+              return {
+                centerOffset: (left + right) / 2 - center,
+                middleOffset: centers[1]! - center,
+                spacingDifference:
+                  centers[1]! - centers[0]! - (centers[2]! - centers[1]!),
+                lineOffset:
+                  (top + bottom) / 2 - (lines[0]![edge] + lines[1]![edge]) / 2,
+                clearance: player
+                  ? index === 0
+                    ? top - player.bottom
+                    : player.top - bottom
+                  : null,
+              };
+            })
+          : [];
+        return { outlines, diamondCount: diamonds.length, rows };
+      });
+      expect(metrics.outlines.length).toBeGreaterThan(0);
+      for (const offset of metrics.outlines) expect(offset).toBeCloseTo(0, 2);
+      if (theme === 'emerald-art-deco') {
+        expect(metrics.diamondCount).toBe(6);
+        expect(metrics.rows).toHaveLength(2);
+        for (const row of metrics.rows) {
+          expect(row.centerOffset).toBeCloseTo(0, 2);
+          expect(row.middleOffset).toBeCloseTo(0, 2);
+          expect(row.spacingDifference).toBeCloseTo(0, 2);
+          expect(row.lineOffset).toBeCloseTo(0, 2);
+          if (row.clearance !== null) expect(row.clearance).toBeGreaterThan(0);
+        }
+      }
+    };
+    await expectCenteredOutlines(
+      page.locator('.table-preview > [data-table-theme] > svg'),
+    );
     for (const [preset, w, h, s] of [
       ['portrait', 334, 486, 0.57],
       ['landscape', 559.64, 262.66, 0.571],
@@ -103,6 +179,7 @@ for (const theme of themes)
         .getByLabel('Surface example', { exact: true })
         .selectOption(preset);
       await expect(surface).toHaveAttribute('viewBox', `0 0 ${w} ${h}`);
+      await expectCenteredOutlines(surface);
       const rail = surface
         .locator('[data-table-layer="Outer Rail"] > g > rect')
         .first();
@@ -148,10 +225,21 @@ for (const theme of themes)
         .screenshot({
           path: `test-results/surface-${theme}-${preset}-${info.project.name}.png`,
         });
+      if (preset === 'portrait') {
+        await page
+          .getByLabel('Surface detail sizing', { exact: true })
+          .selectOption('auto');
+        await expectCenteredOutlines(surface);
+        if (theme === 'emerald-art-deco')
+          await page.locator('.surface-preview-frame').screenshot({
+            path: `test-results/surface-emerald-portrait-auto-${info.project.name}.png`,
+          });
+      }
     }
     await page.getByLabel('Surface width', { exact: true }).fill('725');
     await page.getByLabel('Surface height', { exact: true }).fill('355');
     await expect(surface).toHaveAttribute('viewBox', '0 0 725 355');
+    await expectCenteredOutlines(surface);
     const refs = await page.evaluate(() => {
       const ids = Array.from(document.querySelectorAll('[id]'), (el) => el.id),
         missing: string[] = [];

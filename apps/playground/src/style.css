@@ -600,11 +600,13 @@ pre {
   white-space: nowrap;
 }
 .surface-player-top {
-  top: 4%;
+  top: 0;
+  transform: translate(-50%, -50%);
   cursor: pointer;
 }
 .surface-player-bottom {
-  bottom: 4%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
 }
 .surface-community {
   position: absolute;

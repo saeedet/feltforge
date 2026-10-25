@@ -5,6 +5,8 @@ import type { TableTheme } from './table.js';
 import { Resvg } from '@resvg/resvg-js';
 import { PNG } from 'pngjs';
 import { readFileSync } from 'node:fs';
+import { TABLE_SKINS } from './table-skins.generated.js';
+import type { TableLayer } from './table-skin-types.js';
 
 describe('Penpot table themes', () => {
   it('uses the refreshed Classic design by default', () => {
@@ -79,7 +81,7 @@ describe('Penpot table themes', () => {
     ).toThrow(RangeError);
   });
   it.each(['classic', 'royal-burgundy'] as const)(
-    'matches the %s master independently exported from Penpot',
+    'matches the %s Penpot materials outside intentionally realigned ornaments',
     (theme) => {
       const svg = render(<PokerTable layout={6} theme={theme} />)
         .replace(/^<div[^>]*>/, '')
@@ -107,14 +109,47 @@ describe('Penpot table themes', () => {
       ]);
       let error = 0,
         count = 0;
-      // Compare the table interior; shadow tails vary between rasterizers.
+      const source = JSON.parse(
+        readFileSync(
+          new URL(
+            '../../../docs/design/table-theme-specification.json',
+            import.meta.url,
+          ),
+          'utf8',
+        ),
+      ) as { masters: { theme: string; layers: TableLayer[] }[] };
+      const ornaments = [
+        ...source.masters
+          .find((m) => m.theme === theme)!
+          .layers.filter((n) => n.kind === 'text'),
+        ...TABLE_SKINS[theme].filter((n) => n.wordmark),
+      ];
+      // The reference retains the old stud phase and lettering positions. Compare
+      // materials inside the rail, excluding both old and new ornament bounds.
+      // Exact full-material regressions separately cover the rail and its shadows.
       for (let y = 105; y < 565; y++)
-        for (let x = 105; x < 945; x++)
+        for (let x = 105; x < 945; x++) {
+          const sx = x - 25,
+            sy = y - 35;
+          if (Math.hypot(sx - Math.min(690, Math.max(310, sx)), sy - 300) > 198)
+            continue;
+          if (
+            ornaments.some(
+              (n) =>
+                sx >= n.x - 2 &&
+                sx <= n.x + n.width + 2 &&
+                sy >= n.y - 2 &&
+                sy <= n.y + n.height + 2,
+            )
+          )
+            continue;
           for (let channel = 0; channel < 4; channel++) {
             const i = (y * image.width + x) * 4 + channel;
             error += Math.abs(pixels[i]! - reference.data[i]!);
             count++;
           }
+        }
+      expect(count).toBeGreaterThan(500000);
       expect(error / count).toBeLessThan(1);
     },
   );

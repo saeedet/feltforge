@@ -87,7 +87,6 @@ export function adaptTableLayers(
   g: SurfaceGeometry,
 ): readonly TableLayer[] {
   const { width, height, detailScale: s } = g;
-  if (width === 840 && height === 460 && s === 1) return layers;
   const deepestInset = Math.max(
     ...layers.map((n) =>
       n.placement?.kind === 'inset' ? n.placement.inset : 0,
@@ -115,11 +114,16 @@ export function adaptTableLayers(
       // Keep density proportional to the source while bounding DOM cost at extreme ratios.
       const count = Math.min(
         512,
-        Math.max(8, Math.round(perimeter / (33.5716242638546 * s))),
+        Math.max(8, 4 * Math.round(perimeter / (4 * 33.5716242638546 * s))),
       );
       const template = node.children![0]!;
       const children = Array.from({ length: count }, (_, i) => {
-        const p = perimeterPoint(rect, (i * perimeter) / count);
+        // Start on the top/bottom axis, with complete mirrored quartets.
+        const start = (rect.width - 2 * rect.radius) / 2;
+        const p = perimeterPoint(
+          rect,
+          (start + (i * perimeter) / count) % perimeter,
+        );
         return {
           ...template,
           x: p.x - (template.width * s) / 2,
@@ -151,6 +155,12 @@ export function adaptTableLayers(
     if (placement.edge === 'right') x = 80 + width - (920 - cx) * s;
     if (placement.edge === 'top') y = 70 + (cy - 70) * s;
     if (placement.edge === 'bottom') y = 70 + height - (530 - cy) * s;
+    if (placement.inset !== undefined) {
+      if (placement.edge === 'left') x = 80 + placement.inset * s;
+      if (placement.edge === 'right') x = 80 + width - placement.inset * s;
+      if (placement.edge === 'top') y = 70 + placement.inset * s;
+      if (placement.edge === 'bottom') y = 70 + height - placement.inset * s;
+    }
     if (node.wordmark) {
       // A flat desktop wordmark must also fit the curved end of a narrow/circular field.
       // Limit only with uniform sizing; keep the source outlines and upright orientation.

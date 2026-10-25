@@ -158,11 +158,15 @@ function Texture({
   kind,
   scale,
   stroke,
+  centerX,
+  centerY,
 }: {
   id: string;
   kind: 'hex' | 'weave';
   scale: number;
   stroke: TableStroke;
+  centerX: number;
+  centerY: number;
 }) {
   const w = kind === 'hex' ? Math.sqrt(3) * 22 : 26,
     h = kind === 'hex' ? 66 : 26;
@@ -177,10 +181,12 @@ function Texture({
         width={w * scale}
         height={h * scale}
         patternUnits="userSpaceOnUse"
+        viewBox={`0 0 ${w} ${h}`}
+        x={centerX - (w * scale) / 2}
+        y={centerY - (kind === 'hex' ? 22 : h / 2) * scale}
       >
         <path
           d={d}
-          transform={`scale(${scale})`}
           fill="none"
           stroke={stroke.color}
           strokeWidth={stroke.width}
@@ -283,6 +289,8 @@ export const TableArtwork = /* @__PURE__ */ memo(function TableArtwork({
             kind={node.pattern}
             scale={detailScale}
             stroke={node.strokes![0]!}
+            centerX={node.x + node.width / 2}
+            centerY={node.y + node.height / 2}
           />
         )}
         {node.wordmark ? (
