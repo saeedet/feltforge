@@ -1,5 +1,7 @@
 # Implementation status
 
+The 0.4.1 review candidate corrects table decoration alignment across all six themes. Visible suit rows, labels and crowns are centered; studs and texture patterns share symmetric placement rules at desktop and adaptive proportions. Original materials and gameplay geometry remain unchanged. This candidate has not been published.
+
 FeltForge 0.4.0 adds `TableSurface` for consumer-owned portrait, landscape and arbitrary-proportion layouts. It shares the six theme recipes with `PokerTable`, preserves the desktop artwork and overlay API, and includes a surface lab and [consumer handoff](table-surfaces.md). Table overlays keep seats above chips and cards, and the playground's dealer/blind markers shrink with the table.
 
 FeltForge 0.3.0 includes six poker table themes. It includes standard and compact cards, three court collections, two Jokers, chip shadows and rims, framework-independent geometry, React primitives and the hosted playground.

@@ -1,6 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { optimize } from 'svgo';
+import { Resvg } from '@resvg/resvg-js';
 import { format, resolveConfig } from 'prettier';
 
 const root = resolve(import.meta.dirname, '../..');
@@ -56,6 +57,24 @@ async function prepare(layer) {
       viewBox: svg.match(/viewBox="([^"]+)"/)[1],
       body: svg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, ''),
     };
+    // Exported text frames include asymmetric side bearings. Align the visible
+    // outlines, preserving their scale, vertical position and original paths.
+    const [vx, vy, vw, vh] = output.wordmark.viewBox.split(' ').map(Number);
+    const bounds = new Resvg(
+      `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${vw}" height="${vh}" viewBox="${vx} ${vy} ${vw} ${vh}">${output.wordmark.body}</svg>`,
+      { font: { loadSystemFonts: false } },
+    ).getBBox();
+    if (!bounds || !(bounds.width > 0))
+      throw Error('Table ornament must have visible outlines: ' + output.asset);
+    const scale = Math.min(layer.width / vw, layer.height / vh);
+    const round = (value) => Number(value.toFixed(6));
+    output.wordmark.viewBox = [bounds.x, vy, bounds.width, vh]
+      .map(round)
+      .join(' ');
+    output.width = round(bounds.width * scale);
+    output.height = round(vh * scale);
+    output.x = round(500 - output.width / 2);
+    output.y = round(layer.y + (layer.height - output.height) / 2);
     delete output.asset;
   }
   if (output.children)

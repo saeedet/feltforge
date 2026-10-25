@@ -94,6 +94,25 @@ for (const theme of themes)
     await page.goto('/?tab=table#explore');
     await page.getByLabel('Table theme', { exact: true }).selectOption(theme);
     const surface = page.locator('.surface-underlay');
+    const expectCenteredOutlines = async (table: typeof surface) => {
+      const box = (await table.boundingBox())!;
+      for (const mark of await table
+        .locator('[data-table-layer="Text"]')
+        .all()) {
+        const x = await mark.evaluate((el) => {
+          const group = el as SVGGraphicsElement;
+          const bounds = group.getBBox();
+          return new DOMPoint(
+            bounds.x + bounds.width / 2,
+            bounds.y,
+          ).matrixTransform(group.getScreenCTM()!).x;
+        });
+        expect(x).toBeCloseTo(box.x + box.width / 2, 2);
+      }
+    };
+    await expectCenteredOutlines(
+      page.locator('.table-preview > [data-table-theme] > svg'),
+    );
     for (const [preset, w, h, s] of [
       ['portrait', 334, 486, 0.57],
       ['landscape', 559.64, 262.66, 0.571],
@@ -103,6 +122,7 @@ for (const theme of themes)
         .getByLabel('Surface example', { exact: true })
         .selectOption(preset);
       await expect(surface).toHaveAttribute('viewBox', `0 0 ${w} ${h}`);
+      await expectCenteredOutlines(surface);
       const rail = surface
         .locator('[data-table-layer="Outer Rail"] > g > rect')
         .first();
@@ -152,6 +172,7 @@ for (const theme of themes)
     await page.getByLabel('Surface width', { exact: true }).fill('725');
     await page.getByLabel('Surface height', { exact: true }).fill('355');
     await expect(surface).toHaveAttribute('viewBox', '0 0 725 355');
+    await expectCenteredOutlines(surface);
     const refs = await page.evaluate(() => {
       const ids = Array.from(document.querySelectorAll('[id]'), (el) => el.id),
         missing: string[] = [];

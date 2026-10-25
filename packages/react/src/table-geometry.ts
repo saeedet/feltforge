@@ -87,7 +87,6 @@ export function adaptTableLayers(
   g: SurfaceGeometry,
 ): readonly TableLayer[] {
   const { width, height, detailScale: s } = g;
-  if (width === 840 && height === 460 && s === 1) return layers;
   const deepestInset = Math.max(
     ...layers.map((n) =>
       n.placement?.kind === 'inset' ? n.placement.inset : 0,
@@ -115,11 +114,16 @@ export function adaptTableLayers(
       // Keep density proportional to the source while bounding DOM cost at extreme ratios.
       const count = Math.min(
         512,
-        Math.max(8, Math.round(perimeter / (33.5716242638546 * s))),
+        Math.max(8, 4 * Math.round(perimeter / (4 * 33.5716242638546 * s))),
       );
       const template = node.children![0]!;
       const children = Array.from({ length: count }, (_, i) => {
-        const p = perimeterPoint(rect, (i * perimeter) / count);
+        // Start on the top/bottom axis, with complete mirrored quartets.
+        const start = (rect.width - 2 * rect.radius) / 2;
+        const p = perimeterPoint(
+          rect,
+          (start + (i * perimeter) / count) % perimeter,
+        );
         return {
           ...template,
           x: p.x - (template.width * s) / 2,
