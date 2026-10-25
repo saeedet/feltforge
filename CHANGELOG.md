@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased — 0.4.1
+## 0.4.1 — 2026-10-25
 
 - Center the visible four-suit rows, theme lettering and Royal Burgundy crown on the table's horizontal centerline, correcting both off-center export frames and SVG side padding.
 - Mirror Royal Burgundy's studs across both table axes and center Neon Night/Ocean Slate texture patterns at every supported proportion.
