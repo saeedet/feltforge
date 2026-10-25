@@ -14,6 +14,7 @@ function flatten(nodes: readonly TableLayer[]): TableLayer[] {
 }
 const sizes = [
   [334, 486, 0.57],
+  [334, 486, 334 / 460],
   [559.64, 262.66, 0.571],
   [460, 460, 1],
   [725, 355, 0.7],
@@ -222,6 +223,30 @@ describe('adaptive table surfaces', () => {
           Number(ty) + (node.y + node.height / 2) * s,
         ];
       };
+      for (const edge of ['top', 'bottom']) {
+        const row = nodes.filter(
+          (n) =>
+            n.name.startsWith('Deco Diamond') &&
+            n.placement?.kind === 'ornament' &&
+            n.placement.edge === edge,
+        );
+        const diamonds = row
+          .map((node) => center(node)[0]!)
+          .sort((a, b) => a - b);
+        expect(diamonds).toHaveLength(3);
+        expect(diamonds[1]).toBeCloseTo(80 + width / 2, 6);
+        expect((diamonds[0]! + diamonds[2]!) / 2).toBeCloseTo(
+          80 + width / 2,
+          6,
+        );
+        expect(diamonds[1]! - diamonds[0]!).toBeCloseTo(16 * s, 6);
+        expect(diamonds[2]! - diamonds[1]!).toBeCloseTo(16 * s, 6);
+        for (const node of row)
+          expect(center(node)[1]).toBeCloseTo(
+            edge === 'top' ? 70 + 84 * s : 70 + height - 84 * s,
+            6,
+          );
+      }
       for (const ornament of nodes.filter((n) => n.kind === 'path')) {
         const [x, y] = center(ornament);
         const verticalPair = ornament.name.startsWith('Deco Diamond');

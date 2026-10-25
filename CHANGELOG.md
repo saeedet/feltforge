@@ -4,6 +4,7 @@
 
 - Center the visible four-suit rows, theme lettering and Royal Burgundy crown on the table's horizontal centerline, correcting both off-center export frames and SVG side padding.
 - Mirror Royal Burgundy's studs across both table axes and center Neon Night/Ocean Slate texture patterns at every supported proportion.
+- Center Emerald Club's top and bottom three-diamond rows between the paired gold lines, preserving equal spacing around the horizontal centerline.
 - Keep the Art Deco ornament pairs symmetric and preserve table materials, shadows, gameplay anchors and sizing APIs. Add visible-outline and symmetry regressions for desktop and adaptive surfaces.
 
 ## 0.4.0 — 2026-10-19

@@ -4323,6 +4323,7 @@ export const TABLE_SKINS: Readonly<Record<TableTheme, readonly TableLayer[]>> =
         placement: {
           kind: 'ornament',
           edge: 'top',
+          inset: 84,
         },
       },
       {
@@ -4363,6 +4364,7 @@ export const TABLE_SKINS: Readonly<Record<TableTheme, readonly TableLayer[]>> =
         placement: {
           kind: 'ornament',
           edge: 'top',
+          inset: 84,
         },
       },
       {
@@ -4403,6 +4405,7 @@ export const TABLE_SKINS: Readonly<Record<TableTheme, readonly TableLayer[]>> =
         placement: {
           kind: 'ornament',
           edge: 'top',
+          inset: 84,
         },
       },
       {
@@ -4443,6 +4446,7 @@ export const TABLE_SKINS: Readonly<Record<TableTheme, readonly TableLayer[]>> =
         placement: {
           kind: 'ornament',
           edge: 'bottom',
+          inset: 84,
         },
       },
       {
@@ -4483,6 +4487,7 @@ export const TABLE_SKINS: Readonly<Record<TableTheme, readonly TableLayer[]>> =
         placement: {
           kind: 'ornament',
           edge: 'bottom',
+          inset: 84,
         },
       },
       {
@@ -4523,6 +4528,7 @@ export const TABLE_SKINS: Readonly<Record<TableTheme, readonly TableLayer[]>> =
         placement: {
           kind: 'ornament',
           edge: 'bottom',
+          inset: 84,
         },
       },
       {

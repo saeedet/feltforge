@@ -12,7 +12,7 @@ const specification = JSON.parse(
   ),
 );
 const skins = {};
-async function prepare(layer) {
+async function prepare(layer, diamondInset) {
   const output = { ...layer };
   delete output.sourceId;
   if (layer.name === 'Brass Studs') output.placement = { kind: 'studs' };
@@ -37,6 +37,11 @@ async function prepare(layer) {
       distances[a] < distances[b] ? a : b,
     );
     output.placement = { kind: 'ornament', edge };
+    if (layer.name.startsWith('Deco Diamond')) {
+      if (!Number.isFinite(diamondInset))
+        throw Error('Diamond rows require paired Deco Line contours');
+      output.placement.inset = diamondInset;
+    }
   }
   if (output.asset) {
     const source = await readFile(
@@ -78,13 +83,24 @@ async function prepare(layer) {
     delete output.asset;
   }
   if (output.children)
-    output.children = await Promise.all(output.children.map(prepare));
+    output.children = await Promise.all(
+      output.children.map((child) => prepare(child, diamondInset)),
+    );
   if (output.placement?.kind === 'studs')
     for (const child of output.children) delete child.placement;
   return output;
 }
-for (const master of specification.masters)
-  skins[master.theme] = await Promise.all(master.layers.map(prepare));
+for (const master of specification.masters) {
+  const lines = master.layers.filter((layer) =>
+    layer.name.startsWith('Deco Line'),
+  );
+  const diamondInset = lines.length
+    ? lines.reduce((sum, layer) => sum + layer.x - 80, 0) / lines.length
+    : undefined;
+  skins[master.theme] = await Promise.all(
+    master.layers.map((layer) => prepare(layer, diamondInset)),
+  );
+}
 const target = resolve(root, 'packages/react/src/table-skins.generated.ts');
 await writeFile(
   target,

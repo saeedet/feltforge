@@ -109,6 +109,58 @@ for (const theme of themes)
         });
         expect(x).toBeCloseTo(box.x + box.width / 2, 2);
       }
+      if (theme === 'emerald-art-deco') {
+        const diamonds = await table
+          .locator('[data-table-layer^="Deco Diamond"]')
+          .all();
+        expect(diamonds).toHaveLength(6);
+        const lines = await Promise.all(
+          ['Deco Line Outer', 'Deco Line Inner'].map((name) =>
+            table
+              .locator(`[data-table-layer="${name}"] > g > rect`)
+              .first()
+              .evaluate((el) => {
+                const rect = el as SVGRectElement,
+                  matrix = rect.getScreenCTM()!;
+                return {
+                  top: new DOMPoint(0, rect.y.baseVal.value).matrixTransform(
+                    matrix,
+                  ).y,
+                  bottom: new DOMPoint(
+                    0,
+                    rect.y.baseVal.value + rect.height.baseVal.value,
+                  ).matrixTransform(matrix).y,
+                };
+              }),
+          ),
+        );
+        for (const [index, row] of [
+          diamonds.slice(0, 3),
+          diamonds.slice(3),
+        ].entries()) {
+          const bounds = await Promise.all(
+            row.map((diamond) => diamond.boundingBox()),
+          );
+          const left = Math.min(...bounds.map((b) => b!.x));
+          const right = Math.max(...bounds.map((b) => b!.x + b!.width));
+          expect((left + right) / 2).toBeCloseTo(box.x + box.width / 2, 2);
+          const centers = bounds
+            .map((b) => b!.x + b!.width / 2)
+            .sort((a, b) => a - b);
+          expect(centers[1]).toBeCloseTo(box.x + box.width / 2, 2);
+          expect(centers[1]! - centers[0]!).toBeCloseTo(
+            centers[2]! - centers[1]!,
+            2,
+          );
+          const top = Math.min(...bounds.map((b) => b!.y));
+          const bottom = Math.max(...bounds.map((b) => b!.y + b!.height));
+          const edge = index === 0 ? 'top' : 'bottom';
+          expect((top + bottom) / 2).toBeCloseTo(
+            (lines[0]![edge] + lines[1]![edge]) / 2,
+            2,
+          );
+        }
+      }
     };
     await expectCenteredOutlines(
       page.locator('.table-preview > [data-table-theme] > svg'),
@@ -168,6 +220,18 @@ for (const theme of themes)
         .screenshot({
           path: `test-results/surface-${theme}-${preset}-${info.project.name}.png`,
         });
+      if (preset === 'portrait') {
+        await page
+          .getByLabel('Surface detail sizing', { exact: true })
+          .selectOption('auto');
+        await expectCenteredOutlines(surface);
+        if (theme === 'emerald-art-deco')
+          await page
+            .locator('.surface-preview-frame')
+            .screenshot({
+              path: `test-results/surface-emerald-portrait-auto-${info.project.name}.png`,
+            });
+      }
     }
     await page.getByLabel('Surface width', { exact: true }).fill('725');
     await page.getByLabel('Surface height', { exact: true }).fill('355');

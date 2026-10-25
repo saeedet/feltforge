@@ -11,7 +11,7 @@ export function withoutTableDecorations(svg) {
             if (!node.children) return;
             node.children = node.children.filter((child) => {
               const name = child.attributes?.['data-table-layer'] ?? '';
-              return !/^(Text|Brass Studs|Hex Grid.*|Diamond Weave.*)$/.test(
+              return !/^(Text|Brass Studs|Hex Grid.*|Diamond Weave.*|Deco Diamond.*)$/.test(
                 name,
               );
             });

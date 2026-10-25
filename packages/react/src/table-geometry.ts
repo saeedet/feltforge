@@ -155,6 +155,12 @@ export function adaptTableLayers(
     if (placement.edge === 'right') x = 80 + width - (920 - cx) * s;
     if (placement.edge === 'top') y = 70 + (cy - 70) * s;
     if (placement.edge === 'bottom') y = 70 + height - (530 - cy) * s;
+    if (placement.inset !== undefined) {
+      if (placement.edge === 'left') x = 80 + placement.inset * s;
+      if (placement.edge === 'right') x = 80 + width - placement.inset * s;
+      if (placement.edge === 'top') y = 70 + placement.inset * s;
+      if (placement.edge === 'bottom') y = 70 + height - placement.inset * s;
+    }
     if (node.wordmark) {
       // A flat desktop wordmark must also fit the curved end of a narrow/circular field.
       // Limit only with uniform sizing; keep the source outlines and upright orientation.

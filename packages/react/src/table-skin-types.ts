@@ -31,7 +31,11 @@ export type TableShadow = {
 export type TableLayer = {
   placement?:
     | { kind: 'inset'; inset: number }
-    | { kind: 'ornament'; edge: 'left' | 'right' | 'top' | 'bottom' }
+    | {
+        kind: 'ornament';
+        edge: 'left' | 'right' | 'top' | 'bottom';
+        inset?: number;
+      }
     | { kind: 'studs' }
     | { kind: 'hex' }
     | { kind: 'weave' };
