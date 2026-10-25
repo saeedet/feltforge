@@ -95,83 +95,75 @@ for (const theme of themes)
     await page.getByLabel('Table theme', { exact: true }).selectOption(theme);
     const surface = page.locator('.surface-underlay');
     const expectCenteredOutlines = async (table: typeof surface) => {
-      const box = (await table.boundingBox())!;
-      for (const mark of await table
-        .locator('[data-table-layer="Text"]')
-        .all()) {
-        const x = await mark.evaluate((el) => {
-          const group = el as SVGGraphicsElement;
-          const bounds = group.getBBox();
-          return new DOMPoint(
-            bounds.x + bounds.width / 2,
-            bounds.y,
-          ).matrixTransform(group.getScreenCTM()!).x;
-        });
-        expect(x).toBeCloseTo(box.x + box.width / 2, 2);
-      }
-      if (theme === 'emerald-art-deco') {
-        const diamonds = await table
-          .locator('[data-table-layer^="Deco Diamond"]')
-          .all();
-        expect(diamonds).toHaveLength(6);
-        const lines = await Promise.all(
-          ['Deco Line Outer', 'Deco Line Inner'].map((name) =>
-            table
-              .locator(`[data-table-layer="${name}"] > g > rect`)
-              .first()
-              .evaluate((el) => {
-                const rect = el as SVGRectElement,
-                  matrix = rect.getScreenCTM()!;
-                return {
-                  top: new DOMPoint(0, rect.y.baseVal.value).matrixTransform(
-                    matrix,
-                  ).y,
-                  bottom: new DOMPoint(
-                    0,
-                    rect.y.baseVal.value + rect.height.baseVal.value,
-                  ).matrixTransform(matrix).y,
-                };
-              }),
-          ),
+      // Read a single layout snapshot in one coordinate system. Mobile WebKit
+      // can scroll while controls resize the surface between separate calls.
+      const metrics = await table.evaluate((el) => {
+        const svg = el as SVGSVGElement;
+        const box = svg.getBoundingClientRect();
+        const center = box.x + box.width / 2;
+        const outlines = Array.from(
+          svg.querySelectorAll('[data-table-layer="Text"]'),
+          (mark) => {
+            const bounds = mark.getBoundingClientRect();
+            return bounds.x + bounds.width / 2 - center;
+          },
         );
-        for (const [index, row] of [
-          diamonds.slice(0, 3),
-          diamonds.slice(3),
-        ].entries()) {
-          const bounds = await Promise.all(
-            row.map((diamond) => diamond.boundingBox()),
-          );
-          const left = Math.min(...bounds.map((b) => b!.x));
-          const right = Math.max(...bounds.map((b) => b!.x + b!.width));
-          expect((left + right) / 2).toBeCloseTo(box.x + box.width / 2, 2);
-          const centers = bounds
-            .map((b) => b!.x + b!.width / 2)
-            .sort((a, b) => a - b);
-          expect(centers[1]).toBeCloseTo(box.x + box.width / 2, 2);
-          expect(centers[1]! - centers[0]!).toBeCloseTo(
-            centers[2]! - centers[1]!,
-            2,
-          );
-          const top = Math.min(...bounds.map((b) => b!.y));
-          const bottom = Math.max(...bounds.map((b) => b!.y + b!.height));
-          const edge = index === 0 ? 'top' : 'bottom';
-          expect((top + bottom) / 2).toBeCloseTo(
-            (lines[0]![edge] + lines[1]![edge]) / 2,
-            2,
-          );
-          if (
-            await table.evaluate((el) =>
-              el.classList.contains('surface-underlay'),
-            )
-          ) {
-            const player = (await page
-              .locator(
-                index === 0 ? '.surface-player-top' : '.surface-player-bottom',
-              )
-              .boundingBox())!;
-            if (index === 0) expect(player.y + player.height).toBeLessThan(top);
-            else expect(player.y).toBeGreaterThan(bottom);
-          }
+        const diamonds = Array.from(
+          svg.querySelectorAll('[data-table-layer^="Deco Diamond"]'),
+          (node) => node.getBoundingClientRect(),
+        );
+        const lines = ['Deco Line Outer', 'Deco Line Inner'].map((name) =>
+          svg
+            .querySelector(`[data-table-layer="${name}"] > g > rect`)
+            ?.getBoundingClientRect(),
+        );
+        const rows = diamonds.length
+          ? [diamonds.slice(0, 3), diamonds.slice(3)].map((row, index) => {
+              const left = Math.min(...row.map((b) => b.left));
+              const right = Math.max(...row.map((b) => b.right));
+              const top = Math.min(...row.map((b) => b.top));
+              const bottom = Math.max(...row.map((b) => b.bottom));
+              const centers = row
+                .map((b) => b.x + b.width / 2)
+                .sort((a, b) => a - b);
+              const edge = index === 0 ? 'top' : 'bottom';
+              const player = svg.classList.contains('surface-underlay')
+                ? svg
+                    .parentElement!.querySelector(
+                      index === 0
+                        ? '.surface-player-top'
+                        : '.surface-player-bottom',
+                    )!
+                    .getBoundingClientRect()
+                : null;
+              return {
+                centerOffset: (left + right) / 2 - center,
+                middleOffset: centers[1]! - center,
+                spacingDifference:
+                  centers[1]! - centers[0]! - (centers[2]! - centers[1]!),
+                lineOffset:
+                  (top + bottom) / 2 - (lines[0]![edge] + lines[1]![edge]) / 2,
+                clearance: player
+                  ? index === 0
+                    ? top - player.bottom
+                    : player.top - bottom
+                  : null,
+              };
+            })
+          : [];
+        return { outlines, diamondCount: diamonds.length, rows };
+      });
+      expect(metrics.outlines.length).toBeGreaterThan(0);
+      for (const offset of metrics.outlines) expect(offset).toBeCloseTo(0, 2);
+      if (theme === 'emerald-art-deco') {
+        expect(metrics.diamondCount).toBe(6);
+        expect(metrics.rows).toHaveLength(2);
+        for (const row of metrics.rows) {
+          expect(row.centerOffset).toBeCloseTo(0, 2);
+          expect(row.middleOffset).toBeCloseTo(0, 2);
+          expect(row.spacingDifference).toBeCloseTo(0, 2);
+          expect(row.lineOffset).toBeCloseTo(0, 2);
+          if (row.clearance !== null) expect(row.clearance).toBeGreaterThan(0);
         }
       }
     };
